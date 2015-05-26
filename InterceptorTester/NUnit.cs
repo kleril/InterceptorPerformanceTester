@@ -1189,7 +1189,7 @@ namespace ConsoleApplication1
                 timer.Start();
                 AsyncContext.Run(async () => await Program.buildTests(tests));
                 timer.Stop();
-                int time = timer.Elapsed.Milliseconds;
+                double time = timer.Elapsed.TotalMilliseconds;
                 results.WriteLine("Test Time," + time);
 
                 //Verify Server didn't throw up
@@ -1227,7 +1227,7 @@ namespace ConsoleApplication1
             Task.WaitAll(tasks);
 
             timer.Stop();
-            int time = timer.Elapsed.Milliseconds;
+            double time = timer.Elapsed.TotalMilliseconds;
             results.WriteLine("Test Time," + time);
             Console.WriteLine("Test Time," + time);
 
