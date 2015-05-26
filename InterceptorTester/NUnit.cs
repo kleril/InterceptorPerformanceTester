@@ -80,94 +80,6 @@ namespace ConsoleApplication1
 		}
 
 		[Test()]
-		// Invalid Single Backup Item
-		public void InvalidSingleBackupItem()
-		{
-			BackupItem failItem = new BackupItem();
-
-			BackupItem[] failItems = new BackupItem[1];
-			failItems[0] = failItem;
-
-			DeviceBackupJSON failJson = new DeviceBackupJSON();
-            failJson.i = validSerial;
-			failJson.s = 5;
-			failJson.b = failItems;
-
-			DeviceBackup failOperation = new DeviceBackup(testServer, failJson);
-			Test failingTest = new Test(failOperation);
-			failingTest.setTestName("InvalidSingleBackupItem");
-
-			List<Test> tests = new List<Test>();
-			tests.Add(failingTest);
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
-		}
-
-		[Test()]
-		// Muliple Backup Items with Invalid Backup Item in Them
-		public void InvalidBackupItems()
-		{
-			BackupItem failItem = new BackupItem();
-
-			BackupItem[] failItems = new BackupItem[4];
-			failItems[0] = getBackupItem(1);
-			failItems[1] = getBackupItem(2);
-			failItems[2] = failItem;
-			failItems[3] = getBackupItem(3);
-
-			DeviceBackupJSON failJson = new DeviceBackupJSON();
-            failJson.i = validSerial;
-			failJson.s = 5;
-			failJson.b = failItems;
-
-			DeviceBackup failOperation = new DeviceBackup(testServer, failJson);
-			Test failingTest = new Test(failOperation);
-			failingTest.setTestName("InvalidBackupItems");
-
-			List<Test> tests = new List<Test>();
-			tests.Add(failingTest);
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
-		}
-
-		[Test()]
-		// Invalid Serial Number
-		public void BadSerial()
-		{
-			BackupItem[] items = new BackupItem[3];
-			items[0] = getBackupItem(1);
-			items[1] = getBackupItem(2);
-			items[2] = getBackupItem(3);
-
-			DeviceBackupJSON serialJson = new DeviceBackupJSON();
-			serialJson.i = invalidSerial;
-			serialJson.s = 6;
-			serialJson.b = items;
-
-			DeviceBackup serialOperation = new DeviceBackup(testServer, serialJson);
-
-			Test serialTest = new Test(serialOperation);
-			serialTest.setTestName("BadSerial");
-
-			List<Test> tests = new List<Test>();
-			tests.Add(serialTest);
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
-		}
-
-		[Test()]
 		// No Backup Items
 		public void NoBackupItems()
 		{
@@ -185,65 +97,6 @@ namespace ConsoleApplication1
 
 			List<Test> tests = new List<Test>();
 			tests.Add(emptyTest);
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
-		}
-
-		[Test()]
-		// Input with Serial Number as ""
-		public void EmptySerial()
-		{
-			BackupItem[] items = new BackupItem[3];
-			items[0] = getBackupItem(1);
-			items[1] = getBackupItem(2);
-			items[2] = getBackupItem(3);
-
-			DeviceBackupJSON serialJson = new DeviceBackupJSON();
-			serialJson.s = 6;
-			serialJson.b = items;
-			serialJson.i = "";
-
-			DeviceBackup serialOperation = new DeviceBackup(testServer, serialJson);
-
-			Test serialTest = new Test(serialOperation);
-			serialTest.setTestName("EmptySerial");
-
-			List<Test> tests = new List<Test>();
-			tests.Add(serialTest);
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
-		}
-
-
-		[Test()]
-		// Input with Null Serial Number
-		public void NullSerial()
-		{
-			BackupItem[] items = new BackupItem[3];
-			items[0] = getBackupItem(1);
-			items[1] = getBackupItem(2);
-			items[2] = getBackupItem(3);
-
-			DeviceBackupJSON serialJson = new DeviceBackupJSON();
-			serialJson.s = 6;
-			serialJson.b = items;
-			serialJson.i = null;
-
-			DeviceBackup serialOperation = new DeviceBackup(testServer, serialJson);
-
-			Test serialTest = new Test(serialOperation);
-			serialTest.setTestName("NullSerial");
-
-			List<Test> tests = new List<Test>();
-			tests.Add(serialTest);
 			AsyncContext.Run(async() => await Program.buildTests(tests));
 
 			foreach (Test nextTest in Program.getTests())
@@ -348,16 +201,50 @@ namespace ConsoleApplication1
 	[TestFixture()]
 	public class DeviceScanTest
     {
-        static Uri testServer = new Uri(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
-        static string validSerial = ConfigurationManager.ConnectionStrings["ValidSerial"].ConnectionString;
-        static string invalidSerial = ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString;
+        static StreamWriter results;
+        public int maxReps;
+
+        static Uri testServer;
+        static string validSerial;
+        static string invalidSerial;
+
+
+        [TestFixtureSetUp()]
+        public void setup()
+        {
+            try
+            {
+                testServer = new Uri(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
+                validSerial = ConfigurationManager.ConnectionStrings["ValidSerial"].ConnectionString;
+                invalidSerial = ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString;
+
+                string testRunsString = ConfigurationManager.ConnectionStrings["TimesToRunTests"].ConnectionString;
+                try { maxReps = int.Parse(testRunsString); }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    Console.WriteLine("Chances are your appconfig is misconfigured. Double check that performanceTestRuns is an integer and try again.");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
+        static string outputFileSync = "../../../logs/SyncDeviceScanPerformanceTest.csv";
+        static string outputFileAsync = "../../../logs/AsyncDeviceScanPerformanceTest.csv";
 
 		// simple scan code
 
 		[Test()]
 		// Valid Single Scan
-		public void ValidSingleScanSimple()
+		public void SingleScanSimpleAsync()
 		{
+            FileStream stream;
+            stream = File.Create(outputFileAsync);
+            results = new StreamWriter(stream);
+            System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
 
 			DeviceScanJSON testJson = new DeviceScanJSON ();
             testJson.i = validSerial;
@@ -372,121 +259,25 @@ namespace ConsoleApplication1
 			List<Test> tests = new List<Test>();
 			tests.Add(scanTest);
 
-			AsyncContext.Run(async() => await Program.buildTests(tests));
+            timer.Start();
+            // Construct started tasks
+            Task[] tasks = new Task[maxReps];
+            for (int i = 0; i < maxReps; i++)
+            {
+                tasks[i] = Program.buildTests(tests);
+                Console.WriteLine("Test starting:" + i.ToString());
+            }
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("All tests initialized, waiting on them to run as async");
+            Console.WriteLine("------------------------------------------------------");
+            Task.WaitAll(tasks);
 
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}            
-		}
+            timer.Stop();
+            double time = timer.Elapsed.TotalMilliseconds;
+            results.WriteLine("Test Time," + time);
+            Console.WriteLine("Test Time," + time);
 
-		[Test()]
-		// Invalid Single Scan
-		public void InvalidSingleScanSimple()
-		{
-            //TODO: Given when then comments
-           // var getThing = appconfig.get(invalidScanData);
-
-			DeviceScanJSON testJson = new DeviceScanJSON ();
-            testJson.i = validSerial;
-			testJson.d = "qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm";
-			testJson.b = null;
-			testJson.s = 4;
-			DeviceScan testDScan = new DeviceScan(testServer, testJson);
-
-			Test scanTest = new Test(testDScan);
-			scanTest.setTestName("InvalidSingleScanSimple");
-
-
-			List<Test> tests = new List<Test>();
-			tests.Add(scanTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}     
-		}
-
-		[Test()]
-		// Bad Serial
-		public void InvalidSerialSimple()
-		{
-			DeviceScanJSON testJson = new DeviceScanJSON ();
-			testJson.i = "BAD SERIAL";
-			testJson.d = "1289472198573";
-			testJson.b = null;
-			testJson.s = 4;
-			DeviceScan testDScan = new DeviceScan(testServer, testJson);
-
-			Test scanTest = new Test(testDScan);
-			scanTest.setTestName("InvalidSerialSimple");
-
-
-			List<Test> tests = new List<Test>();
-			tests.Add(scanTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}  
-		}
-
-		[Test()]
-		// No Serial(Empty String)
-		public void EmptySerialSimple()
-		{
-			DeviceScanJSON testJson = new DeviceScanJSON ();
-			testJson.i = "";
-			testJson.d = "1289472198573";
-			testJson.b = null;
-			testJson.s = 4;
-			DeviceScan testDScan = new DeviceScan(testServer, testJson);
-
-			Test scanTest = new Test(testDScan);
-			scanTest.setTestName("EmptySerialSimple");
-
-
-			List<Test> tests = new List<Test>();
-			tests.Add(scanTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}  
-		}
-
-
-
-		[Test()]
-		// No Serial(Null)
-		public void NullSerialSimple()
-		{
-			DeviceScanJSON testJson = new DeviceScanJSON ();
-			testJson.i = null;
-			testJson.d = "1289472198573";
-			testJson.b = null;
-			testJson.s = 4;
-			DeviceScan testDScan = new DeviceScan(testServer, testJson);
-
-			Test scanTest = new Test(testDScan);
-			scanTest.setTestName("NullSerialSimple");
-
-
-			List<Test> tests = new List<Test>();
-			tests.Add(scanTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}  
+            results.Close();
 		}
 
 		[Test()]
@@ -507,37 +298,6 @@ namespace ConsoleApplication1
 
 			Test scanTest = new Test(testDScan);
 			scanTest.setTestName("LOValidScansSimple");
-
-
-			List<Test> tests = new List<Test>();
-			tests.Add(scanTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}            
-		}
-
-		[Test()]
-		// Mixed of Valid/Invalid Scans
-		public void ValInvalScansSimple()
-		{
-			DeviceScanJSON testJson = new DeviceScanJSON ();
-			testJson.i = validSerial;
-			testJson.d = null;
-			string[] scanData = new string[4];
-			scanData [0] = "0";
-			scanData [1] = "qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm";
-			scanData [2] = "2";
-			scanData [3] = "3";
-			testJson.b = scanData;
-			testJson.s = 4;
-			DeviceScan testDScan = new DeviceScan(testServer, testJson);
-
-			Test scanTest = new Test(testDScan);
-			scanTest.setTestName("ValInvalScansSimple");
 
 
 			List<Test> tests = new List<Test>();
@@ -605,107 +365,6 @@ namespace ConsoleApplication1
 		}
 
 		[Test()]
-		// Invalid Scan Data
-		public void InvalidSingleScanDyn()
-		{
-			DeviceScanJSON testJson = new DeviceScanJSON ();
-			testJson.i = validSerial;
-			testJson.d = "~20|noendingbar";
-			testJson.b = null;
-			testJson.s = 4;
-			DeviceScan testDScan = new DeviceScan (testServer, testJson);
-
-			Test scanTest = new Test (testDScan);
-			scanTest.setTestName("InvalidSingleScanDyn");
-
-
-			List<Test> tests = new List<Test> ();
-			tests.Add (scanTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests()) {
-				Assert.AreEqual (nextTest.getExpectedResult (), nextTest.getActualResult ());
-			}
-		}
-
-		[Test()]
-		// Bad Serial
-		public void InvalidSerialDyn()
-		{
-			DeviceScanJSON testJson = new DeviceScanJSON ();
-			testJson.i = invalidSerial;
-			testJson.d = "~20/90210|";
-			testJson.b = null;
-			testJson.s = 4;
-			DeviceScan testDScan = new DeviceScan (testServer, testJson);
-
-			Test scanTest = new Test (testDScan);
-			scanTest.setTestName("InvalidSerialDyn");
-
-
-			List<Test> tests = new List<Test> ();
-			tests.Add (scanTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests()) {
-				Assert.AreEqual (nextTest.getExpectedResult (), nextTest.getActualResult ());
-			}
-		}
-
-
-		[Test()]
-		// No Serial (Empty Sting)
-		public void EmptySerialDyn()
-		{
-			DeviceScanJSON testJson = new DeviceScanJSON ();
-			testJson.i = "";
-			testJson.d = "~20/90210|";
-			testJson.b = null;
-			testJson.s = 4;
-			DeviceScan testDScan = new DeviceScan (testServer, testJson);
-
-			Test scanTest = new Test (testDScan);
-			scanTest.setTestName("EmptySerialDyn");
-
-
-			List<Test> tests = new List<Test> ();
-			tests.Add (scanTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests()) {
-				Assert.AreEqual (nextTest.getExpectedResult (), nextTest.getActualResult ());
-			}
-		}
-
-		[Test()]
-		// No Serial (Null)
-		public void NullSerialDyn()
-		{
-			DeviceScanJSON testJson = new DeviceScanJSON ();
-			testJson.i = null;
-			testJson.d = "~20/90210|";
-			testJson.b = null;
-			testJson.s = 4;
-			DeviceScan testDScan = new DeviceScan (testServer, testJson);
-
-			Test scanTest = new Test (testDScan);
-			scanTest.setTestName("NullSerialDyn");
-
-
-			List<Test> tests = new List<Test> ();
-			tests.Add (scanTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests()) {
-				Assert.AreEqual (nextTest.getExpectedResult (), nextTest.getActualResult ());
-			}
-		}
-
-		[Test()]
 		// List of Valid Scans
 		public void LOValidScansDyn()
 		{
@@ -735,40 +394,7 @@ namespace ConsoleApplication1
 			}
 		}
 
-		[Test()]
-		// Mixed of Valid/Invalid Scans
-		public void ValInvalScansDyn()
-		{
-			DeviceScanJSON testJson = new DeviceScanJSON ();
-			testJson.i = validSerial;
-			testJson.d = null;
-			string[] scanData = new string[4];
-			scanData [0] = "~20/0|";
-			scanData [1] = "~20/noendingbar";
-			scanData [2] = "~20/2|";
-			scanData [3] = "~20/3|";
-			testJson.b = scanData;
-			testJson.s = 4;
-			DeviceScan testDScan = new DeviceScan (testServer, testJson);
-
-			Test scanTest = new Test (testDScan);
-			scanTest.setTestName("ValInvalScansDyn");
-
-
-			List<Test> tests = new List<Test> ();
-			tests.Add (scanTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests()) {
-				Assert.AreEqual (nextTest.getExpectedResult (), nextTest.getActualResult ());
-			}
-		}
-
-
-
 		// Combined
-
 		[Test()]
 		// List of Valid Simple and Dynamic Code Scans 
 		public void ValidScansSimDyn()
@@ -787,36 +413,6 @@ namespace ConsoleApplication1
 
 			Test scanTest = new Test (testDScan);
 			scanTest.setTestName("ValidScansSimDyn");
-
-
-			List<Test> tests = new List<Test> ();
-			tests.Add (scanTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests()) {
-				Assert.AreEqual (nextTest.getExpectedResult (), nextTest.getActualResult ());
-			}
-		}
-
-		[Test()]
-		// Mixed of Valid and Invalid Scans
-		public void ValInvalScansSimDyn()
-		{
-			DeviceScanJSON testJson = new DeviceScanJSON ();
-			testJson.i = validSerial;
-			testJson.d = null;
-			string[] scanData = new string[4];
-			scanData [0] = "~20/0|";
-			scanData [1] = "123456789";
-			scanData [2] = "~20/noendingbar";
-			scanData [3] = "qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm";;
-			testJson.b = scanData;
-			testJson.s = 4;
-			DeviceScan testDScan = new DeviceScan (testServer, testJson);
-
-			Test scanTest = new Test (testDScan);
-			scanTest.setTestName("ValInvalScansSimDyn");
 
 
 			List<Test> tests = new List<Test> ();
@@ -857,82 +453,77 @@ namespace ConsoleApplication1
 				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
 			}
 		}
-
-		[Test()]
-		// Invalid Serial
-		public void InvalidSerial() 
-		{
-			DeviceSetting dSetting2 = new DeviceSetting(testServer, invalidSerial);
-
-			Test BadSerial = new Test(dSetting2);
-			BadSerial.setTestName("BadSerial");
-
-
-			List<Test> tests = new List<Test>();
-			tests.Add(BadSerial);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
-		}
-
-		[Test()]
-		// No Serial
-		public void NoSerial() 
-		{
-			DeviceSetting dSetting3 = new DeviceSetting(testServer, null);
-
-			Test NoSerial = new Test(dSetting3);
-			NoSerial.setTestName("NoSerial");
-
-
-			List<Test> tests = new List<Test>();
-			tests.Add(NoSerial);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
-		}
 	}
 
 
 	[TestFixture()]
 	public class DeviceStatusTest
     {
-        static Uri server = new Uri(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
-        static string validSerial = ConfigurationManager.ConnectionStrings["ValidSerial"].ConnectionString;
-        static string invalidSerial = ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString;
+        static StreamWriter results;
+        static string outputFileAsync = "../../../logs/DeviceStatusAsyncPerformanceTest.csv";
+
+        static Uri server;
+        static string validSerial;
+        static string invalidSerial;
+
+        DeviceStatusJSON status;
+
+        public int maxReps;
+
+        [TestFixtureSetUp]
+        public void setup()
+        {
+            status = new DeviceStatusJSON();
+            status.bkupURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceBackup";
+            status.callHomeTimeoutData = "";
+            status.callHomeTimeoutMode = "0";
+            status.capture = "1";
+            status.captureMode = "1";
+            status.cmdChkInt = "1";
+            status.cmdURL = "http://cozumotesttls.cloudapp.net:80/api/iCmd";
+            string[] err = new string[3];
+            err[0] = "asdf";
+            err[1] = "wasd";
+            err[2] = "qwerty";
+            status.dynCodeFormat = err;
+            status.errorLog = err;
+            status.reportURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceStatus";
+            status.requestTimeoutValue = "8000";
+            status.revId = "52987";
+            status.scanURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceScan";
+            status.seqNum = "87";
+            status.startURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceSetting";
+
+            try
+            {
+                server = new Uri(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
+                validSerial = ConfigurationManager.ConnectionStrings["ValidSerial"].ConnectionString;
+                invalidSerial = ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString;
+
+                string testRunsString = ConfigurationManager.ConnectionStrings["TimesToRunTests"].ConnectionString;
+                try {
+                    maxReps = int.Parse(testRunsString);
+                    status.intSerial = validSerial;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    Console.WriteLine("Chances are your appconfig is misconfigured. Double check that performanceTestRuns is an integer and try again.");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+        }
 
 		[Test()]
 		public void ValidSerial()
 		{
-			DeviceStatusJSON status = new DeviceStatusJSON();
-			status.bkupURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceBackup";
-			status.callHomeTimeoutData = "";
-			status.callHomeTimeoutMode = "0";
-			status.capture = "1";
-			status.captureMode = "1";
-			status.cmdChkInt = "1";
-			status.cmdURL = "http://cozumotesttls.cloudapp.net:80/api/iCmd";
-			string[] err = new string[3];
-			err[0] = "asdf";
-			err[1] = "wasd";
-			err[2] = "qwerty";
-			status.dynCodeFormat = err;
-			status.errorLog = err;
-            status.intSerial = validSerial;
-			status.reportURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceStatus";
-			status.requestTimeoutValue = "8000";
-			status.revId = "52987";
-			status.scanURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceScan";
-			status.seqNum = "87";
-			status.startURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceSetting";
+            FileStream stream;
+            stream = File.Create(outputFileAsync);
+            results = new StreamWriter(stream);
 
 			DeviceStatus operation = new DeviceStatus(server, status);
 			Test statusTest = new Test(operation);
@@ -940,131 +531,24 @@ namespace ConsoleApplication1
 
 
 			List<Test> tests = new List<Test>();
-			//for (int i = 0; i < 1000; i++) 
-			//{
 			tests.Add (statusTest);
-			//}
 
-			AsyncContext.Run(async() => await Program.buildTests(tests));
+            System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+            timer.Start();
 
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
-		}
+            // Construct started tasks
+            Task[] tasks = new Task[maxReps];
+            for (int i = 0; i < maxReps; i++)
+            {
+                tasks[i] = Program.buildTests(tests);
+                Console.WriteLine("Test starting:" + i.ToString());
+            }
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("All tests initialized, waiting on them to run as async");
+            Console.WriteLine("------------------------------------------------------");
+            Task.WaitAll(tasks);
 
-
-		[Test()]
-		public void InvalidSerial()
-		{
-			DeviceStatusJSON status = new DeviceStatusJSON();
-			status.bkupURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceBackup";
-			status.callHomeTimeoutData = null;
-			status.callHomeTimeoutMode = "0";
-			status.capture = "1";
-			status.captureMode = "1";
-			status.cmdChkInt = "1";
-			status.cmdURL = "http://cozumotesttls.cloudapp.net:80/api/iCmd";
-			string[] err = new string[3];
-			err[0] = "asdf";
-			err[1] = "wasd";
-			err[2] = "qwerty";
-			status.errorLog = err;
-			status.intSerial = invalidSerial;
-			status.reportURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceStatus";
-			status.requestTimeoutValue = "8000";
-			status.revId = "52987";
-			status.scanURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceScan";
-			status.seqNum = "87";
-			status.startURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceSetting";
-
-			DeviceStatus operation = new DeviceStatus(server, status);
-			Test statusTest = new Test(operation);
-			statusTest.setTestName("BadSerial");
-
-
-			List<Test> tests = new List<Test>();
-			tests.Add(statusTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
-		}
-
-		[Test()]
-		public void EmptySerial()
-		{
-			DeviceStatusJSON status = new DeviceStatusJSON();
-			status.bkupURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceBackup";
-			status.callHomeTimeoutData = "";
-			status.callHomeTimeoutMode = "0";
-			status.capture = "1";
-			status.captureMode = "1";
-			status.cmdChkInt = "1";
-			status.cmdURL = "http://cozumotesttls.cloudapp.net:80/api/iCmd";
-			string[] err = new string[3];
-			err[0] = "asdf";
-			err[1] = "wasd";
-			err[2] = "qwerty";
-			status.errorLog = err;
-			status.reportURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceStatus";
-			status.requestTimeoutValue = "8000";
-			status.revId = "52987";
-			status.scanURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceScan";
-			status.seqNum = "87";
-			status.startURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceSetting";
-
-			DeviceStatus operation = new DeviceStatus(server, status);
-			Test statusTest = new Test(operation);
-			statusTest.setTestName("EmptySerial");
-
-
-			List<Test> tests = new List<Test>();
-			tests.Add(statusTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
-		}
-
-		[Test()]
-		public void NullSerial()
-		{
-			DeviceStatusJSON status = new DeviceStatusJSON();
-			status.bkupURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceBackup";
-			status.callHomeTimeoutData = null;
-			status.callHomeTimeoutMode = "0";
-			status.capture = "1";
-			status.captureMode = "1";
-			status.cmdChkInt = "1";
-			status.cmdURL = "http://cozumotesttls.cloudapp.net:80/api/iCmd";
-			string[] err = new string[3];
-			err[0] = "asdf";
-			err[1] = "wasd";
-			err[2] = "qwerty";
-			status.errorLog = err;
-			status.reportURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceStatus";
-			status.requestTimeoutValue = "8000";
-			status.revId = "52987";
-			status.scanURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceScan";
-			status.seqNum = "87";
-			status.startURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceSetting";
-
-			DeviceStatus operation = new DeviceStatus(server, status);
-			Test statusTest = new Test(operation);
-			statusTest.setTestName("NullSerial");
-
-
-			List<Test> tests = new List<Test>();
-			tests.Add(statusTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
+            timer.Stop();
 
 			foreach (Test nextTest in Program.getTests())
 			{
@@ -1114,29 +598,17 @@ namespace ConsoleApplication1
 		}
 	}
 		
+    //Tests written
 	[TestFixture()]
 	public class ICmdTest
     {
-        
-		static float lessThan900 = 0;
-
-		static float percentage;
-
-		static float avgTime = -1;
-		static float minTime = 9999999999999;
-		static float maxTime = -1;
-		static int reps = 1;
-		public int maxReps;
-
 		static StreamWriter results;
-
-        static string outputFileSync = "../../../logs/SyncPerformanceTest.csv";
-        static string outputFileAsync = "../../../logs/AsyncPerformanceTest.csv";
-
+        public int maxReps;
 
         static Uri testServer;
         static string validSerial;
         static string invalidSerial;
+
 
 		[TestFixtureSetUp()]
 		public void setup()
@@ -1161,13 +633,8 @@ namespace ConsoleApplication1
             }
 		}
 
-        /*
-		[TestFixtureTearDown()]
-		public void tearDown()
-		{
-			
-		}
-        */
+        static string outputFileSync = "../../../logs/SyncICmdPerformanceTest.csv";
+        static string outputFileAsync = "../../../logs/AsyncICmdPerformanceTest.csv";
 
 
         [Test()]
@@ -1203,9 +670,9 @@ namespace ConsoleApplication1
             FileStream stream;
             stream = File.Create(outputFileAsync);
             results = new StreamWriter(stream);
-
-            
             System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+            
+
             ICmd validICmd = new ICmd(testServer, validSerial);
             Test validTest = new Test(validICmd);
             validTest.setTestName("ValidSerial");
@@ -1236,6 +703,14 @@ namespace ConsoleApplication1
             //Verify Server didn't throw up
             foreach (Test nextTest in Program.getTests()) { Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult()); }
         }
+
+        /*
+		[TestFixtureTearDown()]
+		public void tearDown()
+		{
+			
+		}
+        */
 	}
 }
 
