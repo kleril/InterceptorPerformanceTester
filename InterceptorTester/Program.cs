@@ -26,7 +26,7 @@ namespace ConsoleApplication1{
         static Timer time;
         static int seconds;
 
-        static StreamWriter results;
+        //static StreamWriter results;
 
 		static string outputFile = "../../../logs/testResults.txt";
 
@@ -64,6 +64,7 @@ namespace ConsoleApplication1{
                 Console.WriteLine(e.ToString());
             }
 
+            /*
 			FileStream stream;
             try
             {
@@ -83,13 +84,14 @@ namespace ConsoleApplication1{
             }
             catch (IOException e)
             {
-                results = new StreamWriter("../../../logs/OSXtestResults" + DateTime.Now.ToFileTime() + ".txt");
+                //results = new StreamWriter("../../../logs/OSXtestResults" + DateTime.Now.ToFileTime() + ".txt");
 
                 Console.WriteLine("Could not initialize logging");
                 Console.WriteLine(e);
             }
+             */
             tests = new List<Test>();
-            results.WriteLine("Starting Tests! Current time: " + DateTime.Now.ToString());
+            ////results.WriteLine("Starting Tests! Current time: " + DateTime.Now.ToString());
             Console.WriteLine("Setup Complete! Running tests.");
             
             //Setup vars
@@ -106,14 +108,14 @@ namespace ConsoleApplication1{
 
             foreach (Test nextTest in tests)
             {
-				results.WriteLine("Test: " + nextTest.ToString() + " " + nextTest.getTestName());
+				//results.WriteLine("Test: " + nextTest.ToString() + " " + nextTest.getTestName());
                 await runTest(nextTest);
             }
 
             //Shut 'er down!
             Console.WriteLine("Tests complete!");
             Console.WriteLine("Closing writer...");
-            results.Close();
+            //results.Close();
             Console.WriteLine("Writer closed!");
         }
 
@@ -129,77 +131,78 @@ namespace ConsoleApplication1{
             //Get end time
             int endTime = seconds;
             int timeDelta = endTime - startTime;
+            /*
             if (results != null)
             {
                 //Output results
                 //Test
-				results.WriteLine("Summary:");
-				results.WriteLine("Current test: " + currentTest.ToString() + " " + currentTest.getTestName());
+				//results.WriteLine("Summary:");
+				//results.WriteLine("Current test: " + currentTest.ToString() + " " + currentTest.getTestName());
                 //clm();
 
 				try
 				{
-					results.WriteLine("Input JSON:");
-					results.WriteLine(currentTest.getOperation().getJson().ToString());
+					//results.WriteLine("Input JSON:");
+					//results.WriteLine(currentTest.getOperation().getJson().ToString());
 				}
 				catch (Exception)
 				{
-					results.WriteLine("No JSON attached to this operation");
+					//results.WriteLine("No JSON attached to this operation");
 				}
 
-				results.WriteLine("Input URI: " + currentTest.getOperation().getUri());
+				//results.WriteLine("Input URI: " + currentTest.getOperation().getUri());
 
                 //Expected value
-                results.WriteLine("Expected result: " + currentTest.getExpectedResult());
+                //results.WriteLine("Expected result: " + currentTest.getExpectedResult());
                 //clm();
                 //Actual value
-                results.WriteLine("Actual result: " + currentTest.getActualResult());
+                //results.WriteLine("Actual result: " + currentTest.getActualResult());
                 //clm();
                 //Time elapsed (in seconds)
-                results.WriteLine("Time elapsed: " + timeDelta + "s");
+                //results.WriteLine("Time elapsed: " + timeDelta + "s");
                 //clm();
                 //Pass/Fail
-                results.WriteLine("Test result: " + currentTest.result());
-				results.WriteLine ();
-            }
+                //results.WriteLine("Test result: " + currentTest.result());
+				//results.WriteLine ();
+            }*/
         }
 
         //TODOIF: Tweak console output to be a little clearer. Console is made redundant by logs, but it could be useful.
         static async Task testType (Test currentTest)
         {
             KeyValuePair<JObject, string> result;
-            results.WriteLine("Raw test results:");
+            //results.WriteLine("Raw test results:");
             switch (currentTest.ToString())
             {
                 case "iCmd":
                     result = await RunGetAsync(currentTest.getOperation().getUri());
                     currentTest.setActualResult(result.Key.GetValue("StatusCode").ToString());
                     Console.WriteLine(result.Value + " Is the result of the iCmd test");
-                    results.WriteLine(result.ToString());
+                    //results.WriteLine(result.ToString());
                     break;
                 case "DeviceScan":
                     result = await RunPostAsync(currentTest.getOperation().getUri(), currentTest.getOperation().getJson());
                     currentTest.setActualResult(result.Key.GetValue("StatusCode").ToString());
                     Console.WriteLine(result.Value + "Is the result of the DeviceScan test");
-                    results.WriteLine(result.ToString());
+                    //results.WriteLine(result.ToString());
                     break;
                 case "DeviceSetting":
                     result = await RunGetAsync(currentTest.getOperation().getUri());
                     currentTest.setActualResult(result.Key.GetValue("StatusCode").ToString());
                     Console.WriteLine(result.Value + " Is the result of the DeviceSetting test");
-                    results.WriteLine(result.ToString());
+                    //results.WriteLine(result.ToString());
                     break;
                 case "DeviceBackup":
                     result = await RunPostAsync(currentTest.getOperation().getUri(), currentTest.getOperation().getJson());
                     currentTest.setActualResult(result.Key.GetValue("StatusCode").ToString());
                     Console.WriteLine(result.Value + "Is the result of the DeviceBackup test");
-                    results.WriteLine(result.ToString());
+                    //results.WriteLine(result.ToString());
                     break;
                 case "DeviceStatus":
                     result = await RunPostAsync(currentTest.getOperation().getUri(), currentTest.getOperation().getJson());
                     currentTest.setActualResult(result.Key.GetValue("StatusCode").ToString());
                     Console.WriteLine(result.Value + "Is the result of the DeviceStatus test");
-                    results.WriteLine(result.ToString());
+                    //results.WriteLine(result.ToString());
                     break;
                default:
                     Console.WriteLine("Unrecognized test type!");
@@ -344,7 +347,7 @@ namespace ConsoleApplication1{
         //Adds a comma to the output file (column break)
         private static void clm()
         {
-            results.Write(",");
+            //results.Write(",");
         }
     }
 }

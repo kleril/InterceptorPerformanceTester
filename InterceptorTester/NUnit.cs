@@ -1127,15 +1127,11 @@ namespace ConsoleApplication1
 		static float maxTime = -1;
 		static int reps = 1;
 		public int maxReps;
-		//static int[] data = new int[maxReps];
-
 
 		static StreamWriter results;
-		static StreamWriter results1;
 
-		static string outputFile = "../../../logs/performanceTest.csv";
-
-		static string outputFile1 = "../../../logs/performance.csv";
+        static string outputFileSync = "../../../logs/SyncPerformanceTest.csv";
+        static string outputFileAsync = "../../../logs/AsyncPerformanceTest.csv";
 
 
         static Uri testServer;
@@ -1172,156 +1168,74 @@ namespace ConsoleApplication1
 			
 		}
         */
-		
-
-		[Test()]
-		public void PerformanceTest()
-		{
-			FileStream stream;
-			stream = File.Create(outputFile);
-			results = new StreamWriter(stream);
-
-			FileStream stream1;
-			stream1 = File.Create (outputFile1);
-			results1 = new StreamWriter (stream1);
-
-			for (int i = 0; i < maxReps; i++)
-			{
-				System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch ();
-
-				ICmd validICmd = new ICmd (testServer, validSerial);
-
-				Test validTest = new Test (validICmd);
-				validTest.setTestName ("ValidSerial");
 
 
-				List<Test> tests = new List<Test> ();
-				tests.Add (validTest);
+        [Test()]
+        public void SynchronousPerformanceTest()
+        {
+            FileStream stream;
+            stream = File.Create(outputFileSync);
+            results = new StreamWriter(stream);
 
-				timer.Start ();
-				AsyncContext.Run (async() => await Program.buildTests (tests));
-				timer.Stop ();
-				int time = timer.Elapsed.Milliseconds;
-				/*
-				if (avgTime < 0) {
-					avgTime = time;
-				} else {
-					avgTime = (avgTime * (reps - 1) / reps) + (time / reps);
-				}
-				data [reps - 1] = time;
+            for (int i = 0; i < maxReps; i++)
+            {
+                System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+                ICmd validICmd = new ICmd(testServer, validSerial);
+                Test validTest = new Test(validICmd);
+                validTest.setTestName("ValidSerial");
+                List<Test> tests = new List<Test>();
+                tests.Add(validTest);
 
-				reps += 1;
-				if (time < minTime) {
-					minTime = time;
-				}
-				if (time > maxTime) {
-					maxTime = time;
-				}
-				if (time < 900) {
-					lessThan900++;
-				}
-				*/
+                timer.Start();
+                AsyncContext.Run(async () => await Program.buildTests(tests));
+                timer.Stop();
+                int time = timer.Elapsed.Milliseconds;
+                results.WriteLine("Test Time," + time);
 
-				results.WriteLine ("Test Time," + time);
+                //Verify Server didn't throw up
+                foreach (Test nextTest in Program.getTests()) { Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult()); }
+            }
+            results.Close();
+        }
+        [Test()]
+        public void AsynchronousPerformanceTest()
+        {
+            FileStream stream;
+            stream = File.Create(outputFileAsync);
+            results = new StreamWriter(stream);
 
-				results1.WriteLine (time);
+            
+            System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+            ICmd validICmd = new ICmd(testServer, validSerial);
+            Test validTest = new Test(validICmd);
+            validTest.setTestName("ValidSerial");
+            List<Test> tests = new List<Test>();
+            tests.Add(validTest);
 
+            timer.Start();
 
-				foreach (Test nextTest in Program.getTests()) {
-					Assert.AreEqual (nextTest.getExpectedResult (), nextTest.getActualResult ());
-				}
+            // Construct started tasks
+            Task[] tasks = new Task[maxReps];
+            for (int i = 0; i < maxReps; i++)
+            {
+                tasks[i] = Program.buildTests(tests);
+                Console.WriteLine("Test starting:" + i.ToString());
+            }
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("All tests initialized, waiting on them to run as async");
+            Console.WriteLine("------------------------------------------------------");
+            Task.WaitAll(tasks);
 
-				/*if (reps == maxReps + 1) {
-					Assert.LessOrEqual (avgTime, 900);
-					Console.Write ("Response time is OK");
-				}*/
-			}
-			results.Close ();
-			results1.Close ();
-		}
+            timer.Stop();
+            int time = timer.Elapsed.Milliseconds;
+            results.WriteLine("Test Time," + time);
+            Console.WriteLine("Test Time," + time);
 
-		public void ValidSerial()
-		{
+            results.Close();
 
-			//Valid
-			ICmd validICmd = new ICmd(testServer, validSerial);
-
-			Test validTest = new Test(validICmd);
-			validTest.setTestName("ValidSerial");
-
-
-			List<Test> tests = new List<Test>();
-			tests.Add(validTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
-		}
-
-		[Test()]
-		public void InvalidSerial()
-		{
-			//Invalid
-			ICmd invalidICmd = new ICmd(testServer, invalidSerial);
-			Test invalidTest = new Test(invalidICmd);
-			invalidTest.setTestName("BadSerial");
-
-			List<Test> tests = new List<Test>();
-			tests.Add(invalidTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-			foreach (Test nextTest in Program.getTests())
-			{
-				Console.WriteLine(nextTest.getOperation().getUri());
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
-		}
-
-		[Test()]
-		public void MissingSerial()
-		{
-			//Missing
-			ICmd missingICmd = new ICmd(testServer, null);
-			Test missingTest = new Test(missingICmd);
-			missingTest.setTestName("EmptySerial");
-
-
-			List<Test> tests = new List<Test>();
-			tests.Add(missingTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Console.WriteLine(nextTest.getOperation().getUri());
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
-		}
-
-		[Test()]
-		public void NoQuery()
-		{
-			//Missing
-			ICmd missingICmd = new ICmd(testServer, null);
-			missingICmd.noQuery = true;
-			Test missingTest = new Test(missingICmd);
-			missingTest.setTestName("NoQuery");
-
-
-			List<Test> tests = new List<Test>();
-			tests.Add(missingTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Console.WriteLine(nextTest.getOperation().getUri());
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
-		}
+            //Verify Server didn't throw up
+            foreach (Test nextTest in Program.getTests()) { Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult()); }
+        }
 	}
 }
 
