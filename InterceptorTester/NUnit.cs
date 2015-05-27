@@ -11,7 +11,6 @@ using System.IO.Compression;
 
 namespace ConsoleApplication1
 {
-    /*
 	[TestFixture()]
 	public class DeviceBackupTest
 	{
@@ -49,7 +48,7 @@ namespace ConsoleApplication1
             }
         }
 
-
+        /*
 		[Test()]
 		// Valid Serial
 		public void ValidSerial()
@@ -80,6 +79,7 @@ namespace ConsoleApplication1
 				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
 			}
 		}
+         */
 
 		[Test()]
 		// Valid Single Backup Item
@@ -105,16 +105,14 @@ namespace ConsoleApplication1
 			//Test
 			Test backupTest = new Test(operation);
 			backupTest.setTestName("ValidSingleBackupItem");
-			List<Test> tests = new List<Test>();
-			tests.Add(backupTest);
 
             timer.Start();
 
             // Construct started tasks
-            Task[] tasks = new Task[maxReps];
+            Task<double>[] tasks = new Task<double>[maxReps];
             for (int i = 0; i < maxReps; i++)
             {
-                tasks[i] = Program.buildTests(tests);
+                tasks[i] = new Program().runTest(backupTest);
                 Console.WriteLine("Test starting:" + i.ToString());
             }
             Console.WriteLine("------------------------------------------------------");
@@ -122,14 +120,13 @@ namespace ConsoleApplication1
             Console.WriteLine("------------------------------------------------------");
             Task.WaitAll(tasks);
 
-            timer.Stop();
-            double time = timer.Elapsed.TotalMilliseconds;
-            results.WriteLine("Test Time," + time);
-            Console.WriteLine("Test Time," + time);
-
+            foreach (Task<double> nextResult in tasks)
+            {
+                results.WriteLine("Test Time," + nextResult.Result);
+            }
             results.Close();
 		}
-
+        /*
 		[Test()]
 		// No Backup Items
 		public void NoBackupItems()
@@ -218,7 +215,7 @@ namespace ConsoleApplication1
 				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
 			}
 		}
-
+        */
 
 		//TODO: Do this in a cleaner way
 		public BackupItem getBackupItem(int i)
@@ -312,10 +309,10 @@ namespace ConsoleApplication1
 
             timer.Start();
             // Construct started tasks
-            Task[] tasks = new Task[maxReps];
+            Task<double>[] tasks = new Task<double>[maxReps];
             for (int i = 0; i < maxReps; i++)
             {
-                tasks[i] = Program.buildTests(tests);
+                tasks[i] = new Program().runTest(scanTest);
                 Console.WriteLine("Test starting:" + i.ToString());
             }
             Console.WriteLine("------------------------------------------------------");
@@ -323,14 +320,14 @@ namespace ConsoleApplication1
             Console.WriteLine("------------------------------------------------------");
             Task.WaitAll(tasks);
 
-            timer.Stop();
-            double time = timer.Elapsed.TotalMilliseconds;
-            results.WriteLine("Test Time," + time);
-            Console.WriteLine("Test Time," + time);
+            foreach (Task<double> nextResult in tasks)
+            {
+                results.WriteLine("Test Time," + nextResult.Result);
+            }
 
             results.Close();
 		}
-
+        /*
 		[Test()]
 		// List of Valid Scans
 		public void LOValidScansSimple()
@@ -504,6 +501,7 @@ namespace ConsoleApplication1
 				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
 			}
 		}
+         */
 	}
 
 
@@ -588,10 +586,10 @@ namespace ConsoleApplication1
             timer.Start();
 
             // Construct started tasks
-            Task[] tasks = new Task[maxReps];
+            Task<double>[] tasks = new Task<double>[maxReps];
             for (int i = 0; i < maxReps; i++)
             {
-                tasks[i] = Program.buildTests(tests);
+                tasks[i] = new Program().runTest(statusTest);
                 Console.WriteLine("Test starting:" + i.ToString());
             }
             Console.WriteLine("------------------------------------------------------");
@@ -599,14 +597,14 @@ namespace ConsoleApplication1
             Console.WriteLine("------------------------------------------------------");
             Task.WaitAll(tasks);
 
-            timer.Stop();
-            double time = timer.Elapsed.TotalMilliseconds;
-            results.WriteLine("Test Time," + time);
-            Console.WriteLine("Test Time," + time);
+            foreach (Task<double> nextResult in tasks)
+            {
+                results.WriteLine("Test Time," + nextResult.Result);
+            }
 
             results.Close();
 		}
-
+        /*
 		[Test()]
 		public void AlertDataStore()
 		{
@@ -647,8 +645,8 @@ namespace ConsoleApplication1
 			}
 
 		}
+        */
 	}
-    */
 		
     //Tests written
 	[TestFixture()]
