@@ -21,6 +21,7 @@ namespace ConsoleApplication1
         static Uri testServer;
         static string validSerial;
         static string invalidSerial;
+        static int delay;
 
         static string outputFileSync = "../../../logs/SyncDeviceBackupTestPerformanceTest.csv";
         static string outputFileAsync = "../../../logs/AsyncDeviceBackupTestPerformanceTest.csv";
@@ -33,6 +34,7 @@ namespace ConsoleApplication1
                 testServer = new Uri(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
                 validSerial = ConfigurationManager.ConnectionStrings["ValidSerial"].ConnectionString;
                 invalidSerial = ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString;
+                delay = int.Parse(ConfigurationManager.ConnectionStrings["DelayBetweenRuns"].ConnectionString);
 
                 string testRunsString = ConfigurationManager.ConnectionStrings["TimesToRunTests"].ConnectionString;
                 try { maxReps = int.Parse(testRunsString); }
@@ -112,6 +114,7 @@ namespace ConsoleApplication1
             Task<double>[] tasks = new Task<double>[maxReps];
             for (int i = 0; i < maxReps; i++)
             {
+                System.Threading.Thread.Sleep(delay);
                 tasks[i] = new Program().runTest(backupTest);
                 Console.WriteLine("Test starting:" + i.ToString());
             }
@@ -255,6 +258,7 @@ namespace ConsoleApplication1
         static Uri testServer;
         static string validSerial;
         static string invalidSerial;
+        static int delay;
 
 
         [TestFixtureSetUp()]
@@ -265,8 +269,9 @@ namespace ConsoleApplication1
                 testServer = new Uri(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
                 validSerial = ConfigurationManager.ConnectionStrings["ValidSerial"].ConnectionString;
                 invalidSerial = ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString;
+                delay = int.Parse(ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString);
 
-                string testRunsString = ConfigurationManager.ConnectionStrings["TimesToRunTests"].ConnectionString;
+                string testRunsString = ConfigurationManager.ConnectionStrings["DelayBetweenRuns"].ConnectionString;
                 try { maxReps = int.Parse(testRunsString); }
                 catch (Exception e)
                 {
@@ -312,6 +317,7 @@ namespace ConsoleApplication1
             Task<double>[] tasks = new Task<double>[maxReps];
             for (int i = 0; i < maxReps; i++)
             {
+                System.Threading.Thread.Sleep(delay);
                 tasks[i] = new Program().runTest(scanTest);
                 Console.WriteLine("Test starting:" + i.ToString());
             }
@@ -514,6 +520,7 @@ namespace ConsoleApplication1
         static Uri server;
         static string validSerial;
         static string invalidSerial;
+        static int delay;
 
         DeviceStatusJSON status;
 
@@ -548,6 +555,7 @@ namespace ConsoleApplication1
                 server = new Uri(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
                 validSerial = ConfigurationManager.ConnectionStrings["ValidSerial"].ConnectionString;
                 invalidSerial = ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString;
+                delay = int.Parse(ConfigurationManager.ConnectionStrings["DelayBetweenRuns"].ConnectionString);
 
                 string testRunsString = ConfigurationManager.ConnectionStrings["TimesToRunTests"].ConnectionString;
                 try {
@@ -589,6 +597,7 @@ namespace ConsoleApplication1
             Task<double>[] tasks = new Task<double>[maxReps];
             for (int i = 0; i < maxReps; i++)
             {
+                System.Threading.Thread.Sleep(delay);
                 tasks[i] = new Program().runTest(statusTest);
                 Console.WriteLine("Test starting:" + i.ToString());
             }
@@ -658,6 +667,7 @@ namespace ConsoleApplication1
         static Uri testServer;
         static string validSerial;
         static string invalidSerial;
+        static int delay;
 
 
 		[TestFixtureSetUp()]
@@ -668,6 +678,7 @@ namespace ConsoleApplication1
                 testServer = new Uri(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
                 validSerial = ConfigurationManager.ConnectionStrings["ValidSerial"].ConnectionString;
                 invalidSerial = ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString;
+                delay = int.Parse(ConfigurationManager.ConnectionStrings["DelayBetweenRuns"].ConnectionString);
 
                 string testRunsString = ConfigurationManager.ConnectionStrings["TimesToRunTests"].ConnectionString;
                 try { maxReps = int.Parse(testRunsString); }
@@ -732,6 +743,7 @@ namespace ConsoleApplication1
             Task<double>[] tasks = new Task<double>[maxReps];
             for (int i = 0; i < maxReps; i++)
             {
+                System.Threading.Thread.Sleep(delay);
                 tasks[i] = new Program().runTest(validTest);
                 Console.WriteLine("Test starting:" + i.ToString());
             }
