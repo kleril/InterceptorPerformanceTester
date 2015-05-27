@@ -11,13 +11,44 @@ using System.IO.Compression;
 
 namespace ConsoleApplication1
 {
+    /*
 	[TestFixture()]
 	public class DeviceBackupTest
 	{
         //Globals
-        static Uri testServer = new Uri(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
-        static string validSerial = ConfigurationManager.ConnectionStrings["ValidSerial"].ConnectionString;
-        static string invalidSerial = ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString;
+        static StreamWriter results;
+        public int maxReps;
+
+        static Uri testServer;
+        static string validSerial;
+        static string invalidSerial;
+
+        static string outputFileSync = "../../../logs/SyncDeviceBackupTestPerformanceTest.csv";
+        static string outputFileAsync = "../../../logs/AsyncDeviceBackupTestPerformanceTest.csv";
+
+        [TestFixtureSetUp()]
+        public void setup()
+        {
+            try
+            {
+                testServer = new Uri(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
+                validSerial = ConfigurationManager.ConnectionStrings["ValidSerial"].ConnectionString;
+                invalidSerial = ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString;
+
+                string testRunsString = ConfigurationManager.ConnectionStrings["TimesToRunTests"].ConnectionString;
+                try { maxReps = int.Parse(testRunsString); }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    Console.WriteLine("Chances are your appconfig is misconfigured. Double check that performanceTestRuns is an integer and try again.");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
 
 		[Test()]
 		// Valid Serial
@@ -52,8 +83,13 @@ namespace ConsoleApplication1
 
 		[Test()]
 		// Valid Single Backup Item
-		public void ValidSingleBackupItem()
+		public void ValidSingleBackupItemAsync()
 		{
+            FileStream stream;
+            stream = File.Create(outputFileAsync);
+            results = new StreamWriter(stream);
+            System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+
 			BackupItem[] items = new BackupItem[1];
 			items[0] = getBackupItem(1);
 
@@ -71,12 +107,27 @@ namespace ConsoleApplication1
 			backupTest.setTestName("ValidSingleBackupItem");
 			List<Test> tests = new List<Test>();
 			tests.Add(backupTest);
-			AsyncContext.Run(async() => await Program.buildTests(tests));
 
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+            timer.Start();
+
+            // Construct started tasks
+            Task[] tasks = new Task[maxReps];
+            for (int i = 0; i < maxReps; i++)
+            {
+                tasks[i] = Program.buildTests(tests);
+                Console.WriteLine("Test starting:" + i.ToString());
+            }
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("All tests initialized, waiting on them to run as async");
+            Console.WriteLine("------------------------------------------------------");
+            Task.WaitAll(tasks);
+
+            timer.Stop();
+            double time = timer.Elapsed.TotalMilliseconds;
+            results.WriteLine("Test Time," + time);
+            Console.WriteLine("Test Time," + time);
+
+            results.Close();
 		}
 
 		[Test()]
@@ -549,11 +600,11 @@ namespace ConsoleApplication1
             Task.WaitAll(tasks);
 
             timer.Stop();
+            double time = timer.Elapsed.TotalMilliseconds;
+            results.WriteLine("Test Time," + time);
+            Console.WriteLine("Test Time," + time);
 
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+            results.Close();
 		}
 
 		[Test()]
@@ -597,6 +648,7 @@ namespace ConsoleApplication1
 
 		}
 	}
+    */
 		
     //Tests written
 	[TestFixture()]
@@ -654,13 +706,12 @@ namespace ConsoleApplication1
                 tests.Add(validTest);
 
                 timer.Start();
-                AsyncContext.Run(async () => await Program.buildTests(tests));
+                AsyncContext.Run(async () => await new Program().runTest(validTest));
                 timer.Stop();
                 double time = timer.Elapsed.TotalMilliseconds;
                 results.WriteLine("Test Time," + time);
 
                 //Verify Server didn't throw up
-                foreach (Test nextTest in Program.getTests()) { Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult()); }
             }
             results.Close();
         }
@@ -679,13 +730,11 @@ namespace ConsoleApplication1
             List<Test> tests = new List<Test>();
             tests.Add(validTest);
 
-            timer.Start();
-
             // Construct started tasks
-            Task[] tasks = new Task[maxReps];
+            Task<double>[] tasks = new Task<double>[maxReps];
             for (int i = 0; i < maxReps; i++)
             {
-                tasks[i] = Program.buildTests(tests);
+                tasks[i] = new Program().runTest(validTest);
                 Console.WriteLine("Test starting:" + i.ToString());
             }
             Console.WriteLine("------------------------------------------------------");
@@ -693,15 +742,15 @@ namespace ConsoleApplication1
             Console.WriteLine("------------------------------------------------------");
             Task.WaitAll(tasks);
 
-            timer.Stop();
-            double time = timer.Elapsed.TotalMilliseconds;
-            results.WriteLine("Test Time," + time);
-            Console.WriteLine("Test Time," + time);
+            foreach(Task<double> nextResult in tasks)
+            {
+                results.WriteLine("Test Time," + nextResult.Result);
+            }
 
             results.Close();
 
             //Verify Server didn't throw up
-            foreach (Test nextTest in Program.getTests()) { Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult()); }
+            //foreach (Test nextTest in Program.getTests()) { Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult()); }
         }
 
         /*
