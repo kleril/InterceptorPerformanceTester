@@ -708,7 +708,6 @@ namespace ConsoleApplication1
                 timer.Stop();
                 double time = timer.Elapsed.TotalMilliseconds;
                 results.WriteLine("Test Time," + time);
-
                 //Verify Server didn't throw up
             }
             results.Close();
