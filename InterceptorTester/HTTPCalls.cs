@@ -26,13 +26,13 @@ namespace ConsoleApplication1{
         }
 
         //Do test, output results to file.
-        public async Task<double> runTest(Test currentTest)
+        public async Task<double> runTest(Test currentTest, HTTPOperation op)
         {
             System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
             Console.WriteLine("Test starting");
             //Do tests
             timer.Start();
-            await testType(currentTest);
+            await callType(currentTest, op);
             timer.Stop();
             double time = timer.Elapsed.TotalMilliseconds;
             Console.WriteLine("Test ending");
@@ -41,44 +41,29 @@ namespace ConsoleApplication1{
         }
 
         //TODOIF: Tweak console output to be a little clearer. Console is made redundant by logs, but it could be useful.
-        static async Task testType (Test currentTest)
+        static async Task callType (Test currentTest, HTTPOperation op)
         {
             KeyValuePair<JObject, string> result;
-            //results.WriteLine("Raw test results:");
-            switch (currentTest.ToString())
+            switch (op)
             {
-                case "iCmd":
+                case HTTPOperation.GET:
                     result = await RunGetAsync(currentTest.getOperation().getUri());
                     currentTest.setActualResult(result.Key.GetValue("StatusCode").ToString());
-                    Console.WriteLine(result.Value + " Is the result of the iCmd test");
-                    //results.WriteLine(result.ToString());
                     break;
-                case "DeviceScan":
+                case HTTPOperation.POST:
                     result = await RunPostAsync(currentTest.getOperation().getUri(), currentTest.getOperation().getJson());
                     currentTest.setActualResult(result.Key.GetValue("StatusCode").ToString());
-                    Console.WriteLine(result.Value + "Is the result of the DeviceScan test");
-                    //results.WriteLine(result.ToString());
                     break;
-                case "DeviceSetting":
-                    result = await RunGetAsync(currentTest.getOperation().getUri());
+                case HTTPOperation.PUT:
+                    result = await RunPutAsync(currentTest.getOperation().getUri(), currentTest.getOperation().getJson());
                     currentTest.setActualResult(result.Key.GetValue("StatusCode").ToString());
-                    Console.WriteLine(result.Value + " Is the result of the DeviceSetting test");
-                    //results.WriteLine(result.ToString());
                     break;
-                case "DeviceBackup":
-                    result = await RunPostAsync(currentTest.getOperation().getUri(), currentTest.getOperation().getJson());
+                case HTTPOperation.DELETE:
+                    result = await RunDeleteAsync(currentTest.getOperation().getUri());
                     currentTest.setActualResult(result.Key.GetValue("StatusCode").ToString());
-                    Console.WriteLine(result.Value + "Is the result of the DeviceBackup test");
-                    //results.WriteLine(result.ToString());
-                    break;
-                case "DeviceStatus":
-                    result = await RunPostAsync(currentTest.getOperation().getUri(), currentTest.getOperation().getJson());
-                    currentTest.setActualResult(result.Key.GetValue("StatusCode").ToString());
-                    Console.WriteLine(result.Value + "Is the result of the DeviceStatus test");
-                    //results.WriteLine(result.ToString());
                     break;
                default:
-                    Console.WriteLine("Unrecognized test type!");
+                    Console.WriteLine("Unrecognized HTTP Operation!");
                     Console.WriteLine(currentTest.ToString());
                     break;
             }
@@ -143,16 +128,26 @@ namespace ConsoleApplication1{
         }
 
         //PUT call
-        static async Task<KeyValuePair<JObject, string>> RunPutAsync(Uri qUri, HttpContent contentToPut)
+        static async Task<KeyValuePair<JObject, string>> RunPutAsync(Uri qUri, Object contentToPut)
         {
             try
             {
                 using (HttpClient client = new HttpClient())
-                using (HttpResponseMessage response = await client.PutAsync(qUri, contentToPut))
                 {
-                    JObject jResponse = JObject.FromObject(response);
-                    string content = await response.Content.ReadAsStringAsync();
-                    return new KeyValuePair<JObject, string>(jResponse, content);
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    // Newtonsoft Json serialization
+                    var upContent = JObject.FromObject(contentToPut);
+                    Console.WriteLine(upContent.ToString());
+                    var strContent = new System.Net.Http.StringContent(upContent.ToString(), Encoding.UTF8, "application/json");
+
+                    using (HttpResponseMessage response = await client.PutAsync(qUri, strContent))
+                    {
+                        JObject jResponse = JObject.FromObject(response);
+                        string content = await response.Content.ReadAsStringAsync();
+                        return new KeyValuePair<JObject, string>(jResponse, content);
+                    }
                 }
                 
             }
