@@ -15,11 +15,7 @@ namespace ConsoleApplication1{
 
     class HTTPCalls
     {
-		static string certPath = "../../Data/unittestcert.pfx";
-        static string certPass = "unittest";
-        // Create a collection object and populate it using the PFX file
-        static X509Certificate cert;
-
+        public static KeyValuePair<JObject, string> result;
         public HTTPCalls()
         {
             
@@ -43,7 +39,6 @@ namespace ConsoleApplication1{
         //TODOIF: Tweak console output to be a little clearer. Console is made redundant by logs, but it could be useful.
         static async Task callType (Test currentTest, HTTPOperation op)
         {
-            KeyValuePair<JObject, string> result;
             switch (op)
             {
                 case HTTPOperation.GET:

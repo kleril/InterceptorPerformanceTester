@@ -20,6 +20,8 @@ namespace ConsoleApplication1{
         // Create a collection object and populate it using the PFX file
         static X509Certificate cert;
 
+        public static KeyValuePair<JObject, string> result;
+
         public HTTPSCalls()
         {
             try
@@ -52,7 +54,6 @@ namespace ConsoleApplication1{
         //TODOIF: Tweak console output to be a little clearer. Console is made redundant by logs, but it could be useful.
         static async Task callType(Test currentTest, HTTPOperation op)
         {
-            KeyValuePair<JObject, string> result;
             switch (op)
             {
                 case HTTPOperation.GET:
