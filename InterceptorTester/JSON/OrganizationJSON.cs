@@ -5,12 +5,12 @@ namespace ConsoleApplication1
 
 	//[DataContract]
 
-	public class AuthenticateJSON
+	public class OrganizationJSON
 	{
 
 		public bool isValid ()
 		{
-			if ((userID != null) && (password != null))
+			if ((orgID != null) && (orgName != null))
 			{
 				return true;
 			}
@@ -18,9 +18,9 @@ namespace ConsoleApplication1
 			return false;
 		}
 
-		string userID;
+		int orgID;
 
-		string password;
+		string orgName;
 
 		// ReSharper restore InconsistentNaming
 
@@ -29,5 +29,6 @@ namespace ConsoleApplication1
 			return "";
 		}
 	}
-		
+
 }
+

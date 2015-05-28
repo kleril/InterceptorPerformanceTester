@@ -110,6 +110,9 @@
     <Compile Include="NUnitTests\AuthenticateTest.cs" />
     <Compile Include="Data\ServerUris.cs" />
     <Compile Include="Data\ValidSerialNumbers.cs" />
+    <Compile Include="API Operations\Organization.cs" />
+    <Compile Include="JSON\OrganizationJSON.cs" />
+    <Compile Include="NUnitTests\OrganizationTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
