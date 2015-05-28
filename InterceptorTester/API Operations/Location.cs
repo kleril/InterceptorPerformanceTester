@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-	class Authenticate : APIOperation
+	class Location : APIOperation
 	{
-		public Authenticate(Uri server, string serialNum)
+		public Location(Uri server, string serialNum)
 		{
 			opHost = server;
 			hOp = HTTPOperation.POST;
@@ -29,12 +29,12 @@ namespace ConsoleApplication1
 
 		public override string ToString()
 		{
-			return "Authenticate";
+			return "Location";
 		}
 
 		public override Uri getUri()
 		{
-			return new Uri(opHost, "/api/Authenticate/");
+			return new Uri(opHost, "/api/Location/");
 		}
 
 		public override object getJson()
@@ -43,5 +43,6 @@ namespace ConsoleApplication1
 		}
 	}
 }
+
 
 

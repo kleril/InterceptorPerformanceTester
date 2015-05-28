@@ -11,7 +11,7 @@ namespace ConsoleApplication1
 		public Organization(Uri server, string serialNum)
 		{
 			opHost = server;
-			hOp = HTTPOperation.GET;
+			hOp = HTTPOperation.POST;
 			opQuery = new HTTPQuery(QueryParameter.i, serialNum);
 		}
 
