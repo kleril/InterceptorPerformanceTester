@@ -144,7 +144,7 @@ namespace ConsoleApplication1{
         }
 
         //PUT call
-        static async Task<KeyValuePair<JObject, string>> RunPutAsync(Uri qUri, HttpContent contentToPut)
+        static async Task<KeyValuePair<JObject, string>> RunPutAsync(Uri qUri, Object contentToPut)
         {
             try
             {
