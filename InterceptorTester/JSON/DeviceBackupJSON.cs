@@ -37,21 +37,7 @@ namespace ConsoleApplication1
 	{
         public bool isValid()
         {
-			if (ValidSerialNumbers.isValid (i) && s != null) {
-				try {
-					foreach (BackupItem item in b) {
-						if (!item.isValid ()) {
-							return false;
-						}
-					}
-				} catch (Exception) {
-					return true;
-				}
-				return true;
-			} else {
-				return false;
-			}
-            
+			throw new NotImplementedException();
         }
 
 		/// <summary>

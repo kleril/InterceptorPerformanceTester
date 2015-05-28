@@ -11,12 +11,24 @@ using System.IO.Compression;
 
 namespace ConsoleApplication1
 {
-	/*
+    
 	[TestFixture()]
 	public class OrganizationTest
     {
-        
+        [TestFixtureSetUp()]
+        public void setup()
+        {
+            TestGlobals.setup();
+        }
+
+        [Test()]
+        public void createOrganization()
+        {
+            Organization newOrg = new Organization(TestGlobals.testServer, "999");
+            Test mTest = new Test(newOrg);
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST));
+            Assert.AreEqual("201", HTTPSCalls.result.Value);
+        }
 	}
-	*/
 }
 

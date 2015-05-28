@@ -13,12 +13,7 @@ namespace ConsoleApplication1
 	{
         public bool isValid ()
         {
-            if (ValidSerialNumbers.isValid(intSerial) && seqNum != null)
-            {
-                return true;
-            }
-
-            return false;
+			throw new NotImplementedException();
         }
 
 		/// <summary>

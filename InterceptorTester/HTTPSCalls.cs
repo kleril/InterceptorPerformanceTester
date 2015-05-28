@@ -110,15 +110,15 @@ namespace ConsoleApplication1{
         {
             try
             {
-                // ... Use HttpClient.
-
 				WebRequestHandlerWithClientcertificates handler = new WebRequestHandlerWithClientcertificates();
                 handler.ClientCertificates.Add(cert);
                 using (HttpClient client = new HttpClient(handler))
                 {
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
+                    //TODO: How do we get session token
+                    //client.DefaultRequestHeaders.Authorization = "Token " + "1";
+                    
                     // Newtonsoft Json serialization
                     Console.WriteLine(contentToPush.ToString());
                     var upContent = JObject.FromObject(contentToPush);
@@ -132,7 +132,45 @@ namespace ConsoleApplication1{
                         return new KeyValuePair<JObject, string>(jResponse, content);
                     }
                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("POST request failed.");
+                Console.WriteLine("URL: " + qUri.ToString());
+                Console.WriteLine("Content: " + contentToPush.ToString());
+                Console.WriteLine(e);
                 return new KeyValuePair<JObject, string>(null, null);
+            }
+        }
+
+
+        //POST call w/ client
+        static async Task<KeyValuePair<JObject, string>> RunPostAsync(Uri qUri, Object contentToPush, HttpClient clientPass)
+        {
+            try
+            {
+                WebRequestHandlerWithClientcertificates handler = new WebRequestHandlerWithClientcertificates();
+                handler.ClientCertificates.Add(cert);
+                using (HttpClient client = new HttpClient(handler))
+                {
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    //TODO: Do this in a less stupid way
+                    client.DefaultRequestHeaders.Authorization = clientPass.DefaultRequestHeaders.Authorization;
+
+                    // Newtonsoft Json serialization
+                    Console.WriteLine(contentToPush.ToString());
+                    var upContent = JObject.FromObject(contentToPush);
+                    Console.WriteLine(upContent.ToString());
+                    var strContent = new System.Net.Http.StringContent(upContent.ToString(), Encoding.UTF8, "application/json");
+
+                    using (HttpResponseMessage response = await client.PostAsync(qUri, strContent))
+                    {
+                        JObject jResponse = JObject.FromObject(response);
+                        string content = await response.Content.ReadAsStringAsync();
+                        return new KeyValuePair<JObject, string>(jResponse, content);
+                    }
+                }
             }
             catch (Exception e)
             {

@@ -86,11 +86,6 @@
     <Compile Include="API Operations\GenericRequest.cs" />
     <Compile Include="API Operations\ICmd.cs" />
     <Compile Include="Data\Scan.cs" />
-    <Compile Include="Data\ServerUris.cs" />
-    <Compile Include="Data\ValidIntIds.cs" />
-    <Compile Include="Data\ValidLocIds.cs" />
-    <Compile Include="Data\ValidOrgIds.cs" />
-    <Compile Include="Data\ValidSerialNumbers.cs" />
     <Compile Include="HTTP\HTTPHandler.cs" />
     <Compile Include="HTTP\HTTPOperation.cs" />
     <Compile Include="HTTP\HTTPQuery.cs" />
@@ -112,8 +107,6 @@
     <Compile Include="API Operations\Authenticate.cs" />
     <Compile Include="JSON\AuthenticateJSON.cs" />
     <Compile Include="NUnitTests\AuthenticateTest.cs" />
-    <Compile Include="Data\ServerUris.cs" />
-    <Compile Include="Data\ValidSerialNumbers.cs" />
     <Compile Include="API Operations\Organization.cs" />
     <Compile Include="JSON\OrganizationJSON.cs" />
     <Compile Include="NUnitTests\OrganizationTest.cs" />
@@ -126,10 +119,6 @@
     <None Include="packages.config" />
     <None Include="API Operations\.DS_Store" />
     <None Include="Data\.DS_Store" />
-    <None Include="Data\ServerUris.txt" />
-    <None Include="Data\ValidIntIds.txt" />
-    <None Include="Data\ValidOrdIds.txt" />
-    <None Include="Data\ValidSerialNumbers.txt" />
     <None Include="Data\mycertificates.cer" />
     <None Include="Data\mycertificates.crt" />
     <None Include="Data\unittestcert.pfx" />

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ConsoleApplication1.HTTP;
 
 namespace ConsoleApplication1
 {
@@ -22,70 +21,7 @@ namespace ConsoleApplication1
         //Maybe make this throw an error of some sort if false?
         public bool isValid()
         {
-            switch (param)
-            {
-                //TODO: Find out a better way to determine IDs - existence != validity
-                case QueryParameter.i:
-                    foreach (string nextSerialNumber in ValidSerialNumbers.getAll())
-                    {
-                        if (value == null)
-                        {
-                            return false;
-                        }
-                        if (value.Equals(nextSerialNumber))
-                        {
-                            return true;
-                        }
-                    }
-                    Console.WriteLine("Invalid device serial number");
-                    return false;
-
-                case QueryParameter.intId:
-                    foreach(string nextId in ValidIntIds.getAll())
-                    {
-                        if (value == null)
-                        {
-                            return false;
-                        }
-                        if (value.Equals(nextId))
-                        {
-                            return true;
-                        }
-                    }
-                    return false;
-
-                case QueryParameter.locId:
-                    foreach (string nextId in ValidLocIds.getAll())
-                    {
-                        if (value == null)
-                        {
-                            return false;
-                        }
-                        if (value.Equals(nextId))
-                        {
-                            return true;
-                        }
-                    }
-                    return false;
-
-                case QueryParameter.orgId:
-                    foreach (string nextId in ValidOrgIds.getAll())
-                    {
-                        if (value == null)
-                        {
-                            return false;
-                        }
-                        if (value.Equals(nextId))
-                        {
-                            return true;
-                        }
-                    }
-                    return false;
-
-                default:
-                    Console.WriteLine("Query is not of a valid type!");
-                    return false;
-            }
+            throw new NotImplementedException();
         }
 
         /// <summary>

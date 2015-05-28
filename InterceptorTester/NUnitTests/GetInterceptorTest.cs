@@ -64,9 +64,9 @@ namespace ConsoleApplication1
         public static KeyValuePair<JObject, string> run()
         {
             //JObject data = GetLocation.run().Key;
-            APIOperation mOp = new GenericRequest(TestGlobals.testServer, "/api/interceptor", data);
-            Test mTest = new Test(mOp);
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST));
+            //APIOperation mOp = new GenericRequest(TestGlobals.testServer, "/api/interceptor", data);
+            //Test mTest = new Test(mOp);
+            //AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST));
 
             //TODO: Ensure this is correct
             Assert.AreEqual("201", HTTPSCalls.result.Value);

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Runtime.Serialization;
 
 namespace ConsoleApplication1 {
@@ -8,14 +9,7 @@ namespace ConsoleApplication1 {
     {
         public bool isValid()
         {
-			if (ValidSerialNumbers.isValid(i) && s != null)
-            {
-                if (b != null || d != null)
-                {
-                    return true;
-                }
-            }
-            return false;
+			throw new NotImplementedException();
         }
 
         /// <summary>

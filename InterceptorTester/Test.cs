@@ -16,7 +16,6 @@ namespace ConsoleApplication1
         public Test(APIOperation nOperation)
         {
             operation = nOperation;
-            expectedResult = operation.getExpectedResult();
             actualResult = "?";
         }
 
@@ -43,7 +42,7 @@ namespace ConsoleApplication1
 
         public String getExpectedResult ()
         {
-            return expectedResult;
+            throw new NotImplementedException();
         }
 
         public void setActualResult (String result)
