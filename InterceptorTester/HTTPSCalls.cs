@@ -50,6 +50,20 @@ namespace ConsoleApplication1{
 
             return time;
         }
+        //Do test, output results to file.
+        public async Task<double> runTest(Test currentTest, HTTPOperation op, HttpClient client)
+        {
+            System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+            Console.WriteLine("Test starting");
+            //Do tests
+            timer.Start();
+            await callType(currentTest, op, client);
+            timer.Stop();
+            double time = timer.Elapsed.TotalMilliseconds;
+            Console.WriteLine("Test ending");
+
+            return time;
+        }
 
         //TODOIF: Tweak console output to be a little clearer. Console is made redundant by logs, but it could be useful.
         static async Task callType(Test currentTest, HTTPOperation op)
@@ -62,6 +76,33 @@ namespace ConsoleApplication1{
                     break;
                 case HTTPOperation.POST:
                     result = await RunPostAsync(currentTest.getOperation().getUri(), currentTest.getOperation().getJson());
+                    currentTest.setActualResult(result.Key.GetValue("StatusCode").ToString());
+                    break;
+                case HTTPOperation.PUT:
+                    result = await RunPutAsync(currentTest.getOperation().getUri(), currentTest.getOperation().getJson());
+                    currentTest.setActualResult(result.Key.GetValue("StatusCode").ToString());
+                    break;
+                case HTTPOperation.DELETE:
+                    result = await RunDeleteAsync(currentTest.getOperation().getUri());
+                    currentTest.setActualResult(result.Key.GetValue("StatusCode").ToString());
+                    break;
+                default:
+                    Console.WriteLine("Unrecognized HTTP Operation!");
+                    Console.WriteLine(currentTest.ToString());
+                    break;
+            }
+        }
+        //TODOIF: Tweak console output to be a little clearer. Console is made redundant by logs, but it could be useful.
+        static async Task callType(Test currentTest, HTTPOperation op, HttpClient client)
+        {
+            switch (op)
+            {
+                case HTTPOperation.GET:
+                    result = await RunGetAsync(currentTest.getOperation().getUri());
+                    currentTest.setActualResult(result.Key.GetValue("StatusCode").ToString());
+                    break;
+                case HTTPOperation.POST:
+                    result = await RunPostAsync(currentTest.getOperation().getUri(), currentTest.getOperation().getJson(), client);
                     currentTest.setActualResult(result.Key.GetValue("StatusCode").ToString());
                     break;
                 case HTTPOperation.PUT:
@@ -142,7 +183,6 @@ namespace ConsoleApplication1{
                 return new KeyValuePair<JObject, string>(null, null);
             }
         }
-
 
         //POST call w/ client
         static async Task<KeyValuePair<JObject, string>> RunPostAsync(Uri qUri, Object contentToPush, HttpClient clientPass)
