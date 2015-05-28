@@ -16,6 +16,7 @@ namespace ConsoleApplication1{
     class HTTPCalls
     {
         public static KeyValuePair<JObject, string> result;
+
         public HTTPCalls()
         {
             
@@ -110,7 +111,6 @@ namespace ConsoleApplication1{
                         return new KeyValuePair<JObject, string>(jResponse, content);
                     }
                 }
-                return new KeyValuePair<JObject, string>(null, null);
             }
             catch (Exception e)
             {
