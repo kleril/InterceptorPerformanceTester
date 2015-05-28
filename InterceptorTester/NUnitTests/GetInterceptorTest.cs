@@ -85,13 +85,40 @@ namespace ConsoleApplication1
 
     }
 
+	[TestFixture()]
     public class GetOrganization
     {
+		[TestFixtureSetUp()]
+		public void setup()
+		{
+			TestGlobals.setup();
+		}
 
+		[Test()]
+		public void runTest()
+		{
+			JObject data = CreateOrganization.run().Key;
+			APIOperation mOp = new GenericRequest(TestGlobals.testServer, "/api/organization", data);
+			Test mTest = new Test(mOp);
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET));
+			Assert.AreEqual("Yes", HTTPSCalls.result.Value);
+		}
     }
 
+	[TestFixture()]
     public class CreateOrganization
     {
+		[Test()]
+		public static KeyValuePair<JObject, string> run()
+		{
+			APIOperation mOp = new GenericRequest(TestGlobals.testServer, "/api/organization", data);
+			Test mTest = new Test(mOp);
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST));
 
+			//TODO: Ensure this is correct
+			Assert.AreEqual("201", HTTPSCalls.result.Value);
+
+			return HTTPSCalls.result;
+		}
     }
 }
