@@ -109,8 +109,6 @@
     <Compile Include="NUnitTests\DeviceStatusTest.cs" />
     <Compile Include="NUnitTests\ICmdTest.cs" />
     <Compile Include="NUnitTests\DeviceSettingsTest.cs" />
-<<<<<<< Updated upstream
-=======
     <Compile Include="API Operations\Authenticate.cs" />
     <Compile Include="JSON\AuthenticateJSON.cs" />
     <Compile Include="NUnitTests\AuthenticateTest.cs" />
@@ -122,7 +120,6 @@
     <Compile Include="API Operations\Location.cs" />
     <Compile Include="JSON\LocationJSON.cs" />
     <Compile Include="NUnitTests\LocationTest.cs" />
->>>>>>> Stashed changes
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
