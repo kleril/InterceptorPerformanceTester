@@ -100,7 +100,8 @@
     <Compile Include="JSON\DeviceScanRequestJSON.cs" />
     <Compile Include="JSON\DeviceSettingsJSON.cs" />
     <Compile Include="JSON\DeviceStatusJSON.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="HTTPCalls.cs" />
+    <Compile Include="HTTPSCalls.cs" />
     <Compile Include="Test.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -116,7 +117,9 @@
     <None Include="Data\mycertificates.crt" />
     <None Include="Data\unittestcert.pfx" />
     <None Include="HTTP\.DS_Store" />
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="bin\.DS_Store" />
     <None Include="bin\Debug\.DS_Store" />
     <None Include="bin\Debug\InterceptorTester.dll" />
@@ -148,6 +151,5 @@
   </Target>
   <ItemGroup>
     <Folder Include="Data\ConfigurationSections\" />
-    <Folder Include="bin\" />
   </ItemGroup>
 </Project>
