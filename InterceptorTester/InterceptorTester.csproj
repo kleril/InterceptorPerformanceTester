@@ -108,6 +108,9 @@
     <Compile Include="NUnitTests\DeviceStatusTest.cs" />
     <Compile Include="NUnitTests\ICmdTest.cs" />
     <Compile Include="NUnitTests\DeviceSettingsTest.cs" />
+    <Compile Include="NUnitTests\AuthenticateTest.cs" />
+    <Compile Include="API Operations\Authenticate.cs" />
+    <Compile Include="JSON\AuthenticateJSON.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

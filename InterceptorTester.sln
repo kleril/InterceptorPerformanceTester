@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterceptorTester", "InterceptorTester\InterceptorTester.csproj", "{531FA4A0-E161-4DEC-A58B-0E8F12A6E501}"
+Project("{9344BDBB-3E7F-41FC-A0DD-8665D75EE146}") = "InterceptorTester", "InterceptorTester\InterceptorTester.csproj", "{531FA4A0-E161-4DEC-A58B-0E8F12A6E501}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B4FCEF2B-84F8-4867-B52D-AE17ACF95E9D}"
 	ProjectSection(SolutionItems) = preProject
