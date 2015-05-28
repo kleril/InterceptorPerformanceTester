@@ -78,10 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-=======
     <Compile Include="PerformanceTests.cs" />
->>>>>>> origin/master
     <Compile Include="API Operations\APIOperation.cs" />
     <Compile Include="API Operations\DeviceBackup.cs" />
     <Compile Include="API Operations\DeviceScan.cs" />
