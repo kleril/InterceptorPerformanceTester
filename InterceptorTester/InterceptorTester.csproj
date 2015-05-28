@@ -83,6 +83,7 @@
     <Compile Include="API Operations\DeviceScan.cs" />
     <Compile Include="API Operations\DeviceSetting.cs" />
     <Compile Include="API Operations\DeviceStatus.cs" />
+    <Compile Include="API Operations\GenericRequest.cs" />
     <Compile Include="API Operations\ICmd.cs" />
     <Compile Include="Data\Scan.cs" />
     <Compile Include="Data\ServerUris.cs" />
@@ -101,15 +102,13 @@
     <Compile Include="JSON\DeviceStatusJSON.cs" />
     <Compile Include="HTTPCalls.cs" />
     <Compile Include="HTTPSCalls.cs" />
+    <Compile Include="NUnitTests\GetInterceptorTest.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="NUnitTests\DeviceScanTest.cs" />
     <Compile Include="NUnitTests\DeviceBackupTest.cs" />
     <Compile Include="NUnitTests\DeviceStatusTest.cs" />
     <Compile Include="NUnitTests\ICmdTest.cs" />
     <Compile Include="NUnitTests\DeviceSettingsTest.cs" />
-    <Compile Include="API Operations\Authenticate.cs" />
-    <Compile Include="JSON\AuthenticateJSON.cs" />
-    <Compile Include="NUnitTests\AuthenticateTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
