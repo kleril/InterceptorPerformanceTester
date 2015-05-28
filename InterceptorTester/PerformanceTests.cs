@@ -269,7 +269,6 @@ namespace ConsoleApplication1
         static string invalidSerial;
         static int delay;
 
-
         [TestFixtureSetUp()]
         public void setup()
         {
