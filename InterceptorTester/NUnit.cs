@@ -24,7 +24,8 @@ namespace ConsoleApplication1
         static int delay;
 
         static string outputFileSync = "../../../logs/SyncDeviceBackupTestPerformanceTest.csv";
-        static string outputFileAsync = "../../../logs/AsyncDeviceBackupTestPerformanceTest.csv";
+        static string outputFileHTTPSAsync = "../../../logs/AsyncHTTPSDeviceBackupTestPerformanceTest.csv";
+        static string outputFileHTTPAsync = "../../../logs/AsyncHTTPDeviceBackupTestPerformanceTest.csv";
 
         [TestFixtureSetUp()]
         public void setup()
@@ -50,66 +51,29 @@ namespace ConsoleApplication1
             }
         }
 
-        /*
-		[Test()]
-		// Valid Serial
-		public void ValidSerial()
-		{
-			BackupItem[] items = new BackupItem[3];
-			items[0] = getBackupItem(1);
-			items[1] = getBackupItem(2);
-			items[2] = getBackupItem(3);
-
-			//BackupJSon
-			DeviceBackupJSON json = new DeviceBackupJSON();
-            json.i = validSerial;
-			json.s = 4;
-			json.b = items;
-
-			//BackupOperation
-			DeviceBackup operation = new DeviceBackup(testServer, json);
-
-			//Test
-			Test backupTest = new Test(operation);
-			backupTest.setTestName("ValidSerial");
-			List<Test> tests = new List<Test>();
-			tests.Add(backupTest);
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
-		}
-         */
-
-		[Test()]
-		// Valid Single Backup Item
-		public void ValidSingleBackupItemAsync()
-		{
+        [Test()]
+        // Valid Single Backup Item
+        public void AsyncHTTPSDeviceBackup()
+        {
             FileStream stream;
-            stream = File.Create(outputFileAsync);
+            stream = File.Create(outputFileHTTPSAsync);
             results = new StreamWriter(stream);
-            System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
 
-			BackupItem[] items = new BackupItem[1];
-			items[0] = getBackupItem(1);
+            BackupItem[] items = new BackupItem[1];
+            items[0] = getBackupItem(1);
 
-			//BackupJSon
-			DeviceBackupJSON json = new DeviceBackupJSON();
+            //BackupJSon
+            DeviceBackupJSON json = new DeviceBackupJSON();
             json.i = validSerial;
-			json.s = 4;
-			json.b = items;
+            json.s = 4;
+            json.b = items;
 
-			//BackupOperation
-			DeviceBackup operation = new DeviceBackup(testServer, json);
+            //BackupOperation
+            DeviceBackup operation = new DeviceBackup(testServer, json);
 
-			//Test
-			Test backupTest = new Test(operation);
-			backupTest.setTestName("ValidSingleBackupItem");
-
-            timer.Start();
-
+            //Test
+            Test backupTest = new Test(operation);
+            backupTest.setTestName("ValidSingleBackupItem");
             // Construct started tasks
             Task<double>[] tasks = new Task<double>[maxReps];
             for (int i = 0; i < maxReps; i++)
@@ -128,7 +92,52 @@ namespace ConsoleApplication1
                 results.WriteLine("Test Time," + nextResult.Result);
             }
             results.Close();
-		}
+        }
+
+        [Test()]
+        // Valid Single Backup Item
+        public void AsyncHTTPDeviceBackup()
+        {
+            FileStream stream;
+            stream = File.Create(outputFileHTTPAsync);
+            results = new StreamWriter(stream);
+
+            BackupItem[] items = new BackupItem[1];
+            items[0] = getBackupItem(1);
+
+            //BackupJSon
+            DeviceBackupJSON json = new DeviceBackupJSON();
+            json.i = validSerial;
+            json.s = 4;
+            json.b = items;
+
+            //BackupOperation
+            DeviceBackup operation = new DeviceBackup(testServer, json);
+
+            //Test
+            Test backupTest = new Test(operation);
+            backupTest.setTestName("ValidSingleBackupItem");
+            // Construct started tasks
+            Task<double>[] tasks = new Task<double>[maxReps];
+            for (int i = 0; i < maxReps; i++)
+            {
+                System.Threading.Thread.Sleep(delay);
+                tasks[i] = new HTTPCalls().runTest(backupTest);
+                Console.WriteLine("Test starting:" + i.ToString());
+            }
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("All tests initialized, waiting on them to run as async");
+            Console.WriteLine("------------------------------------------------------");
+            Task.WaitAll(tasks);
+
+            foreach (Task<double> nextResult in tasks)
+            {
+                results.WriteLine("Test Time," + nextResult.Result);
+            }
+            results.Close();
+        }
+
+
         /*
 		[Test()]
 		// No Backup Items
@@ -269,9 +278,9 @@ namespace ConsoleApplication1
                 testServer = new Uri(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
                 validSerial = ConfigurationManager.ConnectionStrings["ValidSerial"].ConnectionString;
                 invalidSerial = ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString;
-                delay = int.Parse(ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString);
+                delay = int.Parse(ConfigurationManager.ConnectionStrings["DelayBetweenRuns"].ConnectionString);
 
-                string testRunsString = ConfigurationManager.ConnectionStrings["DelayBetweenRuns"].ConnectionString;
+                string testRunsString = ConfigurationManager.ConnectionStrings["TimesToRunTests"].ConnectionString;
                 try { maxReps = int.Parse(testRunsString); }
                 catch (Exception e)
                 {
@@ -286,18 +295,18 @@ namespace ConsoleApplication1
         }
 
         static string outputFileSync = "../../../logs/SyncDeviceScanPerformanceTest.csv";
-        static string outputFileAsync = "../../../logs/AsyncDeviceScanPerformanceTest.csv";
+        static string outputFileHTTPAsync = "../../../logs/AsyncHTTPDeviceScanPerformanceTest.csv";
+        static string outputFileHTTPSAsync = "../../../logs/AsyncHTTPSDeviceScanPerformanceTest.csv";
 
 		// simple scan code
 
 		[Test()]
 		// Valid Single Scan
-		public void SingleScanSimpleAsync()
+		public void AsyncHTTPSDeviceScan()
 		{
             FileStream stream;
-            stream = File.Create(outputFileAsync);
+            stream = File.Create(outputFileHTTPSAsync);
             results = new StreamWriter(stream);
-            System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
 
 			DeviceScanJSON testJson = new DeviceScanJSON ();
             testJson.i = validSerial;
@@ -312,7 +321,6 @@ namespace ConsoleApplication1
 			List<Test> tests = new List<Test>();
 			tests.Add(scanTest);
 
-            timer.Start();
             // Construct started tasks
             Task<double>[] tasks = new Task<double>[maxReps];
             for (int i = 0; i < maxReps; i++)
@@ -330,9 +338,52 @@ namespace ConsoleApplication1
             {
                 results.WriteLine("Test Time," + nextResult.Result);
             }
-
             results.Close();
 		}
+
+        [Test()]
+        // Valid Single Scan
+        public void AsyncHTTPDeviceScan()
+        {
+            FileStream stream;
+            stream = File.Create(outputFileHTTPAsync);
+            results = new StreamWriter(stream);
+
+            DeviceScanJSON testJson = new DeviceScanJSON();
+            testJson.i = validSerial;
+            testJson.d = "1289472198573";
+            testJson.b = null;
+            testJson.s = 4;
+            DeviceScan testDScan = new DeviceScan(testServer, testJson);
+
+            Test scanTest = new Test(testDScan);
+            scanTest.setTestName("ValidSingleScanSimple");
+
+            List<Test> tests = new List<Test>();
+            tests.Add(scanTest);
+
+            // Construct started tasks
+            Task<double>[] tasks = new Task<double>[maxReps];
+            for (int i = 0; i < maxReps; i++)
+            {
+                System.Threading.Thread.Sleep(delay);
+                tasks[i] = new HTTPCalls().runTest(scanTest);
+                Console.WriteLine("Test starting:" + i.ToString());
+            }
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("All tests initialized, waiting on them to run as async");
+            Console.WriteLine("------------------------------------------------------");
+            Task.WaitAll(tasks);
+
+            foreach (Task<double> nextResult in tasks)
+            {
+                results.WriteLine("Test Time," + nextResult.Result);
+            }
+
+            results.Close();
+        }
+
+
         /*
 		[Test()]
 		// List of Valid Scans
@@ -515,7 +566,8 @@ namespace ConsoleApplication1
 	public class DeviceStatusTest
     {
         static StreamWriter results;
-        static string outputFileAsync = "../../../logs/DeviceStatusAsyncPerformanceTest.csv";
+        static string outputFileHTTPSAsync = "../../../logs/AsyncHTTPSDeviceStatusPerformanceTest.csv";
+        static string outputFileHTTPAsync = "../../../logs/AsyncHTTPDeviceStatusPerformanceTest.csv";
 
         static Uri server;
         static string validSerial;
@@ -576,10 +628,10 @@ namespace ConsoleApplication1
         }
 
 		[Test()]
-		public void ValidSerial()
+		public void AsyncHTTPSDeviceStatus()
 		{
             FileStream stream;
-            stream = File.Create(outputFileAsync);
+            stream = File.Create(outputFileHTTPSAsync);
             results = new StreamWriter(stream);
 
 			DeviceStatus operation = new DeviceStatus(server, status);
@@ -613,48 +665,46 @@ namespace ConsoleApplication1
 
             results.Close();
 		}
-        /*
-		[Test()]
-		public void AlertDataStore()
-		{
-			DeviceStatusJSON status = new DeviceStatusJSON();
-			status.bkupURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceBackup";
-			status.callHomeTimeoutData = null;
-			status.callHomeTimeoutMode = "0";
-			status.capture = "1";
-			status.captureMode = "1";
-			status.cmdChkInt = "1";
-			status.cmdURL = "http://cozumotesttls.cloudapp.net:80/api/iCmd";
-			string[] err = new string[3];
-			err[0] = "<timestamp>///900///bypassmode";
-			err[1] = "wasd";
-			err[2] = "qwerty";
-			status.errorLog = err;
-			status.intSerial = validSerial;
-			status.reportURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceStatus";
-			status.requestTimeoutValue = "8000";
-			status.revId = "52987";
-			status.scanURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceScan";
-			status.seqNum = "87";
-			status.startURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceSetting";
-
-			DeviceStatus operation = new DeviceStatus(server, status);
-			Test statusTest = new Test(operation);
-			statusTest.setTestName("AlertDataStore");
 
 
-			List<Test> tests = new List<Test>();
-			tests.Add(statusTest);
+        [Test()]
+        public void AsyncHTTPDeviceStatus()
+        {
+            FileStream stream;
+            stream = File.Create(outputFileHTTPAsync);
+            results = new StreamWriter(stream);
 
-			AsyncContext.Run(async() => await Program.buildTests(tests));
+            DeviceStatus operation = new DeviceStatus(server, status);
+            Test statusTest = new Test(operation);
+            statusTest.setTestName("ValidSerial");
 
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
 
-		}
-        */
+            List<Test> tests = new List<Test>();
+            tests.Add(statusTest);
+
+            System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+            timer.Start();
+
+            // Construct started tasks
+            Task<double>[] tasks = new Task<double>[maxReps];
+            for (int i = 0; i < maxReps; i++)
+            {
+                System.Threading.Thread.Sleep(delay);
+                tasks[i] = new HTTPCalls().runTest(statusTest);
+                Console.WriteLine("Test starting:" + i.ToString());
+            }
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("All tests initialized, waiting on them to run as async");
+            Console.WriteLine("------------------------------------------------------");
+            Task.WaitAll(tasks);
+
+            foreach (Task<double> nextResult in tasks)
+            {
+                results.WriteLine("Test Time," + nextResult.Result);
+            }
+
+            results.Close();
+        }
 	}
 		
     //Tests written
@@ -668,6 +718,11 @@ namespace ConsoleApplication1
         static string validSerial;
         static string invalidSerial;
         static int delay;
+
+        static string outputFileHTTPSSync = "../../../logs/SyncHTTPSICmdPerformanceTest.csv";
+        static string outputFileHTTPSAsync = "../../../logs/AsyncHTTPSICmdPerformanceTest.csv";
+        static string outputFileHTTPSync = "../../../logs/SyncHTTPICmdPerformanceTest.csv";
+        static string outputFileHTTPAsync = "../../../logs/AsyncHTTPICmdPerformanceTest.csv";
 
 
 		[TestFixtureSetUp()]
@@ -694,15 +749,13 @@ namespace ConsoleApplication1
             }
 		}
 
-        static string outputFileSync = "../../../logs/SyncICmdPerformanceTest.csv";
-        static string outputFileAsync = "../../../logs/AsyncICmdPerformanceTest.csv";
-
+        
 
         [Test()]
-        public void SynchronousPerformanceTest()
+        public void SyncHTTPSICmd()
         {
             FileStream stream;
-            stream = File.Create(outputFileSync);
+            stream = File.Create(outputFileHTTPSSync);
             results = new StreamWriter(stream);
 
             for (int i = 0; i < maxReps; i++)
@@ -724,10 +777,10 @@ namespace ConsoleApplication1
             results.Close();
         }
         [Test()]
-        public void AsynchronousPerformanceTest()
+        public void AsyncHTTPSICmd()
         {
             FileStream stream;
-            stream = File.Create(outputFileAsync);
+            stream = File.Create(outputFileHTTPSAsync);
             results = new StreamWriter(stream);
             System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
             
@@ -757,18 +810,70 @@ namespace ConsoleApplication1
             }
 
             results.Close();
-
-            //Verify Server didn't throw up
-            //foreach (Test nextTest in Program.getTests()) { Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult()); }
         }
 
-        /*
-		[TestFixtureTearDown()]
-		public void tearDown()
-		{
-			
-		}
-        */
+
+        [Test()]
+        public void SyncHTTPICmd()
+        {
+            FileStream stream;
+            stream = File.Create(outputFileHTTPSync);
+            results = new StreamWriter(stream);
+
+            for (int i = 0; i < maxReps; i++)
+            {
+                System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+                ICmd validICmd = new ICmd(testServer, validSerial);
+                Test validTest = new Test(validICmd);
+                validTest.setTestName("ValidSerial");
+                List<Test> tests = new List<Test>();
+                tests.Add(validTest);
+
+                timer.Start();
+                AsyncContext.Run(async () => await new HTTPCalls().runTest(validTest));
+                timer.Stop();
+                double time = timer.Elapsed.TotalMilliseconds;
+                results.WriteLine("Test Time," + time);
+
+                //Verify Server didn't throw up
+            }
+            results.Close();
+        }
+        [Test()]
+        public void AsyncHTTPICmd()
+        {
+            FileStream stream;
+            stream = File.Create(outputFileHTTPAsync);
+            results = new StreamWriter(stream);
+            System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+
+
+            ICmd validICmd = new ICmd(testServer, validSerial);
+            Test validTest = new Test(validICmd);
+            validTest.setTestName("ValidSerial");
+            List<Test> tests = new List<Test>();
+            tests.Add(validTest);
+
+            // Construct started tasks
+            Task<double>[] tasks = new Task<double>[maxReps];
+            for (int i = 0; i < maxReps; i++)
+            {
+                System.Threading.Thread.Sleep(delay);
+                tasks[i] = new HTTPCalls().runTest(validTest);
+                Console.WriteLine("Test starting:" + i.ToString());
+            }
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("All tests initialized, waiting on them to run as async");
+            Console.WriteLine("------------------------------------------------------");
+            Task.WaitAll(tasks);
+
+            foreach (Task<double> nextResult in tasks)
+            {
+                results.WriteLine("Test Time," + nextResult.Result);
+            }
+
+            results.Close();
+        }
 	}
 }
 
