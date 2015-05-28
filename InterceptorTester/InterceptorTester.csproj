@@ -108,6 +108,8 @@
     <Compile Include="API Operations\Authenticate.cs" />
     <Compile Include="JSON\AuthenticateJSON.cs" />
     <Compile Include="NUnitTests\AuthenticateTest.cs" />
+    <Compile Include="Data\ServerUris.cs" />
+    <Compile Include="Data\ValidSerialNumbers.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -141,6 +143,8 @@
     <None Include="bin\Debug\System.Web.Http.dll" />
     <None Include="bin\Debug\nunit.extensions.dll" />
     <None Include="bin\Debug\nunit.framework.dll" />
+    <None Include="Data\ServerUris.txt" />
+    <None Include="Data\ValidSerialNumbers.txt" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
