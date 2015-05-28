@@ -78,7 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NUnit.cs" />
+    <Compile Include="PerformanceTests.cs" />
     <Compile Include="API Operations\APIOperation.cs" />
     <Compile Include="API Operations\DeviceBackup.cs" />
     <Compile Include="API Operations\DeviceScan.cs" />
