@@ -50,7 +50,8 @@ namespace ConsoleApplication1
         public void runTest()
         {
             JObject data = CreateInterceptor.run().Key;
-            APIOperation mOp = new GenericRequest(TestGlobals.testServer, "/api/interceptor", data);
+			string query = "/api/interceptor" + TestGlobals.validSerial;
+			APIOperation mOp = new GenericRequest(TestGlobals.testServer, query, data);
             Test mTest = new Test(mOp);
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET));
             Assert.AreEqual("Yes", HTTPSCalls.result.Value);
