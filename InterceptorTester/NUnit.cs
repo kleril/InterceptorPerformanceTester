@@ -115,7 +115,7 @@ namespace ConsoleApplication1
             for (int i = 0; i < maxReps; i++)
             {
                 System.Threading.Thread.Sleep(delay);
-                tasks[i] = new Program().runTest(backupTest);
+                tasks[i] = new HTTPSCalls().runTest(backupTest);
                 Console.WriteLine("Test starting:" + i.ToString());
             }
             Console.WriteLine("------------------------------------------------------");
@@ -318,7 +318,7 @@ namespace ConsoleApplication1
             for (int i = 0; i < maxReps; i++)
             {
                 System.Threading.Thread.Sleep(delay);
-                tasks[i] = new Program().runTest(scanTest);
+                tasks[i] = new HTTPSCalls().runTest(scanTest);
                 Console.WriteLine("Test starting:" + i.ToString());
             }
             Console.WriteLine("------------------------------------------------------");
@@ -598,7 +598,7 @@ namespace ConsoleApplication1
             for (int i = 0; i < maxReps; i++)
             {
                 System.Threading.Thread.Sleep(delay);
-                tasks[i] = new Program().runTest(statusTest);
+                tasks[i] = new HTTPSCalls().runTest(statusTest);
                 Console.WriteLine("Test starting:" + i.ToString());
             }
             Console.WriteLine("------------------------------------------------------");
@@ -715,7 +715,7 @@ namespace ConsoleApplication1
                 tests.Add(validTest);
 
                 timer.Start();
-                AsyncContext.Run(async () => await new Program().runTest(validTest));
+                AsyncContext.Run(async () => await new HTTPSCalls().runTest(validTest));
                 timer.Stop();
                 double time = timer.Elapsed.TotalMilliseconds;
                 results.WriteLine("Test Time," + time);
@@ -744,7 +744,7 @@ namespace ConsoleApplication1
             for (int i = 0; i < maxReps; i++)
             {
                 System.Threading.Thread.Sleep(delay);
-                tasks[i] = new Program().runTest(validTest);
+                tasks[i] = new HTTPSCalls().runTest(validTest);
                 Console.WriteLine("Test starting:" + i.ToString());
             }
             Console.WriteLine("------------------------------------------------------");
