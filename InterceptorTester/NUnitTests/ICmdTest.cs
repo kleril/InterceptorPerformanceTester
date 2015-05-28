@@ -71,7 +71,7 @@ namespace ConsoleApplication1
 				tests.Add(validTest);
 
 				timer.Start();
-				AsyncContext.Run(async () => await new HTTPSCalls().runTest(validTest));
+				AsyncContext.Run(async () => await new HTTPSCalls().runTest(validTest, HTTPOperation.GET));
 				timer.Stop();
 				double time = timer.Elapsed.TotalMilliseconds;
 				results.WriteLine("Test Time," + time);
@@ -99,7 +99,7 @@ namespace ConsoleApplication1
 			for (int i = 0; i < maxReps; i++)
 			{
 				System.Threading.Thread.Sleep(delay);
-				tasks[i] = new HTTPSCalls().runTest(validTest);
+                tasks[i] = new HTTPSCalls().runTest(validTest, HTTPOperation.GET);
 				Console.WriteLine("Test starting:" + i.ToString());
 			}
 			Console.WriteLine("------------------------------------------------------");
@@ -133,7 +133,7 @@ namespace ConsoleApplication1
 				tests.Add(validTest);
 
 				timer.Start();
-				AsyncContext.Run(async () => await new HTTPCalls().runTest(validTest));
+                AsyncContext.Run(async () => await new HTTPCalls().runTest(validTest, HTTPOperation.GET));
 				timer.Stop();
 				double time = timer.Elapsed.TotalMilliseconds;
 				results.WriteLine("Test Time," + time);
@@ -162,7 +162,7 @@ namespace ConsoleApplication1
 			for (int i = 0; i < maxReps; i++)
 			{
 				System.Threading.Thread.Sleep(delay);
-				tasks[i] = new HTTPCalls().runTest(validTest);
+                tasks[i] = new HTTPCalls().runTest(validTest, HTTPOperation.GET);
 				Console.WriteLine("Test starting:" + i.ToString());
 			}
 			Console.WriteLine("------------------------------------------------------");

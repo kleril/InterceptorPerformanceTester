@@ -78,7 +78,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PerformanceTests.cs" />
     <Compile Include="API Operations\APIOperation.cs" />
     <Compile Include="API Operations\DeviceBackup.cs" />
     <Compile Include="API Operations\DeviceScan.cs" />
@@ -108,9 +107,6 @@
     <Compile Include="NUnitTests\DeviceStatusTest.cs" />
     <Compile Include="NUnitTests\ICmdTest.cs" />
     <Compile Include="NUnitTests\DeviceSettingsTest.cs" />
-    <Compile Include="NUnitTests\AuthenticateTest.cs" />
-    <Compile Include="API Operations\Authenticate.cs" />
-    <Compile Include="JSON\AuthenticateJSON.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -159,6 +155,5 @@
   </Target>
   <ItemGroup>
     <Folder Include="Data\ConfigurationSections\" />
-    <Folder Include="NUnitTests\" />
   </ItemGroup>
 </Project>

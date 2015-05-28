@@ -99,7 +99,7 @@ namespace ConsoleApplication1
 			for (int i = 0; i < maxReps; i++)
 			{
 				System.Threading.Thread.Sleep(delay);
-				tasks[i] = new HTTPSCalls().runTest(statusTest);
+                tasks[i] = new HTTPSCalls().runTest(statusTest, HTTPOperation.POST);
 				Console.WriteLine("Test starting:" + i.ToString());
 			}
 			Console.WriteLine("------------------------------------------------------");
@@ -139,7 +139,7 @@ namespace ConsoleApplication1
 			for (int i = 0; i < maxReps; i++)
 			{
 				System.Threading.Thread.Sleep(delay);
-				tasks[i] = new HTTPCalls().runTest(statusTest);
+                tasks[i] = new HTTPCalls().runTest(statusTest, HTTPOperation.POST);
 				Console.WriteLine("Test starting:" + i.ToString());
 			}
 			Console.WriteLine("------------------------------------------------------");
