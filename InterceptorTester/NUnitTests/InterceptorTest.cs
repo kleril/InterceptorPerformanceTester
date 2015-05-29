@@ -50,7 +50,7 @@ namespace ConsoleApplication1
 		public KeyValuePair<JObject, string> createInterceptor()
 		{
 			//TODO: Set this up
-			Location newInt = new Interceptor(TestGlobals.testServer, TestGlobals.validSerial);
+			Interceptor newInt = new Interceptor(TestGlobals.testServer, TestGlobals.validSerial);
 			Test mTest = new Test(newInt);
 			HttpClient client = new HttpClient();
 			//TODO: Initialize the client properly - add session token to header, etc.
