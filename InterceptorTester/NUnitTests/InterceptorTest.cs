@@ -63,7 +63,7 @@ namespace ConsoleApplication1
 		[Test()]
 		public KeyValuePair<JObject, string> getIntercpetor()
 		{
-			string query = "/API/Interceptor" + TestGlobals.validSerial;
+			string query = "/API/Interceptor/" + TestGlobals.validSerial;
 			GenericRequest getInt = new GenericRequest(TestGlobals.testServer, query, null);
 			Test mTest = new Test(getInt);
 			HttpClient client = new HttpClient();
