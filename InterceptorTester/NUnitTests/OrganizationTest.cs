@@ -26,7 +26,11 @@ namespace ConsoleApplication1
         [Test()]
         public KeyValuePair<JObject, string> createOrganization()
         {
-            Organization newOrg = new Organization(TestGlobals.testServer, "999");
+            OrganizationJSON json = new OrganizationJSON();
+            json.orgID = 999;
+            json.orgName = "TestName";
+            //TODO: Remove redundant "999" string from params
+            Organization newOrg = new Organization(TestGlobals.testServer, "999", json);
             Test mTest = new Test(newOrg);
             HttpClient client = new HttpClient();
             //TODO: Initialize the client properly - add session token to header, etc.

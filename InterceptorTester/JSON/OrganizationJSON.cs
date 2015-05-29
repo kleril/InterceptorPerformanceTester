@@ -18,9 +18,9 @@ namespace ConsoleApplication1
 			return false;
 		}
 
-		int orgID;
+		public int orgID;
 
-		string orgName;
+		public string orgName;
 
 		// ReSharper restore InconsistentNaming
 
