@@ -15,36 +15,11 @@ namespace ConsoleApplication1
 	public class DeviceScanTest
 	{
 		static StreamWriter results;
-		public int maxReps;
-
-		static Uri testServer;
-		static string validSerial;
-		static string invalidSerial;
-		static int delay;
-
 
 		[TestFixtureSetUp()]
 		public void setup()
 		{
-			try
-			{
-				testServer = new Uri(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
-				validSerial = ConfigurationManager.ConnectionStrings["ValidSerial"].ConnectionString;
-				invalidSerial = ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString;
-				delay = int.Parse(ConfigurationManager.ConnectionStrings["DelayBetweenRuns"].ConnectionString);
-
-				string testRunsString = ConfigurationManager.ConnectionStrings["TimesToRunTests"].ConnectionString;
-				try { maxReps = int.Parse(testRunsString); }
-				catch (Exception e)
-				{
-					Console.WriteLine(e);
-					Console.WriteLine("Chances are your appconfig is misconfigured. Double check that performanceTestRuns is an integer and try again.");
-				}
-			}
-			catch (Exception e)
-			{
-				Console.WriteLine(e);
-			}
+			TestGlobals.setup ();
 		}
 
 		static string outputFileSync = "../../../logs/SyncDeviceScanPerformanceTest.csv";
@@ -62,11 +37,11 @@ namespace ConsoleApplication1
 			results = new StreamWriter(stream);
 
 			DeviceScanJSON testJson = new DeviceScanJSON ();
-			testJson.i = validSerial;
+			testJson.i = TestGlobals.validSerial;
 			testJson.d = "1289472198573";
 			testJson.b = null;
 			testJson.s = 4;
-			DeviceScan testDScan = new DeviceScan(testServer, testJson);
+			DeviceScan testDScan = new DeviceScan(TestGlobals.testServer, testJson);
 
 			Test scanTest = new Test(testDScan);
 			scanTest.setTestName("ValidSingleScanSimple");
@@ -75,10 +50,10 @@ namespace ConsoleApplication1
 			tests.Add(scanTest);
 
 			// Construct started tasks
-			Task<double>[] tasks = new Task<double>[maxReps];
-			for (int i = 0; i < maxReps; i++)
+			Task<double>[] tasks = new Task<double>[TestGlobals.maxReps];
+			for (int i = 0; i < TestGlobals.maxReps; i++)
 			{
-				System.Threading.Thread.Sleep(delay);
+				System.Threading.Thread.Sleep(TestGlobals.delay);
                 tasks[i] = new HTTPSCalls().runTest(scanTest, HTTPOperation.POST);
 				Console.WriteLine("Test starting:" + i.ToString());
 			}
@@ -103,11 +78,11 @@ namespace ConsoleApplication1
 			results = new StreamWriter(stream);
 
 			DeviceScanJSON testJson = new DeviceScanJSON();
-			testJson.i = validSerial;
+			testJson.i = TestGlobals.validSerial;
 			testJson.d = "1289472198573";
 			testJson.b = null;
 			testJson.s = 4;
-			DeviceScan testDScan = new DeviceScan(testServer, testJson);
+			DeviceScan testDScan = new DeviceScan(TestGlobals.testServer, testJson);
 
 			Test scanTest = new Test(testDScan);
 			scanTest.setTestName("ValidSingleScanSimple");
@@ -116,10 +91,10 @@ namespace ConsoleApplication1
 			tests.Add(scanTest);
 
 			// Construct started tasks
-			Task<double>[] tasks = new Task<double>[maxReps];
-			for (int i = 0; i < maxReps; i++)
+			Task<double>[] tasks = new Task<double>[TestGlobals.maxReps];
+			for (int i = 0; i < TestGlobals.maxReps; i++)
 			{
-				System.Threading.Thread.Sleep(delay);
+				System.Threading.Thread.Sleep(TestGlobals.delay);
 				tasks[i] = new HTTPCalls().runTest(scanTest, HTTPOperation.POST);
 				Console.WriteLine("Test starting:" + i.ToString());
 			}

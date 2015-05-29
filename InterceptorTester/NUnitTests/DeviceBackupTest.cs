@@ -16,12 +16,6 @@ namespace ConsoleApplication1
 	{
 		//Globals
 		static StreamWriter results;
-		public int maxReps;
-
-		static Uri testServer;
-		static string validSerial;
-		static string invalidSerial;
-		static int delay;
 
 		static string outputFileSync = "../../../logs/SyncDeviceBackupTestPerformanceTest.csv";
 		static string outputFileHTTPSAsync = "../../../logs/AsyncHTTPSDeviceBackupTestPerformanceTest.csv";
@@ -30,25 +24,7 @@ namespace ConsoleApplication1
 		[TestFixtureSetUp()]
 		public void setup()
 		{
-			try
-			{
-				testServer = new Uri(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
-				validSerial = ConfigurationManager.ConnectionStrings["ValidSerial"].ConnectionString;
-				invalidSerial = ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString;
-				delay = int.Parse(ConfigurationManager.ConnectionStrings["DelayBetweenRuns"].ConnectionString);
-
-				string testRunsString = ConfigurationManager.ConnectionStrings["TimesToRunTests"].ConnectionString;
-				try { maxReps = int.Parse(testRunsString); }
-				catch (Exception e)
-				{
-					Console.WriteLine(e);
-					Console.WriteLine("Chances are your appconfig is misconfigured. Double check that performanceTestRuns is an integer and try again.");
-				}
-			}
-			catch (Exception e)
-			{
-				Console.WriteLine(e);
-			}
+			TestGlobals.setup();
 		}
 
 		[Test()]
@@ -64,21 +40,21 @@ namespace ConsoleApplication1
 
 			//BackupJSon
 			DeviceBackupJSON json = new DeviceBackupJSON();
-			json.i = validSerial;
+			json.i = TestGlobals.validSerial;
 			json.s = 4;
 			json.b = items;
 
 			//BackupOperation
-			DeviceBackup operation = new DeviceBackup(testServer, json);
+			DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, json);
 
 			//Test
 			Test backupTest = new Test(operation);
 			backupTest.setTestName("ValidSingleBackupItem");
 			// Construct started tasks
-			Task<double>[] tasks = new Task<double>[maxReps];
-			for (int i = 0; i < maxReps; i++)
+			Task<double>[] tasks = new Task<double>[TestGlobals.maxReps];
+			for (int i = 0; i < TestGlobals.maxReps; i++)
 			{
-				System.Threading.Thread.Sleep(delay);
+				System.Threading.Thread.Sleep(TestGlobals.delay);
                 tasks[i] = new HTTPSCalls().runTest(backupTest, HTTPOperation.POST);
 				Console.WriteLine("Test starting:" + i.ToString());
 			}
@@ -107,21 +83,21 @@ namespace ConsoleApplication1
 
 			//BackupJSon
 			DeviceBackupJSON json = new DeviceBackupJSON();
-			json.i = validSerial;
+			json.i = TestGlobals.validSerial;
 			json.s = 4;
 			json.b = items;
 
 			//BackupOperation
-			DeviceBackup operation = new DeviceBackup(testServer, json);
+			DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, json);
 
 			//Test
 			Test backupTest = new Test(operation);
 			backupTest.setTestName("ValidSingleBackupItem");
 			// Construct started tasks
-			Task<double>[] tasks = new Task<double>[maxReps];
-			for (int i = 0; i < maxReps; i++)
+			Task<double>[] tasks = new Task<double>[TestGlobals.maxReps];
+			for (int i = 0; i < TestGlobals.maxReps; i++)
 			{
-				System.Threading.Thread.Sleep(delay);
+				System.Threading.Thread.Sleep(TestGlobals.delay);
                 tasks[i] = new HTTPCalls().runTest(backupTest, HTTPOperation.POST);
 				Console.WriteLine("Test starting:" + i.ToString());
 			}

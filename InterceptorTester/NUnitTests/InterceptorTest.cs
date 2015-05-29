@@ -14,6 +14,7 @@ using System.Net.Http;
 namespace ConsoleApplication1
 {
     //TODO: Load globals in a cleaner way
+	/*
     public static class TestGlobals
     {
         public static Uri testServer;
@@ -36,6 +37,7 @@ namespace ConsoleApplication1
             }
         }
     }
+    */
 
     [TestFixture()]
     public class InterceptorTest

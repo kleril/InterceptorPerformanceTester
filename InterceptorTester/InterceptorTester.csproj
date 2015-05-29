@@ -115,6 +115,7 @@
     <Compile Include="API Operations\Interceptor.cs" />
     <Compile Include="JSON\InterceptorJSON.cs" />
     <Compile Include="NUnitTests\InterceptorTest.cs" />
+    <Compile Include="NUnitTests\TestGlobals.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

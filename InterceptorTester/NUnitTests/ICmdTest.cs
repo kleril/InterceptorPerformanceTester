@@ -17,11 +17,6 @@ namespace ConsoleApplication1
 		static StreamWriter results;
 		public int maxReps;
 
-		static Uri testServer;
-		static string validSerial;
-		static string invalidSerial;
-		static int delay;
-
 		static string outputFileHTTPSSync = "../../../logs/SyncHTTPSICmdPerformanceTest.csv";
 		static string outputFileHTTPSAsync = "../../../logs/AsyncHTTPSICmdPerformanceTest.csv";
 		static string outputFileHTTPSync = "../../../logs/SyncHTTPICmdPerformanceTest.csv";
@@ -31,6 +26,7 @@ namespace ConsoleApplication1
 		[TestFixtureSetUp()]
 		public void setup()
 		{
+			/*
 			try
 			{
 				testServer = new Uri(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
@@ -50,6 +46,8 @@ namespace ConsoleApplication1
 			{
 				Console.WriteLine(e);
 			}
+			*/
+			TestGlobals.setup ();
 		}
 
 
@@ -64,7 +62,7 @@ namespace ConsoleApplication1
 			for (int i = 0; i < maxReps; i++)
 			{
 				System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
-				ICmd validICmd = new ICmd(testServer, validSerial);
+				ICmd validICmd = new ICmd(TestGlobals.testServer,TestGlobals.validSerial);
 				Test validTest = new Test(validICmd);
 				validTest.setTestName("ValidSerial");
 				List<Test> tests = new List<Test>();
@@ -88,7 +86,7 @@ namespace ConsoleApplication1
 			System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
 
 
-			ICmd validICmd = new ICmd(testServer, validSerial);
+			ICmd validICmd = new ICmd(TestGlobals.testServer, TestGlobals.validSerial);
 			Test validTest = new Test(validICmd);
 			validTest.setTestName("ValidSerial");
 			List<Test> tests = new List<Test>();
@@ -98,7 +96,7 @@ namespace ConsoleApplication1
 			Task<double>[] tasks = new Task<double>[maxReps];
 			for (int i = 0; i < maxReps; i++)
 			{
-				System.Threading.Thread.Sleep(delay);
+				System.Threading.Thread.Sleep(TestGlobals.delay);
                 tasks[i] = new HTTPSCalls().runTest(validTest, HTTPOperation.GET);
 				Console.WriteLine("Test starting:" + i.ToString());
 			}
@@ -126,7 +124,7 @@ namespace ConsoleApplication1
 			for (int i = 0; i < maxReps; i++)
 			{
 				System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
-				ICmd validICmd = new ICmd(testServer, validSerial);
+				ICmd validICmd = new ICmd(TestGlobals.testServer, TestGlobals.validSerial);
 				Test validTest = new Test(validICmd);
 				validTest.setTestName("ValidSerial");
 				List<Test> tests = new List<Test>();
@@ -151,7 +149,7 @@ namespace ConsoleApplication1
 			System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
 
 
-			ICmd validICmd = new ICmd(testServer, validSerial);
+			ICmd validICmd = new ICmd(TestGlobals.testServer, TestGlobals.validSerial);
 			Test validTest = new Test(validICmd);
 			validTest.setTestName("ValidSerial");
 			List<Test> tests = new List<Test>();
@@ -161,7 +159,7 @@ namespace ConsoleApplication1
 			Task<double>[] tasks = new Task<double>[maxReps];
 			for (int i = 0; i < maxReps; i++)
 			{
-				System.Threading.Thread.Sleep(delay);
+				System.Threading.Thread.Sleep(TestGlobals.delay);
                 tasks[i] = new HTTPCalls().runTest(validTest, HTTPOperation.GET);
 				Console.WriteLine("Test starting:" + i.ToString());
 			}

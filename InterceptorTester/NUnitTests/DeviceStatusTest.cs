@@ -18,14 +18,7 @@ namespace ConsoleApplication1
 		static string outputFileHTTPSAsync = "../../../logs/AsyncHTTPSDeviceStatusPerformanceTest.csv";
 		static string outputFileHTTPAsync = "../../../logs/AsyncHTTPDeviceStatusPerformanceTest.csv";
 
-		static Uri server;
-		static string validSerial;
-		static string invalidSerial;
-		static int delay;
-
 		DeviceStatusJSON status;
-
-		public int maxReps;
 
 		[TestFixtureSetUp]
 		public void setup()
@@ -51,29 +44,7 @@ namespace ConsoleApplication1
 			status.seqNum = "87";
 			status.startURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceSetting";
 
-			try
-			{
-				server = new Uri(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
-				validSerial = ConfigurationManager.ConnectionStrings["ValidSerial"].ConnectionString;
-				invalidSerial = ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString;
-				delay = int.Parse(ConfigurationManager.ConnectionStrings["DelayBetweenRuns"].ConnectionString);
-
-				string testRunsString = ConfigurationManager.ConnectionStrings["TimesToRunTests"].ConnectionString;
-				try {
-					maxReps = int.Parse(testRunsString);
-					status.intSerial = validSerial;
-				}
-				catch (Exception e)
-				{
-					Console.WriteLine(e);
-					Console.WriteLine("Chances are your appconfig is misconfigured. Double check that performanceTestRuns is an integer and try again.");
-				}
-			}
-			catch (Exception e)
-			{
-				Console.WriteLine(e);
-			}
-
+			TestGlobals.setup ();
 		}
 
 		[Test()]
@@ -83,7 +54,7 @@ namespace ConsoleApplication1
 			stream = File.Create(outputFileHTTPSAsync);
 			results = new StreamWriter(stream);
 
-			DeviceStatus operation = new DeviceStatus(server, status);
+			DeviceStatus operation = new DeviceStatus(TestGlobals.testServer, status);
 			Test statusTest = new Test(operation);
 			statusTest.setTestName("ValidSerial");
 
@@ -95,10 +66,10 @@ namespace ConsoleApplication1
 			timer.Start();
 
 			// Construct started tasks
-			Task<double>[] tasks = new Task<double>[maxReps];
-			for (int i = 0; i < maxReps; i++)
+			Task<double>[] tasks = new Task<double>[TestGlobals.maxReps];
+			for (int i = 0; i < TestGlobals.maxReps; i++)
 			{
-				System.Threading.Thread.Sleep(delay);
+				System.Threading.Thread.Sleep(TestGlobals.delay);
                 tasks[i] = new HTTPSCalls().runTest(statusTest, HTTPOperation.POST);
 				Console.WriteLine("Test starting:" + i.ToString());
 			}
@@ -123,7 +94,7 @@ namespace ConsoleApplication1
 			stream = File.Create(outputFileHTTPAsync);
 			results = new StreamWriter(stream);
 
-			DeviceStatus operation = new DeviceStatus(server, status);
+			DeviceStatus operation = new DeviceStatus(TestGlobals.testServer, status);
 			Test statusTest = new Test(operation);
 			statusTest.setTestName("ValidSerial");
 
@@ -135,10 +106,10 @@ namespace ConsoleApplication1
 			timer.Start();
 
 			// Construct started tasks
-			Task<double>[] tasks = new Task<double>[maxReps];
-			for (int i = 0; i < maxReps; i++)
+			Task<double>[] tasks = new Task<double>[TestGlobals.maxReps];
+			for (int i = 0; i < TestGlobals.maxReps; i++)
 			{
-				System.Threading.Thread.Sleep(delay);
+				System.Threading.Thread.Sleep(TestGlobals.delay);
                 tasks[i] = new HTTPCalls().runTest(statusTest, HTTPOperation.POST);
 				Console.WriteLine("Test starting:" + i.ToString());
 			}
