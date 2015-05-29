@@ -112,7 +112,7 @@ namespace ConsoleApplication1
 		[Test()]
 		public static KeyValuePair<JObject, string> run()
 		{
-			APIOperation mOp = new GenericRequest(TestGlobals.testServer, "/api/organization", data);
+			APIOperation mOp = new GenericRequest(TestGlobals.testServer, "/api/organization", null);
 			Test mTest = new Test(mOp);
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST));
 
