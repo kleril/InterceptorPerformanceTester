@@ -97,7 +97,6 @@
     <Compile Include="JSON\DeviceStatusJSON.cs" />
     <Compile Include="HTTPCalls.cs" />
     <Compile Include="HTTPSCalls.cs" />
-    <Compile Include="NUnitTests\GetInterceptorTest.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="NUnitTests\DeviceScanTest.cs" />
     <Compile Include="NUnitTests\DeviceBackupTest.cs" />
@@ -113,6 +112,9 @@
     <Compile Include="API Operations\Location.cs" />
     <Compile Include="JSON\LocationJSON.cs" />
     <Compile Include="NUnitTests\LocationTest.cs" />
+    <Compile Include="API Operations\Interceptor.cs" />
+    <Compile Include="JSON\InterceptorJSON.cs" />
+    <Compile Include="NUnitTests\InterceptorTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

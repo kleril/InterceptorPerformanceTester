@@ -37,9 +37,9 @@ namespace ConsoleApplication1
         }
 
         [Test()]
-        public KeyValuePair<JObject, string> getOrganization()
+        public KeyValuePair<JObject, string> getLocation()
         {
-            GenericRequest getLoc = new GenericRequest(TestGlobals.testServer, "/API/Organization/999", null);
+            GenericRequest getLoc = new GenericRequest(TestGlobals.testServer, "/API/Location/", null);
             Test mTest = new Test(getLoc);
             HttpClient client = new HttpClient();
             //TODO: Initialize the client properly - add session token to header, etc.
