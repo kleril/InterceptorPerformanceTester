@@ -63,7 +63,8 @@ namespace ConsoleApplication1
 		[Test()]
 		public KeyValuePair<JObject, string> getIntercpetor()
 		{
-			GenericRequest getInt = new GenericRequest(TestGlobals.testServer, "/API/Interceptor/", null);
+			string query = "/API/Interceptor" + TestGlobals.validSerial;
+			GenericRequest getInt = new GenericRequest(TestGlobals.testServer, query, null);
 			Test mTest = new Test(getInt);
 			HttpClient client = new HttpClient();
 			//TODO: Initialize the client properly - add session token to header, etc.
