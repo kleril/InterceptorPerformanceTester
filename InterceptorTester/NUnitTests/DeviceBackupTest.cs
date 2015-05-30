@@ -14,7 +14,8 @@ namespace ConsoleApplication1
 	[TestFixture()]
 	public class DeviceBackupTest
 	{
-		//Globals
+		// Globals
+
 		static StreamWriter results;
 
 		static string outputFileSync = "../../../logs/SyncDeviceBackupTestPerformanceTest.csv";
