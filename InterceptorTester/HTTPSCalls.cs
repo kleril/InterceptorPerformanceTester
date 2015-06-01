@@ -47,7 +47,6 @@ namespace ConsoleApplication1{
             timer.Stop();
             double time = timer.Elapsed.TotalMilliseconds;
             Console.WriteLine("Test ending");
-
             return time;
         }
         //Do test, output results to file.

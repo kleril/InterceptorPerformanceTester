@@ -11,8 +11,9 @@ using System.Security.Cryptography.X509Certificates;
 using ICSharpCode.SharpZipLib.Zip;
 using ICSharpCode.SharpZipLib.Core;
 
-namespace ConsoleApplication1{
-
+namespace ConsoleApplication1
+{
+    //TODO: Add certificate pass
     class HTTPCalls
     {
         public static KeyValuePair<JObject, string> result;

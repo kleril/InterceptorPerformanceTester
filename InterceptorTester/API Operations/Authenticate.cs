@@ -8,11 +8,13 @@ namespace ConsoleApplication1
 {
 	class Authenticate : APIOperation
 	{
-		public Authenticate(Uri server, string serialNum)
+        AuthenticateJSON json
+		public Authenticate(Uri server, string serialNum, AuthenticateJSON json)
 		{
 			opHost = server;
 			hOp = HTTPOperation.POST;
 			opQuery = new HTTPQuery(QueryParameter.i, serialNum);
+            this.json = json;
 		}
 
 		public override string getExpectedResult()
@@ -39,7 +41,7 @@ namespace ConsoleApplication1
 
 		public override object getJson()
 		{
-			return null;
+			return json;
 		}
 	}
 }
