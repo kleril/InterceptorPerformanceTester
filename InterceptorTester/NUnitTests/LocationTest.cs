@@ -44,7 +44,7 @@ namespace ConsoleApplication1
         [Test()]
         public KeyValuePair<JObject, string> getSingleLocation()
         {
-			string query = "/API/Location/" + TestGlobals.validLocId;
+			string query = "/API/Location/" + TestGlobals.locIdCreated;
 			GenericRequest getLoc = new GenericRequest(TestGlobals.testServer, query, null);
             Test mTest = new Test(getLoc);
             HttpClient client = new HttpClient();
@@ -58,7 +58,7 @@ namespace ConsoleApplication1
 		[Test()]
 		public KeyValuePair<JObject, string> getMultipleLocations()
 		{
-			string query = "/API/Location/?orgid=" + TestGlobals.validOrgId;
+			string query = "/API/Location/?orgid=" + TestGlobals.orgIdCreated;
 			GenericRequest getLoc = new GenericRequest(TestGlobals.testServer, query, null);
 			Test mTest = new Test(getLoc);
 			HttpClient client = new HttpClient();
