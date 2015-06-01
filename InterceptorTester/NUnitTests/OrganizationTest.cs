@@ -27,7 +27,7 @@ namespace ConsoleApplication1
         public KeyValuePair<JObject, string> createOrganization()
         {
             OrganizationJSON json = new OrganizationJSON();
-            json.orgID = "999";
+			json.orgID = TestGlobals.validOrgId;
             json.orgName = "TestName";
             //TODO: Remove redundant "999" string from params
 			Organization newOrg = new Organization(TestGlobals.testServer, TestGlobals.validOrgId, json);
