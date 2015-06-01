@@ -9,12 +9,11 @@ namespace ConsoleApplication1
 	class Organization : APIOperation
 	{
         OrganizationJSON json;
-		public Organization(Uri server, string serialNum, OrganizationJSON json)
+		public Organization(Uri server, OrganizationJSON json)
 		{
 			opHost = server;
 			hOp = HTTPOperation.POST;
-			opQuery = new HTTPQuery(QueryParameter.i, serialNum);
-            this.json = json;
+			this.json = json;
 		}
 
 		public override string getExpectedResult()

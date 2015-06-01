@@ -17,7 +17,9 @@ namespace ConsoleApplication1
 	[TestFixture()]
 	public class OrganizationTest
     {
-        [TestFixtureSetUp()]
+		string orgIdCreated;
+
+		[TestFixtureSetUp()]
         public void setup()
         {
             TestGlobals.setup();
@@ -30,20 +32,21 @@ namespace ConsoleApplication1
 			json.ownerID = 999;
             json.name = "TestName";
             //TODO: Remove redundant "999" string from params
-			Organization newOrg = new Organization(TestGlobals.testServer, TestGlobals.validOrgId, json);
+			Organization newOrg = new Organization(TestGlobals.testServer, json);
             Test mTest = new Test(newOrg);
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
             //client.setup;
 			client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
-			//Assert.AreEqual("{\"orgId\":" + TestGlobals.validOrgId + "}", HTTPSCalls.result.Value);
+			orgIdCreated = HTTPSCalls.result.Value.Substring(9, 4);
+		
         }
 
         [Test()]
         public KeyValuePair<JObject, string> getSingleOrganization()
         {
-			string query = "/API/Organization/" + TestGlobals.validOrgId;
+			string query = "/API/Organization/" + orgIdCreated;
 			GenericRequest getOrg = new GenericRequest(TestGlobals.testServer, query, null);
             Test mTest = new Test(getOrg);
             HttpClient client = new HttpClient();
