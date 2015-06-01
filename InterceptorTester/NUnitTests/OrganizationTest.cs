@@ -66,7 +66,8 @@ namespace ConsoleApplication1
 		[Test()]
 		public void deleteOrganization()
 		{
-			GenericRequest orgReq = new GenericRequest(TestGlobals.testServer, "/api/organization/" + TestGlobals.orgIdCreated, null);
+			string query = "/api/organization/" + TestGlobals.orgIdCreated;
+			GenericRequest orgReq = new GenericRequest(TestGlobals.testServer, query, null);
 			Test orgTest = new Test(orgReq);
 			HttpClient client;
 

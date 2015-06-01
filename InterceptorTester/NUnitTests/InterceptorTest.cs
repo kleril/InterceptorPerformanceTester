@@ -100,7 +100,8 @@ namespace ConsoleApplication1
 		[Test()]
 		public void deleteInterceptor()
 		{
-			GenericRequest intReq = new GenericRequest(TestGlobals.testServer, "/api/interceptor/" + TestGlobals.intIdCreated, null);
+			string query = "/api/interceptor/" + TestGlobals.intIdCreated;
+			GenericRequest intReq = new GenericRequest(TestGlobals.testServer, query, null);
 			Test intTest = new Test(intReq);
 			HttpClient client;
 

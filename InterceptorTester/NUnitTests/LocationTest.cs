@@ -72,7 +72,8 @@ namespace ConsoleApplication1
 		[Test()]
 		public void deleteLocation()
 		{
-			GenericRequest locReq = new GenericRequest(TestGlobals.testServer, "/api/location/" + TestGlobals.locIdCreated, null);
+			string query = "/api/location/" + TestGlobals.locIdCreated;
+			GenericRequest locReq = new GenericRequest(TestGlobals.testServer, query, null);
 			Test locTest = new Test(locReq);
 			HttpClient client;
 
