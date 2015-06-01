@@ -53,7 +53,7 @@ namespace ConsoleApplication1
 		[Test()]
 		public KeyValuePair<JObject, string> getMultipleInterceptors()
 		{
-			string query = "/API/Interceptor/?LocId=" + TestGlobals.validLocId;
+			string query = "/API/Interceptor/?LocId=" + TestGlobals.locIdCreated;
 			GenericRequest getInt = new GenericRequest (TestGlobals.testServer, query, null);
 			Test mTest = new Test (getInt);
 			HttpClient client = new HttpClient ();
