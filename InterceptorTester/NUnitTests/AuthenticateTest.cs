@@ -25,8 +25,13 @@ namespace ConsoleApplication1
             TestGlobals.setup();
         }
 
+<<<<<<< HEAD
 		[Test()]
         public JObject generateSessionToken()
+=======
+        [TestCase(Result="Somethin'")]
+        public static JObject generateSessionToken()
+>>>>>>> origin/master
         {
             AuthenticateJSON json = new AuthenticateJSON();
             //Set up JSON
@@ -52,11 +57,21 @@ namespace ConsoleApplication1
             }
         }
 
+<<<<<<< HEAD
 		[Test()]
 		public AuthenticationHeaderValue getSessionToken()
+=======
+        public static AuthenticationHeaderValue getSessionToken()
+>>>>>>> origin/master
         {
             if (sessionToken == null)
             {
+                Console.WriteLine("No Session token found. Generating session token...");
+                generateSessionToken();
+            }
+            if (sessionToken.GetValue("_sessionToken") == null)
+            {
+                Console.WriteLine("Session token is empty for some reason");
                 generateSessionToken();
             }
             string parse = "Token " + sessionToken.GetValue("_sessionToken").ToString();

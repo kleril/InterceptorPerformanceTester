@@ -8,19 +8,10 @@ namespace ConsoleApplication1
 	public class OrganizationJSON
 	{
 
-		public bool isValid ()
-		{
-			if ((orgID != null) && (orgName != null))
-			{
-				return true;
-			}
+		
+		public int ownerID;
 
-			return false;
-		}
-
-		public string orgID;
-
-		public string orgName;
+		public string name;
 
 		// ReSharper restore InconsistentNaming
 
