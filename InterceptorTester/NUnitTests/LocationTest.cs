@@ -16,15 +16,22 @@ namespace ConsoleApplication1
     [TestFixture()]
     public class LocationTest
     {
+<<<<<<< HEAD
 		public static string locIdcreated;
 
 		[TestFixtureSetUp()]
+=======
+        static string locIdCreated;
+
+        [TestFixtureSetUp()]
+>>>>>>> origin/master
         public void setup()
         {
             TestGlobals.setup();
         }
 
         [Test()]
+<<<<<<< HEAD
 		public void createLocation()
         {
             //TODO: Set up JSON
@@ -38,11 +45,27 @@ namespace ConsoleApplication1
 			locjson.postalCode = "testpostalcode";
 
 			Location newLoc = new Location(TestGlobals.testServer, locjson);
+=======
+        public static void createLocation()
+        {
+            //TODO: Set up JSON
+            LocationJSON json = new LocationJSON(OrganizationTest.getOrgId(), "suite", "street", "suddenValley", "um", "Murica", "A2A2A2");
+            json.locDesc = "desc";
+            json.locSubType = "subtype";
+            json.locType = "type";
+			Location newLoc = new Location(TestGlobals.testServer, TestGlobals.validLocId, json);
+>>>>>>> origin/master
             Test mTest = new Test(newLoc);
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
+<<<<<<< HEAD
             Assert.AreEqual("201", HTTPSCalls.result.Value);
+=======
+            //Assert.AreEqual("201", HTTPSCalls.result.Value);
+            Console.WriteLine(HTTPSCalls.result.Value);
+            locIdCreated = HTTPSCalls.result.Value.Substring(9, HTTPSCalls.result.Value.Length - 10);
+>>>>>>> origin/master
         }
 
         [Test()]
@@ -70,6 +93,15 @@ namespace ConsoleApplication1
 			Assert.AreEqual("201", HTTPSCalls.result.Value);
 			return HTTPCalls.result;
 		}
+
+        public static string getLocId()
+        {
+            if (locIdCreated == null)
+            {
+                createLocation();
+            }
+            return locIdCreated;
+        }
     }
 }
 

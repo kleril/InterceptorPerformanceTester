@@ -25,7 +25,12 @@ namespace ConsoleApplication1
 		[Test()]
 		public KeyValuePair<JObject, string> createInterceptor()
 		{
+<<<<<<< HEAD
 			//TODO: Set up JSON
+=======
+            //TODO: Add JSON
+            //InterceptorJSON json = new InterceptorJSON(locId, ssid, wpaPSK, intSerial);
+>>>>>>> origin/master
 			Interceptor newInt = new Interceptor(TestGlobals.testServer, TestGlobals.validSerial, null);
 			Test mTest = new Test(newInt);
             HttpClient client = new HttpClient();
