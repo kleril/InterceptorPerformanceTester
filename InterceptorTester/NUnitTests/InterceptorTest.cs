@@ -35,6 +35,7 @@ namespace ConsoleApplication1
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
 			Console.WriteLine(HTTPSCalls.result.Value.ToString());
+			Console.WriteLine (LocationTest.getLocId ());
 		}
 
 		[Test()]
