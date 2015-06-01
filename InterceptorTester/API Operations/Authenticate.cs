@@ -9,11 +9,10 @@ namespace ConsoleApplication1
 	class Authenticate : APIOperation
 	{
         AuthenticateJSON json;
-		public Authenticate(Uri server, string serialNum, AuthenticateJSON json)
+		public Authenticate(Uri server, AuthenticateJSON json)
 		{
 			opHost = server;
 			hOp = HTTPOperation.POST;
-			opQuery = new HTTPQuery(QueryParameter.i, serialNum);
             this.json = json;
 		}
 

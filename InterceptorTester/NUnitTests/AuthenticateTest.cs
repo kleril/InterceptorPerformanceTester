@@ -32,7 +32,7 @@ namespace ConsoleApplication1
             //Set up JSON
             json.userID = TestGlobals.username;
             json.password = TestGlobals.password;
-            Authenticate authCall = new Authenticate(TestGlobals.testServer, TestGlobals.validSerial, json);
+            Authenticate authCall = new Authenticate(TestGlobals.testServer, json);
             Test authTest = new Test(authCall);
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(authTest, HTTPOperation.POST));
 			sessionToken = JObject.Parse(HTTPSCalls.result.Value);

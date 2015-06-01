@@ -175,6 +175,92 @@ namespace ConsoleApplication1
 
 			results.Close();
 		}
+
+		/*
+		[Test()]
+		public void ValidSerial()
+		{
+
+			//Valid
+			ICmd validICmd = new ICmd(testServer, validSerial);
+
+			Test validTest = new Test(validICmd);
+			validTest.setTestName("ValidSerial");
+
+
+			List<Test> tests = new List<Test>();
+			tests.Add(validTest);
+
+			AsyncContext.Run(async() => await Program.buildTests(tests));
+
+			foreach (Test nextTest in Program.getTests())
+			{
+				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
+			}
+		}
+
+		[Test()]
+		public void InvalidSerial()
+		{
+			//Invalid
+			ICmd invalidICmd = new ICmd(testServer, invalidSerial);
+			Test invalidTest = new Test(invalidICmd);
+			invalidTest.setTestName("BadSerial");
+
+			List<Test> tests = new List<Test>();
+			tests.Add(invalidTest);
+
+			AsyncContext.Run(async() => await Program.buildTests(tests));
+			foreach (Test nextTest in Program.getTests())
+			{
+				Console.WriteLine(nextTest.getOperation().getUri());
+				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
+			}
+		}
+
+		[Test()]
+		public void MissingSerial()
+		{
+			//Missing
+			ICmd missingICmd = new ICmd(testServer, null);
+			Test missingTest = new Test(missingICmd);
+			missingTest.setTestName("EmptySerial");
+
+
+			List<Test> tests = new List<Test>();
+			tests.Add(missingTest);
+
+			AsyncContext.Run(async() => await Program.buildTests(tests));
+
+			foreach (Test nextTest in Program.getTests())
+			{
+				Console.WriteLine(nextTest.getOperation().getUri());
+				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
+			}
+		}
+
+		[Test()]
+		public void NoQuery()
+		{
+			//Missing
+			ICmd missingICmd = new ICmd(testServer, null);
+			missingICmd.noQuery = true;
+			Test missingTest = new Test(missingICmd);
+			missingTest.setTestName("NoQuery");
+
+
+			List<Test> tests = new List<Test>();
+			tests.Add(missingTest);
+
+			AsyncContext.Run(async() => await Program.buildTests(tests));
+
+			foreach (Test nextTest in Program.getTests())
+			{
+				Console.WriteLine(nextTest.getOperation().getUri());
+				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
+			}
+		}
+		*/ 
 	}
 }
 

@@ -7,38 +7,38 @@ namespace ConsoleApplication1
 
 	public class InterceptorJSON
 	{
-        /*
-        public InterceptorJSON(int locId, string ssid, string wpaPSK, string intSerial)
+		public InterceptorJSON(int locId, string ssid, string wpaPSK, string intSerial)
         {
             this.locId = locId;
             this.ssid = ssid;
             this.wpaPSK = wpaPSK;
             this.intSerial = intSerial;
         }
-        */
-        public InterceptorJSON(int locId, string orgId, string intSerial)
-        {
-            this.locId = locId;
-            this.orgId = orgId;
-            this.intSerial = intSerial;
-        }
 
-		public int locId;
+		public bool isValid ()
+		{
+			if ((locId != null) && (ssid != null) && (intSerial != null))
+			{
+				return true;
+			}
 
-        public string orgId;
+			return false;
+		}
 
-		//string ssid;
+		int locId;
 
-		//string wpaPSK;
+		string ssid;
 
-		public string intSerial;
+		string wpaPSK;
+
+		string intSerial;
 
 		// ReSharper restore InconsistentNaming
 
-		public override string ToString()
+		/*public override string ToString()
 		{
-			return locId.ToString() + " " + intSerial;
-		}
+			return locId.ToString() + " " + ssid + " " + ssid + " " + intSerial;
+		}*/
 	}
 
 }

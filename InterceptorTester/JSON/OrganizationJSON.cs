@@ -8,7 +8,12 @@ namespace ConsoleApplication1
 	public class OrganizationJSON
 	{
 
-		
+		public OrganizationJSON(int ownerID, string name)
+		{
+			this.ownerID = ownerID;
+			this.name = name;
+		}
+
 		public int ownerID;
 
 		public string name;

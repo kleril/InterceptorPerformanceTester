@@ -50,7 +50,8 @@ namespace ConsoleApplication1
         }
 
 		[Test()]
-		public void createInterceptor()
+
+		public static void createInterceptor()
 		{
             //For new version
             //InterceptorJSON json = new InterceptorJSON(int.Parse(LocationTest.getLocId()), "wat", "wappisk", "AYYYYLMAO");
@@ -60,9 +61,10 @@ namespace ConsoleApplication1
             Console.WriteLine(loc);
             InterceptorJSON json = new InterceptorJSON(int.Parse(loc), LocationTest.orgIdPassed, "AYYYYLMAO");
 			Interceptor newInt = new Interceptor(TestGlobals.testServer, json);
+			
 			Test mTest = new Test(newInt);
             HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
+			client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken ();
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
 			Console.WriteLine(HTTPSCalls.result.Value.ToString());
 			Console.WriteLine (LocationTest.getLocId ());

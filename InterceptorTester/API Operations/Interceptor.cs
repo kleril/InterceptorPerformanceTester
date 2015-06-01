@@ -10,10 +10,11 @@ namespace ConsoleApplication1
 	{
         InterceptorJSON json;
 
-		public Interceptor(Uri server, InterceptorJSON json)
+		public Interceptor(Uri server, string serialNum, InterceptorJSON json)
 		{
 			opHost = server;
 			hOp = HTTPOperation.POST;
+			opQuery = new HTTPQuery(QueryParameter.i, serialNum);
             this.json = json;
 		}
 
