@@ -16,34 +16,54 @@ namespace ConsoleApplication1
     [TestFixture()]
     public class LocationTest
     {
+<<<<<<< HEAD
 
 		[TestFixtureSetUp()]
 	
+=======
+		public static string locIdCreated;
+
+        [TestFixtureSetUp()]
+>>>>>>> origin/master
         public void setup()
         {
             TestGlobals.setup();
         }
+<<<<<<< HEAD
 
         [Test()]	
 		 public static void createLocation()
+=======
+        public static void createLocation()
+>>>>>>> origin/master
         {
-            //TODO: Set up JSON
             LocationJSON json = new LocationJSON(OrganizationTest.getOrgId(), "suite", "street", "suddenValley", "um", "Murica", "A2A2A2");
             json.locDesc = "desc";
             json.locSubType = "subtype";
             json.locType = "type";
+<<<<<<< HEAD
 
 			Location newLoc = new Location(TestGlobals.testServer, json);
 
+=======
+			Location newLoc = new Location(TestGlobals.testServer, json);
+>>>>>>> origin/master
             Test mTest = new Test(newLoc);
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
+<<<<<<< HEAD
 
             //Assert.AreEqual("201", HTTPSCalls.result.Value);
             Console.WriteLine(HTTPSCalls.result.Value);
             TestGlobals.locIdCreated = HTTPSCalls.result.Value.Substring(9, HTTPSCalls.result.Value.Length - 10);
 
+=======
+            Assert.AreEqual("201", HTTPSCalls.result.Value);
+            //Assert.AreEqual("201", HTTPSCalls.result.Value);
+            Console.WriteLine(HTTPSCalls.result.Value);
+            locIdCreated = HTTPSCalls.result.Value.Substring(9, HTTPSCalls.result.Value.Length - 10);
+>>>>>>> origin/master
         }
 
         [Test()]

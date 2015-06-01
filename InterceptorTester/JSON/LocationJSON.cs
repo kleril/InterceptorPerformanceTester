@@ -7,9 +7,14 @@ namespace ConsoleApplication1
 
 	public class LocationJSON
 	{
+<<<<<<< HEAD
 
 		public LocationJSON(string orgId, string unitSuite, string street, string city, string province, string country, string postalCode)
 		{
+=======
+        public LocationJSON(string orgId, string unitSuite, string street, string city, string province, string country, string postalCode)
+        {
+>>>>>>> origin/master
             this.orgId = orgId;
             this.unitSuite = unitSuite;
             this.street = street;
@@ -18,6 +23,7 @@ namespace ConsoleApplication1
             this.country = country;
             this.postalCode = postalCode;
         }
+<<<<<<< HEAD
 
 
 		public bool isValid ()
@@ -29,6 +35,8 @@ namespace ConsoleApplication1
 
 			return false;
 		}
+=======
+>>>>>>> origin/master
 
 		public string orgId;
 
