@@ -16,15 +16,36 @@ namespace ConsoleApplication1
     [TestFixture()]
     public class LocationTest
     {
+<<<<<<< HEAD
+		public static string locIdcreated;
+
+		[TestFixtureSetUp()]
+=======
         static string locIdCreated;
 
         [TestFixtureSetUp()]
+>>>>>>> origin/master
         public void setup()
         {
             TestGlobals.setup();
         }
 
         [Test()]
+<<<<<<< HEAD
+		public void createLocation()
+        {
+            //TODO: Set up JSON
+			LocationJSON locjson = new LocationJSON();
+			locjson.orgId = TestGlobals.orgIdCreated;
+			locjson.unitSuite = "testsuite";
+			locjson.street = "teststreet";
+			locjson.city = "testcity";
+			locjson.stateProvince = "testprovince";
+			locjson.country = "testcountry";
+			locjson.postalCode = "testpostalcode";
+
+			Location newLoc = new Location(TestGlobals.testServer, locjson);
+=======
         public static void createLocation()
         {
             //TODO: Set up JSON
@@ -33,13 +54,18 @@ namespace ConsoleApplication1
             json.locSubType = "subtype";
             json.locType = "type";
 			Location newLoc = new Location(TestGlobals.testServer, TestGlobals.validLocId, json);
+>>>>>>> origin/master
             Test mTest = new Test(newLoc);
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
+<<<<<<< HEAD
+            Assert.AreEqual("201", HTTPSCalls.result.Value);
+=======
             //Assert.AreEqual("201", HTTPSCalls.result.Value);
             Console.WriteLine(HTTPSCalls.result.Value);
             locIdCreated = HTTPSCalls.result.Value.Substring(9, HTTPSCalls.result.Value.Length - 10);
+>>>>>>> origin/master
         }
 
         [Test()]
