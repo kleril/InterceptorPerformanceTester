@@ -26,7 +26,7 @@ namespace ConsoleApplication1
         }
 
 		[Test()]
-        public JObject generateSessionToken()
+        public static JObject generateSessionToken()
 		{
             AuthenticateJSON json = new AuthenticateJSON();
             //Set up JSON
@@ -53,9 +53,13 @@ namespace ConsoleApplication1
         }
 
 		[Test()]
-		public AuthenticationHeaderValue getSessionToken()
+		public static AuthenticationHeaderValue getSessionToken()
 		{
             if (sessionToken == null)
+            {
+                generateSessionToken();
+            }
+            if (sessionToken.GetValue("_sessionToken") == null)
             {
                 generateSessionToken();
             }

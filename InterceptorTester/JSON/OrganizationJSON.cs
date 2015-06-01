@@ -10,19 +10,8 @@ namespace ConsoleApplication1
 
 		
 		public int ownerID;
-		public bool isValid ()
-		{
-			if ((orgID != null) && (orgName != null))
-			{
-				return true;
-			}
 
-			return false;
-		}
-
-		public string orgID;
-
-		public string orgName;
+		public string name;
 
 		// ReSharper restore InconsistentNaming
 
