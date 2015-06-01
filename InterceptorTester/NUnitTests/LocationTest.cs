@@ -72,6 +72,7 @@ namespace ConsoleApplication1
 		[Test()]
 		public void deleteLocation()
 		{
+			Console.WriteLine (TestGlobals.locIdCreated);
 			string query = "/api/location/" + TestGlobals.locIdCreated;
 			GenericRequest locReq = new GenericRequest(TestGlobals.testServer, query, null);
 			Test locTest = new Test(locReq);
@@ -81,6 +82,8 @@ namespace ConsoleApplication1
 			client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken(); 
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(locTest, HTTPOperation.DELETE, client));
 			Console.WriteLine(HTTPSCalls.result.Value);
+			createLocation ();
+			Console.WriteLine (TestGlobals.locIdCreated);
 		}
 
 
