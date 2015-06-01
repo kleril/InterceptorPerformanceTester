@@ -60,8 +60,7 @@ namespace ConsoleApplication1
             Console.WriteLine("Creating intercepter w/ loc:");
             Console.WriteLine(loc);
             InterceptorJSON json = new InterceptorJSON(int.Parse(loc), LocationTest.orgIdPassed, "AYYYYLMAO");
-			Interceptor newInt = new Interceptor(TestGlobals.testServer, json);
-			
+			Interceptor newInt = new Interceptor(TestGlobals.testServer, "NotUsed", json);
 			Test mTest = new Test(newInt);
             HttpClient client = new HttpClient();
 			client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken ();

@@ -7,17 +7,18 @@ namespace ConsoleApplication1
 
 	public class InterceptorJSON
 	{
-		public InterceptorJSON(int locId, string ssid, string wpaPSK, string intSerial)
+		public InterceptorJSON(int locId, string orgId, string intSerial)
         {
             this.locId = locId;
-            this.ssid = ssid;
-            this.wpaPSK = wpaPSK;
+            this.orgId = orgId;
+            //this.ssid = ssid;
+            //this.wpaPSK = wpaPSK;
             this.intSerial = intSerial;
         }
 
 		public bool isValid ()
 		{
-			if ((locId != null) && (ssid != null) && (intSerial != null))
+			if ((locId != null) && (intSerial != null))
 			{
 				return true;
 			}
@@ -27,9 +28,11 @@ namespace ConsoleApplication1
 
 		int locId;
 
-		string ssid;
+        string orgId;
 
-		string wpaPSK;
+		//string ssid;
+
+		//string wpaPSK;
 
 		string intSerial;
 
