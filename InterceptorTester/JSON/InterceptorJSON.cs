@@ -7,7 +7,7 @@ namespace ConsoleApplication1
 
 	public class InterceptorJSON
 	{
-        public InterceptorJSON(int locId, string ssid, string wpaPSK, string intSerial)
+		public InterceptorJSON(string locId, string ssid, string wpaPSK, string intSerial)
         {
             this.locId = locId;
             this.ssid = ssid;
@@ -25,7 +25,7 @@ namespace ConsoleApplication1
 			return false;
 		}
 
-		int locId;
+		string locId;
 
 		string ssid;
 

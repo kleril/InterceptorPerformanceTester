@@ -23,21 +23,17 @@ namespace ConsoleApplication1
         }
 
 		[Test()]
-		public KeyValuePair<JObject, string> createInterceptor()
+		public static void createInterceptor()
 		{
-<<<<<<< HEAD
 			//TODO: Set up JSON
-=======
-            //TODO: Add JSON
-            //InterceptorJSON json = new InterceptorJSON(locId, ssid, wpaPSK, intSerial);
->>>>>>> origin/master
-			Interceptor newInt = new Interceptor(TestGlobals.testServer, TestGlobals.validSerial, null);
+			InterceptorJSON intjson = new InterceptorJSON(LocationTest.getLocId(), "Cozumo Office", "cozumo123", TestGlobals.validSerial);
+			Interceptor newInt = new Interceptor(TestGlobals.testServer, TestGlobals.validSerial, intjson);
 			Test mTest = new Test(newInt);
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
-			Assert.AreEqual("201", HTTPSCalls.result.Value);
-			return HTTPCalls.result;
+
+			Console.WriteLine(HTTPSCalls.result.Value);
 		}
 
 		[Test()]

@@ -17,11 +17,6 @@ namespace ConsoleApplication1
 	[TestFixture()]
 	public class OrganizationTest
     {
-<<<<<<< HEAD
-=======
-		static string orgIdCreated;
-
->>>>>>> origin/master
 		[TestFixtureSetUp()]
         public void setup()
         {
@@ -39,15 +34,9 @@ namespace ConsoleApplication1
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
             //client.setup;
-			client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
-<<<<<<< HEAD
-			TestGlobals.orgIdCreated = HTTPSCalls.result.Value.Substring(9, 4);
-		
-=======
-            Console.WriteLine(HTTPSCalls.result.Value);
-            orgIdCreated = HTTPSCalls.result.Value.Substring(9, HTTPSCalls.result.Value.Length - 10);
->>>>>>> origin/master
+			Console.WriteLine(HTTPSCalls.result.Value);
+            TestGlobals.orgIdCreated = HTTPSCalls.result.Value.Substring(9, HTTPSCalls.result.Value.Length - 10);
         }
 
         [Test()]
@@ -78,11 +67,11 @@ namespace ConsoleApplication1
 
         public static string getOrgId()
         {
-            if (orgIdCreated == null)
+            if (TestGlobals.orgIdCreated == null)
             {
                 createOrganization();
             }
-            return orgIdCreated;
+            return TestGlobals.orgIdCreated;
         }
 	}
 }

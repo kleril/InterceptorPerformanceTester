@@ -25,6 +25,7 @@ namespace ConsoleApplication1
         public static string username;
         public static string password;
 		public static string orgIdCreated;
+		public static string locIdCreated;
 
 		public static void setup()
 		{
@@ -47,8 +48,6 @@ namespace ConsoleApplication1
 					Console.WriteLine(e);
 					Console.WriteLine("Chances are your appconfig is misconfigured. Double check that performanceTestRuns is an integer and try again.");
 				}
-
-				OrganizationTest.createOrganization();
 
 			}
 			catch (Exception e)
