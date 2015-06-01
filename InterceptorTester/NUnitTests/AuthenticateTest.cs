@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +17,7 @@ namespace ConsoleApplication1
 	[TestFixture()]
 	public class AuthenticateTest
     {
-        JObject sessionToken;
+        static JObject sessionToken;
 
         [TestFixtureSetUp()]
         public void testSetup()
@@ -37,9 +39,24 @@ namespace ConsoleApplication1
             return sessionToken;
         }
 
-        public JObject getSessionToken()
+        [Test()]
+        public void closeSession()
         {
-            return sessionToken;
+            if (sessionToken != null)
+            {
+                GenericRequest req = new GenericRequest(TestGlobals.testServer, "/api/authenticate/", null);
+                HttpClient client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization = getSessionToken();
+                Test closeTest = new Test(req);
+                AsyncContext.Run(async () => await new HTTPSCalls().runTest(closeTest, HTTPOperation.DELETE, client));
+            }
+        }
+
+        public AuthenticationHeaderValue getSessionToken()
+        {
+            string parse = "Token " + sessionToken.GetValue("Session Token").ToString();
+            AuthenticationHeaderValue ret = System.Net.Http.Headers.AuthenticationHeaderValue.Parse(parse);
+            return ret;
         }
 	}
 }

@@ -8,7 +8,7 @@ namespace ConsoleApplication1
 {
 	class Authenticate : APIOperation
 	{
-        AuthenticateJSON json
+        AuthenticateJSON json;
 		public Authenticate(Uri server, string serialNum, AuthenticateJSON json)
 		{
 			opHost = server;
