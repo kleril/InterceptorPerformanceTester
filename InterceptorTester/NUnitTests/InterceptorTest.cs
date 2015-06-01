@@ -25,7 +25,7 @@ namespace ConsoleApplication1
 		[Test()]
 		public void createInterceptor()
 		{
-            InterceptorJSON json = new InterceptorJSON(int.Parse(LocationTest.getLocId()), "ssid", "wappisk", "AYYYYLMAO");
+            InterceptorJSON json = new InterceptorJSON(int.Parse(LocationTest.getLocId()), "wat", "wappisk", "AYYYYLMAO");
 			Interceptor newInt = new Interceptor(TestGlobals.testServer, TestGlobals.validSerial, json);
 			Test mTest = new Test(newInt);
             HttpClient client = new HttpClient();
