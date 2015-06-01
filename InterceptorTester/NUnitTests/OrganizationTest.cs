@@ -24,21 +24,20 @@ namespace ConsoleApplication1
         }
 
         [Test()]
-        public void createOrganization()
+        public KeyValuePair<JObject, string> createOrganization()
         {
             OrganizationJSON json = new OrganizationJSON();
-            json.ownerID = 999;
-            json.name = "TestName";
+            json.orgID = 999;
+            json.orgName = "TestName";
             //TODO: Remove redundant "999" string from params
 			Organization newOrg = new Organization(TestGlobals.testServer, TestGlobals.validOrgId, json);
             Test mTest = new Test(newOrg);
             HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
+            //TODO: Initialize the client properly - add session token to header, etc.
             //client.setup;
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
-            Console.WriteLine(HTTPSCalls.result.Key);
-            Console.WriteLine(HTTPSCalls.result.Value);
             Assert.AreEqual("201", HTTPSCalls.result.Value);
+            return HTTPCalls.result;
         }
 
         [Test()]

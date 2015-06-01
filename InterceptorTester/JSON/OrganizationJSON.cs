@@ -8,10 +8,24 @@ namespace ConsoleApplication1
 	public class OrganizationJSON
 	{
 
+<<<<<<< HEAD
 		
 		public int ownerID;
+=======
+		public bool isValid ()
+		{
+			if ((orgID != null) && (orgName != null))
+			{
+				return true;
+			}
 
-		public string name;
+			return false;
+		}
+
+		public int orgID;
+>>>>>>> parent of 9ccc7e5... Create org happy path
+
+		public string orgName;
 
 		// ReSharper restore InconsistentNaming
 

@@ -30,8 +30,12 @@ namespace ConsoleApplication1
         public JObject generateSessionToken()
 =======
         [TestCase(Result="Somethin'")]
+<<<<<<< HEAD
         public static JObject generateSessionToken()
 >>>>>>> origin/master
+=======
+        public JObject generateSessionToken()
+>>>>>>> parent of 9ccc7e5... Create org happy path
         {
             AuthenticateJSON json = new AuthenticateJSON();
             //Set up JSON
@@ -58,20 +62,18 @@ namespace ConsoleApplication1
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		[Test()]
 		public AuthenticationHeaderValue getSessionToken()
 =======
         public static AuthenticationHeaderValue getSessionToken()
 >>>>>>> origin/master
+=======
+        public AuthenticationHeaderValue getSessionToken()
+>>>>>>> parent of 9ccc7e5... Create org happy path
         {
             if (sessionToken == null)
             {
-                Console.WriteLine("No Session token found. Generating session token...");
-                generateSessionToken();
-            }
-            if (sessionToken.GetValue("_sessionToken") == null)
-            {
-                Console.WriteLine("Session token is empty for some reason");
                 generateSessionToken();
             }
             string parse = "Token " + sessionToken.GetValue("_sessionToken").ToString();
