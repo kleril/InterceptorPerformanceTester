@@ -24,6 +24,7 @@ namespace ConsoleApplication1
         {
             TestGlobals.setup();
         }
+        [Test()]
         public static void createLocation()
         {
             orgIdPassed = OrganizationTest.getOrgId();
