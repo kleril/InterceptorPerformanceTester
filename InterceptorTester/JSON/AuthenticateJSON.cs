@@ -18,9 +18,9 @@ namespace ConsoleApplication1
 			return false;
 		}
 
-		string userID;
+		public string userID;
 
-		string password;
+		public string password;
 
 		// ReSharper restore InconsistentNaming
 

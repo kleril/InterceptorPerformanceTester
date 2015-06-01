@@ -30,7 +30,7 @@ namespace ConsoleApplication1
         {
             AuthenticateJSON json = new AuthenticateJSON();
             //Set up JSON
-            json.username = TestGlobals.username;
+            json.userID = TestGlobals.username;
             json.password = TestGlobals.password;
             Authenticate authCall = new Authenticate(TestGlobals.testServer, TestGlobals.validSerial, json);
             Test authTest = new Test(authCall);
