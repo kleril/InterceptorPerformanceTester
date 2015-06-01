@@ -16,6 +16,7 @@ namespace ConsoleApplication1
             this.state = province;
             this.country = country;
             this.postalCode = postalCode;
+            this.State = province;
         }
 
 
@@ -29,6 +30,8 @@ namespace ConsoleApplication1
 
 			return false;
 		}
+
+        public string State;
 
 		public string orgId;
 

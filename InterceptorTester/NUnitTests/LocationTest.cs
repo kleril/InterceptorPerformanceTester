@@ -21,6 +21,7 @@ namespace ConsoleApplication1
         {
             TestGlobals.setup();
         }
+<<<<<<< HEAD
 
         [Test()]	
 		 public static void createLocation()
@@ -32,6 +33,16 @@ namespace ConsoleApplication1
 			json.latitude = 0;
 			json.longitude = 0;
 
+=======
+        [Test()]
+        public static void createLocation()
+        {
+            orgIdPassed = OrganizationTest.getOrgId();
+            LocationJSON json = new LocationJSON(orgIdPassed, "suite", "street", "suddenValley", "um", "Murica", "A2A2A2");
+            json.locDesc = "desc";
+            json.locSubType = "subtype";
+            json.locType = "type";
+>>>>>>> origin/master
 			Location newLoc = new Location(TestGlobals.testServer, json);
 
             Test mTest = new Test(newLoc);
@@ -41,8 +52,12 @@ namespace ConsoleApplication1
 
             //Assert.AreEqual("201", HTTPSCalls.result.Value);
             Console.WriteLine(HTTPSCalls.result.Value);
+<<<<<<< HEAD
             TestGlobals.locIdCreated = HTTPSCalls.result.Value.Substring(9, HTTPSCalls.result.Value.Length - 10);
 			Console.WriteLine (TestGlobals.locIdCreated);
+=======
+            locIdCreated = HTTPSCalls.result.Value.Substring(9, HTTPSCalls.result.Value.Length - 10);
+>>>>>>> origin/master
         }
 
         [Test()]

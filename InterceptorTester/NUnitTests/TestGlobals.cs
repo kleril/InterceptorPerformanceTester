@@ -24,6 +24,7 @@ namespace ConsoleApplication1
         public static string password;
 		public static string orgIdCreated;
 		public static string locIdCreated;
+        public static string intIdCreated;
 
 		public static void setup()
 		{
