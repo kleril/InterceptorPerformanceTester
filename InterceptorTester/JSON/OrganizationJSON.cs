@@ -18,7 +18,7 @@ namespace ConsoleApplication1
 			return false;
 		}
 
-		public int orgID;
+		public string orgID;
 
 		public string orgName;
 

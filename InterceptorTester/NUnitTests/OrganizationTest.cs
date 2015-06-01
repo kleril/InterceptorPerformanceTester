@@ -27,10 +27,10 @@ namespace ConsoleApplication1
         public KeyValuePair<JObject, string> createOrganization()
         {
             OrganizationJSON json = new OrganizationJSON();
-            json.orgID = 999;
+			json.orgID = TestGlobals.validOrgId;
             json.orgName = "TestName";
             //TODO: Remove redundant "999" string from params
-            Organization newOrg = new Organization(TestGlobals.testServer, "999", json);
+			Organization newOrg = new Organization(TestGlobals.testServer, TestGlobals.validOrgId, json);
             Test mTest = new Test(newOrg);
             HttpClient client = new HttpClient();
             //TODO: Initialize the client properly - add session token to header, etc.
@@ -41,9 +41,10 @@ namespace ConsoleApplication1
         }
 
         [Test()]
-        public KeyValuePair<JObject, string> getOrganization()
+        public KeyValuePair<JObject, string> getSingleOrganization()
         {
-            GenericRequest getOrg = new GenericRequest(TestGlobals.testServer, "/API/Organization/999", null);
+			string query = "/API/Organization/" + TestGlobals.validOrgId;
+			GenericRequest getOrg = new GenericRequest(TestGlobals.testServer, query, null);
             Test mTest = new Test(getOrg);
             HttpClient client = new HttpClient();
             //TODO: Initialize the client properly - add session token to header, etc.
@@ -52,6 +53,18 @@ namespace ConsoleApplication1
             Assert.AreEqual("201", HTTPSCalls.result.Value);
             return HTTPCalls.result;
         }
+
+		[Test()]
+		public KeyValuePair<JObject, string> getMultipleOrganization()
+		{
+			string query = "/API/Organization/";
+			GenericRequest getOrg = new GenericRequest(TestGlobals.testServer, query, null);
+			Test mTest = new Test(getOrg);
+			HttpClient client = new HttpClient();
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET, client));
+			Assert.AreEqual("201", HTTPSCalls.result.Value);
+			return HTTPCalls.result;
+		}
 	}
 }
 
