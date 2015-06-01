@@ -54,6 +54,10 @@ namespace ConsoleApplication1
 
         public AuthenticationHeaderValue getSessionToken()
         {
+            if (sessionToken == null)
+            {
+                generateSessionToken();
+            }
             string parse = "Token " + sessionToken.GetValue("_sessionToken").ToString();
             AuthenticationHeaderValue ret = System.Net.Http.Headers.AuthenticationHeaderValue.Parse(parse);
             return ret;
