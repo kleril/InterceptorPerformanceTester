@@ -42,7 +42,6 @@ namespace ConsoleApplication1
             //Assert.AreEqual("201", HTTPSCalls.result.Value);
             Console.WriteLine(HTTPSCalls.result.Value);
             TestGlobals.locIdCreated = HTTPSCalls.result.Value.Substring(9, HTTPSCalls.result.Value.Length - 10);
-			Console.WriteLine (TestGlobals.locIdCreated);
         }
 
         [Test()]
