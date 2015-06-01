@@ -25,18 +25,9 @@ namespace ConsoleApplication1
             TestGlobals.setup();
         }
 
-<<<<<<< HEAD
 		[Test()]
         public JObject generateSessionToken()
-=======
-        [TestCase(Result="Somethin'")]
-<<<<<<< HEAD
-        public static JObject generateSessionToken()
->>>>>>> origin/master
-=======
-        public JObject generateSessionToken()
->>>>>>> parent of 9ccc7e5... Create org happy path
-        {
+		{
             AuthenticateJSON json = new AuthenticateJSON();
             //Set up JSON
             json.userID = TestGlobals.username;
@@ -61,17 +52,9 @@ namespace ConsoleApplication1
             }
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 		[Test()]
 		public AuthenticationHeaderValue getSessionToken()
-=======
-        public static AuthenticationHeaderValue getSessionToken()
->>>>>>> origin/master
-=======
-        public AuthenticationHeaderValue getSessionToken()
->>>>>>> parent of 9ccc7e5... Create org happy path
-        {
+		{
             if (sessionToken == null)
             {
                 generateSessionToken();
