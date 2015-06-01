@@ -23,19 +23,22 @@ namespace ConsoleApplication1
         }
 
 		[Test()]
-
-		public static void createInterceptor()
+		public void createInterceptor()
 		{
-			//TODO: Set up JSON
-			InterceptorJSON intjson = new InterceptorJSON(LocationTest.getLocId(), "Cozumo Office", "cozumo123", TestGlobals.validSerial);
-			Interceptor newInt = new Interceptor(TestGlobals.testServer, TestGlobals.validSerial, intjson);
-
+            //For new version
+            //InterceptorJSON json = new InterceptorJSON(int.Parse(LocationTest.getLocId()), "wat", "wappisk", "AYYYYLMAO");
+            InterceptorJSON json = new InterceptorJSON(int.Parse(LocationTest.getLocId()), LocationTest.orgIdPassed, "AYYYYLMAO");
+			Interceptor newInt = new Interceptor(TestGlobals.testServer, json);
 			Test mTest = new Test(newInt);
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
+<<<<<<< HEAD
 			Console.WriteLine(HTTPSCalls.result.Value.ToString());
 			Console.WriteLine (LocationTest.getLocId ());
+=======
+            Console.WriteLine(HTTPSCalls.result.Value.ToString());
+>>>>>>> origin/master
 		}
 
 		[Test()]

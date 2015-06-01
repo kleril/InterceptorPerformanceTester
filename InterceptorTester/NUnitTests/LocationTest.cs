@@ -16,11 +16,15 @@ namespace ConsoleApplication1
     [TestFixture()]
     public class LocationTest
     {
-		[TestFixtureSetUp()]
+		public static string locIdCreated;
+        public static string orgIdPassed;
+
+        [TestFixtureSetUp()]
         public void setup()
         {
             TestGlobals.setup();
         }
+<<<<<<< HEAD
 
         [Test()]	
 		 public static void createLocation()
@@ -32,17 +36,28 @@ namespace ConsoleApplication1
 			json.latitude = 0;
 			json.longitude = 0;
 
+=======
+        public static void createLocation()
+        {
+            orgIdPassed = OrganizationTest.getOrgId();
+            LocationJSON json = new LocationJSON(orgIdPassed, "suite", "street", "suddenValley", "um", "Murica", "A2A2A2");
+            json.locDesc = "desc";
+            json.locSubType = "subtype";
+            json.locType = "type";
+>>>>>>> origin/master
 			Location newLoc = new Location(TestGlobals.testServer, json);
-
             Test mTest = new Test(newLoc);
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
-
             //Assert.AreEqual("201", HTTPSCalls.result.Value);
             Console.WriteLine(HTTPSCalls.result.Value);
+<<<<<<< HEAD
             TestGlobals.locIdCreated = HTTPSCalls.result.Value.Substring(9, HTTPSCalls.result.Value.Length - 10);
 			Console.WriteLine (TestGlobals.locIdCreated);
+=======
+            locIdCreated = HTTPSCalls.result.Value.Substring(9, HTTPSCalls.result.Value.Length - 10);
+>>>>>>> origin/master
         }
 
         [Test()]
@@ -73,11 +88,11 @@ namespace ConsoleApplication1
 
         public static string getLocId()
         {
-            if (TestGlobals.locIdCreated == null)
+            if (locIdCreated == null)
             {
                 createLocation();
             }
-            return TestGlobals.locIdCreated;
+            return locIdCreated;
         }
     }
 }
