@@ -25,7 +25,7 @@ namespace ConsoleApplication1
             TestGlobals.setup();
         }
 
-        [TestCase(Result="Somethin'")]
+		[Test()]
         public JObject generateSessionToken()
         {
             AuthenticateJSON json = new AuthenticateJSON();
@@ -35,7 +35,7 @@ namespace ConsoleApplication1
             Authenticate authCall = new Authenticate(TestGlobals.testServer, TestGlobals.validSerial, json);
             Test authTest = new Test(authCall);
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(authTest, HTTPOperation.POST));
-            sessionToken = JObject.Parse(HTTPSCalls.result.Value);
+			sessionToken = JObject.Parse(HTTPSCalls.result.Value);
             return sessionToken;
         }
 
@@ -52,7 +52,8 @@ namespace ConsoleApplication1
             }
         }
 
-        public AuthenticationHeaderValue getSessionToken()
+		[Test()]
+		public AuthenticationHeaderValue getSessionToken()
         {
             if (sessionToken == null)
             {
