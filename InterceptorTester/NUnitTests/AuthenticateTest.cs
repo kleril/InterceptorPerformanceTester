@@ -17,7 +17,7 @@ namespace ConsoleApplication1
 	[TestFixture()]
 	public class AuthenticateTest
     {
-        static JObject sessionToken;
+        public static JObject sessionToken;
 
         [TestFixtureSetUp()]
         public void testSetup()
@@ -26,7 +26,7 @@ namespace ConsoleApplication1
         }
 
 		[Test()]
-        public JObject generateSessionToken()
+		public JObject generateSessionToken()
 		{
             AuthenticateJSON json = new AuthenticateJSON();
             //Set up JSON
@@ -36,7 +36,7 @@ namespace ConsoleApplication1
             Test authTest = new Test(authCall);
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(authTest, HTTPOperation.POST));
 			sessionToken = JObject.Parse(HTTPSCalls.result.Value);
-            return sessionToken;
+			return sessionToken;
         }
 
         [Test()]

@@ -24,7 +24,7 @@ namespace ConsoleApplication1
         }
 
         [Test()]
-        public KeyValuePair<JObject, string> createOrganization()
+		public void createOrganization()
         {
             OrganizationJSON json = new OrganizationJSON();
 			json.orgID = TestGlobals.validOrgId;
@@ -35,9 +35,10 @@ namespace ConsoleApplication1
             HttpClient client = new HttpClient();
             //TODO: Initialize the client properly - add session token to header, etc.
             //client.setup;
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
+			client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Token ", AuthenticateTest.sessionToken.ToString());
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
             Assert.AreEqual("201", HTTPSCalls.result.Value);
-            return HTTPCalls.result;
+            //return HTTPCalls.result;
         }
 
         [Test()]
