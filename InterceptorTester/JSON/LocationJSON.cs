@@ -7,10 +7,20 @@ namespace ConsoleApplication1
 
 	public class LocationJSON
 	{
+        LocationJSON(string orgId, string unitSuite, string street, string city, string province, string country, string postalCode)
+        {
+            this.orgId = orgId;
+            this.unitSuite = unitSuite;
+            this.street = street;
+            this.city = city;
+            this.stateProvince = province;
+            this.country = country;
+            this.postalCode = postalCode;
+        }
 
 		public bool isValid ()
 		{
-			if ((orgId != null) && (uniteSuite != null) && (city != null) && (stateProvince != null) && (country != null) && (postalCode != null))
+			if ((orgId != null) && (unitSuite != null) && (city != null) && (stateProvince != null) && (country != null) && (postalCode != null))
 			{
 				return true;
 			}
@@ -18,29 +28,29 @@ namespace ConsoleApplication1
 			return false;
 		}
 
-		string orgId;
+		public string orgId;
 
-		string locDesc;
+        public string locDesc;
 
-		string uniteSuite;
+        public string unitSuite;
 
-		string street;
+        public string street;
 
-		string city;
+        public string city;
 
-		string stateProvince;
+        public string stateProvince;
 
-		string country;
+        public string country;
 
-		string postalCode;
+        public string postalCode;
 
-		decimal latitude;
+        public decimal latitude;
 
-		decimal longitude;
+        public decimal longitude;
 
-		string locType;
+        public string locType;
 
-		string locSubType;
+        public string locSubType;
 
 		// ReSharper restore InconsistentNaming
 
