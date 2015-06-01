@@ -26,7 +26,7 @@ namespace ConsoleApplication1
         public KeyValuePair<JObject, string> createLocation()
         {
             //TODO: Set this up
-            Location newLoc = new Location(TestGlobals.testServer, "");
+			Location newLoc = new Location(TestGlobals.testServer, TestGlobals.validLocId);
             Test mTest = new Test(newLoc);
             HttpClient client = new HttpClient();
             //TODO: Initialize the client properly - add session token to header, etc.
@@ -37,9 +37,10 @@ namespace ConsoleApplication1
         }
 
         [Test()]
-        public KeyValuePair<JObject, string> getLocation()
+        public KeyValuePair<JObject, string> getSingleLocation()
         {
-			GenericRequest getLoc = new GenericRequest(TestGlobals.testServer, "/API/Location/", null);
+			string query = "/API/Location/" + TestGlobals.validLocId;
+			GenericRequest getLoc = new GenericRequest(TestGlobals.testServer, query, null);
             Test mTest = new Test(getLoc);
             HttpClient client = new HttpClient();
             //TODO: Initialize the client properly - add session token to header, etc.
@@ -48,14 +49,19 @@ namespace ConsoleApplication1
             Assert.AreEqual("201", HTTPSCalls.result.Value);
             return HTTPCalls.result;
         }
+
+		[Test()]
+		public KeyValuePair<JObject, string> getMultipleLocations()
+		{
+			string query = "/API/Location/?orgid=" + TestGlobals.validOrgId;
+			GenericRequest getLoc = new GenericRequest(TestGlobals.testServer, query, null);
+			Test mTest = new Test(getLoc);
+			HttpClient client = new HttpClient();
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET, client));
+			Assert.AreEqual("201", HTTPSCalls.result.Value);
+			return HTTPCalls.result;
+		}
     }
-	/*
-	[TestFixture()]
-	public class LocationTest
-    {
-        
-	}
-	*/
 }
 
 

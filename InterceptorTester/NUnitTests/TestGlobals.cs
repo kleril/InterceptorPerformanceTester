@@ -18,6 +18,8 @@ namespace ConsoleApplication1
 		public static Uri testServer;
 		public static string validSerial;
 		public static string invalidSerial;
+		public static string validLocId;
+		public static string validOrgId;
 		public static int delay;
         public static int maxReps;
         public static string username;
@@ -30,6 +32,8 @@ namespace ConsoleApplication1
 				testServer = new Uri(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
 				validSerial = ConfigurationManager.ConnectionStrings["ValidSerial"].ConnectionString;
 				invalidSerial = ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString;
+				validLocId = ConfigurationManager.ConnectionStrings["ValidLocId"].ConnectionString;
+				validOrgId = ConfigurationManager.ConnectionStrings["ValidOrgId"].ConnectionString;
 				delay = int.Parse(ConfigurationManager.ConnectionStrings["DelayBetweenRuns"].ConnectionString);
                 username = ConfigurationManager.ConnectionStrings["Username"].ConnectionString;
                 password = ConfigurationManager.ConnectionStrings["Password"].ConnectionString;

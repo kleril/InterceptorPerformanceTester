@@ -37,7 +37,7 @@ namespace ConsoleApplication1
 		}
 
 		[Test()]
-		public KeyValuePair<JObject, string> getIntercpetor()
+		public KeyValuePair<JObject, string> getSingleInterceptor()
 		{
 			string query = "/API/Interceptor/" + TestGlobals.validSerial;
 			GenericRequest getInt = new GenericRequest(TestGlobals.testServer, query, null);
@@ -47,6 +47,18 @@ namespace ConsoleApplication1
 			//client.setup;
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET, client));
 			Assert.AreEqual("201", HTTPSCalls.result.Value);
+			return HTTPCalls.result;
+		}
+
+		[Test()]
+		public KeyValuePair<JObject, string> getMultipleInterceptors()
+		{
+			string query = "/API/Interceptor/?LocId=" + TestGlobals.validLocId;
+			GenericRequest getInt = new GenericRequest (TestGlobals.testServer, query, null);
+			Test mTest = new Test (getInt);
+			HttpClient client = new HttpClient ();
+			AsyncContext.Run (async() => await new HTTPSCalls ().runTest (mTest, HTTPOperation.GET, client));
+			Assert.AreEqual ("201", HTTPCalls.result.Value);
 			return HTTPCalls.result;
 		}
 	}

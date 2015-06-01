@@ -9,7 +9,6 @@ namespace ConsoleApplication1
 	{
 
 		
-
 		public int ownerID;
 
 		public string name;
