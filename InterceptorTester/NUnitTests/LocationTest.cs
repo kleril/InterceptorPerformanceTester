@@ -41,7 +41,6 @@ namespace ConsoleApplication1
             Console.WriteLine(HTTPSCalls.result.Value);
             TestGlobals.locIdCreated = HTTPSCalls.result.Value.Substring(9, HTTPSCalls.result.Value.Length - 10);
             Console.WriteLine(HTTPSCalls.result.Value.Substring(9, HTTPSCalls.result.Value.Length - 10) + " Written to testGlobals");
-            Console.WriteLine(TestGlobals.locIdCreated);
         }
 
         [Test()]
@@ -69,6 +68,20 @@ namespace ConsoleApplication1
 			Assert.AreEqual("201", HTTPSCalls.result.Value);
 			return HTTPCalls.result;
 		}
+
+		[Test()]
+		public void deleteLocation()
+		{
+			GenericRequest locReq = new GenericRequest(TestGlobals.testServer, "/api/location/" + TestGlobals.locIdCreated, null);
+			Test locTest = new Test(locReq);
+			HttpClient client;
+
+			client = new HttpClient();
+			client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken(); 
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(locTest, HTTPOperation.DELETE, client));
+			Console.WriteLine(HTTPSCalls.result.Value);
+		}
+
 
         public static string getLocId()
         {

@@ -63,6 +63,19 @@ namespace ConsoleApplication1
 			return HTTPCalls.result;
 		}
 
+		[Test()]
+		public void deleteOrganization()
+		{
+			GenericRequest orgReq = new GenericRequest(TestGlobals.testServer, "/api/organization/" + TestGlobals.orgIdCreated, null);
+			Test orgTest = new Test(orgReq);
+			HttpClient client;
+
+			client = new HttpClient();
+			client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken(); 
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(orgTest, HTTPOperation.DELETE, client));
+			Console.WriteLine(HTTPSCalls.result.Value);
+		}
+
         public static string getOrgId()
         {
             if (TestGlobals.orgIdCreated == null)

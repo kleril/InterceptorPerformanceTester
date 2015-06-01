@@ -23,6 +23,7 @@ namespace ConsoleApplication1
         }
 
         //Run deletes
+		/*
         [TestFixtureTearDown()]
         public void teardown()
         {
@@ -34,10 +35,10 @@ namespace ConsoleApplication1
             Test locTest = new Test(locReq);
             Test orgTest = new Test(orgReq);
             HttpClient client;
-            /*client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
+            client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(intTest, HTTPOperation.DELETE, client));
             Console.WriteLine(HTTPSCalls.result.Value);
-            */
+
             client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(locTest, HTTPOperation.DELETE, client));
@@ -48,9 +49,9 @@ namespace ConsoleApplication1
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(orgTest, HTTPOperation.DELETE, client));
             Console.WriteLine(HTTPSCalls.result.Value);
         }
+		*/
 
 		[Test()]
-
 		public static void createInterceptor()
 		{
             //For new version
@@ -95,6 +96,20 @@ namespace ConsoleApplication1
 			Assert.AreEqual ("201", HTTPCalls.result.Value);
 			return HTTPCalls.result;
 		}
+
+		[Test()]
+		public void deleteInterceptor()
+		{
+			GenericRequest intReq = new GenericRequest(TestGlobals.testServer, "/api/interceptor/" + TestGlobals.intIdCreated, null);
+			Test intTest = new Test(intReq);
+			HttpClient client;
+
+			client = new HttpClient();
+			client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken(); 
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(intTest, HTTPOperation.DELETE, client));
+			Console.WriteLine(HTTPSCalls.result.Value);
+		}
+
 	}
 
 }
