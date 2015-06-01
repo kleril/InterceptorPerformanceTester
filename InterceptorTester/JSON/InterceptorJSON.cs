@@ -37,7 +37,7 @@ namespace ConsoleApplication1
 
 		public override string ToString()
 		{
-			return "";
+			return locId.ToString() + " " + ssid + " " + ssid + " " + intSerial;
 		}
 	}
 
