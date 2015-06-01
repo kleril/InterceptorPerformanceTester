@@ -17,6 +17,7 @@ namespace ConsoleApplication1
     public class LocationTest
     {
 		public static string locIdCreated;
+        public static string orgIdPassed;
 
         [TestFixtureSetUp()]
         public void setup()
@@ -25,7 +26,8 @@ namespace ConsoleApplication1
         }
         public static void createLocation()
         {
-            LocationJSON json = new LocationJSON(OrganizationTest.getOrgId(), "suite", "street", "suddenValley", "um", "Murica", "A2A2A2");
+            orgIdPassed = OrganizationTest.getOrgId();
+            LocationJSON json = new LocationJSON(orgIdPassed, "suite", "street", "suddenValley", "um", "Murica", "A2A2A2");
             json.locDesc = "desc";
             json.locSubType = "subtype";
             json.locType = "type";
@@ -34,7 +36,6 @@ namespace ConsoleApplication1
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
-            Assert.AreEqual("201", HTTPSCalls.result.Value);
             //Assert.AreEqual("201", HTTPSCalls.result.Value);
             Console.WriteLine(HTTPSCalls.result.Value);
             locIdCreated = HTTPSCalls.result.Value.Substring(9, HTTPSCalls.result.Value.Length - 10);

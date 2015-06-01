@@ -25,14 +25,15 @@ namespace ConsoleApplication1
 		[Test()]
 		public void createInterceptor()
 		{
-            InterceptorJSON json = new InterceptorJSON(int.Parse(LocationTest.getLocId()), "wat", "wappisk", "AYYYYLMAO");
-			Interceptor newInt = new Interceptor(TestGlobals.testServer, TestGlobals.validSerial, json);
+            //For new version
+            //InterceptorJSON json = new InterceptorJSON(int.Parse(LocationTest.getLocId()), "wat", "wappisk", "AYYYYLMAO");
+            InterceptorJSON json = new InterceptorJSON(int.Parse(LocationTest.getLocId()), LocationTest.orgIdPassed, "AYYYYLMAO");
+			Interceptor newInt = new Interceptor(TestGlobals.testServer, json);
 			Test mTest = new Test(newInt);
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
             Console.WriteLine(HTTPSCalls.result.Value.ToString());
-
 		}
 
 		[Test()]
