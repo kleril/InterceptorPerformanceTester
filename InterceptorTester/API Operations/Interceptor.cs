@@ -8,11 +8,14 @@ namespace ConsoleApplication1
 {
 	class Interceptor : APIOperation
 	{
-		public Interceptor(Uri server, string serialNum)
+        InterceptorJSON json;
+
+		public Interceptor(Uri server, string serialNum, InterceptorJSON json)
 		{
 			opHost = server;
 			hOp = HTTPOperation.POST;
 			opQuery = new HTTPQuery(QueryParameter.i, serialNum);
+            this.json = json;
 		}
 
 		public override string getExpectedResult()
@@ -39,7 +42,7 @@ namespace ConsoleApplication1
 
 		public override object getJson()
 		{
-			return null;
+			return json;
 		}
 	}
 }

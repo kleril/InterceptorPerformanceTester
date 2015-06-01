@@ -8,11 +8,13 @@ namespace ConsoleApplication1
 {
 	class Location : APIOperation
 	{
-		public Location(Uri server, string serialNum)
+        LocationJSON json;
+		public Location(Uri server, string serialNum, LocationJSON json)
 		{
 			opHost = server;
 			hOp = HTTPOperation.POST;
 			opQuery = new HTTPQuery(QueryParameter.i, serialNum);
+            this.json = json;
 		}
 
 		public override string getExpectedResult()
@@ -39,7 +41,7 @@ namespace ConsoleApplication1
 
 		public override object getJson()
 		{
-			return null;
+			return json;
 		}
 	}
 }
