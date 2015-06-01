@@ -35,6 +35,7 @@ namespace ConsoleApplication1
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
             //client.setup;
+			client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
 			//Assert.AreEqual("{\"orgId\":" + TestGlobals.validOrgId + "}", HTTPSCalls.result.Value);
         }
