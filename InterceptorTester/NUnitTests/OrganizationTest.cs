@@ -17,7 +17,7 @@ namespace ConsoleApplication1
 	[TestFixture()]
 	public class OrganizationTest
     {
-		string orgIdCreated;
+		static string orgIdCreated;
 
 		[TestFixtureSetUp()]
         public void setup()
@@ -26,7 +26,7 @@ namespace ConsoleApplication1
         }
 
         [Test()]
-        public void createOrganization()
+        public static void createOrganization()
         {
             OrganizationJSON json = new OrganizationJSON();
 			json.ownerID = 999;
@@ -68,6 +68,15 @@ namespace ConsoleApplication1
 			Assert.AreEqual("201", HTTPSCalls.result.Value);
 			return HTTPCalls.result;
 		}
+
+        public static string getOrgId()
+        {
+            if (orgIdCreated == null)
+            {
+                createOrganization();
+            }
+            return orgIdCreated;
+        }
 	}
 }
 
