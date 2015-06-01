@@ -25,12 +25,11 @@ namespace ConsoleApplication1
 		[Test()]
 		public KeyValuePair<JObject, string> createInterceptor()
 		{
-			//TODO: Set this up
+			//TODO: Set up JSON
 			Interceptor newInt = new Interceptor(TestGlobals.testServer, TestGlobals.validSerial);
 			Test mTest = new Test(newInt);
-			HttpClient client = new HttpClient();
-			//TODO: Initialize the client properly - add session token to header, etc.
-			//client.setup;
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
 			Assert.AreEqual("201", HTTPSCalls.result.Value);
 			return HTTPCalls.result;
@@ -42,9 +41,8 @@ namespace ConsoleApplication1
 			string query = "/API/Interceptor/" + TestGlobals.validSerial;
 			GenericRequest getInt = new GenericRequest(TestGlobals.testServer, query, null);
 			Test mTest = new Test(getInt);
-			HttpClient client = new HttpClient();
-			//TODO: Initialize the client properly - add session token to header, etc.
-			//client.setup;
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET, client));
 			Assert.AreEqual("201", HTTPSCalls.result.Value);
 			return HTTPCalls.result;

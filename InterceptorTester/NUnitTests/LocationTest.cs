@@ -25,12 +25,11 @@ namespace ConsoleApplication1
         [Test()]
         public KeyValuePair<JObject, string> createLocation()
         {
-            //TODO: Set this up
+            //TODO: Set up JSON
 			Location newLoc = new Location(TestGlobals.testServer, TestGlobals.validLocId);
             Test mTest = new Test(newLoc);
             HttpClient client = new HttpClient();
-            //TODO: Initialize the client properly - add session token to header, etc.
-            //client.setup;
+            client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
             Assert.AreEqual("201", HTTPSCalls.result.Value);
             return HTTPCalls.result;
