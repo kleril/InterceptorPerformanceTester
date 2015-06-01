@@ -35,10 +35,10 @@ namespace ConsoleApplication1
 
 		// ReSharper restore InconsistentNaming
 
-		public override string ToString()
+		/*public override string ToString()
 		{
 			return locId.ToString() + " " + ssid + " " + ssid + " " + intSerial;
-		}
+		}*/
 	}
 
 }
