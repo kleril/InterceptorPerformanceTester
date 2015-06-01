@@ -8,10 +8,7 @@ namespace ConsoleApplication1
 {
 	class Interceptor : APIOperation
 	{
-		JObject data;
-		string query;
-
-		public Interceptor(Uri server, string serialNum, JObject data)
+		public Interceptor(Uri server, string serialNum)
 		{
 			opHost = server;
 			hOp = HTTPOperation.POST;
