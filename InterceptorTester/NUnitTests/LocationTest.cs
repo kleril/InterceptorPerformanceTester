@@ -39,7 +39,9 @@ namespace ConsoleApplication1
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
             //Assert.AreEqual("201", HTTPSCalls.result.Value);
             Console.WriteLine(HTTPSCalls.result.Value);
-            locIdCreated = HTTPSCalls.result.Value.Substring(9, HTTPSCalls.result.Value.Length - 10);
+            TestGlobals.locIdCreated = HTTPSCalls.result.Value.Substring(9, HTTPSCalls.result.Value.Length - 10);
+            Console.WriteLine(HTTPSCalls.result.Value.Substring(9, HTTPSCalls.result.Value.Length - 10) + " Written to testGlobals");
+            Console.WriteLine(TestGlobals.locIdCreated);
         }
 
         [Test()]
@@ -70,15 +72,17 @@ namespace ConsoleApplication1
 
         public static string getLocId()
         {
-            if (locIdCreated == null)
+            if (TestGlobals.locIdCreated == null)
             {
-                createLocation();
+                Console.WriteLine("Could not get loc ID from test globals");
+                if (LocationTest.locIdCreated == null)
+                {
+                    Console.WriteLine("Could not get loc ID from loc test");
+                    createLocation();
+                    Console.WriteLine("Loc created");
+                }
             }
-            return locIdCreated;
+            return TestGlobals.locIdCreated;
         }
     }
 }
-
-
-
-
