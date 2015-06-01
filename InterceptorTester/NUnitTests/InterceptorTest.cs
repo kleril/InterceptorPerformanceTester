@@ -26,7 +26,7 @@ namespace ConsoleApplication1
 		public KeyValuePair<JObject, string> createInterceptor()
 		{
 			//TODO: Set up JSON
-			Interceptor newInt = new Interceptor(TestGlobals.testServer, TestGlobals.validSerial);
+			Interceptor newInt = new Interceptor(TestGlobals.testServer, TestGlobals.validSerial, null);
 			Test mTest = new Test(newInt);
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();

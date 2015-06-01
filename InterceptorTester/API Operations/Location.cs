@@ -9,12 +9,11 @@ namespace ConsoleApplication1
 	class Location : APIOperation
 	{
         LocationJSON json;
-		public Location(Uri server, string serialNum, LocationJSON json)
+		public Location(Uri server, LocationJSON json)
 		{
 			opHost = server;
 			hOp = HTTPOperation.POST;
-			opQuery = new HTTPQuery(QueryParameter.i, serialNum);
-            this.json = json;
+			this.json = json;
 		}
 
 		public override string getExpectedResult()

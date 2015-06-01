@@ -16,23 +16,33 @@ namespace ConsoleApplication1
     [TestFixture()]
     public class LocationTest
     {
-        [TestFixtureSetUp()]
+		public static string locIdcreated;
+
+		[TestFixtureSetUp()]
         public void setup()
         {
             TestGlobals.setup();
         }
 
         [Test()]
-        public KeyValuePair<JObject, string> createLocation()
+		public void createLocation()
         {
             //TODO: Set up JSON
-			Location newLoc = new Location(TestGlobals.testServer, TestGlobals.validLocId);
+			LocationJSON locjson = new LocationJSON();
+			locjson.orgId = TestGlobals.orgIdCreated;
+			locjson.unitSuite = "testsuite";
+			locjson.street = "teststreet";
+			locjson.city = "testcity";
+			locjson.stateProvince = "testprovince";
+			locjson.country = "testcountry";
+			locjson.postalCode = "testpostalcode";
+
+			Location newLoc = new Location(TestGlobals.testServer, locjson);
             Test mTest = new Test(newLoc);
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
             Assert.AreEqual("201", HTTPSCalls.result.Value);
-            return HTTPCalls.result;
         }
 
         [Test()]
