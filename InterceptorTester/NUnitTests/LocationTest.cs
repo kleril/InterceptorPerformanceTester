@@ -26,7 +26,7 @@ namespace ConsoleApplication1
         public KeyValuePair<JObject, string> createLocation()
         {
             //TODO: Set up JSON
-			Location newLoc = new Location(TestGlobals.testServer, TestGlobals.validLocId);
+			Location newLoc = new Location(TestGlobals.testServer, TestGlobals.validLocId, null);
             Test mTest = new Test(newLoc);
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
