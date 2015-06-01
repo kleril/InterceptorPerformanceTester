@@ -26,7 +26,7 @@ namespace ConsoleApplication1
         }
 
         [TestCase(Result="Somethin'")]
-        public JObject generateSessionToken()
+        public static JObject generateSessionToken()
         {
             AuthenticateJSON json = new AuthenticateJSON();
             //Set up JSON
@@ -52,10 +52,16 @@ namespace ConsoleApplication1
             }
         }
 
-        public AuthenticationHeaderValue getSessionToken()
+        public static AuthenticationHeaderValue getSessionToken()
         {
             if (sessionToken == null)
             {
+                Console.WriteLine("No Session token found. Generating session token...");
+                generateSessionToken();
+            }
+            if (sessionToken.GetValue("_sessionToken") == null)
+            {
+                Console.WriteLine("Session token is empty for some reason");
                 generateSessionToken();
             }
             string parse = "Token " + sessionToken.GetValue("_sessionToken").ToString();
