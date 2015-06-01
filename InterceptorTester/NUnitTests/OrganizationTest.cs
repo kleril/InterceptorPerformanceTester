@@ -26,10 +26,8 @@ namespace ConsoleApplication1
         [Test()]
         public static void createOrganization()
         {
-            OrganizationJSON json = new OrganizationJSON();
-			json.ownerID = 999;
-            json.name = "TestName";
-            Organization newOrg = new Organization(TestGlobals.testServer, json);
+            OrganizationJSON json = new OrganizationJSON(999, "TestName");
+			Organization newOrg = new Organization(TestGlobals.testServer, json);
             Test mTest = new Test(newOrg);
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
