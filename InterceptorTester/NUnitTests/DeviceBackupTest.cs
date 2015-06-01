@@ -116,6 +116,154 @@ namespace ConsoleApplication1
 
 
 		/*
+[Test()]
+		// Valid Serial
+		public void ValidSerial()
+		{
+			BackupItem[] items = new BackupItem[3];
+			items[0] = getBackupItem(1);
+			items[1] = getBackupItem(2);
+			items[2] = getBackupItem(3);
+
+			//BackupJSon
+			DeviceBackupJSON json = new DeviceBackupJSON();
+            json.i = validSerial;
+			json.s = 4;
+			json.b = items;
+
+			//BackupOperation
+			DeviceBackup operation = new DeviceBackup(testServer, json);
+
+			//Test
+			Test backupTest = new Test(operation);
+			backupTest.setTestName("ValidSerial");
+			List<Test> tests = new List<Test>();
+			tests.Add(backupTest);
+			AsyncContext.Run(async() => await Program.buildTests(tests));
+
+			foreach (Test nextTest in Program.getTests())
+			{
+				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
+			}
+		}
+
+		[Test()]
+		// Valid Single Backup Item
+		public void ValidSingleBackupItem()
+		{
+			BackupItem[] items = new BackupItem[1];
+			items[0] = getBackupItem(1);
+
+			//BackupJSon
+			DeviceBackupJSON json = new DeviceBackupJSON();
+            json.i = validSerial;
+			json.s = 4;
+			json.b = items;
+
+			//BackupOperation
+			DeviceBackup operation = new DeviceBackup(testServer, json);
+
+			//Test
+			Test backupTest = new Test(operation);
+			backupTest.setTestName("ValidSingleBackupItem");
+			List<Test> tests = new List<Test>();
+			tests.Add(backupTest);
+			AsyncContext.Run(async() => await Program.buildTests(tests));
+
+			foreach (Test nextTest in Program.getTests())
+			{
+				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
+			}
+		}
+
+		[Test()]
+		// Invalid Single Backup Item
+		public void InvalidSingleBackupItem()
+		{
+			BackupItem failItem = new BackupItem();
+
+			BackupItem[] failItems = new BackupItem[1];
+			failItems[0] = failItem;
+
+			DeviceBackupJSON failJson = new DeviceBackupJSON();
+            failJson.i = validSerial;
+			failJson.s = 5;
+			failJson.b = failItems;
+
+			DeviceBackup failOperation = new DeviceBackup(testServer, failJson);
+			Test failingTest = new Test(failOperation);
+			failingTest.setTestName("InvalidSingleBackupItem");
+
+			List<Test> tests = new List<Test>();
+			tests.Add(failingTest);
+			AsyncContext.Run(async() => await Program.buildTests(tests));
+
+			foreach (Test nextTest in Program.getTests())
+			{
+				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
+			}
+		}
+
+		[Test()]
+		// Muliple Backup Items with Invalid Backup Item in Them
+		public void InvalidBackupItems()
+		{
+			BackupItem failItem = new BackupItem();
+
+			BackupItem[] failItems = new BackupItem[4];
+			failItems[0] = getBackupItem(1);
+			failItems[1] = getBackupItem(2);
+			failItems[2] = failItem;
+			failItems[3] = getBackupItem(3);
+
+			DeviceBackupJSON failJson = new DeviceBackupJSON();
+            failJson.i = validSerial;
+			failJson.s = 5;
+			failJson.b = failItems;
+
+			DeviceBackup failOperation = new DeviceBackup(testServer, failJson);
+			Test failingTest = new Test(failOperation);
+			failingTest.setTestName("InvalidBackupItems");
+
+			List<Test> tests = new List<Test>();
+			tests.Add(failingTest);
+			AsyncContext.Run(async() => await Program.buildTests(tests));
+
+			foreach (Test nextTest in Program.getTests())
+			{
+				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
+			}
+		}
+
+		[Test()]
+		// Invalid Serial Number
+		public void BadSerial()
+		{
+			BackupItem[] items = new BackupItem[3];
+			items[0] = getBackupItem(1);
+			items[1] = getBackupItem(2);
+			items[2] = getBackupItem(3);
+
+			DeviceBackupJSON serialJson = new DeviceBackupJSON();
+			serialJson.i = invalidSerial;
+			serialJson.s = 6;
+			serialJson.b = items;
+
+			DeviceBackup serialOperation = new DeviceBackup(testServer, serialJson);
+
+			Test serialTest = new Test(serialOperation);
+			serialTest.setTestName("BadSerial");
+
+			List<Test> tests = new List<Test>();
+			tests.Add(serialTest);
+			AsyncContext.Run(async() => await Program.buildTests(tests));
+
+			foreach (Test nextTest in Program.getTests())
+			{
+				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
+			}
+		}
+
 		[Test()]
 		// No Backup Items
 		public void NoBackupItems()
@@ -134,6 +282,65 @@ namespace ConsoleApplication1
 
 			List<Test> tests = new List<Test>();
 			tests.Add(emptyTest);
+			AsyncContext.Run(async() => await Program.buildTests(tests));
+
+			foreach (Test nextTest in Program.getTests())
+			{
+				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
+			}
+		}
+
+		[Test()]
+		// Input with Serial Number as ""
+		public void EmptySerial()
+		{
+			BackupItem[] items = new BackupItem[3];
+			items[0] = getBackupItem(1);
+			items[1] = getBackupItem(2);
+			items[2] = getBackupItem(3);
+
+			DeviceBackupJSON serialJson = new DeviceBackupJSON();
+			serialJson.s = 6;
+			serialJson.b = items;
+			serialJson.i = "";
+
+			DeviceBackup serialOperation = new DeviceBackup(testServer, serialJson);
+
+			Test serialTest = new Test(serialOperation);
+			serialTest.setTestName("EmptySerial");
+
+			List<Test> tests = new List<Test>();
+			tests.Add(serialTest);
+			AsyncContext.Run(async() => await Program.buildTests(tests));
+
+			foreach (Test nextTest in Program.getTests())
+			{
+				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
+			}
+		}
+
+
+		[Test()]
+		// Input with Null Serial Number
+		public void NullSerial()
+		{
+			BackupItem[] items = new BackupItem[3];
+			items[0] = getBackupItem(1);
+			items[1] = getBackupItem(2);
+			items[2] = getBackupItem(3);
+
+			DeviceBackupJSON serialJson = new DeviceBackupJSON();
+			serialJson.s = 6;
+			serialJson.b = items;
+			serialJson.i = null;
+
+			DeviceBackup serialOperation = new DeviceBackup(testServer, serialJson);
+
+			Test serialTest = new Test(serialOperation);
+			serialTest.setTestName("NullSerial");
+
+			List<Test> tests = new List<Test>();
+			tests.Add(serialTest);
 			AsyncContext.Run(async() => await Program.buildTests(tests));
 
 			foreach (Test nextTest in Program.getTests())
@@ -204,6 +411,40 @@ namespace ConsoleApplication1
 				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
 			}
 		}
+
+		[Test()]
+		// Multiple valid backup items with simple and dyn code
+		public void ValidBackupItemsSimDyn()
+		{
+			BackupItem[] items = new BackupItem[2];
+			items[0] = new BackupItem();
+			items[0].d = "~20/12345|";
+			items[0].s = 442;
+			items[0].t = new DateTime(2015, 5, 11, 2, 4, 22, 295);
+			items[0].c = false;
+
+			items[1] = getBackupItem(1);
+
+			DeviceBackupJSON serialJson = new DeviceBackupJSON();
+			serialJson.s = 6;
+			serialJson.b = items;
+			serialJson.i = validSerial;
+
+			DeviceBackup serialOperation = new DeviceBackup(testServer, serialJson);
+
+			Test serialTest = new Test(serialOperation);
+			serialTest.setTestName("ValidBackupItemsSimDyn");
+
+			List<Test> tests = new List<Test>();
+			tests.Add(serialTest);
+			AsyncContext.Run(async() => await Program.buildTests(tests));
+
+			foreach (Test nextTest in Program.getTests())
+			{
+				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
+			}
+		}
+
         */
 
 		//TODO: Do this in a cleaner way

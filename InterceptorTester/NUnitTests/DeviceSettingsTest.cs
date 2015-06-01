@@ -15,11 +15,7 @@ namespace ConsoleApplication1
 	[TestFixture()]
 	public class DeviceSettingsTest
     {
-        static Uri testServer = new Uri(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
-        static string validSerial = ConfigurationManager.ConnectionStrings["ValidSerial"].ConnectionString;
-        static string invalidSerial = ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString;
-
-		[Test()]
+        [Test()]
 		// Valid Serial
 		public void ValidSerial() 
 		{
@@ -31,6 +27,48 @@ namespace ConsoleApplication1
 
 			List<Test> tests = new List<Test>();
 			tests.Add(ValidSerial);
+
+			AsyncContext.Run(async() => await Program.buildTests(tests));
+
+			foreach (Test nextTest in Program.getTests())
+			{
+				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
+			}
+		}
+
+		[Test()]
+		// Invalid Serial
+		public void InvalidSerial() 
+		{
+			DeviceSetting dSetting2 = new DeviceSetting(testServer, invalidSerial);
+
+			Test BadSerial = new Test(dSetting2);
+			BadSerial.setTestName("BadSerial");
+
+
+			List<Test> tests = new List<Test>();
+			tests.Add(BadSerial);
+
+			AsyncContext.Run(async() => await Program.buildTests(tests));
+
+			foreach (Test nextTest in Program.getTests())
+			{
+				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
+			}
+		}
+
+		[Test()]
+		// No Serial
+		public void NoSerial() 
+		{
+			DeviceSetting dSetting3 = new DeviceSetting(testServer, null);
+
+			Test NoSerial = new Test(dSetting3);
+			NoSerial.setTestName("NoSerial");
+
+
+			List<Test> tests = new List<Test>();
+			tests.Add(NoSerial);
 
 			AsyncContext.Run(async() => await Program.buildTests(tests));
 
