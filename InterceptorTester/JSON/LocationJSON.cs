@@ -7,17 +7,17 @@ namespace ConsoleApplication1
 
 	public class LocationJSON
 	{
-        LocationJSON(string orgId, string unitSuite, string street, string city, string province, string country, string postalCode)
+        public LocationJSON(string orgId, string unitSuite, string street, string city, string province, string country, string postalCode)
         {
             this.orgId = orgId;
             this.unitSuite = unitSuite;
             this.street = street;
             this.city = city;
-            this.stateProvince = province;
+            this.State = province;
             this.country = country;
             this.postalCode = postalCode;
         }
-
+        /*
 		public bool isValid ()
 		{
 			if ((orgId != null) && (unitSuite != null) && (city != null) && (stateProvince != null) && (country != null) && (postalCode != null))
@@ -26,7 +26,7 @@ namespace ConsoleApplication1
 			}
 
 			return false;
-		}
+		}*/
 
 		public string orgId;
 
@@ -38,7 +38,7 @@ namespace ConsoleApplication1
 
         public string city;
 
-        public string stateProvince;
+        public string State;
 
         public string country;
 
