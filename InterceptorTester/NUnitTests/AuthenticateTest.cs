@@ -15,16 +15,31 @@ namespace ConsoleApplication1
 	[TestFixture()]
 	public class AuthenticateTest
     {
+        JObject sessionToken;
+
+        [TestFixtureSetUp()]
+        public void testSetup()
+        {
+            TestGlobals.setup();
+        }
+
+        [Test()]
         public JObject generateSessionToken()
         {
             AuthenticateJSON json = new AuthenticateJSON();
             //Set up JSON
-            json.username = "username";
-            json.password = "password";
+            json.username = TestGlobals.username;
+            json.password = TestGlobals.password;
             Authenticate authCall = new Authenticate(TestGlobals.testServer, TestGlobals.validSerial, json);
             Test authTest = new Test(authCall);
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(authTest, HTTPOperation.POST));
-            return HTTPSCalls.result.Key;
+            sessionToken = HTTPSCalls.result.Key;
+            return sessionToken;
+        }
+
+        public JObject getSessionToken()
+        {
+            return sessionToken;
         }
 	}
 }

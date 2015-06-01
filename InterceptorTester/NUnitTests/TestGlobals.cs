@@ -19,7 +19,9 @@ namespace ConsoleApplication1
 		public static string validSerial;
 		public static string invalidSerial;
 		public static int delay;
-		public static int maxReps;
+        public static int maxReps;
+        public static string username;
+        public static string password;
 
 		public static void setup()
 		{
@@ -29,6 +31,9 @@ namespace ConsoleApplication1
 				validSerial = ConfigurationManager.ConnectionStrings["ValidSerial"].ConnectionString;
 				invalidSerial = ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString;
 				delay = int.Parse(ConfigurationManager.ConnectionStrings["DelayBetweenRuns"].ConnectionString);
+                username = ConfigurationManager.ConnectionStrings["Username"].ConnectionString;
+                password = ConfigurationManager.ConnectionStrings["Password"].ConnectionString;
+				
 
 				string testRunsString = ConfigurationManager.ConnectionStrings["TimesToRunTests"].ConnectionString;
 				try { maxReps = int.Parse(testRunsString); }
