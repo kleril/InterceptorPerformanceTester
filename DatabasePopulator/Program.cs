@@ -84,12 +84,9 @@ namespace DatabasePopulator
                     basket.Add(ConsoleApplication1.getScan(4));
             }
 
-<<<<<<< Updated upstream
             return basket;
-=======
             ConsoleApplication1.HTTPSCalls calls = new ConsoleApplication1.HTTPSCalls();
 			calls.runTest ();
->>>>>>> Stashed changes
         }
     }
 }

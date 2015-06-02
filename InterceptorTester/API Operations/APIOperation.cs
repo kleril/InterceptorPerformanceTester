@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace ConsoleApplication1
 {
-    abstract class APIOperation
+    public abstract class APIOperation
     {
         protected Uri opHost;
         protected HTTPOperation hOp;
