@@ -110,6 +110,8 @@ namespace ConsoleApplication1
 			Task<double>[] tasks = new Task<double>[TestGlobals.maxReps];
 			for (int i = 0; i < TestGlobals.maxReps; i++)
 			{
+				// thread sleep?  
+
 				System.Threading.Thread.Sleep(TestGlobals.delay);
                 tasks[i] = new HTTPSCalls().runTest(scanTest, HTTPOperation.POST);
 				Console.WriteLine("Test starting:" + i.ToString());
@@ -125,6 +127,8 @@ namespace ConsoleApplication1
 			}
 			results.Close();
 		}
+
+		// add realistic test case
 
 		[Test()]
 		// Valid Single Scan
