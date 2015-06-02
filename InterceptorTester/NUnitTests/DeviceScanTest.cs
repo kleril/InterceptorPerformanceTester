@@ -14,6 +14,58 @@ namespace ConsoleApplication1
 	[TestFixture()]
 	public class DeviceScanTest
 	{
+
+		public Task<Test> getScan(int i)
+		{
+			if (i == 1) {
+				DeviceScanJSON scan1 = new DeviceScanJSON ();
+				scan1.i = TestGlobals.validSerial;
+				scan1.d = "1";
+				scan1.b = null;
+				scan1.s = 4;
+				DeviceScan testDScan1 = new DeviceScan (TestGlobals.testServer, scan1);
+
+				Test scanTest1 = new Test (testDScan1);
+				return scanTest1;
+			} 
+			else if (i == 2)
+			{
+				DeviceScanJSON scan2 = new DeviceScanJSON ();
+				scan2.i = TestGlobals.validSerial;
+				scan2.d = "2";
+				scan2.b = null;
+				scan2.s = 4;
+				DeviceScan testDScan2 = new DeviceScan (TestGlobals.testServer, scan2);
+
+				Test scanTest2 = new Test (testDScan2);
+				return scanTest2;
+			}
+			else if (i == 3)
+			{
+				DeviceScanJSON scan3 = new DeviceScanJSON ();
+				scan3.i = TestGlobals.validSerial;
+				scan3.d = "2";
+				scan3.b = null;
+				scan3.s = 4;
+				DeviceScan testDScan3 = new DeviceScan (TestGlobals.testServer, scan3);
+
+				Test scanTest3 = new Test (testDScan3);
+				return scanTest3;
+			}
+			else if (i == 4)
+			{
+				DeviceScanJSON scan4 = new DeviceScanJSON ();
+				scan4.i = TestGlobals.validSerial;
+				scan4.d = "2";
+				scan4.b = null;
+				scan4.s = 4;
+				DeviceScan testDScan4 = new DeviceScan (TestGlobals.testServer, scan4);
+
+				Test scanTest4 = new Test (testDScan4);
+				return scanTest4;
+			}
+		}
+
 		static StreamWriter results;
 
 		[TestFixtureSetUp()]
@@ -113,7 +165,7 @@ namespace ConsoleApplication1
 
 
 		/*
-[Test()]
+		[Test()]
 		// Valid Single Scan
 		public void ValidSingleScanSimple()
 		{
