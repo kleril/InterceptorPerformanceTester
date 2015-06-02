@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class Test
+    public class Test
     {
         APIOperation operation;
         String expectedResult;
