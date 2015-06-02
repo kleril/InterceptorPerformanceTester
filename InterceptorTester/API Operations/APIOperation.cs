@@ -10,7 +10,7 @@ namespace ConsoleApplication1
     {
         protected Uri opHost;
         protected HTTPOperation hOp;
-        protected HTTPQuery opQuery = null;
+		protected HTTPQuery opQuery = null;
 
         public abstract String getExpectedResult();
 
