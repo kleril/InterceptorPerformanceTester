@@ -12,10 +12,10 @@ using System.IO.Compression;
 namespace ConsoleApplication1
 {
 	[TestFixture()]
-	public class DeviceScanTest
+	static public class DeviceScanTest
 	{
 
-		public Task<Test> getScan(int i)
+		static public Test getScan(int i)
 		{
 			if (i == 1) {
 				DeviceScanJSON scan1 = new DeviceScanJSON ();
@@ -25,7 +25,7 @@ namespace ConsoleApplication1
 				scan1.s = 4;
 				DeviceScan testDScan1 = new DeviceScan (TestGlobals.testServer, scan1);
 
-				Test scanTest1 = new Test (testDScan1);
+				Test scanTest1 = new Test(testDScan1);
 				return scanTest1;
 			} 
 			else if (i == 2)
@@ -52,7 +52,7 @@ namespace ConsoleApplication1
 				Test scanTest3 = new Test (testDScan3);
 				return scanTest3;
 			}
-			else if (i == 4)
+			else
 			{
 				DeviceScanJSON scan4 = new DeviceScanJSON ();
 				scan4.i = TestGlobals.validSerial;
@@ -69,7 +69,7 @@ namespace ConsoleApplication1
 		static StreamWriter results;
 
 		[TestFixtureSetUp()]
-		public void setup()
+		static public void setup()
 		{
 			TestGlobals.setup ();
 		}
@@ -82,7 +82,7 @@ namespace ConsoleApplication1
 
 		[Test()]
 		// Valid Single Scan
-		public void AsyncHTTPSDeviceScan()
+		static public void AsyncHTTPSDeviceScan()
 		{
 			FileStream stream;
 			stream = File.Create(outputFileHTTPSAsync);
@@ -123,7 +123,7 @@ namespace ConsoleApplication1
 
 		[Test()]
 		// Valid Single Scan
-		public void AsyncHTTPDeviceScan()
+		static public void AsyncHTTPDeviceScan()
 		{
 			FileStream stream;
 			stream = File.Create(outputFileHTTPAsync);

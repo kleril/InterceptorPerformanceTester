@@ -85,8 +85,8 @@ namespace DatabasePopulator
             }
 				
             return basket;
+
             ConsoleApplication1.HTTPSCalls calls = new ConsoleApplication1.HTTPSCalls();
-			calls.runTest ();
         }
     }
 }
