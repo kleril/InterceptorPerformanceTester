@@ -13,7 +13,7 @@ using ICSharpCode.SharpZipLib.Core;
 
 namespace ConsoleApplication1{
 
-    class HTTPSCalls
+    public class HTTPSCalls
     {
 		static string certPath = "../../Data/unittestcert.pfx";
         static string certPass = "unittest";

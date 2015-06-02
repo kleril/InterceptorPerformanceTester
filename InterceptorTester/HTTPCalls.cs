@@ -14,7 +14,7 @@ using ICSharpCode.SharpZipLib.Core;
 namespace ConsoleApplication1
 {
     //TODO: Add certificate pass
-    class HTTPCalls
+   public  class HTTPCalls
     {
         public static KeyValuePair<JObject, string> result;
 
