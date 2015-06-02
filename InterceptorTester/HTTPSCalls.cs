@@ -164,11 +164,14 @@ namespace ConsoleApplication1{
                     var upContent = JObject.FromObject(contentToPush);
                     Console.WriteLine(upContent.ToString());
                     var strContent = new System.Net.Http.StringContent(upContent.ToString(), Encoding.UTF8, "application/json");
+                    Console.WriteLine("POST starting...");
 
                     using (HttpResponseMessage response = await client.PostAsync(qUri, strContent))
                     {
+                        Console.WriteLine("POST finished.");
                         JObject jResponse = JObject.FromObject(response);
                         string content = await response.Content.ReadAsStringAsync();
+                        Console.WriteLine("POST request succeeded.");
                         return new KeyValuePair<JObject, string>(jResponse, content);
                     }
                }

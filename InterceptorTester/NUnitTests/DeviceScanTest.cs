@@ -15,7 +15,7 @@ namespace ConsoleApplication1
 	public class DeviceScanTest
 	{
 
-		public Test getScan(int i)
+		public static Test getScan(int i)
 		{
 			if (i == 1) {
 				DeviceScanJSON scan1 = new DeviceScanJSON ();
