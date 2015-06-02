@@ -83,11 +83,7 @@ namespace DatabasePopulator
 					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(2));
 					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(4));
             }
-<<<<<<< HEAD
 				
-=======
-
->>>>>>> origin/master
             return basket;
             ConsoleApplication1.HTTPSCalls calls = new ConsoleApplication1.HTTPSCalls();
 			calls.runTest ();
