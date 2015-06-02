@@ -230,3 +230,5 @@ pip-log.txt
 ConsoleApplication1/bin/Debug/ConsoleApplication1.pdb
 packages/*
 logs/testResults.txt
+DatabasePopulator/DatabasePopulator.csproj
+DatabasePopulator/DatabasePopulator.csproj

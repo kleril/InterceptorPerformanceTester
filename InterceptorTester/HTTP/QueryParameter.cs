@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ConsoleApplication1
 {
-    enum QueryParameter
+    public enum QueryParameter
     {
         //i: serial number
         i,

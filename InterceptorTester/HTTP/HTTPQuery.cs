@@ -6,7 +6,7 @@ using System.Text;
 namespace ConsoleApplication1
 {
     //Handles URL queries
-    class HTTPQuery
+    public class HTTPQuery
     {
         QueryParameter param;
         string value;
