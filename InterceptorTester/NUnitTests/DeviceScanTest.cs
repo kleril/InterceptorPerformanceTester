@@ -15,7 +15,11 @@ namespace ConsoleApplication1
 	static public class DeviceScanTest
 	{
 
+<<<<<<< HEAD
 		static public Test getScan(int i)
+=======
+		public Test getScan(int i)
+>>>>>>> origin/master
 		{
 			if (i == 1) {
 				DeviceScanJSON scan1 = new DeviceScanJSON ();
@@ -64,6 +68,10 @@ namespace ConsoleApplication1
 				Test scanTest4 = new Test (testDScan4);
 				return scanTest4;
 			}
+            else
+            {
+                return null;
+            }
 		}
 
 		static StreamWriter results;

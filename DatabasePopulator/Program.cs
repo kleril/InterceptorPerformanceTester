@@ -35,58 +35,74 @@ namespace DatabasePopulator
 
         private static List<ConsoleApplication1.Test> getBasket(int basketType)
         {
-            List<ConsoleApplication1.Test> basket;
+            List<ConsoleApplication1.Test> basket = new List<ConsoleApplication1.Test>();
+            ConsoleApplication1.DeviceScanTest scanGen = new ConsoleApplication1.DeviceScanTest();
 
             switch (basketType)
             {
                 case 1:
-                    basket.Add(ConsoleApplication1.DeviceScanTest.getScan(3));
-                    basket.Add(ConsoleApplication1.DeviceScanTest.getScan(1));
-                    basket.Add(ConsoleApplication1.DeviceScanTest.getScan(2));
-                    basket.Add(ConsoleApplication1.DeviceScanTest.getScan(4));
+                    basket.Add(scanGen.getScan(3));
+                    basket.Add(scanGen.getScan(1));
+                    basket.Add(scanGen.getScan(2));
+                    basket.Add(scanGen.getScan(4));
                     break;
                 case 2:
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(1));
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(4));
+                    basket.Add(scanGen.getScan(1));
+                    basket.Add(scanGen.getScan(4));
+                    break;
                 case 3:
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(1));
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(1));
+                    basket.Add(scanGen.getScan(3));
+                    basket.Add(scanGen.getScan(4));
+                    break;
                 case 4:
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(1));
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(2));
+                    basket.Add(scanGen.getScan(2));
+                    basket.Add(scanGen.getScan(4));
+                    break;
                 case 5:
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(2));
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(4));
+                    basket.Add(scanGen.getScan(3));
+                    basket.Add(scanGen.getScan(4));
+                    break;
                 case 6:
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(3));
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(2));
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(2));
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(2));
+                    basket.Add(scanGen.getScan(3));
+                    basket.Add(scanGen.getScan(1));
+                    basket.Add(scanGen.getScan(2));
+                    basket.Add(scanGen.getScan(4));
+                    break;
                 case 7:
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(1));
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(3));
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(2));
+                    basket.Add(scanGen.getScan(3));
+                    basket.Add(scanGen.getScan(1));
+                    basket.Add(scanGen.getScan(2));
+                    basket.Add(scanGen.getScan(1));
+                    basket.Add(scanGen.getScan(2));
+                    basket.Add(scanGen.getScan(1));
+                    break;
                 case 8:
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(1));
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(1));
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(2));
+                    basket.Add(scanGen.getScan(3));
+                    basket.Add(scanGen.getScan(4));
+                    break;
                 case 9:
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(1));
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(4));
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(2));
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(2));
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(2));
+                    basket.Add(scanGen.getScan(4));
+                    basket.Add(scanGen.getScan(4));
+                    basket.Add(scanGen.getScan(2));
+                    basket.Add(scanGen.getScan(1));
+                    break;
                 case 10:
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(1));
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(2));
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(2));
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(2));
-					basket.Add(ConsoleApplication1.DeviceScanTest.getScan(4));
+                    basket.Add(scanGen.getScan(1));
+                    basket.Add(scanGen.getScan(1));
+                    basket.Add(scanGen.getScan(1));
+                    basket.Add(scanGen.getScan(2));
+                    break;
+                default:
+                    basket.Add(scanGen.getScan(3));
+                    break;
             }
 				
             return basket;
+<<<<<<< HEAD
 
             ConsoleApplication1.HTTPSCalls calls = new ConsoleApplication1.HTTPSCalls();
+=======
+>>>>>>> origin/master
         }
     }
 }
