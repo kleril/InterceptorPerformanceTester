@@ -98,11 +98,6 @@ namespace DatabasePopulator
             }
 				
             return basket;
-<<<<<<< HEAD
-
-            ConsoleApplication1.HTTPSCalls calls = new ConsoleApplication1.HTTPSCalls();
-=======
->>>>>>> origin/master
         }
     }
 }
