@@ -15,7 +15,7 @@ namespace ConsoleApplication1
 	public class DeviceScanTest
 	{
 
-		public Task<Test> getScan(int i)
+		public Test getScan(int i)
 		{
 			if (i == 1) {
 				DeviceScanJSON scan1 = new DeviceScanJSON ();
@@ -64,6 +64,10 @@ namespace ConsoleApplication1
 				Test scanTest4 = new Test (testDScan4);
 				return scanTest4;
 			}
+            else
+            {
+                return null;
+            }
 		}
 
 		static StreamWriter results;
