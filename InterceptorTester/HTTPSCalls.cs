@@ -22,6 +22,9 @@ namespace ConsoleApplication1{
 
         public static KeyValuePair<JObject, string> result;
 
+        /// <summary>
+        /// Constructor, creates client certificate from file located at: "../../Data/unittestcert.pfx"
+        /// </summary>
         public HTTPSCalls()
         {
             try
@@ -36,7 +39,12 @@ namespace ConsoleApplication1{
             }
         }
 
-        //Do test, output results to file.
+        /// <summary>
+        /// Runs a test with the given http operation type
+        /// </summary>
+        /// <param name="currentTest">Test object containing data for the http request</param>
+        /// <param name="op">One of HTTPOperation's enums (GET,POST,PUT,DELETE)</param>
+        /// <returns>Number of milliseconds the request took</returns>
         public async Task<double> runTest(Test currentTest, HTTPOperation op)
         {
             System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
@@ -49,7 +57,14 @@ namespace ConsoleApplication1{
             Console.WriteLine("Test ending");
             return time;
         }
-        //Do test, output results to file.
+
+        /// <summary>
+        /// Runs a test with the given http operation type
+        /// </summary>
+        /// <param name="currentTest">Test object containing data for the http request</param>
+        /// <param name="op">One of HTTPOperation's enums (GET,POST,PUT,DELETE)</param>
+        /// <param name="client">HTTP Client w/ a header - used for authorization</param>
+        /// <returns>Number of milliseconds the request took</returns>
         public async Task<double> runTest(Test currentTest, HTTPOperation op, HttpClient client)
         {
             System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
@@ -64,7 +79,6 @@ namespace ConsoleApplication1{
             return time;
         }
 
-        //TODOIF: Tweak console output to be a little clearer. Console is made redundant by logs, but it could be useful.
         static async Task callType(Test currentTest, HTTPOperation op)
         {
             switch (op)
@@ -91,7 +105,7 @@ namespace ConsoleApplication1{
                     break;
             }
         }
-        //TODOIF: Tweak console output to be a little clearer. Console is made redundant by logs, but it could be useful.
+
         static async Task callType(Test currentTest, HTTPOperation op, HttpClient client)
         {
             switch (op)

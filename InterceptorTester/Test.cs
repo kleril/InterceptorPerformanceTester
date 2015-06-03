@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
+    //TODO: Clean this (and all dependent files)
     public class Test
     {
         APIOperation operation;
