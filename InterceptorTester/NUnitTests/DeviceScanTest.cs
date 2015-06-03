@@ -20,54 +20,147 @@ namespace ConsoleApplication1
 			if (i == 1) {
 				DeviceScanJSON scan1 = new DeviceScanJSON ();
 				scan1.i = TestGlobals.validSerial;
-				scan1.d = "1";
+				scan1.d = "416000383720";
 				scan1.b = null;
 				scan1.s = 4;
 				DeviceScan testDScan1 = new DeviceScan (TestGlobals.testServer, scan1);
 
-				Test scanTest1 = new Test(testDScan1);
+				Test scanTest1 = new Test (testDScan1);
 				return scanTest1;
-			} 
-			else if (i == 2)
-			{
+			} else if (i == 2) {
 				DeviceScanJSON scan2 = new DeviceScanJSON ();
 				scan2.i = TestGlobals.validSerial;
-				scan2.d = "2";
+				scan2.d = "416000336108";
 				scan2.b = null;
 				scan2.s = 4;
 				DeviceScan testDScan2 = new DeviceScan (TestGlobals.testServer, scan2);
 
 				Test scanTest2 = new Test (testDScan2);
 				return scanTest2;
-			}
-			else if (i == 3)
-			{
+			} else if (i == 3) {
 				DeviceScanJSON scan3 = new DeviceScanJSON ();
 				scan3.i = TestGlobals.validSerial;
-				scan3.d = "2";
+				scan3.d = "416000837315";
 				scan3.b = null;
 				scan3.s = 4;
 				DeviceScan testDScan3 = new DeviceScan (TestGlobals.testServer, scan3);
 
 				Test scanTest3 = new Test (testDScan3);
 				return scanTest3;
-			}
-			else if (i == 4)
-			{
+			} else if (i == 4) {
 				DeviceScanJSON scan4 = new DeviceScanJSON ();
 				scan4.i = TestGlobals.validSerial;
-				scan4.d = "2";
+				scan4.d = "416000837223";
 				scan4.b = null;
 				scan4.s = 4;
 				DeviceScan testDScan4 = new DeviceScan (TestGlobals.testServer, scan4);
 
 				Test scanTest4 = new Test (testDScan4);
 				return scanTest4;
+			} else if (i == 5) {
+				DeviceScanJSON scan4 = new DeviceScanJSON ();
+				scan4.i = TestGlobals.validSerial;
+				scan4.d = "416000837360";
+				scan4.b = null;
+				scan4.s = 4;
+				DeviceScan testDScan4 = new DeviceScan (TestGlobals.testServer, scan4);
+
+				Test scanTest4 = new Test (testDScan4);
+				return scanTest4;
+			} else if (i == 6) {
+				DeviceScanJSON scan4 = new DeviceScanJSON ();
+				scan4.i = TestGlobals.validSerial;
+				scan4.d = "416000338973";
+				scan4.b = null;
+				scan4.s = 4;
+				DeviceScan testDScan4 = new DeviceScan (TestGlobals.testServer, scan4);
+
+				Test scanTest4 = new Test (testDScan4);
+				return scanTest4;
+			} else if (i == 7) {
+				DeviceScanJSON scan4 = new DeviceScanJSON ();
+				scan4.i = TestGlobals.validSerial;
+				scan4.d = "416000837988";
+				scan4.b = null;
+				scan4.s = 4;
+				DeviceScan testDScan4 = new DeviceScan (TestGlobals.testServer, scan4);
+
+				Test scanTest4 = new Test (testDScan4);
+				return scanTest4;
+			} else if (i == 8) {
+				DeviceScanJSON scan4 = new DeviceScanJSON ();
+				scan4.i = TestGlobals.validSerial;
+				scan4.d = "416000336894";
+				scan4.b = null;
+				scan4.s = 4;
+				DeviceScan testDScan4 = new DeviceScan (TestGlobals.testServer, scan4);
+
+				Test scanTest4 = new Test (testDScan4);
+				return scanTest4;
+			} else if (i == 9) {
+				DeviceScanJSON scan4 = new DeviceScanJSON ();
+				scan4.i = TestGlobals.validSerial;
+				scan4.d = "416000837261";
+				scan4.b = null;
+				scan4.s = 4;
+				DeviceScan testDScan4 = new DeviceScan (TestGlobals.testServer, scan4);
+
+				Test scanTest4 = new Test (testDScan4);
+				return scanTest4;
+			} else if (i == 10) {
+				DeviceScanJSON scan4 = new DeviceScanJSON ();
+				scan4.i = TestGlobals.validSerial;
+				scan4.d = "416000837018";
+				scan4.b = null;
+				scan4.s = 4;
+				DeviceScan testDScan4 = new DeviceScan (TestGlobals.testServer, scan4);
+
+				Test scanTest4 = new Test (testDScan4);
+				return scanTest4;
+			} else if (i == 11) {
+				DeviceScanJSON scan4 = new DeviceScanJSON ();
+				scan4.i = TestGlobals.validSerial;
+				scan4.d = "416000338799";
+				scan4.b = null;
+				scan4.s = 4;
+				DeviceScan testDScan4 = new DeviceScan (TestGlobals.testServer, scan4);
+
+				Test scanTest4 = new Test (testDScan4);
+				return scanTest4;
+			} else if (i == 12) {
+				DeviceScanJSON scan4 = new DeviceScanJSON ();
+				scan4.i = TestGlobals.validSerial;
+				scan4.d = "416000837049";
+				scan4.b = null;
+				scan4.s = 4;
+				DeviceScan testDScan4 = new DeviceScan (TestGlobals.testServer, scan4);
+
+				Test scanTest4 = new Test (testDScan4);
+				return scanTest4;
+			} else if (i == 13) {
+				DeviceScanJSON scan4 = new DeviceScanJSON ();
+				scan4.i = TestGlobals.validSerial;
+				scan4.d = "416000837339";
+				scan4.b = null;
+				scan4.s = 4;
+				DeviceScan testDScan4 = new DeviceScan (TestGlobals.testServer, scan4);
+
+				Test scanTest4 = new Test (testDScan4);
+				return scanTest4;
+			} else if (i == 14) {
+				DeviceScanJSON scan4 = new DeviceScanJSON ();
+				scan4.i = TestGlobals.validSerial;
+				scan4.d = "416000837827";
+				scan4.b = null;
+				scan4.s = 4;
+				DeviceScan testDScan4 = new DeviceScan (TestGlobals.testServer, scan4);
+
+				Test scanTest4 = new Test (testDScan4);
+				return scanTest4;
+			} else 
+			{
+				return null;
 			}
-            else
-            {
-                return null;
-            }
 		}
 
 		/*
