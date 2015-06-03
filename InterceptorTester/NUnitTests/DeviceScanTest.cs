@@ -167,33 +167,28 @@ namespace ConsoleApplication1
         }
 
 
-        /*
         [Test()]
         // Valid Single Scan
         public void ValidSingleScanSimple()
         {
 
             DeviceScanJSON testJson = new DeviceScanJSON ();
-            testJson.i = validSerial;
+            testJson.i = TestGlobals.validSerial;
             testJson.d = "1289472198573";
             testJson.b = null;
             testJson.s = 4;
-            DeviceScan testDScan = new DeviceScan(testServer, testJson);
+            DeviceScan testDScan = new DeviceScan(TestGlobals.testServer, testJson);
 
             Test scanTest = new Test(testDScan);
             scanTest.setTestName("ValidSingleScanSimple");
 
-            List<Test> tests = new List<Test>();
-            tests.Add(scanTest);
 
-            AsyncContext.Run(async() => await Program.buildTests(tests));
-
-            foreach (Test nextTest in Program.getTests())
-            {
-                Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-            }            
+            AsyncContext.Run(async() => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+            Assert.AreEqual("201", statusCode);
         }
 
+        /*
         [Test()]
         public void UTF8ScanCode()
         {
