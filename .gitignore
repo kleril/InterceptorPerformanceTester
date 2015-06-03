@@ -232,3 +232,4 @@ packages/*
 logs/testResults.txt
 DatabasePopulator/DatabasePopulator.csproj
 DatabasePopulator/DatabasePopulator.csproj
+logs/PerformanceTestAnalysis.ods
