@@ -20,21 +20,22 @@ namespace DatabasePopulator
 
         private static async void generateScans()
         {
-            int[] pseudoRandDelay = {12,44,52,22,55,93,21,12,4,15,25,35,13,12,24,66,12,12,2,5,76,712,42,120};
-            int[] pseudoRandBasket = {1,2,3,4,5,1,2,3,2,3,4,5,6,2,1,3,5,2,1,5,3,3,2,1,1,1,2,4,5,2,2,2,4,2,2,1,2,2,4,2};
+            int[] pseudoRandDelay = {12,44,52,122,55,93,21,62,49,25,25,65,83,12,24,66,12,12,182,75,76,712,42,120};
+            int[] pseudoRandBasket = {10,4,2,4,5,6,7,8,9,1,5,4,2,1,8,9,7,6,4,5,3,3,5,9,8,7,6,5,4,3,1,2,6,2,2,1,2,2,4,2};
 
             for (int i = 0; i < 100; i++)
             {
-                System.Threading.Thread.Sleep(pseudoRandDelay[i] * 10);
+                System.Threading.Thread.Sleep(pseudoRandDelay[i] * 100);
                 for (int j = 0; j < pseudoRandBasket.Length; j++)
                 {
-                    //System.Threading.Thread.Sleep(pseudoRandDelay[i]);
+                    System.Threading.Thread.Sleep(pseudoRandDelay[i]);
+                    Console.WriteLine("Getting next basket");
                     getBasket(pseudoRandBasket[j]);
                     foreach (ConsoleApplication1.Test nextScan in basket)
                     {
-                        Console.WriteLine("Posting");
+                        Console.WriteLine("Posting Scan");
                         AsyncContext.Run(async () => await new ConsoleApplication1.HTTPSCalls().runTest(nextScan, ConsoleApplication1.HTTPOperation.POST));
-                        Console.WriteLine("Posted");
+                        Console.WriteLine("Posted Scan");
                     }
                 }
             }
