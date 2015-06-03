@@ -11,6 +11,7 @@ using System.IO.Compression;
 
 namespace ConsoleApplication1
 {
+	/*
 	[TestFixture()]
 	public class ICmdTest
 	{
@@ -26,27 +27,7 @@ namespace ConsoleApplication1
 		[TestFixtureSetUp()]
 		public void setup()
 		{
-			/*
-			try
-			{
-				testServer = new Uri(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
-				validSerial = ConfigurationManager.ConnectionStrings["ValidSerial"].ConnectionString;
-				invalidSerial = ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString;
-				delay = int.Parse(ConfigurationManager.ConnectionStrings["DelayBetweenRuns"].ConnectionString);
-
-				string testRunsString = ConfigurationManager.ConnectionStrings["TimesToRunTests"].ConnectionString;
-				try { maxReps = int.Parse(testRunsString); }
-				catch (Exception e)
-				{
-					Console.WriteLine(e);
-					Console.WriteLine("Chances are your appconfig is misconfigured. Double check that performanceTestRuns is an integer and try again.");
-				}
-			}
-			catch (Exception e)
-			{
-				Console.WriteLine(e);
-			}
-			*/
+			
 			TestGlobals.setup ();
 		}
 
@@ -175,6 +156,7 @@ namespace ConsoleApplication1
 
 			results.Close();
 		}
+		*/
 
 		/*
 		[Test()]
@@ -260,7 +242,7 @@ namespace ConsoleApplication1
 				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
 			}
 		}
-		*/ 
 	}
+*/
 }
 

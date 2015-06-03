@@ -11,6 +11,7 @@ using System.IO.Compression;
 
 namespace ConsoleApplication1
 {
+	/*
 	[TestFixture()]
 	public class DeviceBackupTest
 	{
@@ -113,6 +114,7 @@ namespace ConsoleApplication1
 			}
 			results.Close();
 		}
+		*/
 
 
 		/*
@@ -448,6 +450,7 @@ namespace ConsoleApplication1
         */
 
 		//TODO: Do this in a cleaner way
+		/*
 		public BackupItem getBackupItem(int i)
 		{
 			List<BackupItem> items = new List<BackupItem>();
@@ -475,5 +478,6 @@ namespace ConsoleApplication1
 			return items[i-1];
 		}
 	}
+	*/
 }
 

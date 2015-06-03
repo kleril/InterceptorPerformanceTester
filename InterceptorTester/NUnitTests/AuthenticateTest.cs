@@ -14,6 +14,7 @@ using Newtonsoft.Json.Linq;
 
 namespace ConsoleApplication1
 {
+	/*
 	[TestFixture()]
 	public class AuthenticateTest
     {
@@ -67,5 +68,7 @@ namespace ConsoleApplication1
             AuthenticationHeaderValue ret = System.Net.Http.Headers.AuthenticationHeaderValue.Parse(parse);
             return ret;
         }
+
 	}
+	*/
 }

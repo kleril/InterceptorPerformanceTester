@@ -13,7 +13,8 @@ using System.Net.Http;
 
 namespace ConsoleApplication1
 {
-    [TestFixture()]
+    /*
+	[TestFixture()]
     public class LocationTest
     {
 		public static string locIdCreated;
@@ -102,4 +103,5 @@ namespace ConsoleApplication1
             return TestGlobals.locIdCreated;
         }
     }
+    */
 }

@@ -11,6 +11,7 @@ using System.IO.Compression;
 
 namespace ConsoleApplication1
 {
+	/*
 	[TestFixture()]
 	public class DeviceStatusTest
 	{
@@ -125,6 +126,8 @@ namespace ConsoleApplication1
 
 			results.Close();
 		}
+		*/
+
 
 		/*
 		[Test()]
@@ -330,7 +333,8 @@ namespace ConsoleApplication1
 			}
 
 		}
-		*/
+		
 	}
+*/
 }
 

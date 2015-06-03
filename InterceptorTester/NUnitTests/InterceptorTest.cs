@@ -13,7 +13,8 @@ using System.Net.Http;
 
 namespace ConsoleApplication1
 {
-    [TestFixture()]
+    /*
+	[TestFixture()]
     public class InterceptorTest
     {
         [TestFixtureSetUp()]
@@ -51,6 +52,7 @@ namespace ConsoleApplication1
         }
 		*/
 
+		/*
 		[Test()]
 		public static void createInterceptor()
 		{
@@ -112,5 +114,6 @@ namespace ConsoleApplication1
 		}
 
 	}
+*/
 
 }

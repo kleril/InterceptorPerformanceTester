@@ -11,7 +11,8 @@ using System.IO.Compression;
 
 namespace ConsoleApplication1
 {
-	[TestFixture()]
+	
+	//[TestFixture()]
 	public class DeviceScanTest
 	{
 		public static Test getScan(int i)
@@ -69,6 +70,7 @@ namespace ConsoleApplication1
             }
 		}
 
+		/*
 		static StreamWriter results;
 
 		[TestFixtureSetUp()]
@@ -169,6 +171,7 @@ namespace ConsoleApplication1
 
 			results.Close();
 		}
+		*/
 
 
 		/*

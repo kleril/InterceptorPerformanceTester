@@ -14,6 +14,7 @@ using Newtonsoft.Json.Linq;
 
 namespace ConsoleApplication1
 {
+	/*
 	[TestFixture()]
 	public class OrganizationTest
     {
@@ -86,5 +87,6 @@ namespace ConsoleApplication1
             return TestGlobals.orgIdCreated;
         }
 	}
+	*/
 }
 
