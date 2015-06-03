@@ -11,7 +11,6 @@ using System.IO.Compression;
 
 namespace ConsoleApplication1
 {
-	/*
 	[TestFixture()]
 	public class DeviceBackupTest
 	{
@@ -114,10 +113,11 @@ namespace ConsoleApplication1
 			}
 			results.Close();
 		}
-		*/
 
 
-		/*
+
+
+
 		[Test()]
 		// Valid Serial
 		public void ValidSerial()
@@ -129,24 +129,20 @@ namespace ConsoleApplication1
 
 			//BackupJSon
 			DeviceBackupJSON json = new DeviceBackupJSON();
-            json.i = validSerial;
+            json.i = TestGlobals.validSerial;
 			json.s = 4;
 			json.b = items;
 
 			//BackupOperation
-			DeviceBackup operation = new DeviceBackup(testServer, json);
+			DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, json);
 
 			//Test
 			Test backupTest = new Test(operation);
 			backupTest.setTestName("ValidSerial");
-			List<Test> tests = new List<Test>();
-			tests.Add(backupTest);
-			AsyncContext.Run(async() => await Program.buildTests(tests));
 
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("201", statusCode);
 		}
 
 		[Test()]
@@ -158,26 +154,22 @@ namespace ConsoleApplication1
 
 			//BackupJSon
 			DeviceBackupJSON json = new DeviceBackupJSON();
-            json.i = validSerial;
+			json.i = TestGlobals.validSerial;
 			json.s = 4;
 			json.b = items;
 
 			//BackupOperation
-			DeviceBackup operation = new DeviceBackup(testServer, json);
+			DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, json);
 
 			//Test
 			Test backupTest = new Test(operation);
 			backupTest.setTestName("ValidSingleBackupItem");
-			List<Test> tests = new List<Test>();
-			tests.Add(backupTest);
-			AsyncContext.Run(async() => await Program.buildTests(tests));
 
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("201", statusCode);
 		}
-
+			
 		[Test()]
 		// Invalid Single Backup Item
 		public void InvalidSingleBackupItem()
@@ -188,22 +180,17 @@ namespace ConsoleApplication1
 			failItems[0] = failItem;
 
 			DeviceBackupJSON failJson = new DeviceBackupJSON();
-            failJson.i = validSerial;
+			failJson.i = TestGlobals.validSerial;
 			failJson.s = 5;
 			failJson.b = failItems;
 
-			DeviceBackup failOperation = new DeviceBackup(testServer, failJson);
+			DeviceBackup failOperation = new DeviceBackup(TestGlobals.testServer, failJson);
 			Test failingTest = new Test(failOperation);
 			failingTest.setTestName("InvalidSingleBackupItem");
 
-			List<Test> tests = new List<Test>();
-			tests.Add(failingTest);
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(failingTest, HTTPOperation.POST));
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("400", statusCode);
 		}
 
 		[Test()]
@@ -219,22 +206,17 @@ namespace ConsoleApplication1
 			failItems[3] = getBackupItem(3);
 
 			DeviceBackupJSON failJson = new DeviceBackupJSON();
-            failJson.i = validSerial;
+			failJson.i = TestGlobals.validSerial;
 			failJson.s = 5;
 			failJson.b = failItems;
 
-			DeviceBackup failOperation = new DeviceBackup(testServer, failJson);
+			DeviceBackup failOperation = new DeviceBackup(TestGlobals.testServer, failJson);
 			Test failingTest = new Test(failOperation);
 			failingTest.setTestName("InvalidBackupItems");
 
-			List<Test> tests = new List<Test>();
-			tests.Add(failingTest);
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(failingTest, HTTPOperation.POST));
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("400", statusCode);
 		}
 
 		[Test()]
@@ -247,23 +229,18 @@ namespace ConsoleApplication1
 			items[2] = getBackupItem(3);
 
 			DeviceBackupJSON serialJson = new DeviceBackupJSON();
-			serialJson.i = invalidSerial;
+			serialJson.i = TestGlobals.invalidSerial;
 			serialJson.s = 6;
 			serialJson.b = items;
 
-			DeviceBackup serialOperation = new DeviceBackup(testServer, serialJson);
+			DeviceBackup serialOperation = new DeviceBackup(TestGlobals.testServer, serialJson);
 
 			Test serialTest = new Test(serialOperation);
 			serialTest.setTestName("BadSerial");
 
-			List<Test> tests = new List<Test>();
-			tests.Add(serialTest);
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("400", statusCode);
 		}
 
 		[Test()]
@@ -273,23 +250,18 @@ namespace ConsoleApplication1
 			BackupItem[] items = new BackupItem[0];
 
 			DeviceBackupJSON emptyJson = new DeviceBackupJSON();
-            emptyJson.i = validSerial;
+			emptyJson.i = TestGlobals.validSerial;
 			emptyJson.s = 8;
 			emptyJson.b = items;
 
-			DeviceBackup emptyOperation = new DeviceBackup(testServer, emptyJson);
+			DeviceBackup emptyOperation = new DeviceBackup(TestGlobals.testServer, emptyJson);
 			Test emptyTest = new Test(emptyOperation);
 			emptyTest.setTestName("NoBackupItems");
 
 
-			List<Test> tests = new List<Test>();
-			tests.Add(emptyTest);
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(emptyTest, HTTPOperation.POST));
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("201", statusCode);
 		}
 
 		[Test()]
@@ -306,19 +278,14 @@ namespace ConsoleApplication1
 			serialJson.b = items;
 			serialJson.i = "";
 
-			DeviceBackup serialOperation = new DeviceBackup(testServer, serialJson);
+			DeviceBackup serialOperation = new DeviceBackup(TestGlobals.testServer, serialJson);
 
 			Test serialTest = new Test(serialOperation);
 			serialTest.setTestName("EmptySerial");
 
-			List<Test> tests = new List<Test>();
-			tests.Add(serialTest);
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("400", statusCode);
 		}
 
 
@@ -336,19 +303,14 @@ namespace ConsoleApplication1
 			serialJson.b = items;
 			serialJson.i = null;
 
-			DeviceBackup serialOperation = new DeviceBackup(testServer, serialJson);
+			DeviceBackup serialOperation = new DeviceBackup(TestGlobals.testServer, serialJson);
 
 			Test serialTest = new Test(serialOperation);
 			serialTest.setTestName("NullSerial");
 
-			List<Test> tests = new List<Test>();
-			tests.Add(serialTest);
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("201", statusCode);
 		}
 
 		[Test()]
@@ -365,21 +327,16 @@ namespace ConsoleApplication1
 			DeviceBackupJSON serialJson = new DeviceBackupJSON();
 			serialJson.s = 6;
 			serialJson.b = items;
-            serialJson.i = validSerial;
+			serialJson.i = TestGlobals.validSerial;
 
-			DeviceBackup serialOperation = new DeviceBackup(testServer, serialJson);
+			DeviceBackup serialOperation = new DeviceBackup(TestGlobals.testServer, serialJson);
 
 			Test serialTest = new Test(serialOperation);
 			serialTest.setTestName("SpecialDynCode");
 
-			List<Test> tests = new List<Test>();
-			tests.Add(serialTest);
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("201", statusCode);
 		}
 
 
@@ -397,21 +354,16 @@ namespace ConsoleApplication1
 			DeviceBackupJSON serialJson = new DeviceBackupJSON();
 			serialJson.s = 6;
 			serialJson.b = items;
-            serialJson.i = validSerial;
+			serialJson.i = TestGlobals.validSerial;
 
-			DeviceBackup serialOperation = new DeviceBackup(testServer, serialJson);
+			DeviceBackup serialOperation = new DeviceBackup(TestGlobals.testServer, serialJson);
 
 			Test serialTest = new Test(serialOperation);
 			serialTest.setTestName("NotSpecialDynCode");
 
-			List<Test> tests = new List<Test>();
-			tests.Add(serialTest);
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("201", statusCode);
 		}
 
 		[Test()]
@@ -430,27 +382,21 @@ namespace ConsoleApplication1
 			DeviceBackupJSON serialJson = new DeviceBackupJSON();
 			serialJson.s = 6;
 			serialJson.b = items;
-			serialJson.i = validSerial;
+			serialJson.i = TestGlobals.validSerial;
 
-			DeviceBackup serialOperation = new DeviceBackup(testServer, serialJson);
+			DeviceBackup serialOperation = new DeviceBackup(TestGlobals.testServer, serialJson);
 
 			Test serialTest = new Test(serialOperation);
 			serialTest.setTestName("ValidBackupItemsSimDyn");
 
-			List<Test> tests = new List<Test>();
-			tests.Add(serialTest);
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("201", statusCode);
 		}
 
-        */
+       
 
 		//TODO: Do this in a cleaner way
-		/*
 		public BackupItem getBackupItem(int i)
 		{
 			List<BackupItem> items = new List<BackupItem>();
@@ -478,6 +424,5 @@ namespace ConsoleApplication1
 			return items[i-1];
 		}
 	}
-	*/
 }
 

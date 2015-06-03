@@ -11,7 +11,6 @@ using System.IO.Compression;
 
 namespace ConsoleApplication1
 {
-	/*
 	[TestFixture()]
 	public class DeviceSettingsTest
     {
@@ -19,65 +18,49 @@ namespace ConsoleApplication1
 		// Valid Serial
 		public void ValidSerial() 
 		{
-			DeviceSetting dSetting1 = new DeviceSetting(testServer, validSerial);
+			DeviceSetting dSetting1 = new DeviceSetting(TestGlobals.testServer, TestGlobals.validSerial);
 
 			Test ValidSerial = new Test(dSetting1);
 			ValidSerial.setTestName("ValidSerial");
 
 
-			List<Test> tests = new List<Test>();
-			tests.Add(ValidSerial);
+			AsyncContext.Run(async() => await new HTTPSCalls().runTest(ValidSerial, HTTPOperation.GET));
 
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("200", statusCode);
 		}
 
 		[Test()]
 		// Invalid Serial
 		public void InvalidSerial() 
 		{
-			DeviceSetting dSetting2 = new DeviceSetting(testServer, invalidSerial);
+			DeviceSetting dSetting2 = new DeviceSetting(TestGlobals.testServer, TestGlobals.invalidSerial);
 
 			Test BadSerial = new Test(dSetting2);
 			BadSerial.setTestName("BadSerial");
 
 
-			List<Test> tests = new List<Test>();
-			tests.Add(BadSerial);
+			AsyncContext.Run(async() => await new HTTPSCalls().runTest(BadSerial, HTTPOperation.GET));
 
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("400", statusCode);
 		}
 
 		[Test()]
 		// No Serial
 		public void NoSerial() 
 		{
-			DeviceSetting dSetting3 = new DeviceSetting(testServer, null);
+			DeviceSetting dSetting3 = new DeviceSetting(TestGlobals.testServer, null);
 
 			Test NoSerial = new Test(dSetting3);
 			NoSerial.setTestName("NoSerial");
 
 
-			List<Test> tests = new List<Test>();
-			tests.Add(NoSerial);
+			AsyncContext.Run(async() => await new HTTPSCalls().runTest(NoSerial, HTTPOperation.GET));
 
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("400", statusCode);
 		}
 	}
-	*/
 }
 

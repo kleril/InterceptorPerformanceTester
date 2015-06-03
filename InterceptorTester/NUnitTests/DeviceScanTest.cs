@@ -228,6 +228,8 @@ namespace ConsoleApplication1
         }
 
 
+		// Simple Scan Data
+
         [Test()]
         // Valid Single Scan
         public void ValidSingleScanSimple()
@@ -627,7 +629,7 @@ namespace ConsoleApplication1
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
-            Assert.AreEqual("201", statusCode);
+            Assert.AreEqual("400", statusCode);
         }
     }
 }
