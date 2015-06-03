@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Nito.AsyncEx;
 
 namespace DatabasePopulator
 {
@@ -31,7 +32,7 @@ namespace DatabasePopulator
                     foreach (ConsoleApplication1.Test nextScan in basket)
                     {
                         Console.WriteLine("Posting");
-                        await new ConsoleApplication1.HTTPSCalls().runTest(nextScan, ConsoleApplication1.HTTPOperation.POST);
+                        AsyncContext.Run(async () => await new ConsoleApplication1.HTTPSCalls().runTest(nextScan, ConsoleApplication1.HTTPOperation.POST));
                         Console.WriteLine("Posted");
                     }
                 }
