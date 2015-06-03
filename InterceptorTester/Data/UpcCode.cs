@@ -13,14 +13,9 @@ namespace ConsoleApplication1
         Printer,
         Warranty,
         ExternalHDD,
-<<<<<<< HEAD
 		Keyboard,
-=======
-        Keyboard,
         Speakers,
->>>>>>> origin/master
-        Mouse,
-		Speaker,
+		Mouse,
         LaptopCase13Inch,
         Headset,
         LaptopCase11Inch,

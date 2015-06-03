@@ -83,7 +83,7 @@ namespace ConsoleApplication1
 				Test scanTest4 = new Test (testDScan4);
 				return scanTest4;
 			} 
-			else if (item = UpcCode.Speaker) {
+			else if (item = UpcCode.Speakers) {
 				DeviceScanJSON scan4 = new DeviceScanJSON ();
 				scan4.i = TestGlobals.validSerial;
 				scan4.d = "416000837988";
