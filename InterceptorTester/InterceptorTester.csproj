@@ -85,7 +85,6 @@
     <Compile Include="API Operations\DeviceStatus.cs" />
     <Compile Include="API Operations\GenericRequest.cs" />
     <Compile Include="API Operations\ICmd.cs" />
-    <Compile Include="Data\UpcCode.cs" />
     <Compile Include="Data\Scan.cs" />
     <Compile Include="HTTP\HTTPHandler.cs" />
     <Compile Include="HTTP\HTTPOperation.cs" />
