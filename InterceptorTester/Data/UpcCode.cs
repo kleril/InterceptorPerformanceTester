@@ -13,6 +13,8 @@ namespace ConsoleApplication1
         Printer,
         Warranty,
         ExternalHDD,
+        Keyboard,
+        Speakers,
         Mouse,
         LaptopCase13Inch,
         Headset,
