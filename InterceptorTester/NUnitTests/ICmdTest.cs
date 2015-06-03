@@ -11,7 +11,6 @@ using System.IO.Compression;
 
 namespace ConsoleApplication1
 {
-	/*
 	[TestFixture()]
 	public class ICmdTest
 	{
@@ -156,95 +155,70 @@ namespace ConsoleApplication1
 
 			results.Close();
 		}
-		*/
 
 
 
-		/*
+
+
 		[Test()]
 		public void ValidSerial()
 		{
 
 			//Valid
-			ICmd validICmd = new ICmd(testServer, validSerial);
+			ICmd validICmd = new ICmd(TestGlobals.testServer, TestGlobals.validSerial);
 
 			Test validTest = new Test(validICmd);
 			validTest.setTestName("ValidSerial");
 
 
-			List<Test> tests = new List<Test>();
-			tests.Add(validTest);
+			AsyncContext.Run(async() => await new HTTPSCalls().runTest(validTest, HTTPOperation.GET));
 
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("200", statusCode);
 		}
 
 		[Test()]
 		public void InvalidSerial()
 		{
 			//Invalid
-			ICmd invalidICmd = new ICmd(testServer, invalidSerial);
+			ICmd invalidICmd = new ICmd(TestGlobals.testServer, TestGlobals.invalidSerial);
 			Test invalidTest = new Test(invalidICmd);
 			invalidTest.setTestName("BadSerial");
 
-			List<Test> tests = new List<Test>();
-			tests.Add(invalidTest);
+			AsyncContext.Run(async() => await new HTTPSCalls().runTest(invalidTest, HTTPOperation.GET));
 
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-			foreach (Test nextTest in Program.getTests())
-			{
-				Console.WriteLine(nextTest.getOperation().getUri());
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("400", statusCode);
 		}
 
 		[Test()]
 		public void MissingSerial()
 		{
 			//Missing
-			ICmd missingICmd = new ICmd(testServer, null);
+			ICmd missingICmd = new ICmd(TestGlobals.testServer, null);
 			Test missingTest = new Test(missingICmd);
 			missingTest.setTestName("EmptySerial");
 
+			AsyncContext.Run(async() => await new HTTPSCalls().runTest(missingTest, HTTPOperation.GET));
 
-			List<Test> tests = new List<Test>();
-			tests.Add(missingTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Console.WriteLine(nextTest.getOperation().getUri());
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("400", statusCode);
 		}
 
 		[Test()]
 		public void NoQuery()
 		{
 			//Missing
-			ICmd missingICmd = new ICmd(testServer, null);
+			ICmd missingICmd = new ICmd(TestGlobals.testServer, null);
 			missingICmd.noQuery = true;
 			Test missingTest = new Test(missingICmd);
 			missingTest.setTestName("NoQuery");
 
+			AsyncContext.Run(async() => await new HTTPSCalls().runTest(missingTest, HTTPOperation.GET));
 
-			List<Test> tests = new List<Test>();
-			tests.Add(missingTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Console.WriteLine(nextTest.getOperation().getUri());
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("400", statusCode);
 		}
 	}
-*/
 }
 

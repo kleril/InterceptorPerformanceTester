@@ -24,9 +24,9 @@ namespace ConsoleApplication1
             TestGlobals.setup ();
         }
 
-        static string outputFileSync = "../../../logs/SyncDeviceScanPerformanceTest.csv";
-		static string outputFileHTTPSSync = "../../../logs/SyncHTTPSDeviceScanPerformanceTest.csv";
+        static string outputFileHTTPSSync = "../../../logs/SyncHTTPSDeviceScanPerformanceTest.csv";
         static string outputFileHTTPAsync = "../../../logs/AsyncHTTPDeviceScanPerformanceTest.csv";
+		static string outputFileHTTPSync = "../../../logs/SyncHTTPDeviceScanPerformanceTest.csv";
         static string outputFileHTTPSAsync = "../../../logs/AsyncHTTPSDeviceScanPerformanceTest.csv";
         static string outputFileMultiClientScans = "../../../logs/MultiClientScans.csv";
 
@@ -110,7 +110,7 @@ namespace ConsoleApplication1
 		public void SyncHTTPDeviceScan()
 		{
 			FileStream stream;
-			stream = File.Create(outputFileHTTPSSync);
+			stream = File.Create(outputFileHTTPSync);
 			results = new StreamWriter(stream);
 
 			for (int i = 0; i < TestGlobals.maxReps; i++)
@@ -280,9 +280,9 @@ namespace ConsoleApplication1
             Test scanTest = new Test(testDScan);
             scanTest.setTestName("ASCIIScanCode");
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
-            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
-            Assert.AreEqual("201", statusCode);
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("201", statusCode);
         }
 
         [Test()]

@@ -11,7 +11,6 @@ using System.IO.Compression;
 
 namespace ConsoleApplication1
 {
-	/*
 	[TestFixture()]
 	public class DeviceStatusTest
 	{
@@ -126,10 +125,10 @@ namespace ConsoleApplication1
 
 			results.Close();
 		}
-		*/
 
 
-		/*
+
+
 		[Test()]
 		public void ValidSerial()
 		{
@@ -147,7 +146,7 @@ namespace ConsoleApplication1
 			err[2] = "qwerty";
 			status.dynCodeFormat = err;
 			status.errorLog = err;
-            status.intSerial = validSerial;
+            status.intSerial = TestGlobals.validSerial;
 			status.reportURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceStatus";
 			status.requestTimeoutValue = "8000";
 			status.revId = "52987";
@@ -155,23 +154,14 @@ namespace ConsoleApplication1
 			status.seqNum = "87";
 			status.startURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceSetting";
 
-			DeviceStatus operation = new DeviceStatus(server, status);
+			DeviceStatus operation = new DeviceStatus(TestGlobals.testServer, status);
 			Test statusTest = new Test(operation);
 			statusTest.setTestName("ValidSerial");
 
 
-			List<Test> tests = new List<Test>();
-			//for (int i = 0; i < 1000; i++) 
-			//{
-			tests.Add (statusTest);
-			//}
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(statusTest, HTTPOperation.POST));
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("201", statusCode);
 		}
 
 
@@ -191,7 +181,7 @@ namespace ConsoleApplication1
 			err[1] = "wasd";
 			err[2] = "qwerty";
 			status.errorLog = err;
-			status.intSerial = invalidSerial;
+			status.intSerial = TestGlobals.invalidSerial;
 			status.reportURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceStatus";
 			status.requestTimeoutValue = "8000";
 			status.revId = "52987";
@@ -199,20 +189,14 @@ namespace ConsoleApplication1
 			status.seqNum = "87";
 			status.startURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceSetting";
 
-			DeviceStatus operation = new DeviceStatus(server, status);
+			DeviceStatus operation = new DeviceStatus(TestGlobals.testServer, status);
 			Test statusTest = new Test(operation);
 			statusTest.setTestName("BadSerial");
 
 
-			List<Test> tests = new List<Test>();
-			tests.Add(statusTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(statusTest, HTTPOperation.POST));
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("400", statusCode);
 		}
 
 		[Test()]
@@ -238,20 +222,14 @@ namespace ConsoleApplication1
 			status.seqNum = "87";
 			status.startURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceSetting";
 
-			DeviceStatus operation = new DeviceStatus(server, status);
+			DeviceStatus operation = new DeviceStatus(TestGlobals.testServer, status);
 			Test statusTest = new Test(operation);
 			statusTest.setTestName("EmptySerial");
 
 
-			List<Test> tests = new List<Test>();
-			tests.Add(statusTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(statusTest, HTTPOperation.POST));
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("400", statusCode);
 		}
 
 		[Test()]
@@ -277,20 +255,14 @@ namespace ConsoleApplication1
 			status.seqNum = "87";
 			status.startURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceSetting";
 
-			DeviceStatus operation = new DeviceStatus(server, status);
+			DeviceStatus operation = new DeviceStatus(TestGlobals.testServer, status);
 			Test statusTest = new Test(operation);
 			statusTest.setTestName("NullSerial");
 
 
-			List<Test> tests = new List<Test>();
-			tests.Add(statusTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(statusTest, HTTPOperation.POST));
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("400", statusCode);
 		}
 
 		[Test()]
@@ -309,7 +281,7 @@ namespace ConsoleApplication1
 			err[1] = "wasd";
 			err[2] = "qwerty";
 			status.errorLog = err;
-			status.intSerial = validSerial;
+			status.intSerial = TestGlobals.validSerial;
 			status.reportURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceStatus";
 			status.requestTimeoutValue = "8000";
 			status.revId = "52987";
@@ -317,24 +289,17 @@ namespace ConsoleApplication1
 			status.seqNum = "87";
 			status.startURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceSetting";
 
-			DeviceStatus operation = new DeviceStatus(server, status);
+			DeviceStatus operation = new DeviceStatus(TestGlobals.testServer, status);
 			Test statusTest = new Test(operation);
 			statusTest.setTestName("AlertDataStore");
 
 
-			List<Test> tests = new List<Test>();
-			tests.Add(statusTest);
-
-			AsyncContext.Run(async() => await Program.buildTests(tests));
-
-			foreach (Test nextTest in Program.getTests())
-			{
-				Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-			}
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(statusTest, HTTPOperation.POST));
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			Assert.AreEqual("201", statusCode);
 
 		}
 		
 	}
-*/
 }
 
