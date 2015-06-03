@@ -25,13 +25,45 @@ namespace ConsoleApplication1
         }
 
         static string outputFileSync = "../../../logs/SyncDeviceScanPerformanceTest.csv";
+		static string outputFileHTTPSSync = "../../../logs/SyncHTTPSDeviceScanPerformanceTest.csv";
         static string outputFileHTTPAsync = "../../../logs/AsyncHTTPDeviceScanPerformanceTest.csv";
         static string outputFileHTTPSAsync = "../../../logs/AsyncHTTPSDeviceScanPerformanceTest.csv";
         static string outputFileMultiClientScans = "../../../logs/MultiClientScans.csv";
 
         // simple scan code
 
-        [Test()]
+		[Test()]
+		public void SyncHTTPSDeviceScan()
+		{
+			FileStream stream;
+			stream = File.Create(outputFileHTTPSSync);
+			results = new StreamWriter(stream);
+
+			for (int i = 0; i < TestGlobals.maxReps; i++)
+			{
+				System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+				DeviceScanJSON testJson = new DeviceScanJSON ();
+				testJson.i = TestGlobals.validSerial;
+				testJson.d = "1289472198573";
+				testJson.b = null;
+				testJson.s = 4;
+				DeviceScan testDScan = new DeviceScan(TestGlobals.testServer, testJson);
+
+				Test scanTest = new Test(testDScan);
+				scanTest.setTestName("ValidSingleScanSimple");
+
+				timer.Start();
+				AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.GET));
+				timer.Stop();
+				double time = timer.Elapsed.TotalMilliseconds;
+				results.WriteLine("Test Time," + time);
+				System.Threading.Thread.Sleep (TestGlobals.delay);
+				//Verify Server didn't throw up
+			}
+			results.Close();
+		}
+
+		[Test()]
         // Valid Single Scan
         public void AsyncHTTPSDeviceScan()
         {
@@ -73,8 +105,37 @@ namespace ConsoleApplication1
             }
             results.Close();
         }
+			
+		[Test()]
+		public void SyncHTTPDeviceScan()
+		{
+			FileStream stream;
+			stream = File.Create(outputFileHTTPSSync);
+			results = new StreamWriter(stream);
 
-        // add realistic test case
+			for (int i = 0; i < TestGlobals.maxReps; i++)
+			{
+				System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+				DeviceScanJSON testJson = new DeviceScanJSON ();
+				testJson.i = TestGlobals.validSerial;
+				testJson.d = "1289472198573";
+				testJson.b = null;
+				testJson.s = 4;
+				DeviceScan testDScan = new DeviceScan(TestGlobals.testServer, testJson);
+
+				Test scanTest = new Test(testDScan);
+				scanTest.setTestName("ValidSingleScanSimple");
+
+				timer.Start();
+				AsyncContext.Run(async () => await new HTTPCalls().runTest(scanTest, HTTPOperation.GET));
+				timer.Stop();
+				double time = timer.Elapsed.TotalMilliseconds;
+				results.WriteLine("Test Time," + time);
+				System.Threading.Thread.Sleep (TestGlobals.delay);
+				//Verify Server didn't throw up
+			}
+			results.Close();
+		}
 
         [Test()]
         // Valid Single Scan

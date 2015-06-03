@@ -152,7 +152,6 @@ namespace ConsoleApplication1
 
 			results.Close();
 		}
-
 		[Test()]
 		public void ValidSerial()
 		{
