@@ -21,6 +21,7 @@ namespace ConsoleApplication1
 		static string outputFileHTTPSAsync = "../../../logs/AsyncHTTPSICmdPerformanceTest.csv";
 		static string outputFileHTTPSync = "../../../logs/SyncHTTPICmdPerformanceTest.csv";
 		static string outputFileHTTPAsync = "../../../logs/AsyncHTTPICmdPerformanceTest.csv";
+		static string outputFileMultiClientICmd = "../../../logs/MultiClientICmd.csv";
 
 		[TestFixtureSetUp()]
 		public void setup()
@@ -153,27 +154,45 @@ namespace ConsoleApplication1
 			results.Close();
 		}
 
-<<<<<<< HEAD
-
-
-
-
 		[Test()]
-		public void ValidSerial()
+		//Multi-client simultaneious scans
+		public void multiClientICmd()
 		{
+			FileStream stream;
+			stream = File.Create(outputFileMultiClientICmd);
+			results = new StreamWriter(stream);
 
-			//Valid
-			ICmd validICmd = new ICmd(TestGlobals.testServer, TestGlobals.validSerial);
-
-			Test validTest = new Test(validICmd);
-			validTest.setTestName("ValidSerial");
+			ICmd validICmd1 = new ICmd(TestGlobals.testServer, TestGlobals.validSerial);
+			Test validTest1 = new Test(validICmd1);
+			validTest1.setTestName("ValidSerial");
 
 
-			AsyncContext.Run(async() => await new HTTPSCalls().runTest(validTest, HTTPOperation.GET));
+			ICmd validICmd2 = new ICmd(TestGlobals.testServer, TestGlobals.validSerial);
+			Test validTest2 = new Test(validICmd2);
+			validTest2.setTestName("ValidSerial");
 
-			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
-			Assert.AreEqual("200", statusCode);
-=======
+			// Construct started tasks
+			Task<double>[,] tasks = new Task<double>[TestGlobals.maxReps,2];
+			for (int i = 0; i < TestGlobals.maxReps; i++)
+			{
+				System.Threading.Thread.Sleep(TestGlobals.delay);
+				tasks[i,0] = new HTTPCalls().runTest(validTest1, HTTPOperation.GET);
+				tasks[i,1] = new HTTPCalls().runTest(validTest2, HTTPOperation.GET);
+				Console.WriteLine("Test starting:" + i.ToString());
+				Task.WaitAll(tasks[i,0], tasks[i,1]);
+			}
+
+			foreach (Task<double> nextResult in tasks)
+			{
+				results.WriteLine("Test Time," + nextResult.Result);
+			}
+
+			results.Close();
+		}
+
+			
+
+
 		[Test()]
 		public void ValidSerial()
 		{
@@ -184,81 +203,45 @@ namespace ConsoleApplication1
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(validTest, HTTPOperation.GET));
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("200", statusCode);
->>>>>>> origin/master
 		}
 
 
 		[Test()]
 		public void InvalidSerial()
 		{
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
 			ICmd invalidICmd = new ICmd(TestGlobals.testServer, TestGlobals.invalidSerial);
 			Test invalidTest = new Test(invalidICmd);
 			invalidTest.setTestName("BadSerial");
 
-<<<<<<< HEAD
-			AsyncContext.Run(async() => await new HTTPSCalls().runTest(invalidTest, HTTPOperation.GET));
-
-			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
-			Assert.AreEqual("400", statusCode);
-
-=======
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(invalidTest, HTTPOperation.GET));
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("400", statusCode);
->>>>>>> origin/master
+
 		}
 
 		[Test()]
 		public void MissingSerial()
 		{
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
 			ICmd missingICmd = new ICmd(TestGlobals.testServer, null);
 			Test missingTest = new Test(missingICmd);
 			missingTest.setTestName("EmptySerial");
 
-<<<<<<< HEAD
-			AsyncContext.Run(async() => await new HTTPSCalls().runTest(missingTest, HTTPOperation.GET));
-
-			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
-			Assert.AreEqual("400", statusCode);
-
-=======
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(missingTest, HTTPOperation.GET));
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("400", statusCode);
->>>>>>> origin/master
 		}
 
 		[Test()]
 		public void NoQuery()
 		{
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
 			ICmd missingICmd = new ICmd(TestGlobals.testServer, null);
 			missingICmd.noQuery = true;
 			Test missingTest = new Test(missingICmd);
 			missingTest.setTestName("NoQuery");
 
-<<<<<<< HEAD
-			AsyncContext.Run(async() => await new HTTPSCalls().runTest(missingTest, HTTPOperation.GET));
-
-			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
-			Assert.AreEqual("400", statusCode);
-
-=======
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(missingTest, HTTPOperation.GET));
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("404", statusCode);
->>>>>>> origin/master
 		}
 	}
 }

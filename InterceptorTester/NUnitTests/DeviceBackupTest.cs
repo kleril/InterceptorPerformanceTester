@@ -18,14 +18,53 @@ namespace ConsoleApplication1
 
 		static StreamWriter results;
 
-		static string outputFileSync = "../../../logs/SyncDeviceBackupTestPerformanceTest.csv";
 		static string outputFileHTTPSAsync = "../../../logs/AsyncHTTPSDeviceBackupTestPerformanceTest.csv";
 		static string outputFileHTTPAsync = "../../../logs/AsyncHTTPDeviceBackupTestPerformanceTest.csv";
+		static string outputFileHTTPSSync = "../../../logs/SyncHTTPSDeviceBackupTestPerformanceTest.csv";
+		static string outputFileHTTPSync = "../../../logs/SyncHTTPDeviceBackupTestPerformanceTest.csv";
+		static string outputFileMultiClientDeviceBackup = "../../../logs/MultiClientDeviceBackup.csv";
 
 		[TestFixtureSetUp()]
 		public void setup()
 		{
 			TestGlobals.setup();
+		}
+
+		[Test()]
+		public void SyncHTTPSDeviceBackup()
+		{
+			FileStream stream;
+			stream = File.Create(outputFileHTTPSSync);
+			results = new StreamWriter(stream);
+
+			for (int i = 0; i < TestGlobals.maxReps; i++)
+			{
+				System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+				BackupItem[] items = new BackupItem[1];
+				items[0] = getBackupItem(1);
+
+				//BackupJSon
+				DeviceBackupJSON json = new DeviceBackupJSON();
+				json.i = TestGlobals.validSerial;
+				json.s = 4;
+				json.b = items;
+
+				//BackupOperation
+				DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, json);
+
+				//Test
+				Test backupTest = new Test(operation);
+				backupTest.setTestName("ValidSingleBackupItem");
+
+				timer.Start();
+				AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
+				timer.Stop();
+				double time = timer.Elapsed.TotalMilliseconds;
+				results.WriteLine("Test Time," + time);
+				System.Threading.Thread.Sleep (TestGlobals.delay);
+				//Verify Server didn't throw up
+			}
+			results.Close();
 		}
 
 		[Test()]
@@ -72,6 +111,43 @@ namespace ConsoleApplication1
 		}
 
 		[Test()]
+		public void SyncHTTPDeviceBackup()
+		{
+			FileStream stream;
+			stream = File.Create(outputFileHTTPSync);
+			results = new StreamWriter(stream);
+
+			for (int i = 0; i < TestGlobals.maxReps; i++)
+			{
+				System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+				BackupItem[] items = new BackupItem[1];
+				items[0] = getBackupItem(1);
+
+				//BackupJSon
+				DeviceBackupJSON json = new DeviceBackupJSON();
+				json.i = TestGlobals.validSerial;
+				json.s = 4;
+				json.b = items;
+
+				//BackupOperation
+				DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, json);
+
+				//Test
+				Test backupTest = new Test(operation);
+				backupTest.setTestName("ValidSingleBackupItem");
+
+				timer.Start();
+				AsyncContext.Run(async () => await new HTTPCalls().runTest(backupTest, HTTPOperation.POST));
+				timer.Stop();
+				double time = timer.Elapsed.TotalMilliseconds;
+				results.WriteLine("Test Time," + time);
+				System.Threading.Thread.Sleep (TestGlobals.delay);
+				//Verify Server didn't throw up
+			}
+			results.Close();
+		}
+
+		[Test()]
 		// Valid Single Backup Item
 		public void AsyncHTTPDeviceBackup()
 		{
@@ -113,6 +189,56 @@ namespace ConsoleApplication1
 			}
 			results.Close();
 		}
+
+		[Test()]
+		//Multi-client simultaneious scans
+		public void multiClientDeviceBackup()
+		{
+			FileStream stream;
+			stream = File.Create(outputFileMultiClientDeviceBackup);
+			results = new StreamWriter(stream);
+
+			BackupItem[] items = new BackupItem[1];
+			items[0] = getBackupItem(1);
+			DeviceBackupJSON json = new DeviceBackupJSON();
+			json.i = TestGlobals.validSerial;
+			json.s = 4;
+			json.b = items;
+			DeviceBackup operation1 = new DeviceBackup(TestGlobals.testServer, json);
+
+			Test backupTest1 = new Test(operation1);
+			backupTest1.setTestName("ValidSingleBackupItem");
+
+			BackupItem[] items2 = new BackupItem[1];
+			items2[0] = getBackupItem(1);
+			DeviceBackupJSON json2 = new DeviceBackupJSON();
+			json2.i = TestGlobals.validSerial;
+			json2.s = 4;
+			json2.b = items;
+			DeviceBackup operation2 = new DeviceBackup(TestGlobals.testServer, json);
+
+			Test backupTest2 = new Test(operation2);
+			backupTest2.setTestName("ValidSingleBackupItem");
+
+			// Construct started tasks
+			Task<double>[,] tasks = new Task<double>[TestGlobals.maxReps,2];
+			for (int i = 0; i < TestGlobals.maxReps; i++)
+			{
+				System.Threading.Thread.Sleep(TestGlobals.delay);
+				tasks[i,0] = new HTTPCalls().runTest(backupTest1, HTTPOperation.POST);
+				tasks[i,1] = new HTTPCalls().runTest(backupTest2, HTTPOperation.POST);
+				Console.WriteLine("Test starting:" + i.ToString());
+				Task.WaitAll(tasks[i,0], tasks[i,1]);
+			}
+
+			foreach (Task<double> nextResult in tasks)
+			{
+				results.WriteLine("Test Time," + nextResult.Result);
+			}
+
+			results.Close();
+		}
+
 
 
 
