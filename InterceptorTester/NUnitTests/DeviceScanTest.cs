@@ -188,82 +188,40 @@ namespace ConsoleApplication1
             Assert.AreEqual("201", statusCode);
         }
 
-        /*
         [Test()]
         public void UTF8ScanCode()
         {
             DeviceScanJSON testJson = new DeviceScanJSON ();
-            testJson.i = validSerial;
+            testJson.i = TestGlobals.validSerial;
             testJson.d = "¿ÀÁÂÆÐ123òü";
             testJson.b = null;
             testJson.s = 4;
-            DeviceScan testDScan = new DeviceScan(testServer, testJson);
+            DeviceScan testDScan = new DeviceScan(TestGlobals.testServer, testJson);
 
             Test scanTest = new Test(testDScan);
             scanTest.setTestName("UTF8ScanCode");
 
-            List<Test> tests = new List<Test>();
-            tests.Add(scanTest);
-
-            AsyncContext.Run(async() => await Program.buildTests(tests));
-
-            foreach (Test nextTest in Program.getTests())
-            {
-                Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-            }            
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+            Assert.AreEqual("201", statusCode);
         }
 
         [Test()]
         public void ASCIIScanCode()
         {
             DeviceScanJSON testJson = new DeviceScanJSON ();
-            testJson.i = validSerial;
+            testJson.i = TestGlobals.validSerial;
             testJson.d = "!\"#&)(";
             testJson.b = null;
             testJson.s = 4;
-            DeviceScan testDScan = new DeviceScan(testServer, testJson);
+            DeviceScan testDScan = new DeviceScan(TestGlobals.testServer, testJson);
 
             Test scanTest = new Test(testDScan);
             scanTest.setTestName("ASCIIScanCode");
 
-            List<Test> tests = new List<Test>();
-            tests.Add(scanTest);
-
-            AsyncContext.Run(async() => await Program.buildTests(tests));
-
-            foreach (Test nextTest in Program.getTests())
-            {
-                Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-            }            
-        }
-
-        [Test()]
-        // Invalid Single Scan
-        public void InvalidSingleScanSimple()
-        {
-            //TODO: Given when then comments
-           // var getThing = appconfig.get(invalidScanData);
-
-            DeviceScanJSON testJson = new DeviceScanJSON ();
-            testJson.i = validSerial;
-            testJson.d = "qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm";
-            testJson.b = null;
-            testJson.s = 4;
-            DeviceScan testDScan = new DeviceScan(testServer, testJson);
-
-            Test scanTest = new Test(testDScan);
-            scanTest.setTestName("InvalidSingleScanSimple");
-
-
-            List<Test> tests = new List<Test>();
-            tests.Add(scanTest);
-
-            AsyncContext.Run(async() => await Program.buildTests(tests));
-
-            foreach (Test nextTest in Program.getTests())
-            {
-                Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-            }     
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+            Assert.AreEqual("201", statusCode);
         }
 
         [Test()]
@@ -275,21 +233,14 @@ namespace ConsoleApplication1
             testJson.d = "1289472198573";
             testJson.b = null;
             testJson.s = 4;
-            DeviceScan testDScan = new DeviceScan(testServer, testJson);
+            DeviceScan testDScan = new DeviceScan(TestGlobals.testServer, testJson);
 
             Test scanTest = new Test(testDScan);
             scanTest.setTestName("InvalidSerialSimple");
 
-
-            List<Test> tests = new List<Test>();
-            tests.Add(scanTest);
-
-            AsyncContext.Run(async() => await Program.buildTests(tests));
-
-            foreach (Test nextTest in Program.getTests())
-            {
-                Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-            }  
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+            Assert.AreEqual("400", statusCode);
         }
 
         [Test()]
@@ -301,21 +252,14 @@ namespace ConsoleApplication1
             testJson.d = "1289472198573";
             testJson.b = null;
             testJson.s = 4;
-            DeviceScan testDScan = new DeviceScan(testServer, testJson);
+            DeviceScan testDScan = new DeviceScan(TestGlobals.testServer, testJson);
 
             Test scanTest = new Test(testDScan);
             scanTest.setTestName("EmptySerialSimple");
 
-
-            List<Test> tests = new List<Test>();
-            tests.Add(scanTest);
-
-            AsyncContext.Run(async() => await Program.buildTests(tests));
-
-            foreach (Test nextTest in Program.getTests())
-            {
-                Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-            }  
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+            Assert.AreEqual("400", statusCode);
         }
 
 
@@ -329,21 +273,14 @@ namespace ConsoleApplication1
             testJson.d = "1289472198573";
             testJson.b = null;
             testJson.s = 4;
-            DeviceScan testDScan = new DeviceScan(testServer, testJson);
+            DeviceScan testDScan = new DeviceScan(TestGlobals.testServer, testJson);
 
             Test scanTest = new Test(testDScan);
             scanTest.setTestName("NullSerialSimple");
 
-
-            List<Test> tests = new List<Test>();
-            tests.Add(scanTest);
-
-            AsyncContext.Run(async() => await Program.buildTests(tests));
-
-            foreach (Test nextTest in Program.getTests())
-            {
-                Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-            }  
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+            Assert.AreEqual("400", statusCode);
         }
 
         [Test()]
@@ -351,7 +288,7 @@ namespace ConsoleApplication1
         public void LOValidScansSimple()
         {
             DeviceScanJSON testJson = new DeviceScanJSON ();
-            testJson.i = validSerial;
+            testJson.i = TestGlobals.validSerial;
             testJson.d = null;
             string[] scanData = new string[4];
             scanData [0] = "0";
@@ -360,52 +297,14 @@ namespace ConsoleApplication1
             scanData [3] = "3";
             testJson.b = scanData;
             testJson.s = 4;
-            DeviceScan testDScan = new DeviceScan(testServer, testJson);
+            DeviceScan testDScan = new DeviceScan(TestGlobals.testServer, testJson);
 
             Test scanTest = new Test(testDScan);
             scanTest.setTestName("LOValidScansSimple");
 
-
-            List<Test> tests = new List<Test>();
-            tests.Add(scanTest);
-
-            AsyncContext.Run(async() => await Program.buildTests(tests));
-
-            foreach (Test nextTest in Program.getTests())
-            {
-                Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-            }            
-        }
-
-        [Test()]
-        // Mixed of Valid/Invalid Scans
-        public void ValInvalScansSimple()
-        {
-            DeviceScanJSON testJson = new DeviceScanJSON ();
-            testJson.i = validSerial;
-            testJson.d = null;
-            string[] scanData = new string[4];
-            scanData [0] = "0";
-            scanData [1] = "qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm";
-            scanData [2] = "2";
-            scanData [3] = "3";
-            testJson.b = scanData;
-            testJson.s = 4;
-            DeviceScan testDScan = new DeviceScan(testServer, testJson);
-
-            Test scanTest = new Test(testDScan);
-            scanTest.setTestName("ValInvalScansSimple");
-
-
-            List<Test> tests = new List<Test>();
-            tests.Add(scanTest);
-
-            AsyncContext.Run(async() => await Program.buildTests(tests));
-
-            foreach (Test nextTest in Program.getTests())
-            {
-                Assert.AreEqual(nextTest.getExpectedResult(), nextTest.getActualResult());
-            }            
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+            Assert.AreEqual("201", statusCode);
         }
 
         //Dynamic
@@ -415,25 +314,18 @@ namespace ConsoleApplication1
         public void ValidSingleScanDyn()
         {
             DeviceScanJSON testJson = new DeviceScanJSON ();
-            testJson.i = validSerial;
+            testJson.i = TestGlobals.validSerial;
             testJson.d = "~20/90210|";
             testJson.b = null;
             testJson.s = 4;
-            DeviceScan testDScan = new DeviceScan (testServer, testJson);
+            DeviceScan testDScan = new DeviceScan (TestGlobals.testServer, testJson);
 
             Test scanTest = new Test (testDScan);
             scanTest.setTestName("ValidSingleScanDyn");
 
-
-            List<Test> tests = new List<Test> ();
-            tests.Add (scanTest);
-
-            AsyncContext.Run(async() => await Program.buildTests(tests));
-
-            foreach (Test nextTest in Program.getTests()) 
-            {
-                Assert.AreEqual (nextTest.getExpectedResult (), nextTest.getActualResult ());
-            }
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+            Assert.AreEqual("201", statusCode);
         }
 
         [Test()]
@@ -441,26 +333,22 @@ namespace ConsoleApplication1
         public void ValidCH()
         {
             DeviceScanJSON testJson = new DeviceScanJSON ();
-            testJson.i = validSerial;
+            testJson.i = TestGlobals.validSerial;
             testJson.d = "~21/*CH*055577520928";
             testJson.b = null;
             testJson.s = 4;
-            DeviceScan testDScan = new DeviceScan (testServer, testJson);
+            DeviceScan testDScan = new DeviceScan (TestGlobals.testServer, testJson);
 
             Test scanTest = new Test (testDScan);
             scanTest.setTestName("ValidCH");
 
-
-            List<Test> tests = new List<Test> ();
-            tests.Add (scanTest);
-
-            AsyncContext.Run(async() => await Program.buildTests(tests));
-
-            foreach (Test nextTest in Program.getTests()) {
-                Assert.AreEqual (nextTest.getExpectedResult (), nextTest.getActualResult ());
-            }
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+            Assert.AreEqual("201", statusCode);
         }
 
+        //TODO: Identify invalid possible scans
+        /*
         [Test()]
         // Invalid Scan Data
         public void InvalidSingleScanDyn()
@@ -485,30 +373,25 @@ namespace ConsoleApplication1
                 Assert.AreEqual (nextTest.getExpectedResult (), nextTest.getActualResult ());
             }
         }
+        */
 
         [Test()]
         // Bad Serial
         public void InvalidSerialDyn()
         {
             DeviceScanJSON testJson = new DeviceScanJSON ();
-            testJson.i = invalidSerial;
+            testJson.i = TestGlobals.invalidSerial;
             testJson.d = "~20/90210|";
             testJson.b = null;
             testJson.s = 4;
-            DeviceScan testDScan = new DeviceScan (testServer, testJson);
+            DeviceScan testDScan = new DeviceScan (TestGlobals.testServer, testJson);
 
             Test scanTest = new Test (testDScan);
             scanTest.setTestName("InvalidSerialDyn");
 
-
-            List<Test> tests = new List<Test> ();
-            tests.Add (scanTest);
-
-            AsyncContext.Run(async() => await Program.buildTests(tests));
-
-            foreach (Test nextTest in Program.getTests()) {
-                Assert.AreEqual (nextTest.getExpectedResult (), nextTest.getActualResult ());
-            }
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+            Assert.AreEqual("400", statusCode);
         }
 
 
@@ -521,20 +404,14 @@ namespace ConsoleApplication1
             testJson.d = "~20/90210|";
             testJson.b = null;
             testJson.s = 4;
-            DeviceScan testDScan = new DeviceScan (testServer, testJson);
+            DeviceScan testDScan = new DeviceScan (TestGlobals.testServer, testJson);
 
             Test scanTest = new Test (testDScan);
             scanTest.setTestName("EmptySerialDyn");
 
-
-            List<Test> tests = new List<Test> ();
-            tests.Add (scanTest);
-
-            AsyncContext.Run(async() => await Program.buildTests(tests));
-
-            foreach (Test nextTest in Program.getTests()) {
-                Assert.AreEqual (nextTest.getExpectedResult (), nextTest.getActualResult ());
-            }
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+            Assert.AreEqual("400", statusCode);
         }
 
         [Test()]
@@ -546,20 +423,14 @@ namespace ConsoleApplication1
             testJson.d = "~20/90210|";
             testJson.b = null;
             testJson.s = 4;
-            DeviceScan testDScan = new DeviceScan (testServer, testJson);
+            DeviceScan testDScan = new DeviceScan (TestGlobals.testServer, testJson);
 
             Test scanTest = new Test (testDScan);
             scanTest.setTestName("NullSerialDyn");
 
-
-            List<Test> tests = new List<Test> ();
-            tests.Add (scanTest);
-
-            AsyncContext.Run(async() => await Program.buildTests(tests));
-
-            foreach (Test nextTest in Program.getTests()) {
-                Assert.AreEqual (nextTest.getExpectedResult (), nextTest.getActualResult ());
-            }
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+            Assert.AreEqual("400", statusCode);
         }
 
         [Test()]
@@ -567,7 +438,7 @@ namespace ConsoleApplication1
         public void LOValidScansDyn()
         {
             DeviceScanJSON testJson = new DeviceScanJSON ();
-            testJson.i = validSerial;
+            testJson.i = TestGlobals.validSerial;
             testJson.d = null;
             string[] scanData = new string[4];
             scanData[0] = "~20/0|";
@@ -576,22 +447,18 @@ namespace ConsoleApplication1
             scanData[3] = "~20/3|";
             testJson.b = scanData;
             testJson.s = 4;
-            DeviceScan testDScan = new DeviceScan (testServer, testJson);
+            DeviceScan testDScan = new DeviceScan (TestGlobals.testServer, testJson);
 
             Test scanTest = new Test (testDScan);
             scanTest.setTestName("LOValidScansDyn");
 
-
-            List<Test> tests = new List<Test> ();
-            tests.Add (scanTest);
-
-            AsyncContext.Run(async() => await Program.buildTests(tests));
-
-            foreach (Test nextTest in Program.getTests()) {
-                Assert.AreEqual (nextTest.getExpectedResult (), nextTest.getActualResult ());
-            }
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+            Assert.AreEqual("201", statusCode);
         }
 
+        //TODO: Identify invalid scan
+        /*
         [Test()]
         // Mixed of Valid/Invalid Scans
         public void ValInvalScansDyn()
@@ -622,7 +489,7 @@ namespace ConsoleApplication1
             }
         }
 
-
+        */
 
         // Combined
 
@@ -631,7 +498,7 @@ namespace ConsoleApplication1
         public void ValidScansSimDyn()
         {
             DeviceScanJSON testJson = new DeviceScanJSON ();
-            testJson.i = validSerial;
+            testJson.i = TestGlobals.validSerial;
             testJson.d = null;
             string[] scanData = new string[4];
             scanData [0] = "~20/0|";
@@ -640,22 +507,18 @@ namespace ConsoleApplication1
             scanData [3] = "987654321";
             testJson.b = scanData;
             testJson.s = 4;
-            DeviceScan testDScan = new DeviceScan (testServer, testJson);
+            DeviceScan testDScan = new DeviceScan (TestGlobals.testServer, testJson);
 
             Test scanTest = new Test (testDScan);
             scanTest.setTestName("ValidScansSimDyn");
 
-
-            List<Test> tests = new List<Test> ();
-            tests.Add (scanTest);
-
-            AsyncContext.Run(async() => await Program.buildTests(tests));
-
-            foreach (Test nextTest in Program.getTests()) {
-                Assert.AreEqual (nextTest.getExpectedResult (), nextTest.getActualResult ());
-            }
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+            Assert.AreEqual("201", statusCode);
         }
 
+        //TODO: Need dynamic invalid scan
+        /*
         [Test()]
         // Mixed of Valid and Invalid Scans
         public void ValInvalScansSimDyn()
@@ -685,31 +548,25 @@ namespace ConsoleApplication1
                 Assert.AreEqual (nextTest.getExpectedResult (), nextTest.getActualResult ());
             }
         }
+        */
 
         [Test()]
         // No scan data
         public void NoScanData()
         {
             DeviceScanJSON testJson = new DeviceScanJSON ();
-            testJson.i = validSerial;
+            testJson.i = TestGlobals.validSerial;
             testJson.d = null;
             testJson.b = null;
             testJson.s = 4;
-            DeviceScan testDScan = new DeviceScan (testServer, testJson);
+            DeviceScan testDScan = new DeviceScan (TestGlobals.testServer, testJson);
 
             Test scanTest = new Test (testDScan);
             scanTest.setTestName("NoScanData");
 
-
-            List<Test> tests = new List<Test> ();
-            tests.Add (scanTest);
-
-            AsyncContext.Run(async() => await Program.buildTests(tests));
-
-            foreach (Test nextTest in Program.getTests()) {
-                Assert.AreEqual (nextTest.getExpectedResult (), nextTest.getActualResult ());
-            }
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+            Assert.AreEqual("201", statusCode);
         }
-         */
     }
 }
