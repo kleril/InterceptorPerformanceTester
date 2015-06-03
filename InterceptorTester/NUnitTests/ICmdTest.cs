@@ -152,28 +152,7 @@ namespace ConsoleApplication1
 
 			results.Close();
 		}
-<<<<<<< HEAD
 
-
-
-
-
-		[Test()]
-		public void ValidSerial()
-		{
-
-			//Valid
-			ICmd validICmd = new ICmd(TestGlobals.testServer, TestGlobals.validSerial);
-
-			Test validTest = new Test(validICmd);
-			validTest.setTestName("ValidSerial");
-
-
-			AsyncContext.Run(async() => await new HTTPSCalls().runTest(validTest, HTTPOperation.GET));
-
-			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
-			Assert.AreEqual("200", statusCode);
-=======
 		[Test()]
 		public void ValidSerial()
 		{
@@ -184,77 +163,43 @@ namespace ConsoleApplication1
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(validTest, HTTPOperation.GET));
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("200", statusCode);
->>>>>>> origin/master
 		}
 
 		[Test()]
 		public void InvalidSerial()
 		{
-<<<<<<< HEAD
-			//Invalid
-=======
->>>>>>> origin/master
 			ICmd invalidICmd = new ICmd(TestGlobals.testServer, TestGlobals.invalidSerial);
 			Test invalidTest = new Test(invalidICmd);
 			invalidTest.setTestName("BadSerial");
 
-<<<<<<< HEAD
-			AsyncContext.Run(async() => await new HTTPSCalls().runTest(invalidTest, HTTPOperation.GET));
-
-			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
-			Assert.AreEqual("400", statusCode);
-=======
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(invalidTest, HTTPOperation.GET));
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("400", statusCode);
->>>>>>> origin/master
 		}
 
 		[Test()]
 		public void MissingSerial()
 		{
-<<<<<<< HEAD
-			//Missing
-=======
->>>>>>> origin/master
 			ICmd missingICmd = new ICmd(TestGlobals.testServer, null);
 			Test missingTest = new Test(missingICmd);
 			missingTest.setTestName("EmptySerial");
 
-<<<<<<< HEAD
-			AsyncContext.Run(async() => await new HTTPSCalls().runTest(missingTest, HTTPOperation.GET));
-
-			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
-			Assert.AreEqual("400", statusCode);
-=======
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(missingTest, HTTPOperation.GET));
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("400", statusCode);
->>>>>>> origin/master
 		}
 
 		[Test()]
 		public void NoQuery()
 		{
-<<<<<<< HEAD
-			//Missing
-=======
->>>>>>> origin/master
 			ICmd missingICmd = new ICmd(TestGlobals.testServer, null);
 			missingICmd.noQuery = true;
 			Test missingTest = new Test(missingICmd);
 			missingTest.setTestName("NoQuery");
 
-<<<<<<< HEAD
-			AsyncContext.Run(async() => await new HTTPSCalls().runTest(missingTest, HTTPOperation.GET));
-
-			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
-			Assert.AreEqual("400", statusCode);
-=======
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(missingTest, HTTPOperation.GET));
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("404", statusCode);
->>>>>>> origin/master
 		}
 	}
 }
