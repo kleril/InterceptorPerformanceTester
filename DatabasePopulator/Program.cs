@@ -48,7 +48,7 @@ namespace DatabasePopulator
             switch (basketType)
             {
                 case 1:
-                    basket.Add(ConsoleApplication1.DeviceScanTest.getScan(3));
+                    basket.Add(ConsoleApplication1.DeviceScanTest.getScan(ConsoleApplication1.UpcCode.Laptop11Inch));
                     basket.Add(ConsoleApplication1.DeviceScanTest.getScan(1));
                     basket.Add(ConsoleApplication1.DeviceScanTest.getScan(2));
                     basket.Add(ConsoleApplication1.DeviceScanTest.getScan(4));
