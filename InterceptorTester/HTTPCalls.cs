@@ -13,7 +13,7 @@ using ICSharpCode.SharpZipLib.Core;
 
 namespace ConsoleApplication1
 {
-    //TODO: Add certificate pass
+    //TODOIF: Add client(?)
    public  class HTTPCalls
     {
         public static KeyValuePair<JObject, string> result;
@@ -23,7 +23,12 @@ namespace ConsoleApplication1
             
         }
 
-        //Do test, output results to file.
+       /// <summary>
+       /// Runs a test with the given http operation type
+       /// </summary>
+       /// <param name="currentTest">Test object containing data for the http request</param>
+       /// <param name="op">One of HTTPOperation's enums (GET,POST,PUT,DELETE)</param>
+       /// <returns></returns>
         public async Task<double> runTest(Test currentTest, HTTPOperation op)
         {
             System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
@@ -38,7 +43,6 @@ namespace ConsoleApplication1
             return time;
         }
 
-        //TODOIF: Tweak console output to be a little clearer. Console is made redundant by logs, but it could be useful.
         static async Task callType (Test currentTest, HTTPOperation op)
         {
             switch (op)
