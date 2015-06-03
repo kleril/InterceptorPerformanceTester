@@ -20,10 +20,12 @@ namespace DatabasePopulator
 
         private static async void generateScans()
         {
-            int[] pseudoRandDelay = {60, 120, 600};
+            int[] pseudoRandBasketDelay = {60000, 120000, 180000};
+			int[] pseudoRandScanDelay = {3000, 4000, 5000};
             int[] pseudoRandBasket = {10,4,2,4,5,6,7,8,9,1,5,4,2,1,8,9,7,6,4,10,3,3,5,9,8,1,7,6,5,4,3,10,2,6,2,2,1,2,2,4,2};
 
-			foreach (int delay in pseudoRandDelay)
+			foreach (int basketDelay in pseudoRandBasketDelay)
+			foreach (int scanDelay in pseudoRandScanDelay)
             {
 				foreach (int basketType in pseudoRandBasket)
                 {
@@ -34,11 +36,11 @@ namespace DatabasePopulator
                         AsyncContext.Run(async () => await new ConsoleApplication1.HTTPSCalls().runTest(nextScan, ConsoleApplication1.HTTPOperation.POST));
                         Console.WriteLine("Posted Scan");
 						Console.WriteLine ("Wating for next scan");
-						System.Threading.Thread.Sleep (delay * 100);
+						System.Threading.Thread.Sleep (scanDelay);
 
                     }
 					Console.WriteLine("Basket complete. Sleeping...");
-					System.Threading.Thread.Sleep(delay * 1000);
+					System.Threading.Thread.Sleep(basketDelay);
 
 					Console.WriteLine("Getting next basket");
                 }
