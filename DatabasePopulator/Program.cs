@@ -25,20 +25,22 @@ namespace DatabasePopulator
 
 			foreach (int delay in pseudoRandDelay)
             {
-				System.Threading.Thread.Sleep(delay * 100);
 				foreach (int basketType in pseudoRandBasket)
                 {
-					Console.WriteLine("Basket complete. Sleeping...");
-					System.Threading.Thread.Sleep(delay * 1000);
-
-                    Console.WriteLine("Getting next basket");
 					getBasket(basketType);
                     foreach (ConsoleApplication1.Test nextScan in basket)
                     {
-                        Console.WriteLine("Posting Scan");
+						Console.WriteLine("Posting Scan");
                         AsyncContext.Run(async () => await new ConsoleApplication1.HTTPSCalls().runTest(nextScan, ConsoleApplication1.HTTPOperation.POST));
                         Console.WriteLine("Posted Scan");
+						Console.WriteLine ("Wating for next scan");
+						System.Threading.Thread.Sleep (delay * 100);
+
                     }
+					Console.WriteLine("Basket complete. Sleeping...");
+					System.Threading.Thread.Sleep(delay * 1000);
+
+					Console.WriteLine("Getting next basket");
                 }
             }
             Console.WriteLine("Reached end of posts");
