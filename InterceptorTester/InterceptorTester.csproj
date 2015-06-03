@@ -97,8 +97,9 @@
     <Compile Include="JSON\DeviceStatusJSON.cs" />
     <Compile Include="HTTPCalls.cs" />
     <Compile Include="HTTPSCalls.cs" />
-    <Compile Include="Test.cs" />
     <Compile Include="NUnitTests\DeviceScanTest.cs" />
+    <Compile Include="Test.cs" />
+    <Compile Include="NUnitTests\DemoScans.cs" />
     <Compile Include="NUnitTests\DeviceBackupTest.cs" />
     <Compile Include="NUnitTests\DeviceStatusTest.cs" />
     <Compile Include="NUnitTests\ICmdTest.cs" />
