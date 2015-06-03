@@ -15,9 +15,9 @@ namespace ConsoleApplication1
 	//[TestFixture()]
 	public class DeviceScanTest
 	{
-		public static Test getScan(int i)
+		public static Test getScan(UpcCode item)
 		{
-			if (i == 1) {
+			if (item = UpcCode.Laptop13Inch) {
 				DeviceScanJSON scan1 = new DeviceScanJSON ();
 				scan1.i = TestGlobals.validSerial;
 				scan1.d = "416000383720";
@@ -27,7 +27,8 @@ namespace ConsoleApplication1
 
 				Test scanTest1 = new Test (testDScan1);
 				return scanTest1;
-			} else if (i == 2) {
+			} 
+			else if (item = UpcCode.Laptop11Inch) {
 				DeviceScanJSON scan2 = new DeviceScanJSON ();
 				scan2.i = TestGlobals.validSerial;
 				scan2.d = "416000336108";
@@ -37,7 +38,8 @@ namespace ConsoleApplication1
 
 				Test scanTest2 = new Test (testDScan2);
 				return scanTest2;
-			} else if (i == 3) {
+			} 
+			else if (item = UpcCode.Printer) {
 				DeviceScanJSON scan3 = new DeviceScanJSON ();
 				scan3.i = TestGlobals.validSerial;
 				scan3.d = "416000837315";
@@ -47,7 +49,8 @@ namespace ConsoleApplication1
 
 				Test scanTest3 = new Test (testDScan3);
 				return scanTest3;
-			} else if (i == 4) {
+			} 
+			else if (item = UpcCode.Warranty) {
 				DeviceScanJSON scan4 = new DeviceScanJSON ();
 				scan4.i = TestGlobals.validSerial;
 				scan4.d = "416000837223";
@@ -57,7 +60,8 @@ namespace ConsoleApplication1
 
 				Test scanTest4 = new Test (testDScan4);
 				return scanTest4;
-			} else if (i == 5) {
+			} 
+			else if (item = UpcCode.ExternalHDD) {
 				DeviceScanJSON scan4 = new DeviceScanJSON ();
 				scan4.i = TestGlobals.validSerial;
 				scan4.d = "416000837360";
@@ -67,7 +71,8 @@ namespace ConsoleApplication1
 
 				Test scanTest4 = new Test (testDScan4);
 				return scanTest4;
-			} else if (i == 6) {
+			} 
+			else if (item = UpcCode.Keyboard) {
 				DeviceScanJSON scan4 = new DeviceScanJSON ();
 				scan4.i = TestGlobals.validSerial;
 				scan4.d = "416000338973";
@@ -77,7 +82,8 @@ namespace ConsoleApplication1
 
 				Test scanTest4 = new Test (testDScan4);
 				return scanTest4;
-			} else if (i == 7) {
+			} 
+			else if (item = UpcCode.Speaker) {
 				DeviceScanJSON scan4 = new DeviceScanJSON ();
 				scan4.i = TestGlobals.validSerial;
 				scan4.d = "416000837988";
@@ -87,7 +93,8 @@ namespace ConsoleApplication1
 
 				Test scanTest4 = new Test (testDScan4);
 				return scanTest4;
-			} else if (i == 8) {
+			} 
+			else if (item = UpcCode.Mouse) {
 				DeviceScanJSON scan4 = new DeviceScanJSON ();
 				scan4.i = TestGlobals.validSerial;
 				scan4.d = "416000336894";
@@ -97,7 +104,8 @@ namespace ConsoleApplication1
 
 				Test scanTest4 = new Test (testDScan4);
 				return scanTest4;
-			} else if (i == 9) {
+			} 
+			else if (item = UpcCode.LaptopCase13Inch) {
 				DeviceScanJSON scan4 = new DeviceScanJSON ();
 				scan4.i = TestGlobals.validSerial;
 				scan4.d = "416000837261";
@@ -107,7 +115,8 @@ namespace ConsoleApplication1
 
 				Test scanTest4 = new Test (testDScan4);
 				return scanTest4;
-			} else if (i == 10) {
+			} 
+			else if (item = UpcCode.Headset) {
 				DeviceScanJSON scan4 = new DeviceScanJSON ();
 				scan4.i = TestGlobals.validSerial;
 				scan4.d = "416000837018";
@@ -117,7 +126,8 @@ namespace ConsoleApplication1
 
 				Test scanTest4 = new Test (testDScan4);
 				return scanTest4;
-			} else if (i == 11) {
+			} 
+			else if (item = UpcCode.LaptopCase11Inch) {
 				DeviceScanJSON scan4 = new DeviceScanJSON ();
 				scan4.i = TestGlobals.validSerial;
 				scan4.d = "416000338799";
@@ -127,7 +137,8 @@ namespace ConsoleApplication1
 
 				Test scanTest4 = new Test (testDScan4);
 				return scanTest4;
-			} else if (i == 12) {
+			} 
+			else if (item = UpcCode.Earbuds) {
 				DeviceScanJSON scan4 = new DeviceScanJSON ();
 				scan4.i = TestGlobals.validSerial;
 				scan4.d = "416000837049";
@@ -137,7 +148,8 @@ namespace ConsoleApplication1
 
 				Test scanTest4 = new Test (testDScan4);
 				return scanTest4;
-			} else if (i == 13) {
+			} 
+			else if (item = UpcCode.HdmiCable) {
 				DeviceScanJSON scan4 = new DeviceScanJSON ();
 				scan4.i = TestGlobals.validSerial;
 				scan4.d = "416000837339";
@@ -147,7 +159,8 @@ namespace ConsoleApplication1
 
 				Test scanTest4 = new Test (testDScan4);
 				return scanTest4;
-			} else if (i == 14) {
+			} 
+			else if (item = UpcCode.UsbCable) {
 				DeviceScanJSON scan4 = new DeviceScanJSON ();
 				scan4.i = TestGlobals.validSerial;
 				scan4.d = "416000837827";
@@ -157,7 +170,8 @@ namespace ConsoleApplication1
 
 				Test scanTest4 = new Test (testDScan4);
 				return scanTest4;
-			} else 
+			} 
+			else 
 			{
 				return null;
 			}
