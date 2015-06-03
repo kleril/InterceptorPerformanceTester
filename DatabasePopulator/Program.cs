@@ -23,21 +23,14 @@ namespace DatabasePopulator
             int[] pseudoRandDelay = {60, 120, 600};
             int[] pseudoRandBasket = {10,4,2,4,5,6,7,8,9,1,5,4,2,1,8,9,7,6,4,10,3,3,5,9,8,1,7,6,5,4,3,10,2,6,2,2,1,2,2,4,2};
 
-<<<<<<< HEAD
 			foreach (int delay in pseudoRandDelay)
             {
 				System.Threading.Thread.Sleep(delay * 100);
 				foreach (int basketType in pseudoRandBasket)
                 {
-					System.Threading.Thread.Sleep(delay);
-=======
-            for (int i = 0; i < pseudoRandDelay.Length; i++)
-            {
-                for (int j = 0; j < pseudoRandBasket.Length; j++)
-                {
-                    Console.WriteLine("Basket complete. Sleeping...");
-                    System.Threading.Thread.Sleep(pseudoRandDelay[i] * 1000);
->>>>>>> origin/master
+					Console.WriteLine("Basket complete. Sleeping...");
+					System.Threading.Thread.Sleep(delay * 1000);
+
                     Console.WriteLine("Getting next basket");
 					getBasket(basketType);
                     foreach (ConsoleApplication1.Test nextScan in basket)
