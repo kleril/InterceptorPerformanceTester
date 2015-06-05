@@ -234,3 +234,4 @@ DatabasePopulator/DatabasePopulator.csproj
 DatabasePopulator/DatabasePopulator.csproj
 logs/PerformanceTestAnalysis.ods
 logs/testLog.txt
+logs/*
