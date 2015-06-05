@@ -15,12 +15,23 @@ namespace InterceptorTester.Tests.InterceptorTests
 	[TestFixture()]
 	public class ICmdTest
 	{
+        static StreamWriter results;
 
 		[TestFixtureSetUp()]
 		public void setup()
 		{
 			TestGlobals.setup();
+
+            FileStream stream;
+            stream = File.OpenWrite(TestGlobals.logFile);
+            results = new StreamWriter(stream);
 		}
+
+        [TestFixtureTearDown()]
+        public void tearDown()
+        {
+            results.Close();
+        }
 
 		[Test()]
 		public void ValidSerial()
@@ -30,6 +41,8 @@ namespace InterceptorTester.Tests.InterceptorTests
 			validTest.setTestName("ValidSerial");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(validTest, HTTPOperation.GET));
+            results.WriteLine(HTTPSCalls.result.ToString());
+            
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("200", statusCode);
 		}
@@ -42,6 +55,8 @@ namespace InterceptorTester.Tests.InterceptorTests
 			invalidTest.setTestName("BadSerial");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(invalidTest, HTTPOperation.GET));
+            results.WriteLine(HTTPSCalls.result.ToString());
+            
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("400", statusCode);
 
@@ -55,6 +70,8 @@ namespace InterceptorTester.Tests.InterceptorTests
 			missingTest.setTestName("EmptySerial");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(missingTest, HTTPOperation.GET));
+            results.WriteLine(HTTPSCalls.result.ToString());
+
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("400", statusCode);
 		}
@@ -68,6 +85,8 @@ namespace InterceptorTester.Tests.InterceptorTests
 			missingTest.setTestName("NoQuery");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(missingTest, HTTPOperation.GET));
+            results.WriteLine(HTTPSCalls.result.ToString());
+
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("404", statusCode);
 		}

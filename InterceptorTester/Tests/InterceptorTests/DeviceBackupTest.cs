@@ -15,14 +15,23 @@ namespace InterceptorTester.Tests.InterceptorTests
 	[TestFixture()]
 	public class DeviceBackupTest
 	{
-		// Globals
+        static StreamWriter results;
 
-		
-		[TestFixtureSetUp()]
-		public void setup()
-		{
-			TestGlobals.setup();
-		}
+        [TestFixtureSetUp()]
+        public void setup()
+        {
+            TestGlobals.setup();
+
+            FileStream stream;
+            stream = File.OpenWrite(TestGlobals.logFile);
+            results = new StreamWriter(stream);
+        }
+
+        [TestFixtureTearDown()]
+        public void tearDown()
+        {
+            results.Close();
+        }
 
 		[Test()]
 		// Valid Serial
@@ -46,7 +55,8 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Test backupTest = new Test(operation);
 			backupTest.setTestName("ValidSerial");
 
-			AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
 			Assert.AreEqual("201", statusCode);
 		}
@@ -71,7 +81,8 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Test backupTest = new Test(operation);
 			backupTest.setTestName("ValidSingleBackupItem");
 
-			AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
 			Assert.AreEqual("201", statusCode);
 		}
@@ -94,7 +105,8 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Test failingTest = new Test(failOperation);
 			failingTest.setTestName("InvalidSingleBackupItem");
 
-			AsyncContext.Run(async () => await new HTTPSCalls().runTest(failingTest, HTTPOperation.POST));
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(failingTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
 			Assert.AreEqual("400", statusCode);
 		}
@@ -120,7 +132,8 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Test failingTest = new Test(failOperation);
 			failingTest.setTestName("InvalidBackupItems");
 
-			AsyncContext.Run(async () => await new HTTPSCalls().runTest(failingTest, HTTPOperation.POST));
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(failingTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
 			Assert.AreEqual("400", statusCode);
 		}
@@ -144,7 +157,8 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Test serialTest = new Test(serialOperation);
 			serialTest.setTestName("BadSerial");
 
-			AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
 			Assert.AreEqual("400", statusCode);
 		}
@@ -165,7 +179,8 @@ namespace InterceptorTester.Tests.InterceptorTests
 			emptyTest.setTestName("NoBackupItems");
 
 
-			AsyncContext.Run(async () => await new HTTPSCalls().runTest(emptyTest, HTTPOperation.POST));
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(emptyTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
 			Assert.AreEqual("201", statusCode);
 		}
@@ -189,7 +204,8 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Test serialTest = new Test(serialOperation);
 			serialTest.setTestName("EmptySerial");
 
-			AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
 			Assert.AreEqual("400", statusCode);
 		}
@@ -214,7 +230,8 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Test serialTest = new Test(serialOperation);
 			serialTest.setTestName("NullSerial");
 
-			AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
 			Assert.AreEqual("201", statusCode);
 		}
@@ -240,7 +257,8 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Test serialTest = new Test(serialOperation);
 			serialTest.setTestName("SpecialDynCode");
 
-			AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
 			Assert.AreEqual("201", statusCode);
 		}
@@ -267,7 +285,8 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Test serialTest = new Test(serialOperation);
 			serialTest.setTestName("NotSpecialDynCode");
 
-			AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
 			Assert.AreEqual("201", statusCode);
 		}
@@ -295,7 +314,8 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Test serialTest = new Test(serialOperation);
 			serialTest.setTestName("ValidBackupItemsSimDyn");
 
-			AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
 			Assert.AreEqual("201", statusCode);
 		}

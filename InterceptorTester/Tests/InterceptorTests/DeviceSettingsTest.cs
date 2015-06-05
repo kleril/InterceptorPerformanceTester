@@ -15,6 +15,24 @@ namespace InterceptorTester.Tests.InterceptorTests
 	[TestFixture()]
 	public class DeviceSettingsTest
     {
+
+        static StreamWriter results;
+
+        [TestFixtureSetUp()]
+        public void setup()
+        {
+            TestGlobals.setup();
+
+            FileStream stream;
+            stream = File.OpenWrite(TestGlobals.logFile);
+            results = new StreamWriter(stream);
+        }
+
+        [TestFixtureTearDown()]
+        public void tearDown()
+        {
+            results.Close();
+        }
         [Test()]
 		// Valid Serial
 		public void ValidSerial() 
@@ -25,7 +43,8 @@ namespace InterceptorTester.Tests.InterceptorTests
 			ValidSerial.setTestName("ValidSerial");
 
 
-			AsyncContext.Run(async() => await new HTTPSCalls().runTest(ValidSerial, HTTPOperation.GET));
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(ValidSerial, HTTPOperation.GET));
+            results.WriteLine(HTTPSCalls.result.ToString());
 
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
 			Assert.AreEqual("200", statusCode);
@@ -41,7 +60,8 @@ namespace InterceptorTester.Tests.InterceptorTests
 			BadSerial.setTestName("BadSerial");
 
 
-			AsyncContext.Run(async() => await new HTTPSCalls().runTest(BadSerial, HTTPOperation.GET));
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(BadSerial, HTTPOperation.GET));
+            results.WriteLine(HTTPSCalls.result.ToString());
 
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
 			Assert.AreEqual("400", statusCode);
@@ -57,7 +77,8 @@ namespace InterceptorTester.Tests.InterceptorTests
 			NoSerial.setTestName("NoSerial");
 
 
-			AsyncContext.Run(async() => await new HTTPSCalls().runTest(NoSerial, HTTPOperation.GET));
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(NoSerial, HTTPOperation.GET));
+            results.WriteLine(HTTPSCalls.result.ToString());
 
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
 			Assert.AreEqual("400", statusCode);

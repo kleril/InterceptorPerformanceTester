@@ -16,11 +16,21 @@ namespace InterceptorTester.Tests.InterceptorTests
 	[TestFixture()]
     class DeviceScanTest
     {
+        static StreamWriter results;
 
         [TestFixtureSetUp()]
         static public void setup()
         {
-            TestGlobals.setup ();
+            TestGlobals.setup();
+            FileStream stream;
+            stream = File.OpenWrite(TestGlobals.logFile);
+            results = new StreamWriter(stream);
+        }
+
+        [TestFixtureTearDown()]
+        public void tearDown()
+        {
+            results.Close();
         }
 
 		// Simple Scan Data
@@ -41,7 +51,8 @@ namespace InterceptorTester.Tests.InterceptorTests
             scanTest.setTestName("ValidSingleScanSimple");
 
 
-            AsyncContext.Run(async() => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("201", statusCode);
         }
@@ -77,7 +88,8 @@ namespace InterceptorTester.Tests.InterceptorTests
             Test scanTest = new Test(testDScan);
             scanTest.setTestName("ASCIIScanCode");
 
-			AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
 			Assert.AreEqual("201", statusCode);
         }
@@ -116,6 +128,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             scanTest.setTestName("EmptySerialSimple");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("400", statusCode);
         }
@@ -137,6 +150,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             scanTest.setTestName("NullSerialSimple");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("400", statusCode);
         }
@@ -182,6 +196,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             scanTest.setTestName("ValidSingleScanDyn");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("201", statusCode);
         }
@@ -201,6 +216,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             scanTest.setTestName("ValidCH");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("201", statusCode);
         }
@@ -248,6 +264,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             scanTest.setTestName("InvalidSerialDyn");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("400", statusCode);
         }
@@ -268,6 +285,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             scanTest.setTestName("EmptySerialDyn");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("400", statusCode);
         }
@@ -287,6 +305,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             scanTest.setTestName("NullSerialDyn");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("400", statusCode);
         }
@@ -311,6 +330,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             scanTest.setTestName("LOValidScansDyn");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("201", statusCode);
         }
@@ -371,6 +391,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             scanTest.setTestName("ValidScansSimDyn");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("201", statusCode);
         }
@@ -423,6 +444,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             scanTest.setTestName("NoScanData");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
+            results.WriteLine(HTTPSCalls.result.ToString());
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
             Assert.AreEqual("400", statusCode);
         }

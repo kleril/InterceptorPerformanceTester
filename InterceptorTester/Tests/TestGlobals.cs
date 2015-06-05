@@ -25,6 +25,7 @@ namespace ConsoleApplication1
 		public static string orgIdCreated;
 		public static string locIdCreated;
         public static string intIdCreated;
+        public static string logFile = "../../../logs/testLog.txt";
 
 		public static void setup()
 		{

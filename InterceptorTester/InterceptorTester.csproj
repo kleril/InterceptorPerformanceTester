@@ -166,6 +166,5 @@
   </Target>
   <ItemGroup>
     <Folder Include="Data\ConfigurationSections\" />
-    <Folder Include="Interceptor Tests\" />
   </ItemGroup>
 </Project>
