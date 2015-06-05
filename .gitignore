@@ -234,3 +234,9 @@ DatabasePopulator/DatabasePopulator.csproj
 DatabasePopulator/DatabasePopulator.csproj
 logs/PerformanceTestAnalysis.ods
 logs/testLog.txt
+
+logs/OSXtestResults130779978234317050.txt
+
+*.txt
+
+logs/OSXtestResults130779978232105540.txt
