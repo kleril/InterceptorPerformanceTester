@@ -61,8 +61,10 @@ namespace InterceptorTester.Tests.InterceptorTests
 
 			results.WriteLine (DateTime.Now);
 			results.WriteLine ("current test: " + backupTest.ToString () + " " + backupTest.getTestName ());
+
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
             results.WriteLine("Json posted:");
 			results.WriteLine (operation.getJson().ToString());
 			results.WriteLine ("Server: " + TestGlobals.testServer);
@@ -240,7 +242,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, emptyJson);
 
 			Test backupTest = new Test(operation);
-			backupTest.setTestName("BadSerial");
+			backupTest.setTestName("NoBackupItems");
 			backupTest.setExpectedResult ("201");
 
 			results.WriteLine (DateTime.Now);
@@ -279,7 +281,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, serialJson);
 
 			Test backupTest = new Test(operation);
-			backupTest.setTestName("BadSerial");
+			backupTest.setTestName("EmptySerial");
 			backupTest.setExpectedResult ("400");
 
 			results.WriteLine (DateTime.Now);
@@ -318,7 +320,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, serialJson);
 
 			Test backupTest = new Test(operation);
-			backupTest.setTestName("BadSerial");
+			backupTest.setTestName("NullSerial");
 			backupTest.setExpectedResult ("201");
 
 			results.WriteLine (DateTime.Now);
@@ -358,7 +360,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, serialJson);
 
 			Test backupTest = new Test(operation);
-			backupTest.setTestName("BadSerial");
+			backupTest.setTestName("SpecialDynCode");
 			backupTest.setExpectedResult ("201");
 
 			results.WriteLine (DateTime.Now);
@@ -399,7 +401,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, serialJson);
 
 			Test backupTest = new Test(operation);
-			backupTest.setTestName("BadSerial");
+			backupTest.setTestName("NotSpecialDynCode");
 			backupTest.setExpectedResult ("201");
 
 			results.WriteLine (DateTime.Now);
@@ -441,7 +443,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, serialJson);
 
 			Test backupTest = new Test(operation);
-			backupTest.setTestName("BadSerial");
+			backupTest.setTestName("ValidBackupItemSimDyn");
 			backupTest.setExpectedResult ("201");
 
 			results.WriteLine (DateTime.Now);
