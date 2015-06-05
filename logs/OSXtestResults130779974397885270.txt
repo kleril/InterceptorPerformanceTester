@@ -1,0 +1,13 @@
+Starting Tests! Current time: 2015-06-05 1:03:59 PM
+Current test: DeviceSetting ValidSerial
+Raw test results:
+Summary:
+Current test: DeviceSetting ValidSerial
+Input JSON:
+No JSON attached to this operation
+Input URI: http://cozumotesttls.cloudapp.net/api/DeviceSetting/?i=D05FB84F1606
+Expected result: 200
+Actual result: 200
+Time elapsed: 122.5862s
+Test result: Pass
+

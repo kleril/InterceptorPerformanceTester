@@ -1,0 +1,13 @@
+Starting Tests! Current time: 2015-06-05 1:09:44 PM
+Current test: iCmd NoQuery
+Raw test results:
+Summary:
+Current test: iCmd NoQuery
+Input JSON:
+No JSON attached to this operation
+Input URI: http://cozumotesttls.cloudapp.net/api/iCmd
+Expected result: 400
+Actual result: 404
+Time elapsed: 51.9909s
+Test result: Fail
+

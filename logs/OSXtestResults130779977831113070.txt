@@ -1,0 +1,13 @@
+Starting Tests! Current time: 2015-06-05 1:09:43 PM
+Current test: DeviceSetting BadSerial
+Raw test results:
+Summary:
+Current test: DeviceSetting BadSerial
+Input JSON:
+No JSON attached to this operation
+Input URI: http://cozumotesttls.cloudapp.net/api/DeviceSetting/?i=THISISANINVALIDSERIAL
+Expected result: 400
+Actual result: 400
+Time elapsed: 108.9362s
+Test result: Pass
+

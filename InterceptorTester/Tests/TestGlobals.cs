@@ -16,6 +16,7 @@ namespace ConsoleApplication1
 	public static class TestGlobals
 	{
 		public static Uri testServer;
+		public static Uri adminServer;
 		public static string validSerial;
 		public static string invalidSerial;
 		public static int delay;
@@ -32,6 +33,7 @@ namespace ConsoleApplication1
 			try
 			{
 				testServer = new Uri(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
+				adminServer = new Uri(ConfigurationManager.ConnectionStrings["AdminServer"].ConnectionString);
 				validSerial = ConfigurationManager.ConnectionStrings["ValidSerial"].ConnectionString;
 				invalidSerial = ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString;
 				delay = int.Parse(ConfigurationManager.ConnectionStrings["DelayBetweenRuns"].ConnectionString);

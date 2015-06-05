@@ -1,0 +1,24 @@
+Starting Tests! Current time: 2015-06-05 12:58:10 PM
+Current test: DeviceBackup ValidSingleBackupItem
+Raw test results:
+Summary:
+Current test: DeviceBackup ValidSingleBackupItem
+Input JSON:
+{
+  "i": "D05FB84F1606",
+  "b": [
+    {
+      "d": "12566132",
+      "s": 442,
+      "t": "2015-05-11T02:04:22.295",
+      "c": false
+    }
+  ],
+  "s": 4
+}
+Input URI: http://cozumotesttls.cloudapp.net/api/DeviceBackup/
+Expected result: 201
+Actual result: 201
+Time elapsed: 571.9929s
+Test result: Pass
+

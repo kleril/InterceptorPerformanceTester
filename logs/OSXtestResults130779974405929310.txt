@@ -1,0 +1,13 @@
+Starting Tests! Current time: 2015-06-05 1:04:00 PM
+Current test: iCmd EmptySerial
+Raw test results:
+Summary:
+Current test: iCmd EmptySerial
+Input JSON:
+No JSON attached to this operation
+Input URI: http://cozumotesttls.cloudapp.net/api/iCmd/?i=
+Expected result: 400
+Actual result: 500
+Time elapsed: 165.063s
+Test result: Fail
+

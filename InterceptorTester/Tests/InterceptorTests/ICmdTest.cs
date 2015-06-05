@@ -39,6 +39,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			ICmd validICmd = new ICmd(TestGlobals.testServer, TestGlobals.validSerial);
 			Test validTest = new Test(validICmd);
 			validTest.setTestName("ValidSerial");
+			validTest.setExpectedResult ("200");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(validTest, HTTPOperation.GET));
             results.WriteLine(HTTPSCalls.result.ToString());
@@ -53,6 +54,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			ICmd invalidICmd = new ICmd(TestGlobals.testServer, TestGlobals.invalidSerial);
 			Test invalidTest = new Test(invalidICmd);
 			invalidTest.setTestName("BadSerial");
+			invalidTest.setExpectedResult ("400");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(invalidTest, HTTPOperation.GET));
             results.WriteLine(HTTPSCalls.result.ToString());
@@ -68,6 +70,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			ICmd missingICmd = new ICmd(TestGlobals.testServer, null);
 			Test missingTest = new Test(missingICmd);
 			missingTest.setTestName("EmptySerial");
+			missingTest.setExpectedResult ("400");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(missingTest, HTTPOperation.GET));
             results.WriteLine(HTTPSCalls.result.ToString());
@@ -83,6 +86,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			missingICmd.noQuery = true;
 			Test missingTest = new Test(missingICmd);
 			missingTest.setTestName("NoQuery");
+			missingTest.setExpectedResult ("400");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(missingTest, HTTPOperation.GET));
             results.WriteLine(HTTPSCalls.result.ToString());

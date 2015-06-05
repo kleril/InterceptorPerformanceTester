@@ -41,6 +41,8 @@ namespace InterceptorTester.Tests.PerformanceTests
                 ICmd validICmd = new ICmd(TestGlobals.testServer, TestGlobals.validSerial);
                 Test validTest = new Test(validICmd);
                 validTest.setTestName("ValidSerial");
+				validTest.setExpectedResult ("200");
+				validTest.setType ("performance");
                 List<Test> tests = new List<Test>();
                 tests.Add(validTest);
 
@@ -66,6 +68,8 @@ namespace InterceptorTester.Tests.PerformanceTests
             ICmd validICmd = new ICmd(TestGlobals.testServer, TestGlobals.validSerial);
             Test validTest = new Test(validICmd);
             validTest.setTestName("ValidSerial");
+			validTest.setExpectedResult ("200");
+			validTest.setType ("performance");
             List<Test> tests = new List<Test>();
             tests.Add(validTest);
 
@@ -103,6 +107,8 @@ namespace InterceptorTester.Tests.PerformanceTests
                 ICmd validICmd = new ICmd(TestGlobals.testServer, TestGlobals.validSerial);
                 Test validTest = new Test(validICmd);
                 validTest.setTestName("ValidSerial");
+				validTest.setExpectedResult ("200");
+				validTest.setType ("performance");
                 List<Test> tests = new List<Test>();
                 tests.Add(validTest);
 
@@ -129,6 +135,8 @@ namespace InterceptorTester.Tests.PerformanceTests
             ICmd validICmd = new ICmd(TestGlobals.testServer, TestGlobals.validSerial);
             Test validTest = new Test(validICmd);
             validTest.setTestName("ValidSerial");
+			validTest.setExpectedResult ("200");
+			validTest.setType ("performance");
             List<Test> tests = new List<Test>();
             tests.Add(validTest);
 
@@ -164,11 +172,15 @@ namespace InterceptorTester.Tests.PerformanceTests
             ICmd validICmd1 = new ICmd(TestGlobals.testServer, TestGlobals.validSerial);
             Test validTest1 = new Test(validICmd1);
             validTest1.setTestName("ValidSerial");
+			validTest1.setExpectedResult ("200");
+			validTest1.setType ("performance");
 
 
             ICmd validICmd2 = new ICmd(TestGlobals.testServer, TestGlobals.validSerial);
             Test validTest2 = new Test(validICmd2);
             validTest2.setTestName("ValidSerial");
+			validTest2.setExpectedResult ("200");
+			validTest2.setType ("performance");
 
             // Construct started tasks
             Task<double>[,] tasks = new Task<double>[TestGlobals.maxReps, 2];

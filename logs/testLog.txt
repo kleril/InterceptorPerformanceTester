@@ -1,37 +1,21 @@
 [{
-  "Version": {
-    "Major": 1,
-    "Minor": 1,
-    "Build": -1,
-    "Revision": -1,
-    "MajorRevision": -1,
-    "MinorRevision": -1
-  },
   "Content": {
     "Headers": [
+      {
+        "Key": "Expires",
+        "Value": [
+          "-1"
+        ]
+      },
       {
         "Key": "Content-Length",
         "Value": [
           "0"
         ]
-      },
-      {
-        "Key": "Expires",
-        "Value": [
-          "-1"
-        ]
       }
     ]
   },
-  "StatusCode": 500,
-  "ReasonPhrase": "Internal Server Error",
   "Headers": [
-    {
-      "Key": "Pragma",
-      "Value": [
-        "no-cache"
-      ]
-    },
     {
       "Key": "Cache-Control",
       "Value": [
@@ -39,9 +23,9 @@
       ]
     },
     {
-      "Key": "Date",
+      "Key": "Pragma",
       "Value": [
-        "Fri, 05 Jun 2015 15:45:21 GMT"
+        "no-cache"
       ]
     },
     {
@@ -61,120 +45,34 @@
       "Value": [
         "ASP.NET"
       ]
-    }
-  ],
-  "RequestMessage": {
-    "Version": {
-      "Major": 1,
-      "Minor": 1,
-      "Build": -1,
-      "Revision": -1,
-      "MajorRevision": -1,
-      "MinorRevision": -1
-    },
-    "Content": {
-      "Headers": [
-        {
-          "Key": "Content-Type",
-          "Value": [
-            "application/json; charset=utf-8"
-          ]
-        },
-        {
-          "Key": "Content-Length",
-          "Value": [
-            "67"
-          ]
-        }
-      ]
-    },
-    "Method": {
-      "Method": "POST"
-    },
-    "RequestUri": "http://cozumotesttls.cloudapp.net/api/DeviceScan/",
-    "Headers": [
-      {
-        "Key": "Accept",
-        "Value": [
-          "application/json"
-        ]
-      }
-    ],
-    "Properties": {}
-  },
-  "IsSuccessStatusCode": false
-}, ]
--8"
-        ]
-      },
-      {
-        "Key": "Expires",
-        "Value": [
-          "-1"
-        ]
-      }
-    ]
-  },
-  "StatusCode": 500,
-  "ReasonPhrase": "Internal Server Error",
-  "Headers": [
-    {
-      "Key": "Pragma",
-      "Value": [
-        "no-cache"
-      ]
-    },
-    {
-      "Key": "Cache-Control",
-      "Value": [
-        "no-cache"
-      ]
     },
     {
       "Key": "Date",
       "Value": [
-        "Fri, 05 Jun 2015 15:43:20 GMT"
-      ]
-    },
-    {
-      "Key": "Server",
-      "Value": [
-        "Microsoft-IIS/8.0"
-      ]
-    },
-    {
-      "Key": "X-AspNet-Version",
-      "Value": [
-        "4.0.30319"
-      ]
-    },
-    {
-      "Key": "X-Powered-By",
-      "Value": [
-        "ASP.NET"
+        "Fri, 05 Jun 2015 17:09:43 GMT"
       ]
     }
   ],
+  "IsSuccessStatusCode": false,
+  "ReasonPhrase": "Bad Request",
   "RequestMessage": {
-    "Version": {
-      "Major": 1,
-      "Minor": 1,
-      "Build": -1,
-      "Revision": -1,
-      "MajorRevision": -1,
-      "MinorRevision": -1
-    },
     "Content": null,
+    "Headers": [],
     "Method": {
       "Method": "GET"
     },
-    "RequestUri": "http://cozumotesttls.cloudapp.net/api/iCmd/?i=",
-    "Headers": [],
-    "Properties": {}
+    "Properties": {},
+    "RequestUri": "http://cozumotesttls.cloudapp.net/api/iCmd/?i=THISISANINVALIDSERIAL",
+    "Version": {
+      "Major": 1,
+      "Minor": 1,
+      "Build": -1,
+      "Revision": -1,
+      "MajorRevision": -1,
+      "MinorRevision": -1
+    }
   },
-  "IsSuccessStatusCode": false
-}, {"e":{"Errors":[{"source":".Net SqlClient Data Provider","number":8178,"state":1,"errorClass":16,"server":"zdv0o26czf.database.windows.net","message":"The parameterized query '(@IntSerial varchar(12))SELECT InterceptorType FROM dbo.tblInter' expects the parameter '@IntSerial', which was not supplied.","procedure":"","lineNumber":0,"win32ErrorCode":0}],"ClientConnectionId":"d3b4b1b3-06f6-4d14-9686-26d2495263ed","ClassName":"System.Data.SqlClient.SqlException","Message":"The parameterized query '(@IntSerial varchar(12))SELECT InterceptorType FROM dbo.tblInter' expects the parameter '@IntSerial', which was not supplied.","Data":{"HelpLink.ProdName":"Microsoft SQL Server","HelpLink.ProdVer":"11.00.9230","HelpLink.EvtSrc":"MSSQLServer","HelpLink.EvtID":"8178","HelpLink.BaseHelpUrl":"http://go.microsoft.com/fwlink","HelpLink.LinkId":"20476"},"InnerException":null,"HelpURL":null,"StackTraceString":"   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()\r\n   at System.Data.SqlClient.SqlDataReader.get_MetaData()\r\n   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)\r\n   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)\r\n   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)\r\n   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()\r\n   at Cozumo.AuthenticationAndAuthorization.Dao.LegacyAuthenticationDao.GetInterceptorCredentials(IDbCommand command, IEntityKey key)\r\n   at Cozumo.Common.DB.DbUtils.WrapInTransaction[T,TO](Func`1 connectionFactory, Func`3 func, T item)\r\n   at Cozumo.AuthenticationAndAuthorization.Dao.LegacyAuthenticationDao.GetInterceptorCredentials(IEntityKey key)\r\n   at Cozumo.AuthenticationAndAuthorization.Dao.LegacyAuthenticationDao.GetCredentials(String correlationId, IEntityKey key)\r\n   at Cozumo.AuthenticationAndAuthorization.LegacyAuthenticator.Authenticate(String correlationId, IAuthenticationRequest request, IAuthenticationContext requestContext)\r\n   at Cozumo.AuthenticationAndAuthorization.ObjectCacheAuthenticationManager.Authenticate(String correlationId, IAuthenticationRequest request, IAuthenticationContext requestContext)\r\n   at Cozumo.AuthenticationAndAuthorization.LegacyAuthAndAuthService.Authorize(String correlationId, IAuthenticationRequest request, IAuthenticationContext authenticationContext, String action, IImmutableSet`1 objectIds, IAuthorizationContext authorizationContext)\r\n   at AuthAndAuthRoutes.AuthAndAuthRoute.RunRoute(IEsbMessage message)\r\n   at AuthAndAuthRoutes.AuthAndAuthRoute.Send(IEsbMessage message)\r\n   at Cozumo.Common.Esb.LocalService.Send(String routeName, IEsbMessage message)\r\n   at Cozumo.Common.Esb.LocalService.Send(String sourceCorrelation, String routeName, IEsbMessage message)\r\n   at Cozumo.Esb.Routes.AuthorizationUtils.AuthorizeAndGetInterceptorId(IEsbService esbService, ISystemEventDao systemEventDao, String correlationId, String action, CredentialPayloadWrapper payload)\r\n   at Cozumo.Esb.Routes.InterceptorCmdRoute.<RunRoute>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()\r\n   at Cozumo.Esb.Routes.InterceptorCmdRoute.<SendAsync>d__7.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()\r\n   at Cozumo.Common.Esb.LocalService.<SendAsync>d__0.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()\r\n   at Cozumo.Common.Esb.LocalService.<SendAsync>d__7.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()\r\n   at Cozumo.Interceptor.API.Controllers.ICmdController.<GetICmdDetails>d__3.MoveNext() in d:\\a\\src\\WebRole1\\Controllers\\ICmdController.cs:line 85","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":"8\nOnError\nSystem.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\nSystem.Data.SqlClient.SqlConnection\nVoid OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])","HResult":-2146232060,"Source":".Net SqlClient Data Provider","WatsonBuckets":null}}]
-[{
+  "StatusCode": 400,
   "Version": {
     "Major": 1,
     "Minor": 1,
@@ -182,38 +80,122 @@
     "Revision": -1,
     "MajorRevision": -1,
     "MinorRevision": -1
-  },
+  }
+}, ]
+[{
   "Content": {
     "Headers": [
+      {
+        "Key": "Content-Type",
+        "Value": [
+          "application/json; charset=utf-8"
+        ]
+      },
+      {
+        "Key": "Expires",
+        "Value": [
+          "-1"
+        ]
+      },
+      {
+        "Key": "Content-Length",
+        "Value": [
+          "6401"
+        ]
+      }
+    ]
+  },
+  "Headers": [
+    {
+      "Key": "Cache-Control",
+      "Value": [
+        "no-cache"
+      ]
+    },
+    {
+      "Key": "Pragma",
+      "Value": [
+        "no-cache"
+      ]
+    },
+    {
+      "Key": "Server",
+      "Value": [
+        "Microsoft-IIS/8.0"
+      ]
+    },
+    {
+      "Key": "X-AspNet-Version",
+      "Value": [
+        "4.0.30319"
+      ]
+    },
+    {
+      "Key": "X-Powered-By",
+      "Value": [
+        "ASP.NET"
+      ]
+    },
+    {
+      "Key": "Date",
+      "Value": [
+        "Fri, 05 Jun 2015 17:09:43 GMT"
+      ]
+    }
+  ],
+  "IsSuccessStatusCode": false,
+  "ReasonPhrase": "Internal Server Error",
+  "RequestMessage": {
+    "Content": null,
+    "Headers": [],
+    "Method": {
+      "Method": "GET"
+    },
+    "Properties": {},
+    "RequestUri": "http://cozumotesttls.cloudapp.net/api/iCmd/?i=",
+    "Version": {
+      "Major": 1,
+      "Minor": 1,
+      "Build": -1,
+      "Revision": -1,
+      "MajorRevision": -1,
+      "MinorRevision": -1
+    }
+  },
+  "StatusCode": 500,
+  "Version": {
+    "Major": 1,
+    "Minor": 1,
+    "Build": -1,
+    "Revision": -1,
+    "MajorRevision": -1,
+    "MinorRevision": -1
+  }
+}, {"e":{"Errors":[{"source":".Net SqlClient Data Provider","number":8178,"state":1,"errorClass":16,"server":"zdv0o26czf.database.windows.net","message":"The parameterized query '(@IntSerial varchar(12))SELECT InterceptorType FROM dbo.tblInter' expects the parameter '@IntSerial', which was not supplied.","procedure":"","lineNumber":0,"win32ErrorCode":0}],"ClientConnectionId":"c057bb1b-7881-4992-b002-f0b4254a49dd","ClassName":"System.Data.SqlClient.SqlException","Message":"The parameterized query '(@IntSerial varchar(12))SELECT InterceptorType FROM dbo.tblInter' expects the parameter '@IntSerial', which was not supplied.","Data":{"HelpLink.ProdName":"Microsoft SQL Server","HelpLink.ProdVer":"11.00.9230","HelpLink.EvtSrc":"MSSQLServer","HelpLink.EvtID":"8178","HelpLink.BaseHelpUrl":"http://go.microsoft.com/fwlink","HelpLink.LinkId":"20476"},"InnerException":null,"HelpURL":null,"StackTraceString":"   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()\r\n   at System.Data.SqlClient.SqlDataReader.get_MetaData()\r\n   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)\r\n   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)\r\n   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)\r\n   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()\r\n   at Cozumo.AuthenticationAndAuthorization.Dao.LegacyAuthenticationDao.GetInterceptorCredentials(IDbCommand command, IEntityKey key)\r\n   at Cozumo.Common.DB.DbUtils.WrapInTransaction[T,TO](Func`1 connectionFactory, Func`3 func, T item)\r\n   at Cozumo.AuthenticationAndAuthorization.Dao.LegacyAuthenticationDao.GetInterceptorCredentials(IEntityKey key)\r\n   at Cozumo.AuthenticationAndAuthorization.Dao.LegacyAuthenticationDao.GetCredentials(String correlationId, IEntityKey key)\r\n   at Cozumo.AuthenticationAndAuthorization.LegacyAuthenticator.Authenticate(String correlationId, IAuthenticationRequest request, IAuthenticationContext requestContext)\r\n   at Cozumo.AuthenticationAndAuthorization.ObjectCacheAuthenticationManager.Authenticate(String correlationId, IAuthenticationRequest request, IAuthenticationContext requestContext)\r\n   at Cozumo.AuthenticationAndAuthorization.LegacyAuthAndAuthService.Authorize(String correlationId, IAuthenticationRequest request, IAuthenticationContext authenticationContext, String action, IImmutableSet`1 objectIds, IAuthorizationContext authorizationContext)\r\n   at AuthAndAuthRoutes.AuthAndAuthRoute.RunRoute(IEsbMessage message)\r\n   at AuthAndAuthRoutes.AuthAndAuthRoute.Send(IEsbMessage message)\r\n   at Cozumo.Common.Esb.LocalService.Send(String routeName, IEsbMessage message)\r\n   at Cozumo.Common.Esb.LocalService.Send(String sourceCorrelation, String routeName, IEsbMessage message)\r\n   at Cozumo.Esb.Routes.AuthorizationUtils.AuthorizeAndGetInterceptorId(IEsbService esbService, ISystemEventDao systemEventDao, String correlationId, String action, CredentialPayloadWrapper payload)\r\n   at Cozumo.Esb.Routes.InterceptorCmdRoute.<RunRoute>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()\r\n   at Cozumo.Esb.Routes.InterceptorCmdRoute.<SendAsync>d__7.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()\r\n   at Cozumo.Common.Esb.LocalService.<SendAsync>d__0.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()\r\n   at Cozumo.Common.Esb.LocalService.<SendAsync>d__7.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()\r\n   at Cozumo.Interceptor.API.Controllers.ICmdController.<GetICmdDetails>d__3.MoveNext() in d:\\a\\src\\WebRole1\\Controllers\\ICmdController.cs:line 85","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":"8\nOnError\nSystem.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\nSystem.Data.SqlClient.SqlConnection\nVoid OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])","HResult":-2146232060,"Source":".Net SqlClient Data Provider","WatsonBuckets":null}}]
+[{
+  "Content": {
+    "Headers": [
+      {
+        "Key": "Content-Type",
+        "Value": [
+          "application/json; charset=utf-8"
+        ]
+      },
+      {
+        "Key": "Expires",
+        "Value": [
+          "-1"
+        ]
+      },
       {
         "Key": "Content-Length",
         "Value": [
           "115"
         ]
-      },
-      {
-        "Key": "Content-Type",
-        "Value": [
-          "application/json; charset=utf-8"
-        ]
-      },
-      {
-        "Key": "Expires",
-        "Value": [
-          "-1"
-        ]
       }
     ]
   },
-  "StatusCode": 404,
-  "ReasonPhrase": "Not Found",
   "Headers": [
-    {
-      "Key": "Pragma",
-      "Value": [
-        "no-cache"
-      ]
-    },
     {
       "Key": "Cache-Control",
       "Value": [
@@ -221,9 +203,9 @@
       ]
     },
     {
-      "Key": "Date",
+      "Key": "Pragma",
       "Value": [
-        "Fri, 05 Jun 2015 15:43:27 GMT"
+        "no-cache"
       ]
     },
     {
@@ -243,9 +225,24 @@
       "Value": [
         "ASP.NET"
       ]
+    },
+    {
+      "Key": "Date",
+      "Value": [
+        "Fri, 05 Jun 2015 17:09:43 GMT"
+      ]
     }
   ],
+  "IsSuccessStatusCode": false,
+  "ReasonPhrase": "Not Found",
   "RequestMessage": {
+    "Content": null,
+    "Headers": [],
+    "Method": {
+      "Method": "GET"
+    },
+    "Properties": {},
+    "RequestUri": "http://cozumotesttls.cloudapp.net/api/iCmd",
     "Version": {
       "Major": 1,
       "Minor": 1,
@@ -253,18 +250,9 @@
       "Revision": -1,
       "MajorRevision": -1,
       "MinorRevision": -1
-    },
-    "Content": null,
-    "Method": {
-      "Method": "GET"
-    },
-    "RequestUri": "http://cozumotesttls.cloudapp.net/api/iCmd",
-    "Headers": [],
-    "Properties": {}
+    }
   },
-  "IsSuccessStatusCode": false
-}, {"Message":"No HTTP resource was found that matches the request URI 'http://cozumotesttls.cloudapp.net/api/iCmd'."}]
-[{
+  "StatusCode": 404,
   "Version": {
     "Major": 1,
     "Minor": 1,
@@ -272,38 +260,32 @@
     "Revision": -1,
     "MajorRevision": -1,
     "MinorRevision": -1
-  },
+  }
+}, {"Message":"No HTTP resource was found that matches the request URI 'http://cozumotesttls.cloudapp.net/api/iCmd'."}]
+[{
   "Content": {
     "Headers": [
+      {
+        "Key": "Content-Type",
+        "Value": [
+          "application/json; charset=utf-8"
+        ]
+      },
+      {
+        "Key": "Expires",
+        "Value": [
+          "-1"
+        ]
+      },
       {
         "Key": "Content-Length",
         "Value": [
           "1"
         ]
-      },
-      {
-        "Key": "Content-Type",
-        "Value": [
-          "application/json; charset=utf-8"
-        ]
-      },
-      {
-        "Key": "Expires",
-        "Value": [
-          "-1"
-        ]
       }
     ]
   },
-  "StatusCode": 200,
-  "ReasonPhrase": "OK",
   "Headers": [
-    {
-      "Key": "Pragma",
-      "Value": [
-        "no-cache"
-      ]
-    },
     {
       "Key": "Cache-Control",
       "Value": [
@@ -311,9 +293,9 @@
       ]
     },
     {
-      "Key": "Date",
+      "Key": "Pragma",
       "Value": [
-        "Fri, 05 Jun 2015 15:43:27 GMT"
+        "no-cache"
       ]
     },
     {
@@ -333,9 +315,24 @@
       "Value": [
         "ASP.NET"
       ]
+    },
+    {
+      "Key": "Date",
+      "Value": [
+        "Fri, 05 Jun 2015 17:09:43 GMT"
+      ]
     }
   ],
+  "IsSuccessStatusCode": true,
+  "ReasonPhrase": "OK",
   "RequestMessage": {
+    "Content": null,
+    "Headers": [],
+    "Method": {
+      "Method": "GET"
+    },
+    "Properties": {},
+    "RequestUri": "http://cozumotesttls.cloudapp.net/api/iCmd/?i=D05FB84F1606",
     "Version": {
       "Major": 1,
       "Minor": 1,
@@ -343,22 +340,30 @@
       "Revision": -1,
       "MajorRevision": -1,
       "MinorRevision": -1
-    },
-    "Content": null,
-    "Method": {
-      "Method": "GET"
-    },
-    "RequestUri": "http://cozumotesttls.cloudapp.net/api/iCmd/?i=D05FB84F1606",
-    "Headers": [],
-    "Properties": {}
+    }
   },
-  "IsSuccessStatusCode": true
+  "StatusCode": 200,
+  "Version": {
+    "Major": 1,
+    "Minor": 1,
+    "Build": -1,
+    "Revision": -1,
+    "MajorRevision": -1,
+    "MinorRevision": -1
+  }
 }, 0]
-  },
-    "Method": {
-      "Method": "POST"
+sonPhrase": "Internal Server Error",
+  "RequestMessage": {
+    "Content": {
+      "Headers": [
+        {
+          "Key": "Content-Type",
+          "Value": [
+            "application/json; charset=utf-8"
+          ]
+        }
+      ]
     },
-    "RequestUri": "http://cozumotesttls.cloudapp.net/api/DeviceScan/",
     "Headers": [
       {
         "Key": "Accept",
@@ -367,11 +372,21 @@
         ]
       }
     ],
-    "Properties": {}
+    "Method": {
+      "Method": "POST"
+    },
+    "Properties": {},
+    "RequestUri": "http://cozumotesttls.cloudapp.net/api/DeviceScan/",
+    "Version": {
+      "Major": 1,
+      "Minor": 1,
+      "Build": -1,
+      "Revision": -1,
+      "MajorRevision": -1,
+      "MinorRevision": -1
+    }
   },
-  "IsSuccessStatusCode": false
-}, ]
-[{
+  "StatusCode": 500,
   "Version": {
     "Major": 1,
     "Minor": 1,
@@ -379,38 +394,32 @@
     "Revision": -1,
     "MajorRevision": -1,
     "MinorRevision": -1
-  },
+  }
+}, ]
+[{
   "Content": {
     "Headers": [
+      {
+        "Key": "Content-Type",
+        "Value": [
+          "application/json; charset=utf-8"
+        ]
+      },
+      {
+        "Key": "Expires",
+        "Value": [
+          "-1"
+        ]
+      },
       {
         "Key": "Content-Length",
         "Value": [
           "20"
         ]
-      },
-      {
-        "Key": "Content-Type",
-        "Value": [
-          "application/json; charset=utf-8"
-        ]
-      },
-      {
-        "Key": "Expires",
-        "Value": [
-          "-1"
-        ]
       }
     ]
   },
-  "StatusCode": 201,
-  "ReasonPhrase": "Created",
   "Headers": [
-    {
-      "Key": "Pragma",
-      "Value": [
-        "no-cache"
-      ]
-    },
     {
       "Key": "Cache-Control",
       "Value": [
@@ -418,9 +427,9 @@
       ]
     },
     {
-      "Key": "Date",
+      "Key": "Pragma",
       "Value": [
-        "Fri, 05 Jun 2015 15:43:04 GMT"
+        "no-cache"
       ]
     },
     {
@@ -440,17 +449,17 @@
       "Value": [
         "ASP.NET"
       ]
+    },
+    {
+      "Key": "Date",
+      "Value": [
+        "Fri, 05 Jun 2015 17:09:41 GMT"
+      ]
     }
   ],
+  "IsSuccessStatusCode": true,
+  "ReasonPhrase": "Created",
   "RequestMessage": {
-    "Version": {
-      "Major": 1,
-      "Minor": 1,
-      "Build": -1,
-      "Revision": -1,
-      "MajorRevision": -1,
-      "MinorRevision": -1
-    },
     "Content": {
       "Headers": [
         {
@@ -458,19 +467,9 @@
           "Value": [
             "application/json; charset=utf-8"
           ]
-        },
-        {
-          "Key": "Content-Length",
-          "Value": [
-            "84"
-          ]
         }
       ]
     },
-    "Method": {
-      "Method": "POST"
-    },
-    "RequestUri": "http://cozumotesttls.cloudapp.net/api/DeviceScan/",
     "Headers": [
       {
         "Key": "Accept",
@@ -479,44 +478,48 @@
         ]
       }
     ],
-    "Properties": {}
+    "Method": {
+      "Method": "POST"
+    },
+    "Properties": {},
+    "RequestUri": "http://cozumotesttls.cloudapp.net/api/DeviceScan/",
+    "Version": {
+      "Major": 1,
+      "Minor": 1,
+      "Build": -1,
+      "Revision": -1,
+      "MajorRevision": -1,
+      "MinorRevision": -1
+    }
   },
-  "IsSuccessStatusCode": true
+  "StatusCode": 201,
+  "Version": {
+    "Major": 1,
+    "Minor": 1,
+    "Build": -1,
+    "Revision": -1,
+    "MajorRevision": -1,
+    "MinorRevision": -1
+  }
 }, {"r":"055577420928"}]
 [{
-  "Version": {
-    "Major": 1,
-    "Minor": 1,
-    "Build": -1,
-    "Revision": -1,
-    "MajorRevision": -1,
-    "MinorRevision": -1
-  },
   "Content": {
     "Headers": [
-      {
-        "Key": "Content-Length",
-        "Value": [
-          "0"
-        ]
-      },
       {
         "Key": "Expires",
         "Value": [
           "-1"
         ]
+      },
+      {
+        "Key": "Content-Length",
+        "Value": [
+          "0"
+        ]
       }
     ]
   },
-  "StatusCode": 201,
-  "ReasonPhrase": "Created",
   "Headers": [
-    {
-      "Key": "Pragma",
-      "Value": [
-        "no-cache"
-      ]
-    },
     {
       "Key": "Cache-Control",
       "Value": [
@@ -524,9 +527,9 @@
       ]
     },
     {
-      "Key": "Date",
+      "Key": "Pragma",
       "Value": [
-        "Fri, 05 Jun 2015 15:43:06 GMT"
+        "no-cache"
       ]
     },
     {
@@ -546,17 +549,17 @@
       "Value": [
         "ASP.NET"
       ]
+    },
+    {
+      "Key": "Date",
+      "Value": [
+        "Fri, 05 Jun 2015 17:09:41 GMT"
+      ]
     }
   ],
+  "IsSuccessStatusCode": true,
+  "ReasonPhrase": "Created",
   "RequestMessage": {
-    "Version": {
-      "Major": 1,
-      "Minor": 1,
-      "Build": -1,
-      "Revision": -1,
-      "MajorRevision": -1,
-      "MinorRevision": -1
-    },
     "Content": {
       "Headers": [
         {
@@ -564,19 +567,9 @@
           "Value": [
             "application/json; charset=utf-8"
           ]
-        },
-        {
-          "Key": "Content-Length",
-          "Value": [
-            "133"
-          ]
         }
       ]
     },
-    "Method": {
-      "Method": "POST"
-    },
-    "RequestUri": "http://cozumotesttls.cloudapp.net/api/DeviceScan/",
     "Headers": [
       {
         "Key": "Accept",
@@ -585,44 +578,48 @@
         ]
       }
     ],
-    "Properties": {}
+    "Method": {
+      "Method": "POST"
+    },
+    "Properties": {},
+    "RequestUri": "http://cozumotesttls.cloudapp.net/api/DeviceScan/",
+    "Version": {
+      "Major": 1,
+      "Minor": 1,
+      "Build": -1,
+      "Revision": -1,
+      "MajorRevision": -1,
+      "MinorRevision": -1
+    }
   },
-  "IsSuccessStatusCode": true
+  "StatusCode": 201,
+  "Version": {
+    "Major": 1,
+    "Minor": 1,
+    "Build": -1,
+    "Revision": -1,
+    "MajorRevision": -1,
+    "MinorRevision": -1
+  }
 }, ]
 [{
-  "Version": {
-    "Major": 1,
-    "Minor": 1,
-    "Build": -1,
-    "Revision": -1,
-    "MajorRevision": -1,
-    "MinorRevision": -1
-  },
   "Content": {
     "Headers": [
-      {
-        "Key": "Content-Length",
-        "Value": [
-          "0"
-        ]
-      },
       {
         "Key": "Expires",
         "Value": [
           "-1"
         ]
+      },
+      {
+        "Key": "Content-Length",
+        "Value": [
+          "0"
+        ]
       }
     ]
   },
-  "StatusCode": 201,
-  "ReasonPhrase": "Created",
   "Headers": [
-    {
-      "Key": "Pragma",
-      "Value": [
-        "no-cache"
-      ]
-    },
     {
       "Key": "Cache-Control",
       "Value": [
@@ -630,9 +627,9 @@
       ]
     },
     {
-      "Key": "Date",
+      "Key": "Pragma",
       "Value": [
-        "Fri, 05 Jun 2015 15:43:06 GMT"
+        "no-cache"
       ]
     },
     {
@@ -652,17 +649,17 @@
       "Value": [
         "ASP.NET"
       ]
+    },
+    {
+      "Key": "Date",
+      "Value": [
+        "Fri, 05 Jun 2015 17:09:41 GMT"
+      ]
     }
   ],
+  "IsSuccessStatusCode": true,
+  "ReasonPhrase": "Created",
   "RequestMessage": {
-    "Version": {
-      "Major": 1,
-      "Minor": 1,
-      "Build": -1,
-      "Revision": -1,
-      "MajorRevision": -1,
-      "MinorRevision": -1
-    },
     "Content": {
       "Headers": [
         {
@@ -670,19 +667,9 @@
           "Value": [
             "application/json; charset=utf-8"
           ]
-        },
-        {
-          "Key": "Content-Length",
-          "Value": [
-            "74"
-          ]
         }
       ]
     },
-    "Method": {
-      "Method": "POST"
-    },
-    "RequestUri": "http://cozumotesttls.cloudapp.net/api/DeviceScan/",
     "Headers": [
       {
         "Key": "Accept",
@@ -691,44 +678,48 @@
         ]
       }
     ],
-    "Properties": {}
+    "Method": {
+      "Method": "POST"
+    },
+    "Properties": {},
+    "RequestUri": "http://cozumotesttls.cloudapp.net/api/DeviceScan/",
+    "Version": {
+      "Major": 1,
+      "Minor": 1,
+      "Build": -1,
+      "Revision": -1,
+      "MajorRevision": -1,
+      "MinorRevision": -1
+    }
   },
-  "IsSuccessStatusCode": true
+  "StatusCode": 201,
+  "Version": {
+    "Major": 1,
+    "Minor": 1,
+    "Build": -1,
+    "Revision": -1,
+    "MajorRevision": -1,
+    "MinorRevision": -1
+  }
 }, ]
 [{
-  "Version": {
-    "Major": 1,
-    "Minor": 1,
-    "Build": -1,
-    "Revision": -1,
-    "MajorRevision": -1,
-    "MinorRevision": -1
-  },
   "Content": {
     "Headers": [
-      {
-        "Key": "Content-Length",
-        "Value": [
-          "0"
-        ]
-      },
       {
         "Key": "Expires",
         "Value": [
           "-1"
         ]
+      },
+      {
+        "Key": "Content-Length",
+        "Value": [
+          "0"
+        ]
       }
     ]
   },
-  "StatusCode": 201,
-  "ReasonPhrase": "Created",
   "Headers": [
-    {
-      "Key": "Pragma",
-      "Value": [
-        "no-cache"
-      ]
-    },
     {
       "Key": "Cache-Control",
       "Value": [
@@ -736,9 +727,9 @@
       ]
     },
     {
-      "Key": "Date",
+      "Key": "Pragma",
       "Value": [
-        "Fri, 05 Jun 2015 15:43:09 GMT"
+        "no-cache"
       ]
     },
     {
@@ -758,17 +749,17 @@
       "Value": [
         "ASP.NET"
       ]
+    },
+    {
+      "Key": "Date",
+      "Value": [
+        "Fri, 05 Jun 2015 17:09:41 GMT"
+      ]
     }
   ],
+  "IsSuccessStatusCode": true,
+  "ReasonPhrase": "Created",
   "RequestMessage": {
-    "Version": {
-      "Major": 1,
-      "Minor": 1,
-      "Build": -1,
-      "Revision": -1,
-      "MajorRevision": -1,
-      "MinorRevision": -1
-    },
     "Content": {
       "Headers": [
         {
@@ -776,19 +767,9 @@
           "Value": [
             "application/json; charset=utf-8"
           ]
-        },
-        {
-          "Key": "Content-Length",
-          "Value": [
-            "77"
-          ]
         }
       ]
     },
-    "Method": {
-      "Method": "POST"
-    },
-    "RequestUri": "http://cozumotesttls.cloudapp.net/api/DeviceScan/",
     "Headers": [
       {
         "Key": "Accept",
@@ -797,7 +778,27 @@
         ]
       }
     ],
-    "Properties": {}
+    "Method": {
+      "Method": "POST"
+    },
+    "Properties": {},
+    "RequestUri": "http://cozumotesttls.cloudapp.net/api/DeviceScan/",
+    "Version": {
+      "Major": 1,
+      "Minor": 1,
+      "Build": -1,
+      "Revision": -1,
+      "MajorRevision": -1,
+      "MinorRevision": -1
+    }
   },
-  "IsSuccessStatusCode": true
+  "StatusCode": 201,
+  "Version": {
+    "Major": 1,
+    "Minor": 1,
+    "Build": -1,
+    "Revision": -1,
+    "MajorRevision": -1,
+    "MinorRevision": -1
+  }
 }, ]

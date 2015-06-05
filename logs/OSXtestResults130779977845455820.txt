@@ -1,0 +1,13 @@
+Starting Tests! Current time: 2015-06-05 1:09:44 PM
+Current test: iCmd ValidSerial
+Raw test results:
+Summary:
+Current test: iCmd ValidSerial
+Input JSON:
+No JSON attached to this operation
+Input URI: http://cozumotesttls.cloudapp.net/api/iCmd/?i=D05FB84F1606
+Expected result: 200
+Actual result: 200
+Time elapsed: 753.7694s
+Test result: Pass
+

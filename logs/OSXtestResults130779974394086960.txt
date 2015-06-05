@@ -1,0 +1,18 @@
+Starting Tests! Current time: 2015-06-05 1:03:59 PM
+Current test: DeviceScan ValidSingleScanSimple
+Raw test results:
+Summary:
+Current test: DeviceScan ValidSingleScanSimple
+Input JSON:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 4
+}
+Input URI: http://cozumotesttls.cloudapp.net/api/DeviceScan/
+Expected result: 201
+Actual result: 201
+Time elapsed: 114.7722s
+Test result: Pass
+

@@ -49,6 +49,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
             Test scanTest = new Test(testDScan);
             scanTest.setTestName("ValidSingleScanSimple");
+			scanTest.setExpectedResult ("201");
 
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
@@ -69,6 +70,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
             Test scanTest = new Test(testDScan);
             scanTest.setTestName("UTF8ScanCode");
+			scanTest.setExpectedResult ("201");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
@@ -87,6 +89,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
             Test scanTest = new Test(testDScan);
             scanTest.setTestName("ASCIIScanCode");
+			scanTest.setExpectedResult ("201");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
             results.WriteLine(HTTPSCalls.result.ToString());
@@ -107,6 +110,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
             Test scanTest = new Test(testDScan);
             scanTest.setTestName("InvalidSerialSimple");
+			scanTest.setExpectedResult ("400");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
@@ -126,6 +130,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
             Test scanTest = new Test(testDScan);
             scanTest.setTestName("EmptySerialSimple");
+			scanTest.setExpectedResult ("400");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
             results.WriteLine(HTTPSCalls.result.ToString());
@@ -148,6 +153,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
             Test scanTest = new Test(testDScan);
             scanTest.setTestName("NullSerialSimple");
+			scanTest.setExpectedResult ("400");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
             results.WriteLine(HTTPSCalls.result.ToString());
@@ -173,6 +179,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
             Test scanTest = new Test(testDScan);
             scanTest.setTestName("LOValidScansSimple");
+			scanTest.setExpectedResult ("201");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
@@ -194,6 +201,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
             Test scanTest = new Test (testDScan);
             scanTest.setTestName("ValidSingleScanDyn");
+			scanTest.setExpectedResult ("201");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
             results.WriteLine(HTTPSCalls.result.ToString());
@@ -214,6 +222,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
             Test scanTest = new Test (testDScan);
             scanTest.setTestName("ValidCH");
+			scanTest.setExpectedResult ("201");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
             results.WriteLine(HTTPSCalls.result.ToString());
@@ -262,6 +271,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
             Test scanTest = new Test (testDScan);
             scanTest.setTestName("InvalidSerialDyn");
+			scanTest.setExpectedResult ("400");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
             results.WriteLine(HTTPSCalls.result.ToString());
@@ -283,6 +293,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
             Test scanTest = new Test (testDScan);
             scanTest.setTestName("EmptySerialDyn");
+			scanTest.setExpectedResult ("400");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
             results.WriteLine(HTTPSCalls.result.ToString());
@@ -303,6 +314,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
             Test scanTest = new Test (testDScan);
             scanTest.setTestName("NullSerialDyn");
+			scanTest.setExpectedResult ("400");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
             results.WriteLine(HTTPSCalls.result.ToString());
@@ -328,6 +340,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
             Test scanTest = new Test (testDScan);
             scanTest.setTestName("LOValidScansDyn");
+			scanTest.setExpectedResult ("201");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
             results.WriteLine(HTTPSCalls.result.ToString());
@@ -389,6 +402,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
             Test scanTest = new Test (testDScan);
             scanTest.setTestName("ValidScansSimDyn");
+			scanTest.setExpectedResult ("201");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
             results.WriteLine(HTTPSCalls.result.ToString());
@@ -442,6 +456,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
             Test scanTest = new Test (testDScan);
             scanTest.setTestName("NoScanData");
+			scanTest.setExpectedResult ("400");
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
             results.WriteLine(HTTPSCalls.result.ToString());

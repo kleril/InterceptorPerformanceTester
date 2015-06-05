@@ -47,6 +47,8 @@ namespace InterceptorTester.Tests.PerformanceTests
 
                 Test scanTest = new Test(testDScan);
                 scanTest.setTestName("ValidSingleScanSimple");
+				scanTest.setExpectedResult ("201");
+				scanTest.setType ("performance");
 
                 timer.Start();
                 AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.GET));
@@ -76,6 +78,8 @@ namespace InterceptorTester.Tests.PerformanceTests
 
             Test scanTest = new Test(testDScan);
             scanTest.setTestName("ValidSingleScanSimple");
+			scanTest.setExpectedResult ("201");
+			scanTest.setType ("performance");
 
             List<Test> tests = new List<Test>();
             tests.Add(scanTest);
@@ -121,6 +125,8 @@ namespace InterceptorTester.Tests.PerformanceTests
 
                 Test scanTest = new Test(testDScan);
                 scanTest.setTestName("ValidSingleScanSimple");
+				scanTest.setExpectedResult ("201");
+				scanTest.setType ("performance");
 
                 timer.Start();
                 AsyncContext.Run(async () => await new HTTPCalls().runTest(scanTest, HTTPOperation.GET));
@@ -150,6 +156,8 @@ namespace InterceptorTester.Tests.PerformanceTests
 
             Test scanTest = new Test(testDScan);
             scanTest.setTestName("ValidSingleScanSimple");
+			scanTest.setExpectedResult ("201");
+			scanTest.setType ("performance");
 
             List<Test> tests = new List<Test>();
             tests.Add(scanTest);
@@ -192,6 +200,8 @@ namespace InterceptorTester.Tests.PerformanceTests
 
             Test scanTest1 = new Test(Scan1);
             scanTest1.setTestName("ValidSingleScanSimple");
+			scanTest1.setExpectedResult ("201");
+			scanTest1.setType ("performance");
 
 
             DeviceScanJSON testJson2 = new DeviceScanJSON();
@@ -203,6 +213,8 @@ namespace InterceptorTester.Tests.PerformanceTests
 
             Test scanTest2 = new Test(Scan2);
             scanTest2.setTestName("ValidSingleScanSimple");
+			scanTest2.setExpectedResult ("201");
+			scanTest2.setType ("performance");
 
             // Construct started tasks
             Task<double>[,] tasks = new Task<double>[TestGlobals.maxReps, 2];

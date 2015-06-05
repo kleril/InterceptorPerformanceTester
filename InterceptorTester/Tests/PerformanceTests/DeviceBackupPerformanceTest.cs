@@ -54,6 +54,8 @@ namespace InterceptorTester.Tests.PerformanceTests
                 //Test
                 Test backupTest = new Test(operation);
                 backupTest.setTestName("ValidSingleBackupItem");
+				backupTest.setExpectedResult ("201");
+				backupTest.setType ("performance");
 
                 timer.Start();
                 AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
@@ -89,6 +91,8 @@ namespace InterceptorTester.Tests.PerformanceTests
             //Test
             Test backupTest = new Test(operation);
             backupTest.setTestName("ValidSingleBackupItem");
+			backupTest.setExpectedResult ("201");
+			backupTest.setType ("performance");
             // Construct started tasks
             Task<double>[] tasks = new Task<double>[TestGlobals.maxReps];
             for (int i = 0; i < TestGlobals.maxReps; i++)
@@ -134,6 +138,8 @@ namespace InterceptorTester.Tests.PerformanceTests
                 //Test
                 Test backupTest = new Test(operation);
                 backupTest.setTestName("ValidSingleBackupItem");
+				backupTest.setExpectedResult ("201");
+				backupTest.setType ("performance");
 
                 timer.Start();
                 AsyncContext.Run(async () => await new HTTPCalls().runTest(backupTest, HTTPOperation.POST));
@@ -169,6 +175,8 @@ namespace InterceptorTester.Tests.PerformanceTests
             //Test
             Test backupTest = new Test(operation);
             backupTest.setTestName("ValidSingleBackupItem");
+			backupTest.setExpectedResult ("201");
+			backupTest.setType ("performance");
             // Construct started tasks
             Task<double>[] tasks = new Task<double>[TestGlobals.maxReps];
             for (int i = 0; i < TestGlobals.maxReps; i++)
@@ -207,6 +215,8 @@ namespace InterceptorTester.Tests.PerformanceTests
 
             Test backupTest1 = new Test(operation1);
             backupTest1.setTestName("ValidSingleBackupItem");
+			backupTest1.setExpectedResult ("201");
+			backupTest1.setType ("performance");
 
             BackupItem[] items2 = new BackupItem[1];
             items2[0] = InterceptorTests.DeviceBackupTest.getBackupItem(1);
@@ -218,6 +228,8 @@ namespace InterceptorTester.Tests.PerformanceTests
 
             Test backupTest2 = new Test(operation2);
             backupTest2.setTestName("ValidSingleBackupItem");
+			backupTest2.setExpectedResult ("201");
+			backupTest2.setType ("performance");
 
             // Construct started tasks
             Task<double>[,] tasks = new Task<double>[TestGlobals.maxReps, 2];

@@ -22,17 +22,14 @@ namespace InterceptorTester.Tests.AdminTests
         public void setup()
         {
             TestGlobals.setup();
-<<<<<<< HEAD:InterceptorTester/NUnitTests/OrganizationTest.cs
-			server = new Uri(ConfigurationManager.ConnectionStrings["AdminServer"].ConnectionString);
-=======
->>>>>>> origin/master:InterceptorTester/Tests/AdminTests/OrganizationTest.cs
+
         }
 
         [Test()]
         public static void createOrganization()
         {
             OrganizationJSON json = new OrganizationJSON(999, "TestName");
-			Organization newOrg = new Organization(TestGlobals.testServer, json);
+			Organization newOrg = new Organization(TestGlobals.adminServer, json);
             Test mTest = new Test(newOrg);
             Console.WriteLine("Creating client");
             HttpClient client = new HttpClient();
@@ -47,7 +44,7 @@ namespace InterceptorTester.Tests.AdminTests
         public KeyValuePair<JObject, string> getSingleOrganization()
         {
 			string query = "/API/Organization/" + TestGlobals.orgIdCreated;
-            GenericRequest getOrg = new GenericRequest(TestGlobals.testServer, query, null);
+            GenericRequest getOrg = new GenericRequest(TestGlobals.adminServer, query, null);
             Test mTest = new Test(getOrg);
             HttpClient client = new HttpClient();
             //TODO: Initialize the client properly - add session token to header, etc.
@@ -61,7 +58,7 @@ namespace InterceptorTester.Tests.AdminTests
 		public KeyValuePair<JObject, string> getMultipleOrganization()
 		{
 			string query = "/API/Organization/";
-            GenericRequest getOrg = new GenericRequest(TestGlobals.testServer, query, null);
+            GenericRequest getOrg = new GenericRequest(TestGlobals.adminServer, query, null);
 			Test mTest = new Test(getOrg);
 			HttpClient client = new HttpClient();
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET, client));
@@ -73,7 +70,7 @@ namespace InterceptorTester.Tests.AdminTests
 		public void deleteOrganization()
 		{
 			string query = "/api/organization/" + TestGlobals.orgIdCreated;
-            GenericRequest orgReq = new GenericRequest(TestGlobals.testServer, query, null);
+            GenericRequest orgReq = new GenericRequest(TestGlobals.adminServer, query, null);
 			Test orgTest = new Test(orgReq);
 			HttpClient client;
 

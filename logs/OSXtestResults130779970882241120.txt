@@ -1,0 +1,17 @@
+Starting Tests! Current time: 2015-06-05 12:58:08 PM
+Current test: DeviceBackup NoBackupItems
+Raw test results:
+Summary:
+Current test: DeviceBackup NoBackupItems
+Input JSON:
+{
+  "i": "D05FB84F1606",
+  "b": [],
+  "s": 8
+}
+Input URI: http://cozumotesttls.cloudapp.net/api/DeviceBackup/
+Expected result: 201
+Actual result: 201
+Time elapsed: 859.3368s
+Test result: Pass
+

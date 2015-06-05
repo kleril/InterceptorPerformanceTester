@@ -41,6 +41,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
 			Test ValidSerial = new Test(dSetting1);
 			ValidSerial.setTestName("ValidSerial");
+			ValidSerial.setExpectedResult ("200");
 
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(ValidSerial, HTTPOperation.GET));
@@ -58,6 +59,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
 			Test BadSerial = new Test(dSetting2);
 			BadSerial.setTestName("BadSerial");
+			BadSerial.setExpectedResult ("400");
 
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(BadSerial, HTTPOperation.GET));
@@ -75,6 +77,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
 			Test NoSerial = new Test(dSetting3);
 			NoSerial.setTestName("NoSerial");
+			NoSerial.setExpectedResult ("400");
 
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(NoSerial, HTTPOperation.GET));

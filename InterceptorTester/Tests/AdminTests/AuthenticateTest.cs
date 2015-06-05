@@ -33,7 +33,7 @@ namespace InterceptorTester.Tests.AdminTests
             //Set up JSON
             json.userID = TestGlobals.username;
             json.password = TestGlobals.password;
-            Authenticate authCall = new Authenticate(TestGlobals.testServer, json);
+            Authenticate authCall = new Authenticate(TestGlobals.adminServer, json);
             Test authTest = new Test(authCall);
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(authTest, HTTPOperation.POST));
 			sessionToken = JObject.Parse(HTTPSCalls.result.Value);
@@ -44,7 +44,7 @@ namespace InterceptorTester.Tests.AdminTests
         {
             if (sessionToken != null)
             {
-                GenericRequest req = new GenericRequest(TestGlobals.testServer, "/api/authenticate/", null);
+                GenericRequest req = new GenericRequest(TestGlobals.adminServer, "/api/authenticate/", null);
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Authorization = getSessionToken();
                 Test closeTest = new Test(req);

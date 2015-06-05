@@ -1,0 +1,34 @@
+Starting Tests! Current time: 2015-06-05 1:09:43 PM
+Current test: DeviceStatus AlertDataStore
+Raw test results:
+Summary:
+Current test: DeviceStatus AlertDataStore
+Input JSON:
+{
+  "intSerial": "D05FB84F1606",
+  "seqNum": "87",
+  "startURL": "http://cozumotesttls.cloudapp.net:80/api/DeviceSetting",
+  "reportURL": "http://cozumotesttls.cloudapp.net:80/api/DeviceStatus",
+  "scanURL": "http://cozumotesttls.cloudapp.net:80/api/DeviceScan",
+  "bkupURL": "http://cozumotesttls.cloudapp.net:80/api/DeviceBackup",
+  "cmdURL": "http://cozumotesttls.cloudapp.net:80/api/iCmd",
+  "capture": "1",
+  "captureMode": "1",
+  "requestTimeoutValue": "8000",
+  "callHomeTimeoutMode": "0",
+  "callHomeTimeoutData": null,
+  "dynCodeFormat": null,
+  "cmdChkInt": "1",
+  "revId": "52987",
+  "errorLog": [
+    "<timestamp>///900///bypassmode",
+    "wasd",
+    "qwerty"
+  ]
+}
+Input URI: http://cozumotesttls.cloudapp.net/api/DeviceStatus/
+Expected result: 201
+Actual result: 400
+Time elapsed: 67.1275s
+Test result: Fail
+

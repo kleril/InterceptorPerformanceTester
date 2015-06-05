@@ -58,6 +58,8 @@ namespace InterceptorTester.Tests.PerformanceTests
             DeviceStatus operation = new DeviceStatus(TestGlobals.testServer, status);
             Test statusTest = new Test(operation);
             statusTest.setTestName("ValidSerial");
+			statusTest.setExpectedResult ("201");
+			statusTest.setType ("performance");
 
 
             List<Test> tests = new List<Test>();
@@ -98,6 +100,8 @@ namespace InterceptorTester.Tests.PerformanceTests
             DeviceStatus operation = new DeviceStatus(TestGlobals.testServer, status);
             Test statusTest = new Test(operation);
             statusTest.setTestName("ValidSerial");
+			statusTest.setExpectedResult ("201");
+			statusTest.setType ("performance");
 
 
             List<Test> tests = new List<Test>();

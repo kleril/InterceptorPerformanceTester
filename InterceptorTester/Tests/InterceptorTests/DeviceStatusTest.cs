@@ -83,6 +83,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			DeviceStatus operation = new DeviceStatus(TestGlobals.testServer, status);
 			Test statusTest = new Test(operation);
 			statusTest.setTestName("ValidSerial");
+			statusTest.setExpectedResult ("201");
 
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(statusTest, HTTPOperation.POST));
@@ -119,6 +120,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			DeviceStatus operation = new DeviceStatus(TestGlobals.testServer, status);
 			Test statusTest = new Test(operation);
 			statusTest.setTestName("BadSerial");
+			statusTest.setExpectedResult ("400");
 
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(statusTest, HTTPOperation.POST));
@@ -153,6 +155,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			DeviceStatus operation = new DeviceStatus(TestGlobals.testServer, status);
 			Test statusTest = new Test(operation);
 			statusTest.setTestName("EmptySerial");
+			statusTest.setExpectedResult ("400");
 
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(statusTest, HTTPOperation.POST));
@@ -187,6 +190,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			DeviceStatus operation = new DeviceStatus(TestGlobals.testServer, status);
 			Test statusTest = new Test(operation);
 			statusTest.setTestName("NullSerial");
+			statusTest.setExpectedResult ("400");
 
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(statusTest, HTTPOperation.POST));
@@ -222,6 +226,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			DeviceStatus operation = new DeviceStatus(TestGlobals.testServer, status);
 			Test statusTest = new Test(operation);
 			statusTest.setTestName("AlertDataStore");
+			statusTest.setExpectedResult ("201");
 
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(statusTest, HTTPOperation.POST));

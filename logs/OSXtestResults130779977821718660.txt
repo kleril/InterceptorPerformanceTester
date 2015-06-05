@@ -1,0 +1,18 @@
+Starting Tests! Current time: 2015-06-05 1:09:42 PM
+Current test: DeviceScan ValidCH
+Raw test results:
+Summary:
+Current test: DeviceScan ValidCH
+Input JSON:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "~21/*CH*055577520928",
+  "s": 4
+}
+Input URI: http://cozumotesttls.cloudapp.net/api/DeviceScan/
+Expected result: 201
+Actual result: 201
+Time elapsed: 453.1315s
+Test result: Pass
+

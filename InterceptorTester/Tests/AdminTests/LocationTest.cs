@@ -24,10 +24,6 @@ namespace InterceptorTester.Tests.AdminTests
         public void setup()
         {
             TestGlobals.setup();
-<<<<<<< HEAD:InterceptorTester/NUnitTests/LocationTest.cs
-            server = new Uri(ConfigurationManager.ConnectionStrings["AdminServer"].ConnectionString);
-=======
->>>>>>> origin/master:InterceptorTester/Tests/AdminTests/LocationTest.cs
         }
 
         [Test()]
@@ -38,7 +34,7 @@ namespace InterceptorTester.Tests.AdminTests
             json.locDesc = "desc";
             json.locSubType = "subtype";
             json.locType = "type";
-			Location newLoc = new Location(TestGlobals.testServer, json);
+			Location newLoc = new Location(TestGlobals.adminServer, json);
             Test mTest = new Test(newLoc);
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
@@ -53,7 +49,7 @@ namespace InterceptorTester.Tests.AdminTests
         public KeyValuePair<JObject, string> getSingleLocation()
         {
 			string query = "/API/Location/" + TestGlobals.locIdCreated;
-			GenericRequest getLoc = new GenericRequest(TestGlobals.testServer, query, null);
+			GenericRequest getLoc = new GenericRequest(TestGlobals.adminServer, query, null);
             Test mTest = new Test(getLoc);
             HttpClient client = new HttpClient();
             //TODO: Initialize the client properly - add session token to header, etc.
@@ -67,7 +63,7 @@ namespace InterceptorTester.Tests.AdminTests
 		public KeyValuePair<JObject, string> getMultipleLocations()
 		{
 			string query = "/API/Location/?orgid=" + TestGlobals.orgIdCreated;
-			GenericRequest getLoc = new GenericRequest(TestGlobals.testServer, query, null);
+			GenericRequest getLoc = new GenericRequest(TestGlobals.adminServer, query, null);
 			Test mTest = new Test(getLoc);
 			HttpClient client = new HttpClient();
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET, client));
@@ -80,7 +76,7 @@ namespace InterceptorTester.Tests.AdminTests
 		{
 			Console.WriteLine (TestGlobals.locIdCreated);
 			string query = "/api/location/" + TestGlobals.locIdCreated;
-			GenericRequest locReq = new GenericRequest(TestGlobals.testServer, query, null);
+			GenericRequest locReq = new GenericRequest(TestGlobals.adminServer, query, null);
 			Test locTest = new Test(locReq);
 			HttpClient client;
 
