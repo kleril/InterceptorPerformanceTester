@@ -10,23 +10,26 @@ using Nito.AsyncEx;
 using System.IO.Compression;
 using Newtonsoft.Json.Linq;
 using System.Net.Http;
+using ConsoleApplication1;
 
-namespace ConsoleApplication1
+namespace InterceptorTester.Tests.AdminTests
 {
-    /*
 	[TestFixture()]
     public class LocationTest
     {
 		public static string locIdCreated;
         public static string orgIdPassed;
-		public static string server;
 
         [TestFixtureSetUp()]
         public void setup()
         {
             TestGlobals.setup();
+<<<<<<< HEAD:InterceptorTester/NUnitTests/LocationTest.cs
             server = new Uri(ConfigurationManager.ConnectionStrings["AdminServer"].ConnectionString);
+=======
+>>>>>>> origin/master:InterceptorTester/Tests/AdminTests/LocationTest.cs
         }
+
         [Test()]
         public static void createLocation()
         {
@@ -35,7 +38,7 @@ namespace ConsoleApplication1
             json.locDesc = "desc";
             json.locSubType = "subtype";
             json.locType = "type";
-			Location newLoc = new Location(server, json);
+			Location newLoc = new Location(TestGlobals.testServer, json);
             Test mTest = new Test(newLoc);
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
@@ -50,7 +53,7 @@ namespace ConsoleApplication1
         public KeyValuePair<JObject, string> getSingleLocation()
         {
 			string query = "/API/Location/" + TestGlobals.locIdCreated;
-			GenericRequest getLoc = new GenericRequest(server, query, null);
+			GenericRequest getLoc = new GenericRequest(TestGlobals.testServer, query, null);
             Test mTest = new Test(getLoc);
             HttpClient client = new HttpClient();
             //TODO: Initialize the client properly - add session token to header, etc.
@@ -64,7 +67,7 @@ namespace ConsoleApplication1
 		public KeyValuePair<JObject, string> getMultipleLocations()
 		{
 			string query = "/API/Location/?orgid=" + TestGlobals.orgIdCreated;
-			GenericRequest getLoc = new GenericRequest(server, query, null);
+			GenericRequest getLoc = new GenericRequest(TestGlobals.testServer, query, null);
 			Test mTest = new Test(getLoc);
 			HttpClient client = new HttpClient();
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET, client));
@@ -77,7 +80,7 @@ namespace ConsoleApplication1
 		{
 			Console.WriteLine (TestGlobals.locIdCreated);
 			string query = "/api/location/" + TestGlobals.locIdCreated;
-			GenericRequest locReq = new GenericRequest(server, query, null);
+			GenericRequest locReq = new GenericRequest(TestGlobals.testServer, query, null);
 			Test locTest = new Test(locReq);
 			HttpClient client;
 
@@ -105,5 +108,4 @@ namespace ConsoleApplication1
             return TestGlobals.locIdCreated;
         }
     }
-    */
 }

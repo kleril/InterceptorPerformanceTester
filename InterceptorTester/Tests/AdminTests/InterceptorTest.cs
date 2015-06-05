@@ -10,20 +10,21 @@ using Nito.AsyncEx;
 using System.IO.Compression;
 using Newtonsoft.Json.Linq;
 using System.Net.Http;
+using ConsoleApplication1;
 
-namespace ConsoleApplication1
+namespace InterceptorTester.Tests.AdminTests
 {
-    /*
 	[TestFixture()]
     public class InterceptorTest
     {
-		public static string server;
-
 		[TestFixtureSetUp()]
         public void setup()
         {
             TestGlobals.setup();
+<<<<<<< HEAD:InterceptorTester/NUnitTests/InterceptorTest.cs
 			server = new Uri(ConfigurationManager.ConnectionStrings["AdminServer"].ConnectionString);
+=======
+>>>>>>> origin/master:InterceptorTester/Tests/AdminTests/InterceptorTest.cs
         }
 
 
@@ -37,7 +38,7 @@ namespace ConsoleApplication1
             Console.WriteLine("Creating intercepter w/ loc:");
             Console.WriteLine(loc);
             InterceptorJSON json = new InterceptorJSON(int.Parse(loc), LocationTest.orgIdPassed, "AYYYYLMAO");
-			Interceptor newInt = new Interceptor(server, "NotUsed", json);
+            Interceptor newInt = new Interceptor(TestGlobals.testServer, "NotUsed", json);
 			Test mTest = new Test(newInt);
             HttpClient client = new HttpClient();
 			client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken ();
@@ -52,7 +53,7 @@ namespace ConsoleApplication1
 		public KeyValuePair<JObject, string> getSingleInterceptor()
 		{
 			string query = "/API/Interceptor/" + TestGlobals.validSerial;
-			GenericRequest getInt = new GenericRequest(server, query, null);
+            GenericRequest getInt = new GenericRequest(TestGlobals.testServer, query, null);
 			Test mTest = new Test(getInt);
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
@@ -65,7 +66,7 @@ namespace ConsoleApplication1
 		public KeyValuePair<JObject, string> getMultipleInterceptors()
 		{
 			string query = "/API/Interceptor/?LocId=" + TestGlobals.locIdCreated;
-			GenericRequest getInt = new GenericRequest (server, query, null);
+            GenericRequest getInt = new GenericRequest(TestGlobals.testServer, query, null);
 			Test mTest = new Test (getInt);
 			HttpClient client = new HttpClient ();
 			AsyncContext.Run (async() => await new HTTPSCalls ().runTest (mTest, HTTPOperation.GET, client));
@@ -77,7 +78,7 @@ namespace ConsoleApplication1
 		public void deleteInterceptor()
 		{
 			string query = "/api/interceptor/" + TestGlobals.intIdCreated;
-			GenericRequest intReq = new GenericRequest(server, query, null);
+            GenericRequest intReq = new GenericRequest(TestGlobals.testServer, query, null);
 			Test intTest = new Test(intReq);
 			HttpClient client;
 
@@ -88,5 +89,4 @@ namespace ConsoleApplication1
 		}
 
 	}
-	*/
 }

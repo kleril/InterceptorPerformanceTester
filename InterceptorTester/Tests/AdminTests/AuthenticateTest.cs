@@ -11,10 +11,10 @@ using System.Configuration;
 using Nito.AsyncEx;
 using System.IO.Compression;
 using Newtonsoft.Json.Linq;
+using ConsoleApplication1;
 
-namespace ConsoleApplication1
+namespace InterceptorTester.Tests.AdminTests
 {
-	/*
 	[TestFixture()]
 	public class AuthenticateTest
     {
@@ -27,7 +27,7 @@ namespace ConsoleApplication1
         }
 
 		[Test()]
-        public static JObject generateSessionToken()
+        public static void generateSessionToken()
 		{
             AuthenticateJSON json = new AuthenticateJSON();
             //Set up JSON
@@ -37,7 +37,6 @@ namespace ConsoleApplication1
             Test authTest = new Test(authCall);
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(authTest, HTTPOperation.POST));
 			sessionToken = JObject.Parse(HTTPSCalls.result.Value);
-			return sessionToken;
         }
 
         [Test()]
@@ -53,8 +52,7 @@ namespace ConsoleApplication1
             }
         }
 
-		[Test()]
-		public static AuthenticationHeaderValue getSessionToken()
+		public static AuthenticationHeaderValue getSessionToken()   
 		{
             if (sessionToken == null)
             {
@@ -65,10 +63,10 @@ namespace ConsoleApplication1
                 generateSessionToken();
             }
             string parse = "Token " + sessionToken.GetValue("_sessionToken").ToString();
+            Console.WriteLine(parse);
             AuthenticationHeaderValue ret = System.Net.Http.Headers.AuthenticationHeaderValue.Parse(parse);
             return ret;
         }
 
 	}
-	*/
 }
