@@ -11,6 +11,9 @@ namespace DatabasePopulator
     class Program
     {
         static List<ConsoleApplication1.Test> basket = new List<ConsoleApplication1.Test>();
+		static int basketNum;
+		static int scanNum;
+		static int totalScan;
 
         static void Main(string[] args)
         {
@@ -21,26 +24,44 @@ namespace DatabasePopulator
         private static async void generateScans()
         {
 			int[] pseudoRandDelay = {60, 120, 600, 60, 120, 480, 300, 180};
-			int[] pseudoRandBasket = {10,4,2,4,5,6,7,8,9,1,5,4,2,1,8,9,7,6,4,10,3,3,5,9,8,1,7,6,5,4,3,10,2,6,2,2,1,2,2,4,2};
+			int[] pseudoRandBasket = { 10, 4,2,4,5,6,7,8,9,1,5,4,2,1,8,9,7,6,4,10,3,3,5,9,8,1,7,6,5,4,3,10,2,6,2,2,1,2,2,4,2};
+
+			basketNum = 0;
+			totalScan = 0;
+
+			DateTime started = DateTime.Now;
 
 			foreach (int delay in pseudoRandDelay)
             {
 				foreach (int basketType in pseudoRandBasket)
                 {
 					getBasket(basketType);
+					Console.WriteLine (DateTime.Now);
+
+					scanNum = 0;
+
                     foreach (ConsoleApplication1.Test nextScan in basket)
                     {
 						Console.WriteLine("Posting Scan");
                         AsyncContext.Run(async () => await new ConsoleApplication1.HTTPSCalls().runTest(nextScan, ConsoleApplication1.HTTPOperation.POST));
                         Console.WriteLine("Posted Scan");
-						Console.WriteLine ("Wating for next scan");
+						Console.WriteLine ("Waiting for next scan...");
 						System.Threading.Thread.Sleep (5000);
-
+						scanNum++;
                     }
-					Console.WriteLine("Basket complete. Sleeping...");
+					basketNum++;
+					totalScan += scanNum;
+					Console.WriteLine ("Basket complete.");
+					Console.WriteLine ("Number of items in this basket: " + scanNum);
+					Console.WriteLine ("Total baskets: " + basketNum);
+					Console.WriteLine ("Total scans: " + totalScan);
+					Console.WriteLine ("Test started at: " + started);
+					Console.WriteLine ("Current time: " + DateTime.Now);
+					Console.WriteLine ("Waiting for next basket...");
 					System.Threading.Thread.Sleep(delay * 1000);
 
 					Console.WriteLine("Getting next basket");
+					Console.WriteLine();
                 }
             }
             Console.WriteLine("Reached end of posts");
