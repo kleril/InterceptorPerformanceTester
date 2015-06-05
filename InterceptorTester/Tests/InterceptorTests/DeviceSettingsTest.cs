@@ -8,8 +8,9 @@ using System.IO;
 using System.Configuration;
 using Nito.AsyncEx;
 using System.IO.Compression;
+using ConsoleApplication1;
 
-namespace ConsoleApplication1
+namespace InterceptorTester.Tests.InterceptorTests
 {
 	[TestFixture()]
 	public class DeviceSettingsTest

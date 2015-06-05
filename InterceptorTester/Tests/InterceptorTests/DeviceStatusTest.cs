@@ -8,15 +8,13 @@ using System.IO;
 using System.Configuration;
 using Nito.AsyncEx;
 using System.IO.Compression;
+using ConsoleApplication1;
 
-namespace ConsoleApplication1
+namespace InterceptorTester.Tests.InterceptorTests
 {
 	[TestFixture()]
 	public class DeviceStatusTest
 	{
-		static StreamWriter results;
-		static string outputFileHTTPSAsync = "../../../logs/AsyncHTTPSDeviceStatusPerformanceTest.csv";
-		static string outputFileHTTPAsync = "../../../logs/AsyncHTTPDeviceStatusPerformanceTest.csv";
 
 		DeviceStatusJSON status;
 
@@ -46,88 +44,6 @@ namespace ConsoleApplication1
 
 			TestGlobals.setup ();
 		}
-
-		[Test()]
-		public void AsyncHTTPSDeviceStatus()
-		{
-			FileStream stream;
-			stream = File.Create(outputFileHTTPSAsync);
-			results = new StreamWriter(stream);
-
-			DeviceStatus operation = new DeviceStatus(TestGlobals.testServer, status);
-			Test statusTest = new Test(operation);
-			statusTest.setTestName("ValidSerial");
-
-
-			List<Test> tests = new List<Test>();
-			tests.Add (statusTest);
-
-			System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
-			timer.Start();
-
-			// Construct started tasks
-			Task<double>[] tasks = new Task<double>[TestGlobals.maxReps];
-			for (int i = 0; i < TestGlobals.maxReps; i++)
-			{
-				System.Threading.Thread.Sleep(TestGlobals.delay);
-                tasks[i] = new HTTPSCalls().runTest(statusTest, HTTPOperation.POST);
-				Console.WriteLine("Test starting:" + i.ToString());
-			}
-			Console.WriteLine("------------------------------------------------------");
-			Console.WriteLine("All tests initialized, waiting on them to run as async");
-			Console.WriteLine("------------------------------------------------------");
-			Task.WaitAll(tasks);
-
-			foreach (Task<double> nextResult in tasks)
-			{
-				results.WriteLine("Test Time," + nextResult.Result);
-			}
-
-			results.Close();
-		}
-
-
-		[Test()]
-		public void AsyncHTTPDeviceStatus()
-		{
-			FileStream stream;
-			stream = File.Create(outputFileHTTPAsync);
-			results = new StreamWriter(stream);
-
-			DeviceStatus operation = new DeviceStatus(TestGlobals.testServer, status);
-			Test statusTest = new Test(operation);
-			statusTest.setTestName("ValidSerial");
-
-
-			List<Test> tests = new List<Test>();
-			tests.Add(statusTest);
-
-			System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
-			timer.Start();
-
-			// Construct started tasks
-			Task<double>[] tasks = new Task<double>[TestGlobals.maxReps];
-			for (int i = 0; i < TestGlobals.maxReps; i++)
-			{
-				System.Threading.Thread.Sleep(TestGlobals.delay);
-                tasks[i] = new HTTPCalls().runTest(statusTest, HTTPOperation.POST);
-				Console.WriteLine("Test starting:" + i.ToString());
-			}
-			Console.WriteLine("------------------------------------------------------");
-			Console.WriteLine("All tests initialized, waiting on them to run as async");
-			Console.WriteLine("------------------------------------------------------");
-			Task.WaitAll(tasks);
-
-			foreach (Task<double> nextResult in tasks)
-			{
-				results.WriteLine("Test Time," + nextResult.Result);
-			}
-
-			results.Close();
-		}
-
-
-
 
 		[Test()]
 		public void ValidSerial()
