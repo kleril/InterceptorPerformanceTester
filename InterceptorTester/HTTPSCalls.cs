@@ -22,9 +22,6 @@ namespace ConsoleApplication1{
 
         public static KeyValuePair<JObject, string> result;
 
-		static StreamWriter results;
-
-		static string outputFile = "../../../logs/testResults.txt";
 
         /// <summary>
         /// Constructor, creates client certificate from file located at: "../../Data/unittestcert.pfx"
@@ -51,40 +48,9 @@ namespace ConsoleApplication1{
         /// <returns>Number of milliseconds the request took</returns>
         public async Task<double> runTest(Test currentTest, HTTPOperation op)
         {
-            
-			FileStream stream;
-			try
-			{
-				if (File.Exists(outputFile))
-				{
-					stream = File.Open(outputFile, FileMode.Append);
-					Console.WriteLine("Streaming into append mode");
-				}
-				else
-				{
-					stream = File.Create(outputFile);
-					Console.WriteLine("Streaming into new file");
-				}
-
-
-				results = new StreamWriter(stream);
-			}
-			catch (IOException e)
-			{
-				results = new StreamWriter("../../../logs/OSXtestResults" + DateTime.Now.ToFileTime() + ".txt");
-
-				Console.WriteLine("Could not initialize logging");
-				Console.WriteLine(e);
-			}
-
-
-			System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+            System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
             Console.WriteLine("Test starting");
-			if (currentTest.getType () == "unit")
-			{
-				results.WriteLine ("Starting Tests! Current time: " + DateTime.Now.ToString ());
-				results.WriteLine ("Current test: " + currentTest.ToString () + " " + currentTest.getTestName ());
-			}
+
 
             //Do tests
             timer.Start();
@@ -93,44 +59,7 @@ namespace ConsoleApplication1{
             double time = timer.Elapsed.TotalMilliseconds;
             Console.WriteLine("Test ending");
 
-
-			if ((results != null) && (currentTest.getType () == "unit"))
-			{
-				//Output results
-				//Test
-				results.WriteLine("Summary:");
-				results.WriteLine("Current test: " + currentTest.ToString() + " " + currentTest.getTestName());
-				//clm();
-
-				try
-				{
-					results.WriteLine("Input JSON:");
-					results.WriteLine(currentTest.getOperation().getJson().ToString());
-				}
-				catch (Exception)
-				{
-					results.WriteLine("No JSON attached to this operation");
-				}
-
-				results.WriteLine("Input URI: " + currentTest.getOperation().getUri());
-
-				//Expected value
-				results.WriteLine("Expected result: " + currentTest.getExpectedResult());
-				//clm();
-				//Actual value
-				results.WriteLine("Actual result: " + currentTest.getActualResult());
-				//clm();
-				//Time elapsed (in seconds)
-				results.WriteLine("Time elapsed: " + time + "s");
-				//clm();
-				//Pass/Fail
-				results.WriteLine("Test result: " + currentTest.result());
-				results.WriteLine ();
-			}
-
-			
-			results.Close();
-            return time;
+			return time;
         }
 
         /// <summary>
@@ -142,91 +71,23 @@ namespace ConsoleApplication1{
         /// <returns>Number of milliseconds the request took</returns>
         public async Task<double> runTest(Test currentTest, HTTPOperation op, HttpClient client)
         {
-			FileStream stream;
-			try
-			{
-				if (File.Exists(outputFile))
-				{
-					stream = File.Open(outputFile, FileMode.Append);
-					Console.WriteLine("Streaming into append mode");
-				}
-				else
-				{
-					stream = File.Create(outputFile);
-					Console.WriteLine("Streaming into new file");
-				}
-
-
-				results = new StreamWriter(stream);
-			}
-			catch (IOException e)
-			{
-				results = new StreamWriter("../../../logs/OSXtestResults" + DateTime.Now.ToFileTime() + ".txt");
-
-				Console.WriteLine("Could not initialize logging");
-				Console.WriteLine(e);
-			}
-
-
+			
 			System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
             Console.WriteLine("Test starting");
-			if (currentTest.getType () == "unit")
-			{
-				results.WriteLine ("Starting Tests! Current time: " + DateTime.Now.ToString ());
-				results.WriteLine ("Current test: " + currentTest.ToString () + " " + currentTest.getTestName ());
-			}
 
             //Do tests
             timer.Start();
-			results.WriteLine("Current test: " + currentTest.ToString() + " " + currentTest.getTestName());
-            await callType(currentTest, op, client);
+			await callType(currentTest, op, client);
             timer.Stop();
             double time = timer.Elapsed.TotalMilliseconds;
             Console.WriteLine("Test ending");
 
 
-			if ((results != null) && (currentTest.getType () == "unit"))
-			{
-				//Output results
-				//Test
-				results.WriteLine("Summary:");
-				results.WriteLine("Current test: " + currentTest.ToString() + " " + currentTest.getTestName());
-				//clm();
-
-				try
-				{
-					results.WriteLine("Input JSON:");
-					results.WriteLine(currentTest.getOperation().getJson().ToString());
-				}
-				catch (Exception)
-				{
-					results.WriteLine("No JSON attached to this operation");
-				}
-
-				results.WriteLine("Input URI: " + currentTest.getOperation().getUri());
-
-				//Expected value
-				results.WriteLine("Expected result: " + currentTest.getExpectedResult());
-				//clm();
-				//Actual value
-				results.WriteLine("Actual result: " + currentTest.getActualResult());
-				//clm();
-				//Time elapsed (in seconds)
-				results.WriteLine("Time elapsed: " + time + "s");
-				//clm();
-				//Pass/Fail
-				results.WriteLine("Test result: " + currentTest.result());
-				results.WriteLine ();
-			}
-
-
-			results.Close();
             return time;
         }
 
         static async Task callType(Test currentTest, HTTPOperation op)
         {
-			results.WriteLine("Raw test results:");
 			switch (op)
             {
 			case HTTPOperation.GET:
@@ -254,7 +115,6 @@ namespace ConsoleApplication1{
 
         static async Task callType(Test currentTest, HTTPOperation op, HttpClient client)
         {
-			results.WriteLine("Raw test results:");
 			switch (op)
             {
                 case HTTPOperation.GET:

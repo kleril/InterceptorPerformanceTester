@@ -17,12 +17,6 @@ namespace InterceptorTester.Tests.InterceptorTests
 	{
 		// Globals
 
-		static string outputFileHTTPSAsync = "../../../logs/AsyncHTTPSDeviceBackupTestPerformanceTest.csv";
-		static string outputFileHTTPAsync = "../../../logs/AsyncHTTPDeviceBackupTestPerformanceTest.csv";
-		static string outputFileHTTPSSync = "../../../logs/SyncHTTPSDeviceBackupTestPerformanceTest.csv";
-		static string outputFileHTTPSync = "../../../logs/SyncHTTPDeviceBackupTestPerformanceTest.csv";
-		static string outputFileMultiClientDeviceBackup = "../../../logs/MultiClientDeviceBackup.csv";
-
 		static StreamWriter results;
 
 		[TestFixtureSetUp()]
