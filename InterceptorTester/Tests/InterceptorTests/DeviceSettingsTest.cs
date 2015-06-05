@@ -16,15 +16,15 @@ namespace InterceptorTester.Tests.InterceptorTests
 	public class DeviceSettingsTest
     {
 
-        static StreamWriter results;
+		static string outputFile = "../../../logs/DeviceSettingUnitTest.txt";
+		static StreamWriter results;
 
         [TestFixtureSetUp()]
         public void setup()
         {
             TestGlobals.setup();
-
-            FileStream stream;
-            stream = File.OpenWrite(TestGlobals.logFile);
+			FileStream stream;
+			stream = File.OpenWrite(outputFile);
             results = new StreamWriter(stream);
         }
 
@@ -39,15 +39,23 @@ namespace InterceptorTester.Tests.InterceptorTests
 		{
 			DeviceSetting dSetting1 = new DeviceSetting(TestGlobals.testServer, TestGlobals.validSerial);
 
-			Test ValidSerial = new Test(dSetting1);
-			ValidSerial.setTestName("ValidSerial");
-			ValidSerial.setExpectedResult ("200");
+			Test deviceSetting = new Test(dSetting1);
+			deviceSetting.setTestName("ValidSerial");
+			deviceSetting.setExpectedResult ("200");
+
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + deviceSetting.ToString () + " " + deviceSetting.getTestName ());
 
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(ValidSerial, HTTPOperation.GET));
-            results.WriteLine(HTTPSCalls.result.ToString());
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(deviceSetting, HTTPOperation.GET));
+          	string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
 
-			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + deviceSetting.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + deviceSetting.result ());
+			results.WriteLine ();
+
 			Assert.AreEqual("200", statusCode);
 		}
 
@@ -57,15 +65,24 @@ namespace InterceptorTester.Tests.InterceptorTests
 		{
 			DeviceSetting dSetting2 = new DeviceSetting(TestGlobals.testServer, TestGlobals.invalidSerial);
 
-			Test BadSerial = new Test(dSetting2);
-			BadSerial.setTestName("BadSerial");
-			BadSerial.setExpectedResult ("400");
+			Test deviceSetting = new Test(dSetting2);
+			deviceSetting.setTestName("BadSerial");
+			deviceSetting.setExpectedResult ("400");
 
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(BadSerial, HTTPOperation.GET));
-            results.WriteLine(HTTPSCalls.result.ToString());
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + deviceSetting.ToString () + " " + deviceSetting.getTestName ());
 
+
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(deviceSetting, HTTPOperation.GET));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + deviceSetting.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + deviceSetting.result ());
+			results.WriteLine ();
+
 			Assert.AreEqual("400", statusCode);
 		}
 
@@ -75,15 +92,24 @@ namespace InterceptorTester.Tests.InterceptorTests
 		{
 			DeviceSetting dSetting3 = new DeviceSetting(TestGlobals.testServer, null);
 
-			Test NoSerial = new Test(dSetting3);
-			NoSerial.setTestName("NoSerial");
-			NoSerial.setExpectedResult ("400");
+			Test deviceSetting = new Test(dSetting3);
+			deviceSetting.setTestName("NoSerial");
+			deviceSetting.setExpectedResult ("400");
 
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(NoSerial, HTTPOperation.GET));
-            results.WriteLine(HTTPSCalls.result.ToString());
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + deviceSetting.ToString () + " " + deviceSetting.getTestName ());
 
+
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(deviceSetting, HTTPOperation.GET));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + deviceSetting.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + deviceSetting.result ());
+			results.WriteLine ();
+
 			Assert.AreEqual("400", statusCode);
 		}
 	}

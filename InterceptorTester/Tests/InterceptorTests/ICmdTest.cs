@@ -15,7 +15,9 @@ namespace InterceptorTester.Tests.InterceptorTests
 	[TestFixture()]
 	public class ICmdTest
 	{
-        static StreamWriter results;
+        
+		static string outputFile = "../../../logs/ICmdUnitTest.txt";
+		static StreamWriter results;
 
 		[TestFixtureSetUp()]
 		public void setup()
@@ -23,7 +25,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			TestGlobals.setup();
 
             FileStream stream;
-            stream = File.OpenWrite(TestGlobals.logFile);
+			stream = File.OpenWrite(outputFile);
             results = new StreamWriter(stream);
 		}
 
@@ -37,14 +39,23 @@ namespace InterceptorTester.Tests.InterceptorTests
 		public void ValidSerial()
 		{
 			ICmd validICmd = new ICmd(TestGlobals.testServer, TestGlobals.validSerial);
-			Test validTest = new Test(validICmd);
-			validTest.setTestName("ValidSerial");
-			validTest.setExpectedResult ("200");
+			Test icmdTest = new Test(validICmd);
+			icmdTest.setTestName("ValidSerial");
+			icmdTest.setExpectedResult ("200");
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(validTest, HTTPOperation.GET));
-            results.WriteLine(HTTPSCalls.result.ToString());
-            
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + icmdTest.ToString () + " " + icmdTest.getTestName ());
+
+
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(icmdTest, HTTPOperation.GET));
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + icmdTest.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + icmdTest.result ());
+			results.WriteLine ();
+
             Assert.AreEqual("200", statusCode);
 		}
 
@@ -52,14 +63,23 @@ namespace InterceptorTester.Tests.InterceptorTests
 		public void InvalidSerial()
 		{
 			ICmd invalidICmd = new ICmd(TestGlobals.testServer, TestGlobals.invalidSerial);
-			Test invalidTest = new Test(invalidICmd);
-			invalidTest.setTestName("BadSerial");
-			invalidTest.setExpectedResult ("400");
+			Test icmdTest = new Test(invalidICmd);
+			icmdTest.setTestName("BadSerial");
+			icmdTest.setExpectedResult ("400");
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(invalidTest, HTTPOperation.GET));
-            results.WriteLine(HTTPSCalls.result.ToString());
-            
-            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + icmdTest.ToString () + " " + icmdTest.getTestName ());
+
+
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(icmdTest, HTTPOperation.GET));
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + icmdTest.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + icmdTest.result ());
+			results.WriteLine ();
+
             Assert.AreEqual("400", statusCode);
 
 		}
@@ -68,14 +88,23 @@ namespace InterceptorTester.Tests.InterceptorTests
 		public void MissingSerial()
 		{
 			ICmd missingICmd = new ICmd(TestGlobals.testServer, null);
-			Test missingTest = new Test(missingICmd);
-			missingTest.setTestName("EmptySerial");
-			missingTest.setExpectedResult ("400");
+			Test icmdTest = new Test(missingICmd);
+			icmdTest.setTestName("EmptySerial");
+			icmdTest.setExpectedResult ("400");
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(missingTest, HTTPOperation.GET));
-            results.WriteLine(HTTPSCalls.result.ToString());
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + icmdTest.ToString () + " " + icmdTest.getTestName ());
 
-            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(icmdTest, HTTPOperation.GET));
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + icmdTest.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + icmdTest.result ());
+			results.WriteLine ();
+
             Assert.AreEqual("400", statusCode);
 		}
 
@@ -84,14 +113,23 @@ namespace InterceptorTester.Tests.InterceptorTests
 		{
 			ICmd missingICmd = new ICmd(TestGlobals.testServer, null);
 			missingICmd.noQuery = true;
-			Test missingTest = new Test(missingICmd);
-			missingTest.setTestName("NoQuery");
-			missingTest.setExpectedResult ("400");
+			Test icmdTest = new Test(missingICmd);
+			icmdTest.setTestName("NoQuery");
+			icmdTest.setExpectedResult ("400");
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(missingTest, HTTPOperation.GET));
-            results.WriteLine(HTTPSCalls.result.ToString());
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + icmdTest.ToString () + " " + icmdTest.getTestName ());
 
-            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(icmdTest, HTTPOperation.GET));
+			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + icmdTest.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + icmdTest.result ());
+			results.WriteLine ();
+
             Assert.AreEqual("404", statusCode);
 		}
 	}

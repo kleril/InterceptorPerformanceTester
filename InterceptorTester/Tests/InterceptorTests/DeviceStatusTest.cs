@@ -15,7 +15,9 @@ namespace InterceptorTester.Tests.InterceptorTests
 	[TestFixture()]
 	public class DeviceStatusTest
     {
-        static StreamWriter results;
+		static string outputFile = "../../../logs/DeviceStatusUnitTest.txt";
+
+		static StreamWriter results;
 
 		DeviceStatusJSON status;
 
@@ -45,7 +47,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
             TestGlobals.setup();
             FileStream stream;
-            stream = File.OpenWrite(TestGlobals.logFile);
+			stream = File.OpenWrite(outputFile);
             results = new StreamWriter(stream);
         }
 
@@ -85,10 +87,20 @@ namespace InterceptorTester.Tests.InterceptorTests
 			statusTest.setTestName("ValidSerial");
 			statusTest.setExpectedResult ("201");
 
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + statusTest.ToString () + " " + statusTest.getTestName ());
 
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(statusTest, HTTPOperation.POST));
-            results.WriteLine(HTTPSCalls.result.ToString());
-			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine("Json posted:");
+			results.WriteLine (statusTest.getOperation().getJson().ToString());
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + statusTest.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + statusTest.result ());
+			results.WriteLine ();
+
 			Assert.AreEqual("201", statusCode);
 		}
 
@@ -123,9 +135,20 @@ namespace InterceptorTester.Tests.InterceptorTests
 			statusTest.setExpectedResult ("400");
 
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(statusTest, HTTPOperation.POST));
-            results.WriteLine(HTTPSCalls.result.ToString());
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + statusTest.ToString () + " " + statusTest.getTestName ());
+
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(statusTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine("Json posted:");
+			results.WriteLine (statusTest.getOperation().getJson().ToString());
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + statusTest.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + statusTest.result ());
+			results.WriteLine ();
+
 			Assert.AreEqual("400", statusCode);
 		}
 
@@ -157,10 +180,20 @@ namespace InterceptorTester.Tests.InterceptorTests
 			statusTest.setTestName("EmptySerial");
 			statusTest.setExpectedResult ("400");
 
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + statusTest.ToString () + " " + statusTest.getTestName ());
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(statusTest, HTTPOperation.POST));
-            results.WriteLine(HTTPSCalls.result.ToString());
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(statusTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine("Json posted:");
+			results.WriteLine (statusTest.getOperation().getJson().ToString());
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + statusTest.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + statusTest.result ());
+			results.WriteLine ();
+
 			Assert.AreEqual("400", statusCode);
 		}
 
@@ -192,10 +225,20 @@ namespace InterceptorTester.Tests.InterceptorTests
 			statusTest.setTestName("NullSerial");
 			statusTest.setExpectedResult ("400");
 
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + statusTest.ToString () + " " + statusTest.getTestName ());
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(statusTest, HTTPOperation.POST));
-            results.WriteLine(HTTPSCalls.result.ToString());
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(statusTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine("Json posted:");
+			results.WriteLine (statusTest.getOperation().getJson().ToString());
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + statusTest.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + statusTest.result ());
+			results.WriteLine ();
+
 			Assert.AreEqual("400", statusCode);
 		}
 
@@ -228,10 +271,20 @@ namespace InterceptorTester.Tests.InterceptorTests
 			statusTest.setTestName("AlertDataStore");
 			statusTest.setExpectedResult ("201");
 
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + statusTest.ToString () + " " + statusTest.getTestName ());
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(statusTest, HTTPOperation.POST));
-            results.WriteLine(HTTPSCalls.result.ToString());
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(statusTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine("Json posted:");
+			results.WriteLine (statusTest.getOperation().getJson().ToString());
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + statusTest.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + statusTest.result ());
+			results.WriteLine ();
+
 			Assert.AreEqual("201", statusCode);
 
 		}
