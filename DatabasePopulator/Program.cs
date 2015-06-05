@@ -53,9 +53,16 @@ namespace DatabasePopulator
                     {
 						Console.WriteLine("Posting Scan");
 						results.WriteLine ("Posting Scan");
-                        AsyncContext.Run(async () => await new ConsoleApplication1.HTTPSCalls().runTest(nextScan, ConsoleApplication1.HTTPOperation.POST));
-                        Console.WriteLine("Posted Scan");
-						Console.WriteLine ("Waiting for next scan...");
+						AsyncContext.Run(async () => await new ConsoleApplication1.HTTPSCalls().runTest(nextScan, ConsoleApplication1.HTTPOperation.POST));
+
+						Console.WriteLine ("Scan posted:");
+						Console.WriteLine (nextScan.getOperation().getJson().ToString ());
+
+						results.WriteLine ("Scan posted:");
+						results.WriteLine (nextScan.getOperation ().getJson ().ToString ());
+
+
+                        Console.WriteLine ("Waiting for next scan...");
 
 						results.WriteLine ("Posted Scan");
 						results.WriteLine ("Waiting for next scan...");
