@@ -1,0 +1,32 @@
+Starting Tests! Current time: 2015-06-05 11:39:33 AM
+Current test: DeviceBackup BadSerial
+Raw test results:
+Summary:
+Current test: DeviceBackup BadSerial
+Input JSON:
+{
+  "i": "THISISANINVALIDSERIAL",
+  "b": [
+    {
+      "d": "12566132",
+      "s": 442,
+      "t": "2015-05-11T02:04:22.295",
+      "c": false
+    },
+    {
+      "d": "534235721",
+      "s": 442,
+      "t": "2015-05-11T02:04:28.216",
+      "c": false
+    },
+    {
+      "d": "892535",
+      "s": 442,
+      "t": "2015-05-11T02:04:25.142",
+      "c": false
+    }
+  ],
+  "s": 6
+}
+Time elapsed: 5249.3312s
+

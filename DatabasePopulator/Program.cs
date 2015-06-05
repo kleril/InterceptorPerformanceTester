@@ -15,6 +15,7 @@ namespace DatabasePopulator
 		static int scanNum;
 		static int totalScan;
 
+
         static void Main(string[] args)
         {
             ConsoleApplication1.TestGlobals.setup();

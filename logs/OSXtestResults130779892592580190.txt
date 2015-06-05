@@ -1,0 +1,119 @@
+Starting Tests! Current time: 2015-06-05 10:47:39 AM
+Current test: DeviceScan ValidCH
+Raw test results:
+[{
+  "Content": {
+    "Headers": [
+      {
+        "Key": "Content-Type",
+        "Value": [
+          "application/json; charset=utf-8"
+        ]
+      },
+      {
+        "Key": "Expires",
+        "Value": [
+          "-1"
+        ]
+      },
+      {
+        "Key": "Content-Length",
+        "Value": [
+          "20"
+        ]
+      }
+    ]
+  },
+  "Headers": [
+    {
+      "Key": "Cache-Control",
+      "Value": [
+        "no-cache"
+      ]
+    },
+    {
+      "Key": "Pragma",
+      "Value": [
+        "no-cache"
+      ]
+    },
+    {
+      "Key": "Server",
+      "Value": [
+        "Microsoft-IIS/8.0"
+      ]
+    },
+    {
+      "Key": "X-AspNet-Version",
+      "Value": [
+        "4.0.30319"
+      ]
+    },
+    {
+      "Key": "X-Powered-By",
+      "Value": [
+        "ASP.NET"
+      ]
+    },
+    {
+      "Key": "Date",
+      "Value": [
+        "Fri, 05 Jun 2015 14:47:40 GMT"
+      ]
+    }
+  ],
+  "IsSuccessStatusCode": true,
+  "ReasonPhrase": "Created",
+  "RequestMessage": {
+    "Content": {
+      "Headers": [
+        {
+          "Key": "Content-Type",
+          "Value": [
+            "application/json; charset=utf-8"
+          ]
+        }
+      ]
+    },
+    "Headers": [
+      {
+        "Key": "Accept",
+        "Value": [
+          "application/json"
+        ]
+      }
+    ],
+    "Method": {
+      "Method": "POST"
+    },
+    "Properties": {},
+    "RequestUri": "http://cozumotesttls.cloudapp.net/api/DeviceScan/",
+    "Version": {
+      "Major": 1,
+      "Minor": 1,
+      "Build": -1,
+      "Revision": -1,
+      "MajorRevision": -1,
+      "MinorRevision": -1
+    }
+  },
+  "StatusCode": 201,
+  "Version": {
+    "Major": 1,
+    "Minor": 1,
+    "Build": -1,
+    "Revision": -1,
+    "MajorRevision": -1,
+    "MinorRevision": -1
+  }
+}, {"r":"055577420928"}]
+Summary:
+Current test: DeviceScan ValidCH
+Input JSON:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "~21/*CH*055577520928",
+  "s": 4
+}
+Input URI: http://cozumotesttls.cloudapp.net/

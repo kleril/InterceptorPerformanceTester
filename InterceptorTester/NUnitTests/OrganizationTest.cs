@@ -25,7 +25,7 @@ namespace ConsoleApplication1
         public void setup()
         {
             TestGlobals.setup();
-			server = new Uri(ConfigurationManager.ConnectionStrings["IntOpServer"].ConnectionString);
+			server = new Uri(ConfigurationManager.ConnectionStrings["AdminServer"].ConnectionString);
         }
 
         [Test()]

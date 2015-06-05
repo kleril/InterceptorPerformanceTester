@@ -1,0 +1,93 @@
+Starting Tests! Current time: 2015-06-05 10:47:40 AM
+Current test: DeviceSetting ValidSerial
+Raw test results:
+[{
+  "Content": {
+    "Headers": [
+      {
+        "Key": "Content-Type",
+        "Value": [
+          "application/json; charset=utf-8"
+        ]
+      },
+      {
+        "Key": "Expires",
+        "Value": [
+          "-1"
+        ]
+      },
+      {
+        "Key": "Content-Length",
+        "Value": [
+          "672"
+        ]
+      }
+    ]
+  },
+  "Headers": [
+    {
+      "Key": "Cache-Control",
+      "Value": [
+        "no-cache"
+      ]
+    },
+    {
+      "Key": "Pragma",
+      "Value": [
+        "no-cache"
+      ]
+    },
+    {
+      "Key": "Server",
+      "Value": [
+        "Microsoft-IIS/8.0"
+      ]
+    },
+    {
+      "Key": "X-AspNet-Version",
+      "Value": [
+        "4.0.30319"
+      ]
+    },
+    {
+      "Key": "X-Powered-By",
+      "Value": [
+        "ASP.NET"
+      ]
+    },
+    {
+      "Key": "Date",
+      "Value": [
+        "Fri, 05 Jun 2015 14:47:40 GMT"
+      ]
+    }
+  ],
+  "IsSuccessStatusCode": true,
+  "ReasonPhrase": "OK",
+  "RequestMessage": {
+    "Content": null,
+    "Headers": [],
+    "Method": {
+      "Method": "GET"
+    },
+    "Properties": {},
+    "RequestUri": "http://cozumotesttls.cloudapp.net/api/DeviceSetting/?i=D05FB84F1606",
+    "Version": {
+      "Major": 1,
+      "Minor": 1,
+      "Build": -1,
+      "Revision": -1,
+      "MajorRevision": -1,
+      "MinorRevision": -1
+    }
+  },
+  "StatusCode": 200,
+  "Version": {
+    "Major": 1,
+    "Minor": 1,
+    "Build": -1,
+    "Revision": -1,
+    "MajorRevision": -1,
+    "MinorRevision": -1
+  }
+}, {"startURL":"http://cozumotesttls.cloudapp.net:80/api/DeviceSetting","reportURL":"http://cozumotesttls.cloudapp.net:80/api/DeviceStatus","scanURL":"http://cozumotesttls.cloudapp.net:80/api/DeviceScan","bkupURL":"http://cozumotesttls.cloudapp.net:80/api/DeviceBackup","cmdURL":"http://cozumotesttls.cloudapp.net:80/api/ICmd","capture":"1","captureMode":"1","requestTimeoutValue":"2000","callHomeTimeoutMode":"0","callHomeTimeoutData":"testdata","dy

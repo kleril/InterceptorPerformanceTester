@@ -37,6 +37,7 @@ namespace ConsoleApplication1
 			stream = File.Create(outputFileHTTPSSync);
 			results = new StreamWriter(stream);
 
+
 			for (int i = 0; i < TestGlobals.maxReps; i++)
 			{
 				System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
@@ -55,6 +56,8 @@ namespace ConsoleApplication1
 				//Test
 				Test backupTest = new Test(operation);
 				backupTest.setTestName("ValidSingleBackupItem");
+				backupTest.setExpectedResult ("201");
+				backupTest.setType ("performance");
 
 				timer.Start();
 				AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
@@ -71,6 +74,7 @@ namespace ConsoleApplication1
 		// Valid Single Backup Item
 		public void AsyncHTTPSDeviceBackup()
 		{
+
 			FileStream stream;
 			stream = File.Create(outputFileHTTPSAsync);
 			results = new StreamWriter(stream);
@@ -90,6 +94,8 @@ namespace ConsoleApplication1
 			//Test
 			Test backupTest = new Test(operation);
 			backupTest.setTestName("ValidSingleBackupItem");
+			backupTest.setExpectedResult ("201");
+			backupTest.setType ("performance");
 			// Construct started tasks
 			Task<double>[] tasks = new Task<double>[TestGlobals.maxReps];
 			for (int i = 0; i < TestGlobals.maxReps; i++)
@@ -268,6 +274,8 @@ namespace ConsoleApplication1
 
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			backupTest.setExpectedResult ("201");
+	
 			Assert.AreEqual("201", statusCode);
 		}
 
@@ -290,6 +298,7 @@ namespace ConsoleApplication1
 			//Test
 			Test backupTest = new Test(operation);
 			backupTest.setTestName("ValidSingleBackupItem");
+			backupTest.setExpectedResult ("201");
 
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
@@ -313,6 +322,7 @@ namespace ConsoleApplication1
 			DeviceBackup failOperation = new DeviceBackup(TestGlobals.testServer, failJson);
 			Test failingTest = new Test(failOperation);
 			failingTest.setTestName("InvalidSingleBackupItem");
+			failingTest.setExpectedResult ("400");
 
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(failingTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
@@ -339,6 +349,7 @@ namespace ConsoleApplication1
 			DeviceBackup failOperation = new DeviceBackup(TestGlobals.testServer, failJson);
 			Test failingTest = new Test(failOperation);
 			failingTest.setTestName("InvalidBackupItems");
+			failingTest.setExpectedResult ("400");
 
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(failingTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
@@ -363,6 +374,7 @@ namespace ConsoleApplication1
 
 			Test serialTest = new Test(serialOperation);
 			serialTest.setTestName("BadSerial");
+			serialTest.setExpectedResult ("400");
 
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
@@ -383,6 +395,7 @@ namespace ConsoleApplication1
 			DeviceBackup emptyOperation = new DeviceBackup(TestGlobals.testServer, emptyJson);
 			Test emptyTest = new Test(emptyOperation);
 			emptyTest.setTestName("NoBackupItems");
+			emptyTest.setExpectedResult ("201");
 
 
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(emptyTest, HTTPOperation.POST));
@@ -408,6 +421,7 @@ namespace ConsoleApplication1
 
 			Test serialTest = new Test(serialOperation);
 			serialTest.setTestName("EmptySerial");
+			serialTest.setExpectedResult ("400");
 
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
@@ -433,6 +447,7 @@ namespace ConsoleApplication1
 
 			Test serialTest = new Test(serialOperation);
 			serialTest.setTestName("NullSerial");
+			serialTest.setExpectedResult ("201");
 
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
@@ -459,6 +474,7 @@ namespace ConsoleApplication1
 
 			Test serialTest = new Test(serialOperation);
 			serialTest.setTestName("SpecialDynCode");
+			serialTest.setExpectedResult ("201");
 
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
@@ -486,6 +502,7 @@ namespace ConsoleApplication1
 
 			Test serialTest = new Test(serialOperation);
 			serialTest.setTestName("NotSpecialDynCode");
+			serialTest.setExpectedResult ("201");
 
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
@@ -514,6 +531,7 @@ namespace ConsoleApplication1
 
 			Test serialTest = new Test(serialOperation);
 			serialTest.setTestName("ValidBackupItemsSimDyn");
+			serialTest.setExpectedResult ("201");
 
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();

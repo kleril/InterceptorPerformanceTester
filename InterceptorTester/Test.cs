@@ -13,8 +13,9 @@ namespace ConsoleApplication1
         String expectedResult;
         String actualResult;
 		String testName;
+		String type = "unit";
 
-        public Test(APIOperation nOperation)
+		public Test(APIOperation nOperation)
         {
             operation = nOperation;
             actualResult = "?";
@@ -30,20 +31,32 @@ namespace ConsoleApplication1
             //This is going to break. If and when it does, use above code.
             return operation.ToString();
         }
+			
 
         public APIOperation getOperation()
         {
             return operation;
         }
 
-        private void setExpectedResult (String result)
+		public void setType(string testType)
+		{
+			type = testType;
+		}
+
+		public string getType()
+		{
+			return type;
+		}
+
+
+		public void setExpectedResult (String result)
         {
             expectedResult = result;
         }
 
         public String getExpectedResult ()
         {
-            throw new NotImplementedException();
+			return expectedResult;
         }
 
         public void setActualResult (String result)

@@ -1,0 +1,112 @@
+Starting Tests! Current time: 2015-06-05 10:47:42 AM
+Current test: DeviceStatus ValidSerial
+Raw test results:
+[{
+  "Content": {
+    "Headers": [
+      {
+        "Key": "Expires",
+        "Value": [
+          "-1"
+        ]
+      },
+      {
+        "Key": "Content-Length",
+        "Value": [
+          "0"
+        ]
+      }
+    ]
+  },
+  "Headers": [
+    {
+      "Key": "Cache-Control",
+      "Value": [
+        "no-cache"
+      ]
+    },
+    {
+      "Key": "Pragma",
+      "Value": [
+        "no-cache"
+      ]
+    },
+    {
+      "Key": "Server",
+      "Value": [
+        "Microsoft-IIS/8.0"
+      ]
+    },
+    {
+      "Key": "X-AspNet-Version",
+      "Value": [
+        "4.0.30319"
+      ]
+    },
+    {
+      "Key": "X-Powered-By",
+      "Value": [
+        "ASP.NET"
+      ]
+    },
+    {
+      "Key": "Date",
+      "Value": [
+        "Fri, 05 Jun 2015 14:47:43 GMT"
+      ]
+    }
+  ],
+  "IsSuccessStatusCode": false,
+  "ReasonPhrase": "Bad Request",
+  "RequestMessage": {
+    "Content": {
+      "Headers": [
+        {
+          "Key": "Content-Type",
+          "Value": [
+            "application/json; charset=utf-8"
+          ]
+        }
+      ]
+    },
+    "Headers": [
+      {
+        "Key": "Accept",
+        "Value": [
+          "application/json"
+        ]
+      }
+    ],
+    "Method": {
+      "Method": "POST"
+    },
+    "Properties": {},
+    "RequestUri": "http://cozumotesttls.cloudapp.net/api/DeviceStatus/",
+    "Version": {
+      "Major": 1,
+      "Minor": 1,
+      "Build": -1,
+      "Revision": -1,
+      "MajorRevision": -1,
+      "MinorRevision": -1
+    }
+  },
+  "StatusCode": 400,
+  "Version": {
+    "Major": 1,
+    "Minor": 1,
+    "Build": -1,
+    "Revision": -1,
+    "MajorRevision": -1,
+    "MinorRevision": -1
+  }
+}, ]
+Summary:
+Current test: DeviceStatus ValidSerial
+Input JSON:
+{
+  "intSerial": null,
+  "seqNum": "87",
+  "startURL": "http://cozumotesttls.cloudapp.net:80/api/DeviceSetting",
+  "reportURL": "http://cozumotesttls.cloudapp.net:80/api/DeviceStatus",
+  "scanURL": "http://cozumotesttls.cloudapp.net:80/api/DeviceSc
