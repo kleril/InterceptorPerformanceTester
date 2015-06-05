@@ -16,6 +16,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 	public class DeviceBackupTest
 	{
 		// Globals
+		static string outputFile = "../../../logs/DeviceBackupUnitTest.txt";
 
 		static StreamWriter results;
 
@@ -25,7 +26,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			TestGlobals.setup();
 
 			FileStream stream;
-			stream = File.OpenWrite(TestGlobals.logFile);
+			stream = File.OpenWrite(outputFile);
 			results = new StreamWriter(stream);
 		}
 
@@ -58,10 +59,19 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Test backupTest = new Test(operation);
 			backupTest.setTestName("ValidSerial");
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
-            results.WriteLine(HTTPSCalls.result.ToString());
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + backupTest.ToString () + " " + backupTest.getTestName ());
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+            results.WriteLine("Json posted:");
+			results.WriteLine (operation.getJson().ToString());
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + backupTest.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+
 			backupTest.setExpectedResult ("201");
+			results.WriteLine ("Test result: " + backupTest.result ());
+			results.WriteLine ();
 	
 			Assert.AreEqual("201", statusCode);
 		}
@@ -87,9 +97,20 @@ namespace InterceptorTester.Tests.InterceptorTests
 			backupTest.setTestName("ValidSingleBackupItem");
 			backupTest.setExpectedResult ("201");
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
-            results.WriteLine(HTTPSCalls.result.ToString());
-			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + backupTest.ToString () + " " + backupTest.getTestName ());
+
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine("Json posted:");
+			results.WriteLine (operation.getJson().ToString());
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + backupTest.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + backupTest.result ());
+			results.WriteLine ();
+
 			Assert.AreEqual("201", statusCode);
 		}
 			
@@ -107,14 +128,25 @@ namespace InterceptorTester.Tests.InterceptorTests
 			failJson.s = 5;
 			failJson.b = failItems;
 
-			DeviceBackup failOperation = new DeviceBackup(TestGlobals.testServer, failJson);
-			Test failingTest = new Test(failOperation);
-			failingTest.setTestName("InvalidSingleBackupItem");
-			failingTest.setExpectedResult ("400");
+			DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, failJson);
+			Test backupTest = new Test(operation);
+			backupTest.setTestName("InvalidSingleBackupItem");
+			backupTest.setExpectedResult ("400");
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(failingTest, HTTPOperation.POST));
-            results.WriteLine(HTTPSCalls.result.ToString());
-			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + backupTest.ToString () + " " + backupTest.getTestName ());
+
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine("Json posted:");
+			results.WriteLine (operation.getJson().ToString());
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + backupTest.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + backupTest.result ());
+			results.WriteLine ();
+
 			Assert.AreEqual("400", statusCode);
 		}
 
@@ -135,14 +167,25 @@ namespace InterceptorTester.Tests.InterceptorTests
 			failJson.s = 5;
 			failJson.b = failItems;
 
-			DeviceBackup failOperation = new DeviceBackup(TestGlobals.testServer, failJson);
-			Test failingTest = new Test(failOperation);
-			failingTest.setTestName("InvalidBackupItems");
-			failingTest.setExpectedResult ("400");
+			DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, failJson);
+			Test backupTest = new Test(operation);
+			backupTest.setTestName("InvalidBackupItems");
+			backupTest.setExpectedResult ("400");
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(failingTest, HTTPOperation.POST));
-            results.WriteLine(HTTPSCalls.result.ToString());
-			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + backupTest.ToString () + " " + backupTest.getTestName ());
+
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine("Json posted:");
+			results.WriteLine (operation.getJson().ToString());
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + backupTest.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + backupTest.result ());
+			results.WriteLine ();
+
 			Assert.AreEqual("400", statusCode);
 		}
 
@@ -160,15 +203,26 @@ namespace InterceptorTester.Tests.InterceptorTests
 			serialJson.s = 6;
 			serialJson.b = items;
 
-			DeviceBackup serialOperation = new DeviceBackup(TestGlobals.testServer, serialJson);
+			DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, serialJson);
 
-			Test serialTest = new Test(serialOperation);
-			serialTest.setTestName("BadSerial");
-			serialTest.setExpectedResult ("400");
+			Test backupTest = new Test(operation);
+			backupTest.setTestName("BadSerial");
+			backupTest.setExpectedResult ("400");
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
-            results.WriteLine(HTTPSCalls.result.ToString());
-			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + backupTest.ToString () + " " + backupTest.getTestName ());
+
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine("Json posted:");
+			results.WriteLine (operation.getJson().ToString());
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + backupTest.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + backupTest.result ());
+			results.WriteLine ();
+
 			Assert.AreEqual("400", statusCode);
 		}
 
@@ -183,15 +237,28 @@ namespace InterceptorTester.Tests.InterceptorTests
 			emptyJson.s = 8;
 			emptyJson.b = items;
 
-			DeviceBackup emptyOperation = new DeviceBackup(TestGlobals.testServer, emptyJson);
-			Test emptyTest = new Test(emptyOperation);
-			emptyTest.setTestName("NoBackupItems");
-			emptyTest.setExpectedResult ("201");
+			DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, emptyJson);
+
+			Test backupTest = new Test(operation);
+			backupTest.setTestName("BadSerial");
+			backupTest.setExpectedResult ("201");
+
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + backupTest.ToString () + " " + backupTest.getTestName ());
 
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(emptyTest, HTTPOperation.POST));
-            results.WriteLine(HTTPSCalls.result.ToString());
-			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
+            string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine("Json posted:");
+			results.WriteLine (operation.getJson().ToString());
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + backupTest.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + backupTest.result ());
+			results.WriteLine ();
+
+
 			Assert.AreEqual("201", statusCode);
 		}
 
@@ -209,15 +276,27 @@ namespace InterceptorTester.Tests.InterceptorTests
 			serialJson.b = items;
 			serialJson.i = "";
 
-			DeviceBackup serialOperation = new DeviceBackup(TestGlobals.testServer, serialJson);
+			DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, serialJson);
 
-			Test serialTest = new Test(serialOperation);
-			serialTest.setTestName("EmptySerial");
-			serialTest.setExpectedResult ("400");
+			Test backupTest = new Test(operation);
+			backupTest.setTestName("BadSerial");
+			backupTest.setExpectedResult ("400");
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
-            results.WriteLine(HTTPSCalls.result.ToString());
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + backupTest.ToString () + " " + backupTest.getTestName ());
+
+
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine("Json posted:");
+			results.WriteLine (operation.getJson().ToString());
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + backupTest.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + backupTest.result ());
+			results.WriteLine ();
+
 			Assert.AreEqual("400", statusCode);
 		}
 
@@ -236,15 +315,27 @@ namespace InterceptorTester.Tests.InterceptorTests
 			serialJson.b = items;
 			serialJson.i = null;
 
-			DeviceBackup serialOperation = new DeviceBackup(TestGlobals.testServer, serialJson);
+			DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, serialJson);
 
-			Test serialTest = new Test(serialOperation);
-			serialTest.setTestName("NullSerial");
-			serialTest.setExpectedResult ("201");
+			Test backupTest = new Test(operation);
+			backupTest.setTestName("BadSerial");
+			backupTest.setExpectedResult ("201");
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
-            results.WriteLine(HTTPSCalls.result.ToString());
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + backupTest.ToString () + " " + backupTest.getTestName ());
+
+
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine("Json posted:");
+			results.WriteLine (operation.getJson().ToString());
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + backupTest.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + backupTest.result ());
+			results.WriteLine ();
+
 			Assert.AreEqual("201", statusCode);
 		}
 
@@ -264,15 +355,27 @@ namespace InterceptorTester.Tests.InterceptorTests
 			serialJson.b = items;
 			serialJson.i = TestGlobals.validSerial;
 
-			DeviceBackup serialOperation = new DeviceBackup(TestGlobals.testServer, serialJson);
+			DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, serialJson);
 
-			Test serialTest = new Test(serialOperation);
-			serialTest.setTestName("SpecialDynCode");
-			serialTest.setExpectedResult ("201");
+			Test backupTest = new Test(operation);
+			backupTest.setTestName("BadSerial");
+			backupTest.setExpectedResult ("201");
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
-            results.WriteLine(HTTPSCalls.result.ToString());
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + backupTest.ToString () + " " + backupTest.getTestName ());
+
+
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine("Json posted:");
+			results.WriteLine (operation.getJson().ToString());
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + backupTest.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + backupTest.result ());
+			results.WriteLine ();
+
 			Assert.AreEqual("201", statusCode);
 		}
 
@@ -293,15 +396,27 @@ namespace InterceptorTester.Tests.InterceptorTests
 			serialJson.b = items;
 			serialJson.i = TestGlobals.validSerial;
 
-			DeviceBackup serialOperation = new DeviceBackup(TestGlobals.testServer, serialJson);
+			DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, serialJson);
 
-			Test serialTest = new Test(serialOperation);
-			serialTest.setTestName("NotSpecialDynCode");
-			serialTest.setExpectedResult ("201");
+			Test backupTest = new Test(operation);
+			backupTest.setTestName("BadSerial");
+			backupTest.setExpectedResult ("201");
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
-            results.WriteLine(HTTPSCalls.result.ToString());
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + backupTest.ToString () + " " + backupTest.getTestName ());
+
+
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine("Json posted:");
+			results.WriteLine (operation.getJson().ToString());
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + backupTest.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + backupTest.result ());
+			results.WriteLine ();
+
 			Assert.AreEqual("201", statusCode);
 		}
 
@@ -323,15 +438,27 @@ namespace InterceptorTester.Tests.InterceptorTests
 			serialJson.b = items;
 			serialJson.i = TestGlobals.validSerial;
 
-			DeviceBackup serialOperation = new DeviceBackup(TestGlobals.testServer, serialJson);
+			DeviceBackup operation = new DeviceBackup(TestGlobals.testServer, serialJson);
 
-			Test serialTest = new Test(serialOperation);
-			serialTest.setTestName("ValidBackupItemsSimDyn");
-			serialTest.setExpectedResult ("201");
+			Test backupTest = new Test(operation);
+			backupTest.setTestName("BadSerial");
+			backupTest.setExpectedResult ("201");
 
-            AsyncContext.Run(async () => await new HTTPSCalls().runTest(serialTest, HTTPOperation.POST));
-            results.WriteLine(HTTPSCalls.result.ToString());
+			results.WriteLine (DateTime.Now);
+			results.WriteLine ("current test: " + backupTest.ToString () + " " + backupTest.getTestName ());
+
+
+			AsyncContext.Run(async () => await new HTTPSCalls().runTest(backupTest, HTTPOperation.POST));
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
+
+			results.WriteLine("Json posted:");
+			results.WriteLine (operation.getJson().ToString());
+			results.WriteLine ("Server: " + TestGlobals.testServer);
+			results.WriteLine ("Expected result: " + backupTest.getActualResult());
+			results.WriteLine ("Actual result: " + statusCode);
+			results.WriteLine ("Test result: " + backupTest.result ());
+			results.WriteLine ();
+
 			Assert.AreEqual("201", statusCode);
 		}
 
