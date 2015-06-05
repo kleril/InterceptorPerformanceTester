@@ -61,6 +61,7 @@ namespace DatabasePopulator
 						results.WriteLine ("Scan posted:");
 						results.WriteLine (nextScan.getOperation ().getJson ().ToString ());
 
+						scanNum++;
 
                         Console.WriteLine ("Waiting for next scan...");
 
@@ -68,16 +69,21 @@ namespace DatabasePopulator
 						results.WriteLine ("Waiting for next scan...");
 
 						System.Threading.Thread.Sleep (5000);
-						scanNum++;
+
                     }
 					basketNum++;
 					totalScan += scanNum;
+
+					DateTime current = DateTime.Now;
+					TimeSpan testTime = current - started;
+
 					Console.WriteLine ("Basket complete.");
 					Console.WriteLine ("Number of items in this basket: " + scanNum);
 					Console.WriteLine ("Total baskets: " + basketNum);
 					Console.WriteLine ("Total scans: " + totalScan);
 					Console.WriteLine ("Test started at: " + started);
-					Console.WriteLine ("Current time: " + DateTime.Now);
+					Console.WriteLine ("Current time: " + current);
+					Console.WriteLine ("Test has lasted for " + testTime);
 					Console.WriteLine ("Waiting for next basket...");
 
 					results.WriteLine ("Basket complete.");
@@ -85,7 +91,8 @@ namespace DatabasePopulator
 					results.WriteLine ("Total baskets: " + basketNum);
 					results.WriteLine ("Total scans: " + totalScan);
 					results.WriteLine ("Test started at: " + started);
-					results.WriteLine ("Current time: " + DateTime.Now);
+					results.WriteLine ("Current time: " + current);
+					results.WriteLine ("Test has lasted for " + testTime);
 					results.WriteLine ("Waiting for next basket...");
 
 
