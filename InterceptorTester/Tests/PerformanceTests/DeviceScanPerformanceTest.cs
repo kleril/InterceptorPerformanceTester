@@ -12,7 +12,8 @@ using ConsoleApplication1;
 
 namespace InterceptorTester.Tests.PerformanceTests
 {
-    class DeviceScanPerformanceTest
+	[TestFixture()]
+	public class DeviceScanPerformanceTest
     {
         static StreamWriter results;
 
@@ -20,10 +21,10 @@ namespace InterceptorTester.Tests.PerformanceTests
         static string outputFileHTTPAsync = "../../../logs/AsyncHTTPDeviceScanPerformanceTest.csv";
         static string outputFileHTTPSync = "../../../logs/SyncHTTPDeviceScanPerformanceTest.csv";
         static string outputFileHTTPSAsync = "../../../logs/AsyncHTTPSDeviceScanPerformanceTest.csv";
-        static string outputFileMultiClientScans = "../../../logs/MultiClientScans.csv";
+        static string outputFileMultiClientScans = "../../../logs/MultiClientDeviceScan.csv";
 
         [TestFixtureSetUp()]
-        static public void setup()
+        public void setup()
         {
             TestGlobals.setup();
         }
@@ -51,7 +52,7 @@ namespace InterceptorTester.Tests.PerformanceTests
 				scanTest.setType ("performance");
 
                 timer.Start();
-                AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.GET));
+				AsyncContext.Run(async () => await new HTTPSCalls().runTest(scanTest, HTTPOperation.POST));
                 timer.Stop();
                 double time = timer.Elapsed.TotalMilliseconds;
                 results.WriteLine("Test Time," + time);
@@ -129,7 +130,7 @@ namespace InterceptorTester.Tests.PerformanceTests
 				scanTest.setType ("performance");
 
                 timer.Start();
-                AsyncContext.Run(async () => await new HTTPCalls().runTest(scanTest, HTTPOperation.GET));
+				AsyncContext.Run(async () => await new HTTPCalls().runTest(scanTest, HTTPOperation.POST));
                 timer.Stop();
                 double time = timer.Elapsed.TotalMilliseconds;
                 results.WriteLine("Test Time," + time);

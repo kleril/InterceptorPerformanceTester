@@ -12,14 +12,15 @@ using ConsoleApplication1;
 
 namespace InterceptorTester.Tests.PerformanceTests
 {
-    class DeviceBackupPerformanceTest
+	[TestFixture()]
+	public class DeviceBackupPerformanceTest
     {
         static StreamWriter results;
 
-        static string outputFileHTTPSAsync = "../../../logs/AsyncHTTPSDeviceBackupTestPerformanceTest.csv";
-        static string outputFileHTTPAsync = "../../../logs/AsyncHTTPDeviceBackupTestPerformanceTest.csv";
-        static string outputFileHTTPSSync = "../../../logs/SyncHTTPSDeviceBackupTestPerformanceTest.csv";
-        static string outputFileHTTPSync = "../../../logs/SyncHTTPDeviceBackupTestPerformanceTest.csv";
+        static string outputFileHTTPSAsync = "../../../logs/AsyncHTTPSDeviceBackupPerformanceTest.csv";
+        static string outputFileHTTPAsync = "../../../logs/AsyncHTTPDeviceBackupPerformanceTest.csv";
+        static string outputFileHTTPSSync = "../../../logs/SyncHTTPSDeviceBackupPerformanceTest.csv";
+        static string outputFileHTTPSync = "../../../logs/SyncHTTPDeviceBackupPerformanceTest.csv";
         static string outputFileMultiClientDeviceBackup = "../../../logs/MultiClientDeviceBackup.csv";
 
         [TestFixtureSetUp()]

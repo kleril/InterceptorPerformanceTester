@@ -12,11 +12,15 @@ using ConsoleApplication1;
 
 namespace InterceptorTester.Tests.PerformanceTests
 {
-    class DeviceStatusPerformanceTest
+	[TestFixture()]
+	public class DeviceStatusPerformanceTest
     {
         static StreamWriter results;
         static string outputFileHTTPSAsync = "../../../logs/AsyncHTTPSDeviceStatusPerformanceTest.csv";
         static string outputFileHTTPAsync = "../../../logs/AsyncHTTPDeviceStatusPerformanceTest.csv";
+		static string outputFileHTTPSSync = "../../../logs/SyncHTTPSDeviceStatusPerformanceTest.csv";
+		static string outputFileHTTPSync = "../../../logs/SyncHTTPDeviceStatusPerformanceTest.csv";
+		static string outputFileMultiClientStatus = "../../../logs/MultiClientDeviceStatus.csv";
 
         DeviceStatusJSON status;
 
@@ -46,6 +50,35 @@ namespace InterceptorTester.Tests.PerformanceTests
 
             TestGlobals.setup();
         }
+
+		[Test()]
+		public void SyncHTTPSDeviceStatus()
+		{
+			FileStream stream;
+			stream = File.Create(outputFileHTTPSSync);
+			results = new StreamWriter(stream);
+
+			for (int i = 0; i < TestGlobals.maxReps; i++)
+			{
+				System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+
+				DeviceStatus operation = new DeviceStatus(TestGlobals.testServer, status);
+
+				Test statusTest = new Test(operation);
+				statusTest.setTestName("ValidSerial");
+				statusTest.setExpectedResult ("201");
+				statusTest.setType ("performance");
+
+				timer.Start();
+				AsyncContext.Run(async () => await new HTTPSCalls().runTest(statusTest, HTTPOperation.POST));
+				timer.Stop();
+				double time = timer.Elapsed.TotalMilliseconds;
+				results.WriteLine("Test Time," + time);
+				System.Threading.Thread.Sleep(TestGlobals.delay);
+				//Verify Server didn't throw up
+			}
+			results.Close();
+		}
 
 
         [Test()]
@@ -89,6 +122,34 @@ namespace InterceptorTester.Tests.PerformanceTests
             results.Close();
         }
 
+		[Test()]
+		public void SyncHTTPDeviceStatus()
+		{
+			FileStream stream;
+			stream = File.Create(outputFileHTTPSync);
+			results = new StreamWriter(stream);
+
+			for (int i = 0; i < TestGlobals.maxReps; i++)
+			{
+				System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+
+				DeviceStatus operation = new DeviceStatus(TestGlobals.testServer, status);
+
+				Test statusTest = new Test(operation);
+				statusTest.setTestName("ValidSerial");
+				statusTest.setExpectedResult ("201");
+				statusTest.setType ("performance");
+
+				timer.Start();
+				AsyncContext.Run(async () => await new HTTPCalls().runTest(statusTest, HTTPOperation.POST));
+				timer.Stop();
+				double time = timer.Elapsed.TotalMilliseconds;
+				results.WriteLine("Test Time," + time);
+				System.Threading.Thread.Sleep(TestGlobals.delay);
+				//Verify Server didn't throw up
+			}
+			results.Close();
+		}
 
         [Test()]
         public void AsyncHTTPDeviceStatus()
@@ -130,6 +191,48 @@ namespace InterceptorTester.Tests.PerformanceTests
 
             results.Close();
         }
+
+		[Test()]
+		//Multi-client simultaneious scans
+		public void multiClientStatus()
+		{
+			FileStream stream;
+			stream = File.Create(outputFileMultiClientStatus);
+			results = new StreamWriter(stream);
+
+			DeviceStatus operation1 = new DeviceStatus(TestGlobals.testServer, status);
+
+			Test statusTest1 = new Test(operation1);
+			statusTest1.setTestName("ValidSerial");
+			statusTest1.setExpectedResult ("201");
+			statusTest1.setType ("performance");
+
+
+			DeviceStatus operation2 = new DeviceStatus(TestGlobals.testServer, status);
+
+			Test statusTest2 = new Test(operation2);
+			statusTest2.setTestName("ValidSerial");
+			statusTest2.setExpectedResult ("201");
+			statusTest2.setType ("performance");
+
+			// Construct started tasks
+			Task<double>[,] tasks = new Task<double>[TestGlobals.maxReps, 2];
+			for (int i = 0; i < TestGlobals.maxReps; i++)
+			{
+				System.Threading.Thread.Sleep(TestGlobals.delay);
+				tasks[i, 0] = new HTTPCalls().runTest(statusTest1, HTTPOperation.POST);
+				tasks[i, 1] = new HTTPCalls().runTest(statusTest2, HTTPOperation.POST);
+				Console.WriteLine("Test starting:" + i.ToString());
+				Task.WaitAll(tasks[i, 0], tasks[i, 1]);
+			}
+
+			foreach (Task<double> nextResult in tasks)
+			{
+				results.WriteLine("Test Time," + nextResult.Result);
+			}
+
+			results.Close();
+		}
 
     }
 }

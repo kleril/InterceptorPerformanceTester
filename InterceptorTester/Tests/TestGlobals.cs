@@ -16,8 +16,10 @@ namespace ConsoleApplication1
 	public static class TestGlobals
 	{
 		public static Uri testServer;
+		public static Uri demoServer;
 		public static Uri adminServer;
 		public static string validSerial;
+		public static string demoSerial;
 		public static string invalidSerial;
 		public static int delay;
         public static int maxReps;
@@ -33,8 +35,12 @@ namespace ConsoleApplication1
 			try
 			{
 				testServer = new Uri(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
+				demoServer = new Uri(ConfigurationManager.ConnectionStrings["DemoServer"].ConnectionString);
+				//testServer = new Uri("http://cozumointops.cloudapp.net");
 				adminServer = new Uri(ConfigurationManager.ConnectionStrings["AdminServer"].ConnectionString);
 				validSerial = ConfigurationManager.ConnectionStrings["ValidSerial"].ConnectionString;
+				demoSerial = ConfigurationManager.ConnectionStrings["DemoSerial"].ConnectionString;
+				//validSerial = "D05FB84F2A56";
 				invalidSerial = ConfigurationManager.ConnectionStrings["InvalidSerial"].ConnectionString;
 				delay = int.Parse(ConfigurationManager.ConnectionStrings["DelayBetweenRuns"].ConnectionString);
                 username = ConfigurationManager.ConnectionStrings["Username"].ConnectionString;

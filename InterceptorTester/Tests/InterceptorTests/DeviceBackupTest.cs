@@ -321,7 +321,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
 			Test backupTest = new Test(operation);
 			backupTest.setTestName("NullSerial");
-			backupTest.setExpectedResult ("201");
+			backupTest.setExpectedResult ("400");
 
 			results.WriteLine (DateTime.Now);
 			results.WriteLine ("current test: " + backupTest.ToString () + " " + backupTest.getTestName ());
@@ -338,7 +338,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			results.WriteLine ("Test result: " + backupTest.result ());
 			results.WriteLine ();
 
-			Assert.AreEqual("201", statusCode);
+			Assert.AreEqual("400", statusCode);
 		}
 
 		[Test()]

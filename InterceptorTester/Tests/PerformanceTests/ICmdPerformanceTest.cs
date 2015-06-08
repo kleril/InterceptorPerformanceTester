@@ -12,7 +12,8 @@ using ConsoleApplication1;
 
 namespace InterceptorTester.Tests.PerformanceTests
 {
-    class ICmdPerformanceTest
+	[TestFixture()]
+	public class ICmdPerformanceTest
     {
         static StreamWriter results;
 

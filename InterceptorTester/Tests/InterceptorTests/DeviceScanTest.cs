@@ -14,14 +14,14 @@ namespace InterceptorTester.Tests.InterceptorTests
 {
 	
 	[TestFixture()]
-    class DeviceScanTest
+    public class DeviceScanTest
     {
 		static string outputFile = "../../../logs/DeviceScanUnitTest.txt";
 
 		static StreamWriter results;
 
         [TestFixtureSetUp()]
-        static public void setup()
+        public void setup()
         {
             TestGlobals.setup();
             FileStream stream;
