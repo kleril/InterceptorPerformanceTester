@@ -29,21 +29,19 @@ namespace InterceptorTester.Tests.AdminTests
 		[Test()]
 		public static void createInterceptor()
 		{
-            //For new version
-            //InterceptorJSON json = new InterceptorJSON(int.Parse(LocationTest.getLocId()), "wat", "wappisk", "AYYYYLMAO");
             LocationTest.getLocId();
             string loc = TestGlobals.locIdCreated;
             Console.WriteLine("Creating intercepter w/ loc:");
             Console.WriteLine(loc);
-            InterceptorJSON json = new InterceptorJSON(int.Parse(loc), LocationTest.orgIdPassed, "AYYYYLMAO");
-            Interceptor newInt = new Interceptor(TestGlobals.adminServer, "NotUsed", json);
+            InterceptorJSON json = new InterceptorJSON(int.Parse(TestGlobals.locIdCreated), TestGlobals.validSerial, "wappisk", "AYYYYLMAO");
+            Interceptor newInt = new Interceptor(TestGlobals.adminServer, TestGlobals.validSerial, json);
 			Test mTest = new Test(newInt);
             HttpClient client = new HttpClient();
 			client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken ();
+            Console.WriteLine(newInt.getJson().ToString());
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.POST, client));
 			Console.WriteLine(HTTPSCalls.result.Value.ToString());
 			Console.WriteLine (LocationTest.getLocId ());
-            Console.WriteLine(HTTPSCalls.result.Value.ToString());
             TestGlobals.intIdCreated = HTTPSCalls.result.Value.Substring(9, HTTPSCalls.result.Value.Length - 10);
 		}
 
@@ -55,8 +53,9 @@ namespace InterceptorTester.Tests.AdminTests
 			Test mTest = new Test(getInt);
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
-			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET, client));
-			Assert.AreEqual("201", HTTPSCalls.result.Value);
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET, client));
+            string statusCode = HTTPSCalls.result.Key.GetValue("StatusCode").ToString();
+            Assert.AreEqual("200", statusCode);
 			intStore = HTTPCalls.result;
 		}
 
@@ -66,14 +65,16 @@ namespace InterceptorTester.Tests.AdminTests
 			string query = "/API/Interceptor/?LocId=" + TestGlobals.locIdCreated;
             GenericRequest getInt = new GenericRequest(TestGlobals.adminServer, query, null);
 			Test mTest = new Test (getInt);
-			HttpClient client = new HttpClient ();
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
 			AsyncContext.Run (async() => await new HTTPSCalls ().runTest (mTest, HTTPOperation.GET, client));
-			Assert.AreEqual ("201", HTTPCalls.result.Value);
+            string statusCode = HTTPSCalls.result.Key.GetValue("StatusCode").ToString();
+            Assert.AreEqual("200", statusCode);
 			intStore = HTTPCalls.result;
 		}
 
 		[Test()]
-		public void deleteInterceptor()
+		public void removeInterceptor()
 		{
 			string query = "/api/interceptor/" + TestGlobals.intIdCreated;
             GenericRequest intReq = new GenericRequest(TestGlobals.adminServer, query, null);
@@ -87,4 +88,4 @@ namespace InterceptorTester.Tests.AdminTests
 		}
 
 	}
-}
+}   

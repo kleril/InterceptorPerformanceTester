@@ -54,10 +54,10 @@ namespace InterceptorTester.Tests.AdminTests
 			GenericRequest getLoc = new GenericRequest(TestGlobals.adminServer, query, null);
             Test mTest = new Test(getLoc);
             HttpClient client = new HttpClient();
-            //TODO: Initialize the client properly - add session token to header, etc.
-            //client.setup;
+            client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET, client));
-            Assert.AreEqual("201", HTTPSCalls.result.Value);
+            string statusCode = HTTPSCalls.result.Key.GetValue("StatusCode").ToString();
+            Assert.AreEqual("200", statusCode);
             locStore = HTTPCalls.result;
         }
 
@@ -67,14 +67,16 @@ namespace InterceptorTester.Tests.AdminTests
 			string query = "/API/Location/?orgid=" + TestGlobals.orgIdCreated;
 			GenericRequest getLoc = new GenericRequest(TestGlobals.adminServer, query, null);
 			Test mTest = new Test(getLoc);
-			HttpClient client = new HttpClient();
-			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET, client));
-            Assert.AreEqual("201", HTTPSCalls.result.Value);
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET, client));
+            string statusCode = HTTPSCalls.result.Key.GetValue("StatusCode").ToString();
+            Assert.AreEqual("200", statusCode);
             locStore = HTTPCalls.result;
 		}
 
 		[Test()]
-		public void deleteLocation()
+		public void removeLocation()
 		{
 			Console.WriteLine (TestGlobals.locIdCreated);
 			string query = "/api/location/" + TestGlobals.locIdCreated;

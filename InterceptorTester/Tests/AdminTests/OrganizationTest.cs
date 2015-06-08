@@ -45,31 +45,33 @@ namespace InterceptorTester.Tests.AdminTests
         [Test()]
         public void getSingleOrganization()
         {
-			string query = "/API/Organization/" + TestGlobals.orgIdCreated;
+			string query = "/api/organization/" + TestGlobals.orgIdCreated;
             GenericRequest getOrg = new GenericRequest(TestGlobals.adminServer, query, null);
             Test mTest = new Test(getOrg);
             HttpClient client = new HttpClient();
-            //TODO: Initialize the client properly - add session token to header, etc.
-            //client.setup;
+            client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET, client));
-            Assert.AreEqual("201", HTTPSCalls.result.Value);
+            string statusCode = HTTPSCalls.result.Key.GetValue("StatusCode").ToString();
+            Assert.AreEqual("200", statusCode);
             orgStore = HTTPCalls.result;
         }
 
 		[Test()]
 		public void getMultipleOrganization()
 		{
-			string query = "/API/Organization/";
+			string query = "/api/organization";
             GenericRequest getOrg = new GenericRequest(TestGlobals.adminServer, query, null);
 			Test mTest = new Test(getOrg);
-			HttpClient client = new HttpClient();
-			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET, client));
-            Assert.AreEqual("201", HTTPSCalls.result.Value);
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
+            AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET, client));
+            string statusCode = HTTPSCalls.result.Key.GetValue("StatusCode").ToString();
+            Assert.AreEqual("200", statusCode);
             orgStore = HTTPCalls.result;
 		}
 
 		[Test()]
-		public void deleteOrganization()
+		public void removeOrganization()
 		{
 			string query = "/api/organization/" + TestGlobals.orgIdCreated;
             GenericRequest orgReq = new GenericRequest(TestGlobals.adminServer, query, null);
@@ -79,7 +81,8 @@ namespace InterceptorTester.Tests.AdminTests
 			client = new HttpClient();
 			client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken(); 
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(orgTest, HTTPOperation.DELETE, client));
-			Console.WriteLine(HTTPSCalls.result.Value);
+            Console.WriteLine(HTTPSCalls.result.Value);
+            Assert.AreEqual("{\"completedSuccessfully\":true}", HTTPSCalls.result.Value);
 		}
 
         public static string getOrgId()
