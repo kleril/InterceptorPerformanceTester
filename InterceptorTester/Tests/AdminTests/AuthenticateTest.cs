@@ -26,7 +26,7 @@ namespace InterceptorTester.Tests.AdminTests
             TestGlobals.setup();
         }
 
-		//[Test()]
+		[Test()]
         public static void generateSessionToken()
 		{
             AuthenticateJSON json = new AuthenticateJSON();
@@ -39,7 +39,7 @@ namespace InterceptorTester.Tests.AdminTests
 			sessionToken = JObject.Parse(HTTPSCalls.result.Value);
         }
 
-        //[Test()]
+        [Test()]
         public void closeSession()
         {
             if (sessionToken != null)

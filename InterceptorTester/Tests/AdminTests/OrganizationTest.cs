@@ -18,6 +18,8 @@ namespace InterceptorTester.Tests.AdminTests
 	[TestFixture()]
 	public class OrganizationTest
     {
+        KeyValuePair<JObject, string> orgStore;
+
 		[TestFixtureSetUp()]
         public void setup()
         {
@@ -41,7 +43,7 @@ namespace InterceptorTester.Tests.AdminTests
         }
 
         [Test()]
-        public KeyValuePair<JObject, string> getSingleOrganization()
+        public void getSingleOrganization()
         {
 			string query = "/API/Organization/" + TestGlobals.orgIdCreated;
             GenericRequest getOrg = new GenericRequest(TestGlobals.adminServer, query, null);
@@ -51,19 +53,19 @@ namespace InterceptorTester.Tests.AdminTests
             //client.setup;
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET, client));
             Assert.AreEqual("201", HTTPSCalls.result.Value);
-            return HTTPCalls.result;
+            orgStore = HTTPCalls.result;
         }
 
 		[Test()]
-		public KeyValuePair<JObject, string> getMultipleOrganization()
+		public void getMultipleOrganization()
 		{
 			string query = "/API/Organization/";
             GenericRequest getOrg = new GenericRequest(TestGlobals.adminServer, query, null);
 			Test mTest = new Test(getOrg);
 			HttpClient client = new HttpClient();
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET, client));
-			Assert.AreEqual("201", HTTPSCalls.result.Value);
-			return HTTPCalls.result;
+            Assert.AreEqual("201", HTTPSCalls.result.Value);
+            orgStore = HTTPCalls.result;
 		}
 
 		[Test()]
@@ -87,6 +89,11 @@ namespace InterceptorTester.Tests.AdminTests
                 createOrganization();
             }
             return TestGlobals.orgIdCreated;
+        }
+
+        public KeyValuePair<JObject, string> getStoredOrg()
+        {
+            return orgStore;
         }
 	}
 }

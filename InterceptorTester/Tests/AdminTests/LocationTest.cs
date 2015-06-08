@@ -17,6 +17,8 @@ namespace InterceptorTester.Tests.AdminTests
 	[TestFixture()]
     public class LocationTest
     {
+        public KeyValuePair<JObject, string> locStore;
+
 		public static string locIdCreated;
         public static string orgIdPassed;
 
@@ -46,7 +48,7 @@ namespace InterceptorTester.Tests.AdminTests
         }
 
         [Test()]
-        public KeyValuePair<JObject, string> getSingleLocation()
+        public void getSingleLocation()
         {
 			string query = "/API/Location/" + TestGlobals.locIdCreated;
 			GenericRequest getLoc = new GenericRequest(TestGlobals.adminServer, query, null);
@@ -56,19 +58,19 @@ namespace InterceptorTester.Tests.AdminTests
             //client.setup;
             AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET, client));
             Assert.AreEqual("201", HTTPSCalls.result.Value);
-            return HTTPCalls.result;
+            locStore = HTTPCalls.result;
         }
 
 		[Test()]
-		public KeyValuePair<JObject, string> getMultipleLocations()
+		public void getMultipleLocations()
 		{
 			string query = "/API/Location/?orgid=" + TestGlobals.orgIdCreated;
 			GenericRequest getLoc = new GenericRequest(TestGlobals.adminServer, query, null);
 			Test mTest = new Test(getLoc);
 			HttpClient client = new HttpClient();
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET, client));
-			Assert.AreEqual("201", HTTPSCalls.result.Value);
-			return HTTPCalls.result;
+            Assert.AreEqual("201", HTTPSCalls.result.Value);
+            locStore = HTTPCalls.result;
 		}
 
 		[Test()]

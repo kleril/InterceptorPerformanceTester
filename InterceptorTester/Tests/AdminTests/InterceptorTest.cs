@@ -17,6 +17,8 @@ namespace InterceptorTester.Tests.AdminTests
 	[TestFixture()]
     public class InterceptorTest
     {
+        KeyValuePair<JObject, string> intStore;
+
 		[TestFixtureSetUp()]
         public void setup()
         {
@@ -46,7 +48,7 @@ namespace InterceptorTester.Tests.AdminTests
 		}
 
 		[Test()]
-		public KeyValuePair<JObject, string> getSingleInterceptor()
+		public void getSingleInterceptor()
 		{
 			string query = "/API/Interceptor/" + TestGlobals.validSerial;
             GenericRequest getInt = new GenericRequest(TestGlobals.adminServer, query, null);
@@ -55,11 +57,11 @@ namespace InterceptorTester.Tests.AdminTests
             client.DefaultRequestHeaders.Authorization = AuthenticateTest.getSessionToken();
 			AsyncContext.Run(async () => await new HTTPSCalls().runTest(mTest, HTTPOperation.GET, client));
 			Assert.AreEqual("201", HTTPSCalls.result.Value);
-			return HTTPCalls.result;
+			intStore = HTTPCalls.result;
 		}
 
 		[Test()]
-		public KeyValuePair<JObject, string> getMultipleInterceptors()
+		public void getMultipleInterceptors()
 		{
 			string query = "/API/Interceptor/?LocId=" + TestGlobals.locIdCreated;
             GenericRequest getInt = new GenericRequest(TestGlobals.adminServer, query, null);
@@ -67,7 +69,7 @@ namespace InterceptorTester.Tests.AdminTests
 			HttpClient client = new HttpClient ();
 			AsyncContext.Run (async() => await new HTTPSCalls ().runTest (mTest, HTTPOperation.GET, client));
 			Assert.AreEqual ("201", HTTPCalls.result.Value);
-			return HTTPCalls.result;
+			intStore = HTTPCalls.result;
 		}
 
 		[Test()]
