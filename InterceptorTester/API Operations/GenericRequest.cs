@@ -9,10 +9,10 @@ namespace ConsoleApplication1
 {
     class GenericRequest : APIOperation
     {
-        JObject data;
+        Object data;
         string query;
 
-        public GenericRequest(Uri server, string query, JObject data)
+        public GenericRequest(Uri server, string query, Object data)
         {
             this.opHost = server;
             this.query = query;

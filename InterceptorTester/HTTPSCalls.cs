@@ -249,7 +249,6 @@ namespace ConsoleApplication1{
                     var upContent = JObject.FromObject(contentToPush);
                     var strContent = new System.Net.Http.StringContent(upContent.ToString(), Encoding.UTF8, "application/json");
 
-
                     using (HttpResponseMessage response = await client.PostAsync(qUri, strContent))
                     {
                         JObject jResponse = JObject.FromObject(response);
@@ -311,6 +310,8 @@ namespace ConsoleApplication1{
                 handler.ClientCertificates.Add(cert);
                 using (HttpClient client = new HttpClient(handler))
                 {
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     client.DefaultRequestHeaders.Authorization = clientPass.DefaultRequestHeaders.Authorization;
 
                     var upContent = JObject.FromObject(contentToPut);
