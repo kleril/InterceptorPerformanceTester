@@ -115,7 +115,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
 			Assert.AreEqual("201", statusCode);
 		}
-			
+		/*
 		[Test()]
 		// Invalid Single Backup Item
 		public void InvalidSingleBackupItem()
@@ -151,7 +151,8 @@ namespace InterceptorTester.Tests.InterceptorTests
 
 			Assert.AreEqual("400", statusCode);
 		}
-
+        */
+        /*
 		[Test()]
 		// Muliple Backup Items with Invalid Backup Item in Them
 		public void InvalidBackupItems()
@@ -190,7 +191,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
 			Assert.AreEqual("400", statusCode);
 		}
-
+        */
 		[Test()]
 		// Invalid Serial Number
 		public void BadSerial()

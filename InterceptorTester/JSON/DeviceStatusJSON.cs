@@ -16,6 +16,9 @@ namespace ConsoleApplication1
 			throw new NotImplementedException();
         }
 
+        public string Ssid;
+        public string wpaPSK;
+
 		/// <summary>
 		/// Gets or sets intSerial
 		/// </summary>

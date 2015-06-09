@@ -94,9 +94,9 @@ namespace InterceptorTester.Tests.InterceptorTests
 			status.cmdChkInt = "1";
 			status.cmdURL = "http://cozumotesttls.cloudapp.net:80/api/iCmd";
 			string[] err = new string[3];
-			err[0] = "asdf";
-			err[1] = "wasd";
-			err[2] = "qwerty";
+            err[0] = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") + "///200///pleasework";
+            err[1] = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") + "///200///pleasework";
+            err[2] = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") + "///200///pleasework";
 			status.dynCodeFormat = err;
 			status.errorLog = err;
             status.intSerial = TestGlobals.validSerial;
@@ -106,6 +106,9 @@ namespace InterceptorTester.Tests.InterceptorTests
 			status.scanURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceScan";
 			status.seqNum = "87";
 			status.startURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceSetting";
+            status.Ssid = "43B81B4F768D0549AB4F178022DEB384";
+            status.wpaPSK = "wifipassword";
+
 
 			DeviceStatus operation = new DeviceStatus(TestGlobals.testServer, status);
 			Test statusTest = new Test(operation);
@@ -119,7 +122,10 @@ namespace InterceptorTester.Tests.InterceptorTests
             string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
 
 			results.WriteLine("Json posted:");
-			results.WriteLine (statusTest.getOperation().getJson().ToString());
+            results.WriteLine(statusTest.getOperation().getJson().ToString());
+            results.WriteLine("Server returned:");
+            results.WriteLine(HTTPSCalls.result.Key.ToString());
+            results.WriteLine(HTTPSCalls.result.Value.ToString());
 			results.WriteLine ("Server: " + TestGlobals.testServer);
 			results.WriteLine ("Expected result: " + statusTest.getActualResult());
 			results.WriteLine ("Actual result: " + statusCode);
@@ -278,11 +284,12 @@ namespace InterceptorTester.Tests.InterceptorTests
 			status.captureMode = "1";
 			status.cmdChkInt = "1";
 			status.cmdURL = "http://cozumotesttls.cloudapp.net:80/api/iCmd";
-			string[] err = new string[3];
-			err[0] = "<timestamp>///900///bypassmode";
-			err[1] = "wasd";
-			err[2] = "qwerty";
+			string[] err = new string[1];
+            err[0] = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")+ "///900///bypassmode";
+            status.Ssid = "43B81B4F768D0549AB4F178022DEB384";
+            status.wpaPSK = "wifipassword";
 			status.errorLog = err;
+            status.dynCodeFormat = err;
 			status.intSerial = TestGlobals.validSerial;
 			status.reportURL = "http://cozumotesttls.cloudapp.net:80/api/DeviceStatus";
 			status.requestTimeoutValue = "8000";
@@ -303,7 +310,10 @@ namespace InterceptorTester.Tests.InterceptorTests
 			string statusCode = HTTPSCalls.result.Key.Property("StatusCode").Value.ToString();
 
 			results.WriteLine("Json posted:");
-			results.WriteLine (statusTest.getOperation().getJson().ToString());
+            results.WriteLine(statusTest.getOperation().getJson().ToString());
+            results.WriteLine("Server returned:");
+            results.WriteLine(HTTPSCalls.result.Key.ToString());
+            results.WriteLine(HTTPSCalls.result.Value.ToString());
 			results.WriteLine ("Server: " + TestGlobals.testServer);
 			results.WriteLine ("Expected result: " + statusTest.getActualResult());
 			results.WriteLine ("Actual result: " + statusCode);
