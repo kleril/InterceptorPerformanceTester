@@ -117,13 +117,13 @@
     <Compile Include="Tests\AdminTests\LocationTest.cs" />
     <Compile Include="API Operations\Interceptor.cs" />
     <Compile Include="JSON\InterceptorJSON.cs" />
-    <Compile Include="Tests\AdminTests\InterceptorTest.cs" />
     <Compile Include="Tests\PerformanceTests\DeviceBackupPerformanceTest.cs" />
     <Compile Include="Tests\PerformanceTests\DeviceScanPerformanceTest.cs" />
     <Compile Include="Tests\PerformanceTests\DeviceStatusPerformanceTest.cs" />
     <Compile Include="Tests\PerformanceTests\ICmdPerformanceTest.cs" />
     <Compile Include="Tests\TestGlobals.cs" />
     <Compile Include="Data\UpcCode.cs" />
+    <Compile Include="Tests\AdminTests\InterceptorTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

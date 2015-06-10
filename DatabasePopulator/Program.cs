@@ -17,6 +17,7 @@ namespace DatabasePopulator
 		static int totalScan;
 		public static string logFile = "../../../logs/scanPopulatorLog.txt";
 		static StreamWriter results;
+		public static int seqNum;
 
         static void Main(string[] args)
         {
@@ -26,55 +27,67 @@ namespace DatabasePopulator
 
         private static async void generateScans()
         {
-			int[] pseudoRandDelay = {60, 120};//, 600, 60, 120, 480, 300, 180};
-			int[] pseudoRandBasket = { 10, 4};//,2,4,5,6,7,8,9,1,5,4,2,1,8,9,7,6,4,10,3,3,5,9,8,1,7,6,5,4,3,10,2,6,2,2,1,2,2,4,2};
+			int[] pseudoRandDelay = {60, 120, 240, 60};
+			int[] pseudoRandBasket = {10,9,8,7,6,5,4,3,2,1,5,6,7,8,9,1,2,3,4,10,6,5,4,3,2,10,9,8,7,1};
 
 			basketNum = 0;
 			totalScan = 0;
+			seqNum = 1;
 
-			DateTime started = DateTime.Now;
+			string started = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.ffffff");
+			DateTime started1 = DateTime.Now;
 
 			FileStream stream;
 			stream = File.OpenWrite(logFile);
 			results = new StreamWriter(stream);
 
+			Console.WriteLine (TestGlobals.demoServer);
+			Console.WriteLine (TestGlobals.demoSerial);
+
 			foreach (int delay in pseudoRandDelay)
             {
 				foreach (int basketType in pseudoRandBasket)
                 {
-					getBasket(basketType);
-					Console.WriteLine (DateTime.Now);
-					results.WriteLine (DateTime.Now);
+					getBasket(basketType, seqNum);
+					Console.WriteLine (DateTime.Now.ToString ("yyyy-MM-dd hh:mm:ss.ffffff"));
+					results.WriteLine (DateTime.Now.ToString ("yyyy-MM-dd hh:mm:ss.ffffff"));
 
 					scanNum = 0;
 
                     foreach (ConsoleApplication1.Test nextScan in basket)
                     {
 						Console.WriteLine("Posting Scan");
+						Console.WriteLine(DateTime.Now.ToString ("yyyy-MM-dd hh:mm:ss.ffffff"));
+
 						results.WriteLine ("Posting Scan");
+						results.WriteLine (DateTime.Now.ToString ("yyyy-MM-dd hh:mm:ss.ffffff"));
 						AsyncContext.Run(async () => await new ConsoleApplication1.HTTPSCalls().runTest(nextScan, ConsoleApplication1.HTTPOperation.POST));
 
 						Console.WriteLine ("Scan posted:");
+						Console.WriteLine(DateTime.Now.ToString ("yyyy-MM-dd hh:mm:ss.ffffff"));
 						Console.WriteLine (nextScan.getOperation().getJson().ToString ());
 
 						results.WriteLine ("Scan posted:");
+						results.WriteLine (DateTime.Now.ToString ("yyyy-MM-dd hh:mm:ss.ffffff"));
 						results.WriteLine (nextScan.getOperation ().getJson ().ToString ());
 
 						scanNum++;
+						seqNum++;
 
                         Console.WriteLine ("Waiting for next scan...");
 
 						results.WriteLine ("Posted Scan");
 						results.WriteLine ("Waiting for next scan...");
 
-						System.Threading.Thread.Sleep (5000);
+						System.Threading.Thread.Sleep (4000);
 
                     }
 					basketNum++;
 					totalScan += scanNum;
 
-					DateTime current = DateTime.Now;
-					TimeSpan testTime = current - started;
+					string current = DateTime.Now.ToString ("yyyy-MM-dd hh:mm:ss.ffffff");
+					DateTime current1 = DateTime.Now;
+					TimeSpan testTime = current1 - started1;
 
 					Console.WriteLine ("Basket complete.");
 					Console.WriteLine ("Number of items in this basket: " + scanNum);
@@ -108,8 +121,9 @@ namespace DatabasePopulator
 			results.WriteLine ("Reached end of posts");
 			results.WriteLine ();
 
-			DateTime ended = DateTime.Now;
-			TimeSpan testLast = ended - started;
+			string ended = DateTime.Now.ToString ("yyyy-MM-dd hh:mm:ss.ffffff");
+			DateTime ended1 = DateTime.Now;
+			TimeSpan testLast = ended1 - started1;
 			results.WriteLine ("Summary:");
 			results.WriteLine ("Total baskets: " + basketNum);
 			results.WriteLine ("Total scans: " + totalScan);
@@ -120,7 +134,7 @@ namespace DatabasePopulator
 			results.Close ();
         }
 
-        private static List<ConsoleApplication1.Test> getBasket(int basketType)
+		private static List<ConsoleApplication1.Test> getBasket(int basketType, int s)
         {
             basket.Clear();
             ConsoleApplication1.DemoScans scanGen = new ConsoleApplication1.DemoScans();
@@ -128,59 +142,59 @@ namespace DatabasePopulator
             switch (basketType)
             {
                 case 1:
-                    basket.Add(DemoScans.getScan(UpcCode.Laptop11Inch));
-                    basket.Add(DemoScans.getScan(UpcCode.Mouse));
-                    basket.Add(DemoScans.getScan(UpcCode.LaptopCase11Inch));
+					basket.Add(DemoScans.getScan(UpcCode.Laptop11Inch, s));
+					basket.Add(DemoScans.getScan(UpcCode.Headset, s + 1));
+					basket.Add(DemoScans.getScan(UpcCode.LaptopCase11Inch, s + 2));
                     break;
                 case 2:
-                    basket.Add(DemoScans.getScan(UpcCode.Laptop13Inch));
-                    basket.Add(DemoScans.getScan(UpcCode.Mouse));
-                    basket.Add(DemoScans.getScan(UpcCode.LaptopCase13Inch));
+                    basket.Add(DemoScans.getScan(UpcCode.Laptop13Inch, s));
+					basket.Add(DemoScans.getScan(UpcCode.Mouse, s + 1));
+					basket.Add(DemoScans.getScan(UpcCode.LaptopCase13Inch, s + 2));
                     break;
                 case 3:
-                    basket.Add(DemoScans.getScan(UpcCode.Printer));
-                    basket.Add(DemoScans.getScan(UpcCode.UsbCable));
+                    basket.Add(DemoScans.getScan(UpcCode.Printer, s));
+					basket.Add(DemoScans.getScan(UpcCode.UsbCable, s + 1));
                     break;
                 case 4:
-                    basket.Add(DemoScans.getScan(UpcCode.Laptop13Inch));
-                    basket.Add(DemoScans.getScan(UpcCode.LaptopCase13Inch));
-                    basket.Add(DemoScans.getScan(UpcCode.Warranty));
-                    basket.Add(DemoScans.getScan(UpcCode.ExternalHDD));
-                    basket.Add(DemoScans.getScan(UpcCode.Headset));
-                    basket.Add(DemoScans.getScan(UpcCode.Mouse));
-                    basket.Add(DemoScans.getScan(UpcCode.Keyboard));
+                    basket.Add(DemoScans.getScan(UpcCode.Laptop13Inch, s));
+					basket.Add(DemoScans.getScan(UpcCode.LaptopCase13Inch, s + 1));
+					basket.Add(DemoScans.getScan(UpcCode.Warranty, s + 2));
+					basket.Add(DemoScans.getScan(UpcCode.ExternalHDD, s + 3));
+					basket.Add(DemoScans.getScan(UpcCode.Headset, s + 4));
+					basket.Add(DemoScans.getScan(UpcCode.Mouse, s + 5));
+					basket.Add(DemoScans.getScan(UpcCode.Keyboard, s + 6));
                     break;
                 case 5:
-                    basket.Add(DemoScans.getScan(UpcCode.ExternalHDD));
+					basket.Add(DemoScans.getScan(UpcCode.ExternalHDD, s + 7));
                     break;
                 case 6:
-                    basket.Add(DemoScans.getScan(UpcCode.Keyboard));
-                    basket.Add(DemoScans.getScan(UpcCode.UsbCable));
+					basket.Add(DemoScans.getScan(UpcCode.Keyboard, s));
+					basket.Add(DemoScans.getScan(UpcCode.UsbCable, s + 1));
                     break;
                 case 7:
-                    basket.Add(DemoScans.getScan(UpcCode.Speakers));
-                    basket.Add(DemoScans.getScan(UpcCode.Laptop11Inch));
-                    basket.Add(DemoScans.getScan(UpcCode.Warranty));
+                    basket.Add(DemoScans.getScan(UpcCode.Speakers, s));
+					basket.Add(DemoScans.getScan(UpcCode.Headset, s + 1));
+					basket.Add(DemoScans.getScan(UpcCode.UsbCable, s + 2));
                     break;
                 case 8:
-                    basket.Add(DemoScans.getScan(UpcCode.LaptopCase11Inch));
-                    basket.Add(DemoScans.getScan(UpcCode.Laptop11Inch));
-                    basket.Add(DemoScans.getScan(UpcCode.Earbuds));
+					basket.Add(DemoScans.getScan(UpcCode.Mouse, s));
+					basket.Add(DemoScans.getScan(UpcCode.UsbCable, s + 1));
+					basket.Add(DemoScans.getScan(UpcCode.Earbuds, s + 2));
                     break;
                 case 9:
-                    basket.Add(DemoScans.getScan(UpcCode.HdmiCable));
+                    basket.Add(DemoScans.getScan(UpcCode.HdmiCable, s));
                     break;
                 case 10:
-                    basket.Add(DemoScans.getScan(UpcCode.ExternalHDD));
-                    basket.Add(DemoScans.getScan(UpcCode.Laptop13Inch));
-                    basket.Add(DemoScans.getScan(UpcCode.LaptopCase13Inch));
-                    basket.Add(DemoScans.getScan(UpcCode.Warranty));
-                    basket.Add(DemoScans.getScan(UpcCode.Speakers));
-                    basket.Add(DemoScans.getScan(UpcCode.Mouse));
+                    basket.Add(DemoScans.getScan(UpcCode.ExternalHDD, s));
+					basket.Add(DemoScans.getScan(UpcCode.UsbCable, s + 1));
+					basket.Add(DemoScans.getScan(UpcCode.Keyboard, s + 2));
+					basket.Add(DemoScans.getScan(UpcCode.Earbuds, s + 3));
+					basket.Add(DemoScans.getScan(UpcCode.Speakers, s + 4));
+					basket.Add(DemoScans.getScan(UpcCode.Mouse, s + 5));
                     break;
                 default:
-                    basket.Add(DemoScans.getScan(UpcCode.ExternalHDD));
-                    basket.Add(DemoScans.getScan(UpcCode.UsbCable));
+					basket.Add(DemoScans.getScan(UpcCode.ExternalHDD, s));
+					basket.Add(DemoScans.getScan(UpcCode.UsbCable, s + 1));
                     break;
             }
 				

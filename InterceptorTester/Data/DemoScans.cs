@@ -13,14 +13,14 @@ namespace ConsoleApplication1
 {
 	public class DemoScans
 	{
-		public static Test getScan(UpcCode item)
+		public static Test getScan(UpcCode item, int s)
 		{
 			if (item == UpcCode.Laptop13Inch) {
 				DeviceScanJSON scan1 = new DeviceScanJSON ();
 				scan1.i = TestGlobals.demoSerial;
 				scan1.d = "416000383720";
 				scan1.b = null;
-				scan1.s = 4;
+				scan1.s = s;
 				DeviceScan testDScan1 = new DeviceScan (TestGlobals.demoServer, scan1);
 
 				Test scanTest1 = new Test (testDScan1);
@@ -31,7 +31,7 @@ namespace ConsoleApplication1
 				scan2.i = TestGlobals.demoSerial;
 				scan2.d = "416000336108";
 				scan2.b = null;
-				scan2.s = 4;
+				scan2.s = s;
 				DeviceScan testDScan2 = new DeviceScan (TestGlobals.demoServer, scan2);
 
 				Test scanTest2 = new Test (testDScan2);
@@ -42,7 +42,7 @@ namespace ConsoleApplication1
 				scan3.i = TestGlobals.demoSerial;
 				scan3.d = "416000837315";
 				scan3.b = null;
-				scan3.s = 4;
+				scan3.s = s;
 				DeviceScan testDScan3 = new DeviceScan (TestGlobals.demoServer, scan3);
 
 				Test scanTest3 = new Test (testDScan3);
@@ -53,7 +53,7 @@ namespace ConsoleApplication1
 				scan4.i = TestGlobals.demoSerial;
 				scan4.d = "416000837223";
 				scan4.b = null;
-				scan4.s = 4;
+				scan4.s = s;
 				DeviceScan testDScan4 = new DeviceScan (TestGlobals.demoServer, scan4);
 
 				Test scanTest4 = new Test (testDScan4);
@@ -64,7 +64,7 @@ namespace ConsoleApplication1
 				scan4.i = TestGlobals.demoSerial;
 				scan4.d = "416000837360";
 				scan4.b = null;
-				scan4.s = 4;
+				scan4.s = s;
 				DeviceScan testDScan4 = new DeviceScan (TestGlobals.demoServer, scan4);
 
 				Test scanTest4 = new Test (testDScan4);
@@ -75,7 +75,7 @@ namespace ConsoleApplication1
 				scan4.i = TestGlobals.demoSerial;
 				scan4.d = "416000338973";
 				scan4.b = null;
-				scan4.s = 4;
+				scan4.s = s;
 				DeviceScan testDScan4 = new DeviceScan (TestGlobals.demoServer, scan4);
 
 				Test scanTest4 = new Test (testDScan4);
@@ -86,7 +86,7 @@ namespace ConsoleApplication1
 				scan4.i = TestGlobals.demoSerial;
 				scan4.d = "416000837988";
 				scan4.b = null;
-				scan4.s = 4;
+				scan4.s = s;
 				DeviceScan testDScan4 = new DeviceScan (TestGlobals.demoServer, scan4);
 
 				Test scanTest4 = new Test (testDScan4);
@@ -97,7 +97,7 @@ namespace ConsoleApplication1
 				scan4.i = TestGlobals.demoSerial;
 				scan4.d = "416000336894";
 				scan4.b = null;
-				scan4.s = 4;
+				scan4.s = s;
 				DeviceScan testDScan4 = new DeviceScan (TestGlobals.demoServer, scan4);
 
 				Test scanTest4 = new Test (testDScan4);
@@ -108,7 +108,7 @@ namespace ConsoleApplication1
 				scan4.i = TestGlobals.demoSerial;
 				scan4.d = "416000837261";
 				scan4.b = null;
-				scan4.s = 4;
+				scan4.s = s;
 				DeviceScan testDScan4 = new DeviceScan (TestGlobals.demoServer, scan4);
 
 				Test scanTest4 = new Test (testDScan4);
@@ -119,7 +119,7 @@ namespace ConsoleApplication1
 				scan4.i = TestGlobals.demoSerial;
 				scan4.d = "416000837018";
 				scan4.b = null;
-				scan4.s = 4;
+				scan4.s = s;
 				DeviceScan testDScan4 = new DeviceScan (TestGlobals.demoServer, scan4);
 
 				Test scanTest4 = new Test (testDScan4);
@@ -130,7 +130,7 @@ namespace ConsoleApplication1
 				scan4.i = TestGlobals.demoSerial;
 				scan4.d = "416000338799";
 				scan4.b = null;
-				scan4.s = 4;
+				scan4.s = s;
 				DeviceScan testDScan4 = new DeviceScan (TestGlobals.demoServer, scan4);
 
 				Test scanTest4 = new Test (testDScan4);
@@ -141,7 +141,7 @@ namespace ConsoleApplication1
 				scan4.i = TestGlobals.demoSerial;
 				scan4.d = "416000837049";
 				scan4.b = null;
-				scan4.s = 4;
+				scan4.s = s;
 				DeviceScan testDScan4 = new DeviceScan (TestGlobals.demoServer, scan4);
 
 				Test scanTest4 = new Test (testDScan4);
@@ -152,7 +152,7 @@ namespace ConsoleApplication1
 				scan4.i = TestGlobals.demoSerial;
 				scan4.d = "416000837339";
 				scan4.b = null;
-				scan4.s = 4;
+				scan4.s = s;
 				DeviceScan testDScan4 = new DeviceScan (TestGlobals.demoServer, scan4);
 
 				Test scanTest4 = new Test (testDScan4);
@@ -163,7 +163,7 @@ namespace ConsoleApplication1
 				scan4.i = TestGlobals.demoSerial;
 				scan4.d = "416000837827";
 				scan4.b = null;
-				scan4.s = 4;
+				scan4.s = s;
 				DeviceScan testDScan4 = new DeviceScan (TestGlobals.demoServer, scan4);
 
 				Test scanTest4 = new Test (testDScan4);
