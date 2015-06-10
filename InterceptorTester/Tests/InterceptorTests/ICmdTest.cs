@@ -12,14 +12,14 @@ using ConsoleApplication1;
 
 namespace InterceptorTester.Tests.InterceptorTests
 {
-	[TestFixture()]
+	//[TestFixture()]
 	public class ICmdTest
 	{
         
 		static string outputFile = "../../../logs/ICmdUnitTest.txt";
 		static StreamWriter results;
 
-		[TestFixtureSetUp()]
+		//[TestFixtureSetUp()]
 		public void setup()
 		{
 			TestGlobals.setup();
@@ -29,13 +29,13 @@ namespace InterceptorTester.Tests.InterceptorTests
             results = new StreamWriter(stream);
 		}
 
-        [TestFixtureTearDown()]
+        //[TestFixtureTearDown()]
         public void tearDown()
         {
             results.Close();
         }
 
-		[Test()]
+		//[Test()]
 		public void ValidSerial()
 		{
 			ICmd validICmd = new ICmd(TestGlobals.testServer, TestGlobals.validSerial);
@@ -59,7 +59,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             Assert.AreEqual("200", statusCode);
 		}
 
-		[Test()]
+		//[Test()]
 		public void InvalidSerial()
 		{
 			ICmd invalidICmd = new ICmd(TestGlobals.testServer, TestGlobals.invalidSerial);
@@ -84,7 +84,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
 		}
 
-		[Test()]
+		//[Test()]
 		public void MissingSerial()
 		{
 			ICmd missingICmd = new ICmd(TestGlobals.testServer, null);
@@ -108,7 +108,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             Assert.AreEqual("400", statusCode);
 		}
 
-		[Test()]
+		//[Test()]
 		public void NoQuery()
 		{
 			ICmd missingICmd = new ICmd(TestGlobals.testServer, null);

@@ -12,7 +12,7 @@ using ConsoleApplication1;
 
 namespace InterceptorTester.Tests.InterceptorTests
 {
-	[TestFixture()]
+	//[TestFixture()]
 	public class DeviceStatusTest
     {
 		static string outputFile = "../../../logs/DeviceStatusUnitTest.txt";
@@ -46,7 +46,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             return status;
         }
 
-		[TestFixtureSetUp]
+		//[TestFixtureSetUp]
 		public void setup()
 		{
 			status = new DeviceStatusJSON();
@@ -76,13 +76,13 @@ namespace InterceptorTester.Tests.InterceptorTests
             results = new StreamWriter(stream);
         }
 
-        [TestFixtureTearDown()]
+        //[TestFixtureTearDown()]
         public void tearDown()
         {
             results.Close();
         }
 
-		[Test()]
+		//[Test()]
 		public void ValidSerial()
 		{
 			DeviceStatusJSON status = new DeviceStatusJSON();
@@ -136,7 +136,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 		}
 
 
-		[Test()]
+		//[Test()]
 		public void InvalidSerial()
 		{
 			DeviceStatusJSON status = new DeviceStatusJSON();
@@ -183,7 +183,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Assert.AreEqual("400", statusCode);
 		}
 
-		[Test()]
+		//[Test()]
 		public void EmptySerial()
 		{
 			DeviceStatusJSON status = new DeviceStatusJSON();
@@ -228,7 +228,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Assert.AreEqual("400", statusCode);
 		}
 
-		[Test()]
+		//[Test()]
 		public void NullSerial()
 		{
 			DeviceStatusJSON status = new DeviceStatusJSON();
@@ -273,7 +273,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Assert.AreEqual("400", statusCode);
 		}
 
-		[Test()]
+		//[Test()]
 		public void AlertDataStore()
 		{
 			DeviceStatusJSON status = new DeviceStatusJSON();

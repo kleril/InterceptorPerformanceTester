@@ -98,23 +98,14 @@
     <Compile Include="HTTPCalls.cs" />
     <Compile Include="HTTPSCalls.cs" />
     <Compile Include="JSON\InterceptorIdJSON.cs" />
-    <Compile Include="Tests\AdminTests\DeviceStatusPutJSON.cs" />
-    <Compile Include="Tests\InterceptorTests\DeviceScanTest.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="Data\DemoScans.cs" />
-    <Compile Include="Tests\InterceptorTests\DeviceBackupTest.cs" />
-    <Compile Include="Tests\InterceptorTests\DeviceStatusTest.cs" />
-    <Compile Include="Tests\InterceptorTests\ICmdTest.cs" />
-    <Compile Include="Tests\InterceptorTests\DeviceSettingsTest.cs" />
     <Compile Include="API Operations\Authenticate.cs" />
     <Compile Include="JSON\AuthenticateJSON.cs" />
-    <Compile Include="Tests\AdminTests\AuthenticateTest.cs" />
     <Compile Include="API Operations\Organization.cs" />
     <Compile Include="JSON\OrganizationJSON.cs" />
-    <Compile Include="Tests\AdminTests\OrganizationTest.cs" />
     <Compile Include="API Operations\Location.cs" />
     <Compile Include="JSON\LocationJSON.cs" />
-    <Compile Include="Tests\AdminTests\LocationTest.cs" />
     <Compile Include="API Operations\Interceptor.cs" />
     <Compile Include="JSON\InterceptorJSON.cs" />
     <Compile Include="Tests\PerformanceTests\DeviceBackupPerformanceTest.cs" />
@@ -123,7 +114,11 @@
     <Compile Include="Tests\PerformanceTests\ICmdPerformanceTest.cs" />
     <Compile Include="Tests\TestGlobals.cs" />
     <Compile Include="Data\UpcCode.cs" />
-    <Compile Include="Tests\AdminTests\InterceptorTest.cs" />
+    <Compile Include="Tests\InterceptorTests\DeviceBackupTest.cs" />
+    <Compile Include="Tests\InterceptorTests\DeviceScanTest.cs" />
+    <Compile Include="Tests\InterceptorTests\DeviceSettingsTest.cs" />
+    <Compile Include="Tests\InterceptorTests\DeviceStatusTest.cs" />
+    <Compile Include="Tests\InterceptorTests\ICmdTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -168,5 +163,6 @@
   </Target>
   <ItemGroup>
     <Folder Include="Data\ConfigurationSections\" />
+    <Folder Include="Tests\InterceptorTests\" />
   </ItemGroup>
 </Project>

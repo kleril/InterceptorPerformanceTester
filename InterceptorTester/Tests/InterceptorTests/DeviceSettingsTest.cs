@@ -12,14 +12,14 @@ using ConsoleApplication1;
 
 namespace InterceptorTester.Tests.InterceptorTests
 {
-	[TestFixture()]
+	//[TestFixture()]
 	public class DeviceSettingsTest
     {
 
 		static string outputFile = "../../../logs/DeviceSettingUnitTest.txt";
 		static StreamWriter results;
 
-        [TestFixtureSetUp()]
+        //[TestFixtureSetUp()]
         public void setup()
         {
             TestGlobals.setup();
@@ -28,12 +28,12 @@ namespace InterceptorTester.Tests.InterceptorTests
             results = new StreamWriter(stream);
         }
 
-        [TestFixtureTearDown()]
+        //[TestFixtureTearDown()]
         public void tearDown()
         {
             results.Close();
         }
-        [Test()]
+        //[Test()]
 		// Valid Serial
 		public void ValidSerial() 
 		{
@@ -59,7 +59,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Assert.AreEqual("200", statusCode);
 		}
 
-		[Test()]
+		//[Test()]
 		// Invalid Serial
 		public void InvalidSerial() 
 		{
@@ -86,7 +86,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Assert.AreEqual("400", statusCode);
 		}
 
-		[Test()]
+		//[Test()]
 		// No Serial
 		public void NoSerial() 
 		{

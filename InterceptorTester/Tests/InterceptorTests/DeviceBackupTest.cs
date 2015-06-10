@@ -12,7 +12,7 @@ using ConsoleApplication1;
 
 namespace InterceptorTester.Tests.InterceptorTests
 {
-	[TestFixture()]
+	//[TestFixture()]
 	public class DeviceBackupTest
 	{
 		// Globals
@@ -20,7 +20,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
 		static StreamWriter results;
 
-		[TestFixtureSetUp()]
+		//[TestFixtureSetUp()]
 		public void setup()
 		{
 			TestGlobals.setup();
@@ -30,14 +30,14 @@ namespace InterceptorTester.Tests.InterceptorTests
 			results = new StreamWriter(stream);
 		}
 
-		[TestFixtureTearDown()]
+		//[TestFixtureTearDown()]
 		public void tearDown()
 		{
 			results.Close();
 		}
 			
         
-		[Test()]
+		//[Test()]
 		// Valid Serial
 		public void ValidSerial()
 		{
@@ -78,7 +78,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Assert.AreEqual("201", statusCode);
 		}
 
-		[Test()]
+		//[Test()]
 		// Valid Single Backup Item
 		public void ValidSingleBackupItem()
 		{
@@ -192,7 +192,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Assert.AreEqual("400", statusCode);
 		}
         */
-		[Test()]
+		//[Test()]
 		// Invalid Serial Number
 		public void BadSerial()
 		{
@@ -229,7 +229,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Assert.AreEqual("400", statusCode);
 		}
 
-		[Test()]
+		//[Test()]
 		// No Backup Items
 		public void NoBackupItems()
 		{
@@ -265,7 +265,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Assert.AreEqual("201", statusCode);
 		}
 
-		[Test()]
+		//[Test()]
 		// Input with Serial Number as ""
 		public void EmptySerial()
 		{
@@ -304,7 +304,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 		}
 
 
-		[Test()]
+		//[Test()]
 		// Input with Null Serial Number
 		public void NullSerial()
 		{
@@ -342,7 +342,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Assert.AreEqual("400", statusCode);
 		}
 
-		[Test()]
+		//[Test()]
 		// Scan Code being a Special Dynamic Code
 		public void SpecialDynCode()
 		{
@@ -383,7 +383,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 		}
 
 
-		[Test()]
+		//[Test()]
 		// Scan Code being a Dynamic Code and Not Special
 		public void NotSpecialDynCode()
 		{
@@ -423,7 +423,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Assert.AreEqual("201", statusCode);
 		}
 
-		[Test()]
+		//[Test()]
 		// Multiple valid backup items with simple and dyn code
 		public void ValidBackupItemsSimDyn()
 		{

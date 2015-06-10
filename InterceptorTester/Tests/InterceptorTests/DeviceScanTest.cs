@@ -13,14 +13,14 @@ using ConsoleApplication1;
 namespace InterceptorTester.Tests.InterceptorTests
 {
 	
-	[TestFixture()]
+	//[TestFixture()]
     public class DeviceScanTest
     {
 		static string outputFile = "../../../logs/DeviceScanUnitTest.txt";
 
 		static StreamWriter results;
 
-        [TestFixtureSetUp()]
+        //[TestFixtureSetUp()]
         public void setup()
         {
             TestGlobals.setup();
@@ -29,7 +29,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             results = new StreamWriter(stream);
         }
 
-        [TestFixtureTearDown()]
+        //[TestFixtureTearDown()]
         public void tearDown()
         {
             results.Close();
@@ -37,7 +37,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
 		// Simple Scan Data
 
-        [Test()]
+        //[Test()]
         // Valid Single Scan
         public void ValidSingleScanSimple()
         {
@@ -72,7 +72,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             Assert.AreEqual("201", statusCode);
         }
 
-        [Test()]
+        //[Test()]
         public void UTF8ScanCode()
         {
             DeviceScanJSON testJson = new DeviceScanJSON ();
@@ -103,7 +103,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             Assert.AreEqual("201", statusCode);
         }
 
-        [Test()]
+        //[Test()]
         public void ASCIIScanCode()
         {
             DeviceScanJSON testJson = new DeviceScanJSON ();
@@ -135,7 +135,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 			Assert.AreEqual("201", statusCode);
         }
 
-        [Test()]
+        //[Test()]
         // Bad Serial
         public void InvalidSerialSimple()
         {
@@ -167,7 +167,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             Assert.AreEqual("400", statusCode);
         }
 
-        [Test()]
+        //[Test()]
         // No Serial(Empty String)
         public void EmptySerialSimple()
         {
@@ -201,7 +201,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
 
 
-        [Test()]
+        //[Test()]
         // No Serial(Null)
         public void NullSerialSimple()
         {
@@ -233,7 +233,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             Assert.AreEqual("400", statusCode);
         }
 
-        [Test()]
+        //[Test()]
         // List of Valid Scans
         public void LOValidScansSimple()
         {
@@ -272,7 +272,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
         //Dynamic
 
-        [Test()]
+        //[Test()]
         // Valid Single Scan
         public void ValidSingleScanDyn()
         {
@@ -304,7 +304,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             Assert.AreEqual("201", statusCode);
         }
 
-        [Test()]
+        //[Test()]
         // Valid Call Home Scan
         public void ValidCH()
         {
@@ -364,7 +364,7 @@ namespace InterceptorTester.Tests.InterceptorTests
         }
         */
 
-        [Test()]
+        //[Test()]
         // Bad Serial
         public void InvalidSerialDyn()
         {
@@ -397,7 +397,7 @@ namespace InterceptorTester.Tests.InterceptorTests
         }
 
 
-        [Test()]
+        //[Test()]
         // No Serial (Empty Sting)
         public void EmptySerialDyn()
         {
@@ -429,7 +429,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             Assert.AreEqual("400", statusCode);
         }
 
-        [Test()]
+        //[Test()]
         // No Serial (Null)
         public void NullSerialDyn()
         {
@@ -461,7 +461,7 @@ namespace InterceptorTester.Tests.InterceptorTests
             Assert.AreEqual("400", statusCode);
         }
 
-        [Test()]
+        //[Test()]
         // List of Valid Scans
         public void LOValidScansDyn()
         {
@@ -543,7 +543,7 @@ namespace InterceptorTester.Tests.InterceptorTests
 
         // Combined
 
-        [Test()]
+        //[Test()]
         // List of Valid Simple and Dynamic Code Scans 
         public void ValidScansSimDyn()
         {
@@ -613,7 +613,7 @@ namespace InterceptorTester.Tests.InterceptorTests
         }
         */
 
-        [Test()]
+        //[Test()]
         // No scan data
         public void NoScanData()
         {
