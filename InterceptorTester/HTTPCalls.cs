@@ -17,6 +17,7 @@ namespace ConsoleApplication1
    public  class HTTPCalls
     {
         public static KeyValuePair<JObject, string> result;
+		public static DateTime started;
 
         public HTTPCalls()
         {
@@ -34,6 +35,7 @@ namespace ConsoleApplication1
             System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
             Console.WriteLine("Test starting");
             //Do tests
+			started = DateTime.Now;
             timer.Start();
             await callType(currentTest, op);
             timer.Stop();

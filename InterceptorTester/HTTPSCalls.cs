@@ -22,6 +22,8 @@ namespace ConsoleApplication1{
 
         public static KeyValuePair<JObject, string> result;
 
+		public static DateTime started;
+
 
         /// <summary>
         /// Constructor, creates client certificate from file located at: "../../Data/unittestcert.pfx"
@@ -46,16 +48,18 @@ namespace ConsoleApplication1{
         /// <param name="currentTest">Test object containing data for the http request</param>
         /// <param name="op">One of HTTPOperation's enums (GET,POST,PUT,DELETE)</param>
         /// <returns>Number of milliseconds the request took</returns>
-        public async Task<double> runTest(Test currentTest, HTTPOperation op)
+		public async Task<double> runTest(Test currentTest, HTTPOperation op)
         {
             System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
             Console.WriteLine("Test starting");
 
-
             //Do tests
+
+			started = DateTime.Now;
             timer.Start();
             await callType(currentTest, op);
             timer.Stop();
+
             double time = timer.Elapsed.TotalMilliseconds;
             Console.WriteLine("Test ending");
 
@@ -76,6 +80,7 @@ namespace ConsoleApplication1{
             Console.WriteLine("Test starting");
 
             //Do tests
+			started = DateTime.Now;
             timer.Start();
 			await callType(currentTest, op, client);
             timer.Stop();

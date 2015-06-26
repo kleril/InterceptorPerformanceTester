@@ -50,8 +50,10 @@ namespace InterceptorTester.Tests.PerformanceTests
             stream = File.Create(outputFileHTTPSSync);
             results = new StreamWriter(stream);
 
+			DateTime started = DateTime.Now;
+
 			log.WriteLine ("Test Started: SyncHTTPSICmd");
-			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ("Current Time: " + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.ffffff"));
 			log.WriteLine ("Test Run times: " + TestGlobals.maxReps);
 			log.WriteLine ("Server: " + TestGlobals.testServer);
 
@@ -67,17 +69,31 @@ namespace InterceptorTester.Tests.PerformanceTests
                 List<Test> tests = new List<Test>();
                 tests.Add(validTest);
 
+				log.WriteLine ("Test " + i + " Started at " + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.ffffff"));
                 timer.Start();
                 AsyncContext.Run(async () => await new HTTPSCalls().runTest(validTest, HTTPOperation.GET));
                 timer.Stop();
                 double time = timer.Elapsed.TotalMilliseconds;
                 results.WriteLine("Test Time," + time);
+				log.WriteLine ("Test Lasted: " + time + "ms");
+
+				if (i < 99) 
+				{
+					log.WriteLine ();
+				}
+
+
                 //Verify Server didn't throw up
             }
 
-			log.WriteLine ("Test Ended: SyncHTTPSICmd");
-			log.WriteLine ("Current Time: " + DateTime.Now);
-			log.WriteLine ();
+			DateTime ended = DateTime.Now;
+			TimeSpan lasted = ended - started;
+
+
+			log.WriteLine ("Current Time: " + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.ffffff"));
+			log.WriteLine ("Test lasted: " + lasted);
+			log.WriteLine ("\n\n");
+
 
             results.Close();
         }
@@ -89,8 +105,12 @@ namespace InterceptorTester.Tests.PerformanceTests
             stream = File.Create(outputFileHTTPSAsync);
             results = new StreamWriter(stream);
 
+			DateTime started = DateTime.Now;
+
+			DateTime[] testStarted = new DateTime [TestGlobals.maxReps];
+
 			log.WriteLine ("Test Started: AsyncHTTPSICmd");
-			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ("Current Time: " + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.ffffff"));
 			log.WriteLine ("Test Run times: " + TestGlobals.maxReps);
 			log.WriteLine ("Server: " + TestGlobals.testServer);
 
@@ -111,6 +131,7 @@ namespace InterceptorTester.Tests.PerformanceTests
             {
                 System.Threading.Thread.Sleep(TestGlobals.delay);
                 tasks[i] = new HTTPSCalls().runTest(validTest, HTTPOperation.GET);
+				testStarted [i] = HTTPSCalls.started;
                 Console.WriteLine("Test starting:" + i.ToString());
             }
             Console.WriteLine("------------------------------------------------------");
@@ -118,14 +139,27 @@ namespace InterceptorTester.Tests.PerformanceTests
             Console.WriteLine("------------------------------------------------------");
             Task.WaitAll(tasks);
 
-            foreach (Task<double> nextResult in tasks)
+			int seq = 0;
+			foreach (Task<double> nextResult in tasks)
             {
                 results.WriteLine("Test Time," + nextResult.Result);
+
+				log.WriteLine ("Test " + seq + " Started at " + testStarted[seq].ToString("yyyy-MM-dd hh:mm:ss.ffffff"));
+				log.WriteLine ("Test Lasted: " + nextResult.Result + "ms");
+				seq++;
+				if (seq < 99)
+				{
+					log.WriteLine ();
+				}
             }
 
+			DateTime ended = DateTime.Now;
+			TimeSpan lasted = ended - started;
+
 			log.WriteLine ("Test Ended: AsyncHTTPSICmd");
-			log.WriteLine ("Current Time: " + DateTime.Now);
-			log.WriteLine ();
+			log.WriteLine ("Current Time: " + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.ffffff"));
+			log.WriteLine ("Test lasted: " + lasted);
+			log.WriteLine ("\n\n");
 
             results.Close();
         }
@@ -137,8 +171,10 @@ namespace InterceptorTester.Tests.PerformanceTests
             stream = File.Create(outputFileHTTPSync);
             results = new StreamWriter(stream);
 
+			DateTime started = DateTime.Now;
+
 			log.WriteLine ("Test Started: SyncHTTPICmd");
-			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ("Current Time: " + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.ffffff"));
 			log.WriteLine ("Test Run times: " + TestGlobals.maxReps);
 			log.WriteLine ("Server: " + TestGlobals.testServer);
 
@@ -154,18 +190,31 @@ namespace InterceptorTester.Tests.PerformanceTests
                 List<Test> tests = new List<Test>();
                 tests.Add(validTest);
 
-                timer.Start();
+				log.WriteLine ("Test " + i + " Started at " + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.ffffff"));
+				timer.Start();
                 AsyncContext.Run(async () => await new HTTPCalls().runTest(validTest, HTTPOperation.GET));
                 timer.Stop();
                 double time = timer.Elapsed.TotalMilliseconds;
                 results.WriteLine("Test Time," + time);
 
+				log.WriteLine ("Test Lasted: " + time + "ms");
+
+				if (i < 99) 
+				{
+					log.WriteLine ();
+				}
+
                 //Verify Server didn't throw up
             }
 
+			DateTime ended = DateTime.Now;
+			TimeSpan lasted = ended - started;
+
+
 			log.WriteLine ("Test Ended: SyncHTTPICmd");
-			log.WriteLine ("Current Time: " + DateTime.Now);
-			log.WriteLine ();
+			log.WriteLine ("Current Time: " + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.ffffff"));
+			log.WriteLine ("Test lasted: " + lasted);
+			log.WriteLine ("\n\n");
 
             results.Close();
         }
@@ -177,8 +226,10 @@ namespace InterceptorTester.Tests.PerformanceTests
             stream = File.Create(outputFileHTTPAsync);
             results = new StreamWriter(stream);
 
+			DateTime started = DateTime.Now;
+
 			log.WriteLine ("Test Started: AsyncHTTPICmd");
-			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ("Current Time: " + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.ffffff"));
 			log.WriteLine ("Test Run times: " + TestGlobals.maxReps);
 			log.WriteLine ("Server: " + TestGlobals.testServer);
 
@@ -195,10 +246,12 @@ namespace InterceptorTester.Tests.PerformanceTests
 
             // Construct started tasks
             Task<double>[] tasks = new Task<double>[TestGlobals.maxReps];
+			DateTime[] testStarted = new DateTime [TestGlobals.maxReps];
             for (int i = 0; i < TestGlobals.maxReps; i++)
             {
                 System.Threading.Thread.Sleep(TestGlobals.delay);
                 tasks[i] = new HTTPCalls().runTest(validTest, HTTPOperation.GET);
+				testStarted [i] = HTTPCalls.started;
                 Console.WriteLine("Test starting:" + i.ToString());
             }
             Console.WriteLine("------------------------------------------------------");
@@ -206,14 +259,28 @@ namespace InterceptorTester.Tests.PerformanceTests
             Console.WriteLine("------------------------------------------------------");
             Task.WaitAll(tasks);
 
-            foreach (Task<double> nextResult in tasks)
+			int seq = 0;
+			foreach (Task<double> nextResult in tasks)
             {
                 results.WriteLine("Test Time," + nextResult.Result);
+				log.WriteLine ("Test " + seq + " Started at " + testStarted[seq].ToString("yyyy-MM-dd hh:mm:ss.ffffff"));
+				log.WriteLine ("Test Lasted: " + nextResult.Result + "ms");
+				seq++;
+				if (seq < 99)
+				{
+					log.WriteLine ();
+				}
+
             }
 
+			DateTime ended = DateTime.Now;
+			TimeSpan lasted = ended - started;
+
+
 			log.WriteLine ("Test Ended: AsyncHTTPICmd");
-			log.WriteLine ("Current Time: " + DateTime.Now);
-			log.WriteLine ();
+			log.WriteLine ("Current Time: " + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.ffffff"));
+			log.WriteLine ("Test lasted: " + lasted);
+			log.WriteLine ("\n\n");
 
             results.Close();
         }
@@ -226,8 +293,10 @@ namespace InterceptorTester.Tests.PerformanceTests
             stream = File.Create(outputFileMultiClientICmd);
             results = new StreamWriter(stream);
 
+			DateTime started = DateTime.Now;
+
 			log.WriteLine ("Test Started: MultiClientICmd");
-			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ("Current Time: " + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.ffffff"));
 			log.WriteLine ("Server: " + TestGlobals.testServer);
 
 
@@ -246,23 +315,55 @@ namespace InterceptorTester.Tests.PerformanceTests
 
             // Construct started tasks
             Task<double>[,] tasks = new Task<double>[TestGlobals.maxReps, 2];
+			DateTime[] testStarted1 = new DateTime[TestGlobals.maxReps];
+			DateTime[] testStarted2 = new DateTime[TestGlobals.maxReps];
+
             for (int i = 0; i < TestGlobals.maxReps; i++)
             {
                 System.Threading.Thread.Sleep(TestGlobals.delay);
+				// client 1
                 tasks[i, 0] = new HTTPCalls().runTest(validTest1, HTTPOperation.GET);
+				testStarted1[i] = HTTPCalls.started;
+
+				// client 2
                 tasks[i, 1] = new HTTPCalls().runTest(validTest2, HTTPOperation.GET);
+				testStarted2[i] = HTTPCalls.started;
                 Console.WriteLine("Test starting:" + i.ToString());
                 Task.WaitAll(tasks[i, 0], tasks[i, 1]);
             }
 
-            foreach (Task<double> nextResult in tasks)
-            {
-                results.WriteLine("Test Time," + nextResult.Result);
-            }
+			log.WriteLine ("Client 1:");
+			for(int i = 0; i < TestGlobals.maxReps; i++) 
+			{
+				results.WriteLine ("Test Time," + tasks[i, 0].Result);
+
+				log.WriteLine ("Client 1 Test " + i + " Started at " + testStarted1 [i].ToString ("yyyy-MM-dd hh:mm:ss.ffffff"));
+				log.WriteLine ("Test Lasted: " + tasks[i, 0].Result + "ms");
+				log.WriteLine ();
+			}
+
+			log.WriteLine ("Client 2:");
+			for(int i = 0; i < TestGlobals.maxReps; i++) 
+			{
+				results.WriteLine ("Test Time," + tasks[i, 1].Result);
+
+				log.WriteLine ("Client 2 Test " + i + " Started at " + testStarted2 [i].ToString ("yyyy-MM-dd hh:mm:ss.ffffff"));
+				log.WriteLine ("Test Lasted: " + tasks[i, 1].Result + "ms");
+				if (i < 99) 
+				{
+					log.WriteLine ();
+				}
+			}
+
+			DateTime ended = DateTime.Now;
+			TimeSpan lasted = ended - started;
+
 
 			log.WriteLine ("Test Ended: MultiClientICmd");
-			log.WriteLine ("Current Time: " + DateTime.Now);
-			log.WriteLine ();
+			log.WriteLine ("Current Time: " + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.ffffff"));
+			log.WriteLine ("Test lasted: " + lasted);
+			log.WriteLine ("\n\n");
+
 
             results.Close();
         }
