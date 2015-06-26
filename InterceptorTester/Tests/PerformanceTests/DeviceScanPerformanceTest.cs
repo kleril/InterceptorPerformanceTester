@@ -16,6 +16,7 @@ namespace InterceptorTester.Tests.PerformanceTests
 	public class DeviceScanPerformanceTest
     {
         static StreamWriter results;
+		static StreamWriter log;
 
         static string outputFileHTTPSSync = "../../../logs/SyncHTTPSDeviceScanPerformanceTest.csv";
         static string outputFileHTTPAsync = "../../../logs/AsyncHTTPDeviceScanPerformanceTest.csv";
@@ -23,11 +24,23 @@ namespace InterceptorTester.Tests.PerformanceTests
         static string outputFileHTTPSAsync = "../../../logs/AsyncHTTPSDeviceScanPerformanceTest.csv";
         static string outputFileMultiClientScans = "../../../logs/MultiClientDeviceScan.csv";
 
+		static string outputFile = "../../../logs/DeviceScanPerformance.txt";
+
         [TestFixtureSetUp()]
         public void setup()
         {
             TestGlobals.setup();
+
+			FileStream stream;
+			stream = File.Create (outputFile);
+			log = new StreamWriter (stream);
         }
+
+		[TestFixtureTearDown()]
+		public void tearDown()
+		{
+			log.Close();
+		}
 
         [Test()]
         public void SyncHTTPSDeviceScan()
@@ -35,6 +48,12 @@ namespace InterceptorTester.Tests.PerformanceTests
             FileStream stream;
             stream = File.Create(outputFileHTTPSSync);
             results = new StreamWriter(stream);
+
+			log.WriteLine ("Test Started: SyncHTTPSDeviceScan");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ("Test Run times: " + TestGlobals.maxReps);
+			log.WriteLine ("Server: " + TestGlobals.testServer);
+
 
             for (int i = 0; i < TestGlobals.maxReps; i++)
             {
@@ -59,6 +78,11 @@ namespace InterceptorTester.Tests.PerformanceTests
                 System.Threading.Thread.Sleep(TestGlobals.delay);
                 //Verify Server didn't throw up
             }
+
+			log.WriteLine ("Test Ended: SyncHTTPSDeviceScan");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ();
+
             results.Close();
         }
 
@@ -69,6 +93,12 @@ namespace InterceptorTester.Tests.PerformanceTests
             FileStream stream;
             stream = File.Create(outputFileHTTPSAsync);
             results = new StreamWriter(stream);
+
+			log.WriteLine ("Test Started: AsyncHTTPSDeviceScan");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ("Test Run times: " + TestGlobals.maxReps);
+			log.WriteLine ("Server: " + TestGlobals.testServer);
+
 
             DeviceScanJSON testJson = new DeviceScanJSON();
             testJson.i = TestGlobals.validSerial;
@@ -104,6 +134,11 @@ namespace InterceptorTester.Tests.PerformanceTests
             {
                 results.WriteLine("Test Time," + nextResult.Result);
             }
+
+			log.WriteLine ("Test Ended: AsyncHTTPSDeviceScan");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ();
+
             results.Close();
         }
 
@@ -113,6 +148,11 @@ namespace InterceptorTester.Tests.PerformanceTests
             FileStream stream;
             stream = File.Create(outputFileHTTPSync);
             results = new StreamWriter(stream);
+
+			log.WriteLine ("Test Started: SyncHTTPDeviceScan");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ("Test Run times: " + TestGlobals.maxReps);
+			log.WriteLine ("Server: " + TestGlobals.testServer);
 
             for (int i = 0; i < TestGlobals.maxReps; i++)
             {
@@ -137,6 +177,11 @@ namespace InterceptorTester.Tests.PerformanceTests
                 System.Threading.Thread.Sleep(TestGlobals.delay);
                 //Verify Server didn't throw up
             }
+
+			log.WriteLine ("Test Ended: SyncHTTPDeviceScan");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ();
+
             results.Close();
         }
 
@@ -147,6 +192,11 @@ namespace InterceptorTester.Tests.PerformanceTests
             FileStream stream;
             stream = File.Create(outputFileHTTPAsync);
             results = new StreamWriter(stream);
+
+			log.WriteLine ("Test Started: AsyncHTTPDeviceScan");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ("Test Run times: " + TestGlobals.maxReps);
+			log.WriteLine ("Server: " + TestGlobals.testServer);
 
             DeviceScanJSON testJson = new DeviceScanJSON();
             testJson.i = TestGlobals.validSerial;
@@ -181,16 +231,24 @@ namespace InterceptorTester.Tests.PerformanceTests
                 results.WriteLine("Test Time," + nextResult.Result);
             }
 
+			log.WriteLine ("Test Ended: AsyncHTTPDeviceScan");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ();
+
             results.Close();
         }
 
         [Test()]
         //Multi-client simultaneious scans
-        public void multiClientScans()
+        public void MultiClientScans()
         {
             FileStream stream;
             stream = File.Create(outputFileMultiClientScans);
             results = new StreamWriter(stream);
+
+			log.WriteLine ("Test Started: MultiClientDeviceScan");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ("Server: " + TestGlobals.testServer);
 
             DeviceScanJSON testJson1 = new DeviceScanJSON();
             testJson1.i = TestGlobals.validSerial;
@@ -232,6 +290,10 @@ namespace InterceptorTester.Tests.PerformanceTests
             {
                 results.WriteLine("Test Time," + nextResult.Result);
             }
+
+			log.WriteLine ("Test Ended: MultiClientDeviceScan");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ();
 
             results.Close();
         }

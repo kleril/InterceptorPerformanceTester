@@ -16,6 +16,7 @@ namespace InterceptorTester.Tests.PerformanceTests
 	public class DeviceBackupPerformanceTest
     {
         static StreamWriter results;
+		static StreamWriter log;
 
         static string outputFileHTTPSAsync = "../../../logs/AsyncHTTPSDeviceBackupPerformanceTest.csv";
         static string outputFileHTTPAsync = "../../../logs/AsyncHTTPDeviceBackupPerformanceTest.csv";
@@ -23,11 +24,24 @@ namespace InterceptorTester.Tests.PerformanceTests
         static string outputFileHTTPSync = "../../../logs/SyncHTTPDeviceBackupPerformanceTest.csv";
         static string outputFileMultiClientDeviceBackup = "../../../logs/MultiClientDeviceBackup.csv";
 
+		static string outputFile = "../../../logs/DeviceBackupPerformance.txt";
+
         [TestFixtureSetUp()]
         public void setup()
         {
             TestGlobals.setup();
+
+			FileStream stream;
+			stream = File.Create (outputFile);
+			log = new StreamWriter (stream);
+
         }
+
+		[TestFixtureTearDown()]
+		public void tearDown()
+		{
+			log.Close();
+		}
 
 
         [Test()]
@@ -36,6 +50,11 @@ namespace InterceptorTester.Tests.PerformanceTests
             FileStream stream;
             stream = File.Create(outputFileHTTPSSync);
             results = new StreamWriter(stream);
+
+			log.WriteLine ("Test Started: SyncHTTPSDeviceBackup");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ("Test Run times: " + TestGlobals.maxReps);
+			log.WriteLine ("Server: " + TestGlobals.testServer);
 
             for (int i = 0; i < TestGlobals.maxReps; i++)
             {
@@ -66,6 +85,11 @@ namespace InterceptorTester.Tests.PerformanceTests
                 System.Threading.Thread.Sleep(TestGlobals.delay);
                 //Verify Server didn't throw up
             }
+
+			log.WriteLine ("Test Ended: SyncHTTPSDeviceBackup");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ();
+
             results.Close();
         }
 
@@ -76,6 +100,11 @@ namespace InterceptorTester.Tests.PerformanceTests
             FileStream stream;
             stream = File.Create(outputFileHTTPSAsync);
             results = new StreamWriter(stream);
+
+			log.WriteLine ("Test Started: AsyncHTTPSDeviceBackup");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ("Test Run times: " + TestGlobals.maxReps);
+			log.WriteLine ("Server: " + TestGlobals.testServer);
 
             BackupItem[] items = new BackupItem[1];
             items[0] = InterceptorTests.DeviceBackupTest.getBackupItem(1);
@@ -111,6 +140,11 @@ namespace InterceptorTester.Tests.PerformanceTests
             {
                 results.WriteLine("Test Time," + nextResult.Result);
             }
+
+			log.WriteLine ("Test Ended: AsyncHTTPSDeviceBackup");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ();
+
             results.Close();
         }
 
@@ -120,6 +154,11 @@ namespace InterceptorTester.Tests.PerformanceTests
             FileStream stream;
             stream = File.Create(outputFileHTTPSync);
             results = new StreamWriter(stream);
+
+			log.WriteLine ("Test Started: SyncHTTPDeviceBackup");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ("Test Run times: " + TestGlobals.maxReps);
+			log.WriteLine ("Server: " + TestGlobals.testServer);
 
             for (int i = 0; i < TestGlobals.maxReps; i++)
             {
@@ -150,6 +189,11 @@ namespace InterceptorTester.Tests.PerformanceTests
                 System.Threading.Thread.Sleep(TestGlobals.delay);
                 //Verify Server didn't throw up
             }
+
+			log.WriteLine ("Test Ended: SyncHTTPDeviceBackup");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ();
+
             results.Close();
         }
 
@@ -160,6 +204,11 @@ namespace InterceptorTester.Tests.PerformanceTests
             FileStream stream;
             stream = File.Create(outputFileHTTPAsync);
             results = new StreamWriter(stream);
+
+			log.WriteLine ("Test Started: AsyncHTTPDeviceBackup");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ("Test Run times: " + TestGlobals.maxReps);
+			log.WriteLine ("Server: " + TestGlobals.testServer);
 
             BackupItem[] items = new BackupItem[1];
             items[0] = InterceptorTests.DeviceBackupTest.getBackupItem(1);
@@ -195,16 +244,25 @@ namespace InterceptorTester.Tests.PerformanceTests
             {
                 results.WriteLine("Test Time," + nextResult.Result);
             }
+
+			log.WriteLine ("Test Ended: AsyncHTTPDeviceBackup");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ();
+
             results.Close();
         }
 
         [Test()]
         //Multi-client simultaneious scans
-        public void multiClientDeviceBackup()
+        public void MultiClientDeviceBackup()
         {
             FileStream stream;
             stream = File.Create(outputFileMultiClientDeviceBackup);
             results = new StreamWriter(stream);
+
+			log.WriteLine ("Test Started: MultiClientDeviceBackup");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ("Server: " + TestGlobals.testServer);
 
             BackupItem[] items = new BackupItem[1];
             items[0] = InterceptorTests.DeviceBackupTest.getBackupItem(1);
@@ -247,6 +305,10 @@ namespace InterceptorTester.Tests.PerformanceTests
             {
                 results.WriteLine("Test Time," + nextResult.Result);
             }
+
+			log.WriteLine ("Test Ended: MultiClientDeviceBackup");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ();
 
             results.Close();
         }

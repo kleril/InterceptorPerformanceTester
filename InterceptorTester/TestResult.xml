@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="bin/Debug/InterceptorTester.dll" total="20" failures="0" not-run="0" date="2015-06-10" time="16:23:58">
+  <environment nunit-version="2.4.8.0" clr-version="4.0.30319.17020" os-version="Unix 14.3.0.0" platform="Unix" cwd="/Users/linai/Documents/InterceptorPerformanceTester/InterceptorTester" machine-name="Lins-MacBook-Air.local" user="linai" user-domain="Lins-MacBook-Air.local" />
+  <culture-info current-culture="en-CA" current-uiculture="en-CA" />
+  <test-suite name="bin/Debug/InterceptorTester.dll" success="True" time="55.176" asserts="0">
+    <results>
+      <test-suite name="InterceptorTester" success="True" time="55.172" asserts="0">
+        <results>
+          <test-suite name="Tests" success="True" time="55.170" asserts="0">
+            <results>
+              <test-suite name="PerformanceTests" success="True" time="55.169" asserts="0">
+                <results>
+                  <test-suite name="DeviceBackupPerformanceTest" success="True" time="15.989" asserts="0">
+                    <results>
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceBackupPerformanceTest.AsyncHTTPDeviceBackup" executed="True" success="True" time="3.318" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceBackupPerformanceTest.AsyncHTTPSDeviceBackup" executed="True" success="True" time="2.412" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceBackupPerformanceTest.multiClientDeviceBackup" executed="True" success="True" time="3.533" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceBackupPerformanceTest.SyncHTTPDeviceBackup" executed="True" success="True" time="3.309" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceBackupPerformanceTest.SyncHTTPSDeviceBackup" executed="True" success="True" time="3.381" asserts="0" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="DeviceScanPerformanceTest" success="True" time="14.714" asserts="0">
+                    <results>
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceScanPerformanceTest.AsyncHTTPDeviceScan" executed="True" success="True" time="2.175" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceScanPerformanceTest.AsyncHTTPSDeviceScan" executed="True" success="True" time="2.327" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceScanPerformanceTest.multiClientScans" executed="True" success="True" time="3.493" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceScanPerformanceTest.SyncHTTPDeviceScan" executed="True" success="True" time="3.304" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceScanPerformanceTest.SyncHTTPSDeviceScan" executed="True" success="True" time="3.408" asserts="0" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="DeviceStatusPerformanceTest" success="True" time="13.834" asserts="0">
+                    <results>
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceStatusPerformanceTest.AsyncHTTPDeviceStatus" executed="True" success="True" time="2.125" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceStatusPerformanceTest.AsyncHTTPSDeviceStatus" executed="True" success="True" time="3.289" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceStatusPerformanceTest.multiClientStatus" executed="True" success="True" time="2.727" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceStatusPerformanceTest.SyncHTTPDeviceStatus" executed="True" success="True" time="2.735" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceStatusPerformanceTest.SyncHTTPSDeviceStatus" executed="True" success="True" time="2.952" asserts="0" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="ICmdPerformanceTest" success="True" time="10.611" asserts="0">
+                    <results>
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.ICmdPerformanceTest.AsyncHTTPICmd" executed="True" success="True" time="2.173" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.ICmdPerformanceTest.AsyncHTTPSICmd" executed="True" success="True" time="2.301" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.ICmdPerformanceTest.multiClientICmd" executed="True" success="True" time="3.484" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.ICmdPerformanceTest.SyncHTTPICmd" executed="True" success="True" time="1.297" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.ICmdPerformanceTest.SyncHTTPSICmd" executed="True" success="True" time="1.349" asserts="0" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

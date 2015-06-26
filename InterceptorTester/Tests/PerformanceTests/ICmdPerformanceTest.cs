@@ -16,6 +16,7 @@ namespace InterceptorTester.Tests.PerformanceTests
 	public class ICmdPerformanceTest
     {
         static StreamWriter results;
+		static StreamWriter log;
 
         static string outputFileHTTPSSync = "../../../logs/SyncHTTPSICmdPerformanceTest.csv";
         static string outputFileHTTPSAsync = "../../../logs/AsyncHTTPSICmdPerformanceTest.csv";
@@ -23,11 +24,24 @@ namespace InterceptorTester.Tests.PerformanceTests
         static string outputFileHTTPAsync = "../../../logs/AsyncHTTPICmdPerformanceTest.csv";
         static string outputFileMultiClientICmd = "../../../logs/MultiClientICmd.csv";
 
+		static string outputFile = "../../../logs/ICmdPerformance.txt";
+
         [TestFixtureSetUp()]
         public void setup()
         {
             TestGlobals.setup();
+
+			FileStream stream;
+			stream = File.Create (outputFile);
+			log = new StreamWriter (stream);
         }
+
+		[TestFixtureTearDown()]
+		public void tearDown()
+		{
+			log.Close();
+		}
+
 
         [Test()]
         public void SyncHTTPSICmd()
@@ -35,6 +49,12 @@ namespace InterceptorTester.Tests.PerformanceTests
             FileStream stream;
             stream = File.Create(outputFileHTTPSSync);
             results = new StreamWriter(stream);
+
+			log.WriteLine ("Test Started: SyncHTTPSICmd");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ("Test Run times: " + TestGlobals.maxReps);
+			log.WriteLine ("Server: " + TestGlobals.testServer);
+
 
             for (int i = 0; i < TestGlobals.maxReps; i++)
             {
@@ -54,6 +74,11 @@ namespace InterceptorTester.Tests.PerformanceTests
                 results.WriteLine("Test Time," + time);
                 //Verify Server didn't throw up
             }
+
+			log.WriteLine ("Test Ended: SyncHTTPSICmd");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ();
+
             results.Close();
         }
 
@@ -63,6 +88,12 @@ namespace InterceptorTester.Tests.PerformanceTests
             FileStream stream;
             stream = File.Create(outputFileHTTPSAsync);
             results = new StreamWriter(stream);
+
+			log.WriteLine ("Test Started: AsyncHTTPSICmd");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ("Test Run times: " + TestGlobals.maxReps);
+			log.WriteLine ("Server: " + TestGlobals.testServer);
+
             System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
 
 
@@ -92,6 +123,10 @@ namespace InterceptorTester.Tests.PerformanceTests
                 results.WriteLine("Test Time," + nextResult.Result);
             }
 
+			log.WriteLine ("Test Ended: AsyncHTTPSICmd");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ();
+
             results.Close();
         }
 
@@ -101,6 +136,12 @@ namespace InterceptorTester.Tests.PerformanceTests
             FileStream stream;
             stream = File.Create(outputFileHTTPSync);
             results = new StreamWriter(stream);
+
+			log.WriteLine ("Test Started: SyncHTTPICmd");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ("Test Run times: " + TestGlobals.maxReps);
+			log.WriteLine ("Server: " + TestGlobals.testServer);
+
 
             for (int i = 0; i < TestGlobals.maxReps; i++)
             {
@@ -121,6 +162,11 @@ namespace InterceptorTester.Tests.PerformanceTests
 
                 //Verify Server didn't throw up
             }
+
+			log.WriteLine ("Test Ended: SyncHTTPICmd");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ();
+
             results.Close();
         }
 
@@ -130,6 +176,12 @@ namespace InterceptorTester.Tests.PerformanceTests
             FileStream stream;
             stream = File.Create(outputFileHTTPAsync);
             results = new StreamWriter(stream);
+
+			log.WriteLine ("Test Started: AsyncHTTPICmd");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ("Test Run times: " + TestGlobals.maxReps);
+			log.WriteLine ("Server: " + TestGlobals.testServer);
+
             System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
 
 
@@ -159,16 +211,25 @@ namespace InterceptorTester.Tests.PerformanceTests
                 results.WriteLine("Test Time," + nextResult.Result);
             }
 
+			log.WriteLine ("Test Ended: AsyncHTTPICmd");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ();
+
             results.Close();
         }
 
         [Test()]
         //Multi-client simultaneious scans
-        public void multiClientICmd()
+        public void MultiClientICmd()
         {
             FileStream stream;
             stream = File.Create(outputFileMultiClientICmd);
             results = new StreamWriter(stream);
+
+			log.WriteLine ("Test Started: MultiClientICmd");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ("Server: " + TestGlobals.testServer);
+
 
             ICmd validICmd1 = new ICmd(TestGlobals.testServer, TestGlobals.validSerial);
             Test validTest1 = new Test(validICmd1);
@@ -198,6 +259,10 @@ namespace InterceptorTester.Tests.PerformanceTests
             {
                 results.WriteLine("Test Time," + nextResult.Result);
             }
+
+			log.WriteLine ("Test Ended: MultiClientICmd");
+			log.WriteLine ("Current Time: " + DateTime.Now);
+			log.WriteLine ();
 
             results.Close();
         }

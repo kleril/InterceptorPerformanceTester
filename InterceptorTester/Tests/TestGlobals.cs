@@ -59,6 +59,7 @@ namespace ConsoleApplication1
 					Console.WriteLine(e);
 					Console.WriteLine("Chances are your appconfig is misconfigured. Double check that performanceTestRuns is an integer and try again.");
 				}
+				//maxReps = 50;
 
 			}
 			catch (Exception e)
