@@ -36,6 +36,8 @@ namespace InterceptorTester.Tests.PerformanceTests
 			stream = File.Create (outputFile);
 			log = new StreamWriter (stream);
 
+			Console.WriteLine (TestGlobals.testServer);
+
         }
 
 		[TestFixtureTearDown()]

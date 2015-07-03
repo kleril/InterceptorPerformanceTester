@@ -52,6 +52,7 @@ namespace ConsoleApplication1{
         {
             System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
             Console.WriteLine("Test starting");
+			Console.WriteLine ("Server: " + TestGlobals.testServer);
 
             //Do tests
 
