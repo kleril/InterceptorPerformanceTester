@@ -215,9 +215,6 @@ pip-log.txt
 #Don't upload a million test results
 ####################################
 *.csv
-*.userprefs
-*.exe
-*.exe
 *ConsoleApplication1/bin/Debug/ConsoleApplication1.exe
 *.ConsoleApplication1/bin/Debug/ConsoleApplication1.exe
 *.ConsoleApplication1/bin/Debug/ConsoleApplication1.exe
