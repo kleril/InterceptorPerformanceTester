@@ -45,7 +45,6 @@ local.properties
 [Rr]elease/
 x64/
 build/
-[Oo]bj/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
@@ -214,7 +213,6 @@ pip-log.txt
 ####################################
 #Don't upload a million test results
 ####################################
-*.csv
 *ConsoleApplication1/bin/Debug/ConsoleApplication1.exe
 *.ConsoleApplication1/bin/Debug/ConsoleApplication1.exe
 *.ConsoleApplication1/bin/Debug/ConsoleApplication1.exe
@@ -223,5 +221,3 @@ pip-log.txt
 ConsoleApplication1/bin/Debug/ConsoleApplication1.pdb
 DatabasePopulator/DatabasePopulator.csproj
 DatabasePopulator/DatabasePopulator.csproj
-*.txt
-logs/*
