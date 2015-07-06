@@ -1,0 +1,1843 @@
+Test Started: AsyncHTTPICmd
+Current Time: 2015-06-26 04:52:20.379142
+Test Run times: 100
+Server: http://0827b63a525242d1b8acc7a31a71c39e.cloudapp.net/
+Test 0 Started at 2015-06-26 04:52:20.583711
+Test Lasted: 3397.1876ms
+
+Test 1 Started at 2015-06-26 04:52:20.791907
+Test Lasted: 3266.0413ms
+
+Test 2 Started at 2015-06-26 04:52:20.993415
+Test Lasted: 4419.292ms
+
+Test 3 Started at 2015-06-26 04:52:21.198334
+Test Lasted: 465.4639ms
+
+Test 4 Started at 2015-06-26 04:52:21.402973
+Test Lasted: 2430.823ms
+
+Test 5 Started at 2015-06-26 04:52:21.605850
+Test Lasted: 123.3938ms
+
+Test 6 Started at 2015-06-26 04:52:21.810288
+Test Lasted: 3382.1152ms
+
+Test 7 Started at 2015-06-26 04:52:22.016537
+Test Lasted: 3355.8387ms
+
+Test 8 Started at 2015-06-26 04:52:22.217944
+Test Lasted: 1919.2625ms
+
+Test 9 Started at 2015-06-26 04:52:22.419186
+Test Lasted: 1647.4027ms
+
+Test 10 Started at 2015-06-26 04:52:22.622227
+Test Lasted: 1444.7305ms
+
+Test 11 Started at 2015-06-26 04:52:22.826251
+Test Lasted: 1477.6851ms
+
+Test 12 Started at 2015-06-26 04:52:23.032319
+Test Lasted: 1279.1752ms
+
+Test 13 Started at 2015-06-26 04:52:23.235459
+Test Lasted: 1141.3047ms
+
+Test 14 Started at 2015-06-26 04:52:23.441692
+Test Lasted: 1073.6284ms
+
+Test 15 Started at 2015-06-26 04:52:23.645483
+Test Lasted: 975.6329ms
+
+Test 16 Started at 2015-06-26 04:52:23.850134
+Test Lasted: 799.3251ms
+
+Test 17 Started at 2015-06-26 04:52:24.051319
+Test Lasted: 578.6108ms
+
+Test 18 Started at 2015-06-26 04:52:24.253263
+Test Lasted: 493.7687ms
+
+Test 19 Started at 2015-06-26 04:52:24.456503
+Test Lasted: 284.6219ms
+
+Test 20 Started at 2015-06-26 04:52:24.660469
+Test Lasted: 162.0344ms
+
+Test 21 Started at 2015-06-26 04:52:24.863812
+Test Lasted: 478.8974ms
+
+Test 22 Started at 2015-06-26 04:52:25.066454
+Test Lasted: 400.8629ms
+
+Test 23 Started at 2015-06-26 04:52:25.272568
+Test Lasted: 224.8082ms
+
+Test 24 Started at 2015-06-26 04:52:25.481209
+Test Lasted: 192.5975ms
+
+Test 25 Started at 2015-06-26 04:52:25.685029
+Test Lasted: 162.6152ms
+
+Test 26 Started at 2015-06-26 04:52:25.887867
+Test Lasted: 344.1279ms
+
+Test 27 Started at 2015-06-26 04:52:26.089432
+Test Lasted: 214.0153ms
+
+Test 28 Started at 2015-06-26 04:52:26.295156
+Test Lasted: 131.5615ms
+
+Test 29 Started at 2015-06-26 04:52:26.498815
+Test Lasted: 126.7213ms
+
+Test 30 Started at 2015-06-26 04:52:26.704924
+Test Lasted: 147.2179ms
+
+Test 31 Started at 2015-06-26 04:52:26.910948
+Test Lasted: 375.8157ms
+
+Test 32 Started at 2015-06-26 04:52:27.117136
+Test Lasted: 250.0648ms
+
+Test 33 Started at 2015-06-26 04:52:27.319258
+Test Lasted: 330.0429ms
+
+Test 34 Started at 2015-06-26 04:52:27.522310
+Test Lasted: 1256.7991ms
+
+Test 35 Started at 2015-06-26 04:52:27.724641
+Test Lasted: 216.1239ms
+
+Test 36 Started at 2015-06-26 04:52:27.930848
+Test Lasted: 158.4891ms
+
+Test 37 Started at 2015-06-26 04:52:28.133646
+Test Lasted: 147.9914ms
+
+Test 38 Started at 2015-06-26 04:52:28.340212
+Test Lasted: 223.4564ms
+
+Test 39 Started at 2015-06-26 04:52:28.543420
+Test Lasted: 191.7589ms
+
+Test 40 Started at 2015-06-26 04:52:28.749262
+Test Lasted: 155.6027ms
+
+Test 41 Started at 2015-06-26 04:52:28.950464
+Test Lasted: 253.0119ms
+
+Test 42 Started at 2015-06-26 04:52:29.155970
+Test Lasted: 159.3646ms
+
+Test 43 Started at 2015-06-26 04:52:29.358328
+Test Lasted: 170.4465ms
+
+Test 44 Started at 2015-06-26 04:52:29.563217
+Test Lasted: 147.0359ms
+
+Test 45 Started at 2015-06-26 04:52:29.768461
+Test Lasted: 145.9838ms
+
+Test 46 Started at 2015-06-26 04:52:29.973531
+Test Lasted: 149.0642ms
+
+Test 47 Started at 2015-06-26 04:52:30.177301
+Test Lasted: 116.9846ms
+
+Test 48 Started at 2015-06-26 04:52:30.382757
+Test Lasted: 155.5084ms
+
+Test 49 Started at 2015-06-26 04:52:30.584527
+Test Lasted: 179.155ms
+
+Test 50 Started at 2015-06-26 04:52:30.791220
+Test Lasted: 223.2903ms
+
+Test 51 Started at 2015-06-26 04:52:30.994786
+Test Lasted: 214.5952ms
+
+Test 52 Started at 2015-06-26 04:52:31.198715
+Test Lasted: 220.3805ms
+
+Test 53 Started at 2015-06-26 04:52:31.404376
+Test Lasted: 156.2453ms
+
+Test 54 Started at 2015-06-26 04:52:31.607425
+Test Lasted: 193.8107ms
+
+Test 55 Started at 2015-06-26 04:52:31.808929
+Test Lasted: 1453.8348ms
+
+Test 56 Started at 2015-06-26 04:52:32.014834
+Test Lasted: 1936.5541ms
+
+Test 57 Started at 2015-06-26 04:52:32.216869
+Test Lasted: 296.7794ms
+
+Test 58 Started at 2015-06-26 04:52:32.420230
+Test Lasted: 1539.3281ms
+
+Test 59 Started at 2015-06-26 04:52:32.622223
+Test Lasted: 711.4256ms
+
+Test 60 Started at 2015-06-26 04:52:32.829235
+Test Lasted: 632.2013ms
+
+Test 61 Started at 2015-06-26 04:52:33.032465
+Test Lasted: 496.2909ms
+
+Test 62 Started at 2015-06-26 04:52:33.239013
+Test Lasted: 217.3986ms
+
+Test 63 Started at 2015-06-26 04:52:33.444486
+Test Lasted: 144.1574ms
+
+Test 64 Started at 2015-06-26 04:52:33.648667
+Test Lasted: 271.3573ms
+
+Test 65 Started at 2015-06-26 04:52:33.854872
+Test Lasted: 276.374ms
+
+Test 66 Started at 2015-06-26 04:52:34.058645
+Test Lasted: 543.8223ms
+
+Test 67 Started at 2015-06-26 04:52:34.261279
+Test Lasted: 127.4918ms
+
+Test 68 Started at 2015-06-26 04:52:34.466490
+Test Lasted: 173.4787ms
+
+Test 69 Started at 2015-06-26 04:52:34.672700
+Test Lasted: 210.5086ms
+
+Test 70 Started at 2015-06-26 04:52:34.879035
+Test Lasted: 427.2216ms
+
+Test 71 Started at 2015-06-26 04:52:35.080520
+Test Lasted: 203.1015ms
+
+Test 72 Started at 2015-06-26 04:52:35.281717
+Test Lasted: 251.5402ms
+
+Test 73 Started at 2015-06-26 04:52:35.488433
+Test Lasted: 899.4486ms
+
+Test 74 Started at 2015-06-26 04:52:35.690570
+Test Lasted: 217.5464ms
+
+Test 75 Started at 2015-06-26 04:52:35.892322
+Test Lasted: 140.684ms
+
+Test 76 Started at 2015-06-26 04:52:36.098252
+Test Lasted: 309.6108ms
+
+Test 77 Started at 2015-06-26 04:52:36.300867
+Test Lasted: 169.7606ms
+
+Test 78 Started at 2015-06-26 04:52:36.507923
+Test Lasted: 173.0812ms
+
+Test 79 Started at 2015-06-26 04:52:36.710623
+Test Lasted: 124.2258ms
+
+Test 80 Started at 2015-06-26 04:52:36.914193
+Test Lasted: 178.4992ms
+
+Test 81 Started at 2015-06-26 04:52:37.115865
+Test Lasted: 146.0089ms
+
+Test 82 Started at 2015-06-26 04:52:37.320734
+Test Lasted: 190.4578ms
+
+Test 83 Started at 2015-06-26 04:52:37.526927
+Test Lasted: 160.963ms
+
+Test 84 Started at 2015-06-26 04:52:37.730225
+Test Lasted: 138.3051ms
+
+Test 85 Started at 2015-06-26 04:52:37.936276
+Test Lasted: 131.1781ms
+
+Test 86 Started at 2015-06-26 04:52:38.139828
+Test Lasted: 141.8031ms
+
+Test 87 Started at 2015-06-26 04:52:38.346722
+Test Lasted: 126.2509ms
+
+Test 88 Started at 2015-06-26 04:52:38.550140
+Test Lasted: 132.3565ms
+
+Test 89 Started at 2015-06-26 04:52:38.754268
+Test Lasted: 139.4775ms
+
+Test 90 Started at 2015-06-26 04:52:38.956987
+Test Lasted: 193.6774ms
+
+Test 91 Started at 2015-06-26 04:52:39.159715
+Test Lasted: 141.6226ms
+
+Test 92 Started at 2015-06-26 04:52:39.365840
+Test Lasted: 180.2768ms
+
+Test 93 Started at 2015-06-26 04:52:39.571179
+Test Lasted: 126.6807ms
+
+Test 94 Started at 2015-06-26 04:52:39.773516
+Test Lasted: 112.8824ms
+
+Test 95 Started at 2015-06-26 04:52:39.977900
+Test Lasted: 129.7552ms
+
+Test 96 Started at 2015-06-26 04:52:40.179355
+Test Lasted: 200.8033ms
+
+Test 97 Started at 2015-06-26 04:52:40.384139
+Test Lasted: 168.2573ms
+
+Test 98 Started at 2015-06-26 04:52:40.590129
+Test Lasted: 162.2978ms
+Test 99 Started at 2015-06-26 04:52:40.793331
+Test Lasted: 152.8927ms
+Test Ended: AsyncHTTPICmd
+Current Time: 2015-06-26 04:52:40.947498
+Test lasted: 00:00:20.5683510
+
+
+
+Test Started: AsyncHTTPSICmd
+Current Time: 2015-06-26 04:52:41.048163
+Test Run times: 100
+Server: http://0827b63a525242d1b8acc7a31a71c39e.cloudapp.net/
+Test 0 Started at 2015-06-26 04:52:41.268527
+Test Lasted: 129.7738ms
+
+Test 1 Started at 2015-06-26 04:52:41.491938
+Test Lasted: 274.3879ms
+
+Test 2 Started at 2015-06-26 04:52:41.714407
+Test Lasted: 199.4606ms
+
+Test 3 Started at 2015-06-26 04:52:41.933767
+Test Lasted: 140.5384ms
+
+Test 4 Started at 2015-06-26 04:52:42.154268
+Test Lasted: 158.7486ms
+
+Test 5 Started at 2015-06-26 04:52:42.376718
+Test Lasted: 136.6554ms
+
+Test 6 Started at 2015-06-26 04:52:42.600516
+Test Lasted: 236.3163ms
+
+Test 7 Started at 2015-06-26 04:52:42.823384
+Test Lasted: 155.9016ms
+
+Test 8 Started at 2015-06-26 04:52:43.045904
+Test Lasted: 361.5072ms
+
+Test 9 Started at 2015-06-26 04:52:43.266813
+Test Lasted: 105.1157ms
+
+Test 10 Started at 2015-06-26 04:52:43.489923
+Test Lasted: 120.71ms
+
+Test 11 Started at 2015-06-26 04:52:43.707231
+Test Lasted: 126.618ms
+
+Test 12 Started at 2015-06-26 04:52:43.926952
+Test Lasted: 150.0154ms
+
+Test 13 Started at 2015-06-26 04:52:44.149666
+Test Lasted: 1296.5363ms
+
+Test 14 Started at 2015-06-26 04:52:44.372145
+Test Lasted: 204.2557ms
+
+Test 15 Started at 2015-06-26 04:52:44.596267
+Test Lasted: 643.6587ms
+
+Test 16 Started at 2015-06-26 04:52:44.817480
+Test Lasted: 428.5785ms
+
+Test 17 Started at 2015-06-26 04:52:45.036186
+Test Lasted: 401.8279ms
+
+Test 18 Started at 2015-06-26 04:52:45.260807
+Test Lasted: 144.7881ms
+
+Test 19 Started at 2015-06-26 04:52:45.479224
+Test Lasted: 136.8968ms
+
+Test 20 Started at 2015-06-26 04:52:45.701747
+Test Lasted: 145.218ms
+
+Test 21 Started at 2015-06-26 04:52:45.921182
+Test Lasted: 123.1643ms
+
+Test 22 Started at 2015-06-26 04:52:46.139569
+Test Lasted: 303.5524ms
+
+Test 23 Started at 2015-06-26 04:52:46.360917
+Test Lasted: 136.8178ms
+
+Test 24 Started at 2015-06-26 04:52:46.581854
+Test Lasted: 168.2671ms
+
+Test 25 Started at 2015-06-26 04:52:46.805586
+Test Lasted: 605.8924ms
+
+Test 26 Started at 2015-06-26 04:52:47.028151
+Test Lasted: 431.0531ms
+
+Test 27 Started at 2015-06-26 04:52:47.250499
+Test Lasted: 1954.5719ms
+
+Test 28 Started at 2015-06-26 04:52:47.469978
+Test Lasted: 1495.5718ms
+
+Test 29 Started at 2015-06-26 04:52:47.693621
+Test Lasted: 1335.5547ms
+
+Test 30 Started at 2015-06-26 04:52:47.917891
+Test Lasted: 3430.6961ms
+
+Test 31 Started at 2015-06-26 04:52:48.139143
+Test Lasted: 578.1078ms
+
+Test 32 Started at 2015-06-26 04:52:48.361781
+Test Lasted: 1451.9481ms
+
+Test 33 Started at 2015-06-26 04:52:48.584344
+Test Lasted: 595.1462ms
+
+Test 34 Started at 2015-06-26 04:52:48.807267
+Test Lasted: 504.2722ms
+
+Test 35 Started at 2015-06-26 04:52:49.031367
+Test Lasted: 176.6295ms
+
+Test 36 Started at 2015-06-26 04:52:49.253915
+Test Lasted: 1023.631ms
+
+Test 37 Started at 2015-06-26 04:52:49.476526
+Test Lasted: 1871.873ms
+
+Test 38 Started at 2015-06-26 04:52:49.694678
+Test Lasted: 1654.4259ms
+
+Test 39 Started at 2015-06-26 04:52:49.915707
+Test Lasted: 415.6276ms
+
+Test 40 Started at 2015-06-26 04:52:50.139813
+Test Lasted: 162.7438ms
+
+Test 41 Started at 2015-06-26 04:52:50.359364
+Test Lasted: 1425.8609ms
+
+Test 42 Started at 2015-06-26 04:52:50.578241
+Test Lasted: 449.6574ms
+
+Test 43 Started at 2015-06-26 04:52:50.802378
+Test Lasted: 1733.3059ms
+
+Test 44 Started at 2015-06-26 04:52:51.025208
+Test Lasted: 1524.4582ms
+
+Test 45 Started at 2015-06-26 04:52:51.246714
+Test Lasted: 161.604ms
+
+Test 46 Started at 2015-06-26 04:52:51.469886
+Test Lasted: 337.4304ms
+
+Test 47 Started at 2015-06-26 04:52:51.688267
+Test Lasted: 368.7369ms
+
+Test 48 Started at 2015-06-26 04:52:51.909573
+Test Lasted: 200.0465ms
+
+Test 49 Started at 2015-06-26 04:52:52.127345
+Test Lasted: 193.9718ms
+
+Test 50 Started at 2015-06-26 04:52:52.349253
+Test Lasted: 337.3189ms
+
+Test 51 Started at 2015-06-26 04:52:52.565352
+Test Lasted: 976.0308ms
+
+Test 52 Started at 2015-06-26 04:52:52.786790
+Test Lasted: 1219.9723ms
+
+Test 53 Started at 2015-06-26 04:52:53.009410
+Test Lasted: 609.0348ms
+
+Test 54 Started at 2015-06-26 04:52:53.230905
+Test Lasted: 762.9821ms
+
+Test 55 Started at 2015-06-26 04:52:53.452138
+Test Lasted: 196.388ms
+
+Test 56 Started at 2015-06-26 04:52:53.670615
+Test Lasted: 341.0023ms
+
+Test 57 Started at 2015-06-26 04:52:53.894029
+Test Lasted: 1164.1277ms
+
+Test 58 Started at 2015-06-26 04:52:54.116466
+Test Lasted: 158.6601ms
+
+Test 59 Started at 2015-06-26 04:52:54.338916
+Test Lasted: 230.8741ms
+
+Test 60 Started at 2015-06-26 04:52:54.556883
+Test Lasted: 173.1899ms
+
+Test 61 Started at 2015-06-26 04:52:54.774493
+Test Lasted: 124.8335ms
+
+Test 62 Started at 2015-06-26 04:52:54.995157
+Test Lasted: 185.6563ms
+
+Test 63 Started at 2015-06-26 04:52:55.215693
+Test Lasted: 194.775ms
+
+Test 64 Started at 2015-06-26 04:52:55.433751
+Test Lasted: 125.2628ms
+
+Test 65 Started at 2015-06-26 04:52:55.656219
+Test Lasted: 112.4478ms
+
+Test 66 Started at 2015-06-26 04:52:55.878035
+Test Lasted: 113.1976ms
+
+Test 67 Started at 2015-06-26 04:52:56.100532
+Test Lasted: 129.0901ms
+
+Test 68 Started at 2015-06-26 04:52:56.322878
+Test Lasted: 167.2015ms
+
+Test 69 Started at 2015-06-26 04:52:56.545458
+Test Lasted: 181.3262ms
+
+Test 70 Started at 2015-06-26 04:52:56.765069
+Test Lasted: 147.7089ms
+
+Test 71 Started at 2015-06-26 04:52:56.986494
+Test Lasted: 179.1184ms
+
+Test 72 Started at 2015-06-26 04:52:57.202892
+Test Lasted: 157.2358ms
+
+Test 73 Started at 2015-06-26 04:52:57.422171
+Test Lasted: 179.4562ms
+
+Test 74 Started at 2015-06-26 04:52:57.643180
+Test Lasted: 403.1575ms
+
+Test 75 Started at 2015-06-26 04:52:57.864954
+Test Lasted: 729.6586ms
+
+Test 76 Started at 2015-06-26 04:52:58.084424
+Test Lasted: 1361.4978ms
+
+Test 77 Started at 2015-06-26 04:52:58.308183
+Test Lasted: 210.9791ms
+
+Test 78 Started at 2015-06-26 04:52:58.530863
+Test Lasted: 167.5966ms
+
+Test 79 Started at 2015-06-26 04:52:58.753127
+Test Lasted: 132.398ms
+
+Test 80 Started at 2015-06-26 04:52:58.977056
+Test Lasted: 111.175ms
+
+Test 81 Started at 2015-06-26 04:52:59.197065
+Test Lasted: 897.0583ms
+
+Test 82 Started at 2015-06-26 04:52:59.417813
+Test Lasted: 466.4352ms
+
+Test 83 Started at 2015-06-26 04:52:59.640478
+Test Lasted: 4631.1617ms
+
+Test 84 Started at 2015-06-26 04:52:59.862078
+Test Lasted: 141.6962ms
+
+Test 85 Started at 2015-06-26 04:53:00.084491
+Test Lasted: 1057.0581ms
+
+Test 86 Started at 2015-06-26 04:53:00.303887
+Test Lasted: 4479.0301ms
+
+Test 87 Started at 2015-06-26 04:53:00.527556
+Test Lasted: 889.3452ms
+
+Test 88 Started at 2015-06-26 04:53:00.748531
+Test Lasted: 688.685ms
+
+Test 89 Started at 2015-06-26 04:53:00.972349
+Test Lasted: 3299.3244ms
+
+Test 90 Started at 2015-06-26 04:53:01.195057
+Test Lasted: 396.3069ms
+
+Test 91 Started at 2015-06-26 04:53:01.415321
+Test Lasted: 156.0554ms
+
+Test 92 Started at 2015-06-26 04:53:01.634827
+Test Lasted: 138.4147ms
+
+Test 93 Started at 2015-06-26 04:53:01.853238
+Test Lasted: 133.1233ms
+
+Test 94 Started at 2015-06-26 04:53:02.075754
+Test Lasted: 127.414ms
+
+Test 95 Started at 2015-06-26 04:53:02.296641
+Test Lasted: 153.6529ms
+
+Test 96 Started at 2015-06-26 04:53:02.519029
+Test Lasted: 153.7303ms
+
+Test 97 Started at 2015-06-26 04:53:02.740910
+Test Lasted: 160.193ms
+
+Test 98 Started at 2015-06-26 04:53:02.965625
+Test Lasted: 120.6758ms
+Test 99 Started at 2015-06-26 04:53:03.183339
+Test Lasted: 118.8112ms
+Test Ended: AsyncHTTPSICmd
+Current Time: 2015-06-26 04:53:04.784939
+Test lasted: 00:00:23.7367750
+
+
+
+Test Started: MultiClientICmd
+Current Time: 2015-06-26 04:53:04.792267
+Server: http://0827b63a525242d1b8acc7a31a71c39e.cloudapp.net/
+Client 1:
+Client 1 Test 0 Started at 2015-06-26 04:53:04.994708
+Test Lasted: 811.6498ms
+
+Client 1 Test 1 Started at 2015-06-26 04:53:06.037649
+Test Lasted: 154.6921ms
+
+Client 1 Test 2 Started at 2015-06-26 04:53:06.475631
+Test Lasted: 191.8609ms
+
+Client 1 Test 3 Started at 2015-06-26 04:53:06.872746
+Test Lasted: 639.5305ms
+
+Client 1 Test 4 Started at 2015-06-26 04:53:08.260294
+Test Lasted: 2357.9789ms
+
+Client 1 Test 5 Started at 2015-06-26 04:53:10.818944
+Test Lasted: 833.1691ms
+
+Client 1 Test 6 Started at 2015-06-26 04:53:11.857363
+Test Lasted: 709.8859ms
+
+Client 1 Test 7 Started at 2015-06-26 04:53:13.585179
+Test Lasted: 518.922ms
+
+Client 1 Test 8 Started at 2015-06-26 04:53:14.308851
+Test Lasted: 508.9163ms
+
+Client 1 Test 9 Started at 2015-06-26 04:53:15.018552
+Test Lasted: 413.4435ms
+
+Client 1 Test 10 Started at 2015-06-26 04:53:15.637121
+Test Lasted: 512.5813ms
+
+Client 1 Test 11 Started at 2015-06-26 04:53:17.168027
+Test Lasted: 524.9901ms
+
+Client 1 Test 12 Started at 2015-06-26 04:53:17.897505
+Test Lasted: 755.2425ms
+
+Client 1 Test 13 Started at 2015-06-26 04:53:21.321852
+Test Lasted: 189.2583ms
+
+Client 1 Test 14 Started at 2015-06-26 04:53:21.723140
+Test Lasted: 165.2724ms
+
+Client 1 Test 15 Started at 2015-06-26 04:53:22.090944
+Test Lasted: 129.8258ms
+
+Client 1 Test 16 Started at 2015-06-26 04:53:22.463002
+Test Lasted: 159.4797ms
+
+Client 1 Test 17 Started at 2015-06-26 04:53:22.960235
+Test Lasted: 200.6369ms
+
+Client 1 Test 18 Started at 2015-06-26 04:53:23.361424
+Test Lasted: 158.1404ms
+
+Client 1 Test 19 Started at 2015-06-26 04:53:23.821262
+Test Lasted: 189.414ms
+
+Client 1 Test 20 Started at 2015-06-26 04:53:24.214114
+Test Lasted: 192.2731ms
+
+Client 1 Test 21 Started at 2015-06-26 04:53:24.606924
+Test Lasted: 223.9989ms
+
+Client 1 Test 22 Started at 2015-06-26 04:53:25.032320
+Test Lasted: 191.1544ms
+
+Client 1 Test 23 Started at 2015-06-26 04:53:25.551470
+Test Lasted: 199.9641ms
+
+Client 1 Test 24 Started at 2015-06-26 04:53:26.019592
+Test Lasted: 236.442ms
+
+Client 1 Test 25 Started at 2015-06-26 04:53:26.460722
+Test Lasted: 165.6565ms
+
+Client 1 Test 26 Started at 2015-06-26 04:53:26.828598
+Test Lasted: 257.311ms
+
+Client 1 Test 27 Started at 2015-06-26 04:53:27.289998
+Test Lasted: 165.1161ms
+
+Client 1 Test 28 Started at 2015-06-26 04:53:27.656820
+Test Lasted: 256.4186ms
+
+Client 1 Test 29 Started at 2015-06-26 04:53:28.118626
+Test Lasted: 162.4797ms
+
+Client 1 Test 30 Started at 2015-06-26 04:53:28.597337
+Test Lasted: 123.9631ms
+
+Client 1 Test 31 Started at 2015-06-26 04:53:29.019692
+Test Lasted: 196.9018ms
+
+Client 1 Test 32 Started at 2015-06-26 04:53:29.420241
+Test Lasted: 359.2792ms
+
+Client 1 Test 33 Started at 2015-06-26 04:53:29.981322
+Test Lasted: 177.6291ms
+
+Client 1 Test 34 Started at 2015-06-26 04:53:30.409643
+Test Lasted: 198.9833ms
+
+Client 1 Test 35 Started at 2015-06-26 04:53:30.812866
+Test Lasted: 200.7765ms
+
+Client 1 Test 36 Started at 2015-06-26 04:53:31.214670
+Test Lasted: 153.3219ms
+
+Client 1 Test 37 Started at 2015-06-26 04:53:31.592985
+Test Lasted: 138.9208ms
+
+Client 1 Test 38 Started at 2015-06-26 04:53:32.361853
+Test Lasted: 174.8428ms
+
+Client 1 Test 39 Started at 2015-06-26 04:53:32.792231
+Test Lasted: 148.1134ms
+
+Client 1 Test 40 Started at 2015-06-26 04:53:33.174835
+Test Lasted: 451.8563ms
+
+Client 1 Test 41 Started at 2015-06-26 04:53:33.828721
+Test Lasted: 207.5277ms
+
+Client 1 Test 42 Started at 2015-06-26 04:53:34.239812
+Test Lasted: 190.72ms
+
+Client 1 Test 43 Started at 2015-06-26 04:53:34.646040
+Test Lasted: 249.8348ms
+
+Client 1 Test 44 Started at 2015-06-26 04:53:35.097157
+Test Lasted: 161.4526ms
+
+Client 1 Test 45 Started at 2015-06-26 04:53:35.570331
+Test Lasted: 1570.7159ms
+
+Client 1 Test 46 Started at 2015-06-26 04:53:37.345207
+Test Lasted: 718.2745ms
+
+Client 1 Test 47 Started at 2015-06-26 04:53:38.266527
+Test Lasted: 4442.0612ms
+
+Client 1 Test 48 Started at 2015-06-26 04:53:42.909598
+Test Lasted: 1091.8777ms
+
+Client 1 Test 49 Started at 2015-06-26 04:53:44.202266
+Test Lasted: 752.86ms
+
+Client 1 Test 50 Started at 2015-06-26 04:53:45.159184
+Test Lasted: 685.8883ms
+
+Client 1 Test 51 Started at 2015-06-26 04:53:46.049390
+Test Lasted: 617.1441ms
+
+Client 1 Test 52 Started at 2015-06-26 04:53:46.870485
+Test Lasted: 754.3379ms
+
+Client 1 Test 53 Started at 2015-06-26 04:53:47.830072
+Test Lasted: 197.2442ms
+
+Client 1 Test 54 Started at 2015-06-26 04:53:48.239500
+Test Lasted: 1086.6035ms
+
+Client 1 Test 55 Started at 2015-06-26 04:53:49.526818
+Test Lasted: 555.4067ms
+
+Client 1 Test 56 Started at 2015-06-26 04:53:50.284093
+Test Lasted: 790.8502ms
+
+Client 1 Test 57 Started at 2015-06-26 04:53:51.279274
+Test Lasted: 2040.4256ms
+
+Client 1 Test 58 Started at 2015-06-26 04:53:54.033043
+Test Lasted: 212.4306ms
+
+Client 1 Test 59 Started at 2015-06-26 04:53:55.569032
+Test Lasted: 515.5983ms
+
+Client 1 Test 60 Started at 2015-06-26 04:53:56.592641
+Test Lasted: 1028.0354ms
+
+Client 1 Test 61 Started at 2015-06-26 04:53:57.828348
+Test Lasted: 407.0997ms
+
+Client 1 Test 62 Started at 2015-06-26 04:53:59.456757
+Test Lasted: 628.9883ms
+
+Client 1 Test 63 Started at 2015-06-26 04:54:00.287749
+Test Lasted: 129.4296ms
+
+Client 1 Test 64 Started at 2015-06-26 04:54:00.791826
+Test Lasted: 490.9584ms
+
+Client 1 Test 65 Started at 2015-06-26 04:54:03.274736
+Test Lasted: 1923.1087ms
+
+Client 1 Test 66 Started at 2015-06-26 04:54:05.403171
+Test Lasted: 1845.6127ms
+
+Client 1 Test 67 Started at 2015-06-26 04:54:07.452761
+Test Lasted: 160.2799ms
+
+Client 1 Test 68 Started at 2015-06-26 04:54:08.011801
+Test Lasted: 147.3789ms
+
+Client 1 Test 69 Started at 2015-06-26 04:54:09.505860
+Test Lasted: 3488.5712ms
+
+Client 1 Test 70 Started at 2015-06-26 04:54:13.337000
+Test Lasted: 157.0563ms
+
+Client 1 Test 71 Started at 2015-06-26 04:54:14.208827
+Test Lasted: 410.4007ms
+
+Client 1 Test 72 Started at 2015-06-26 04:54:14.820251
+Test Lasted: 170.5332ms
+
+Client 1 Test 73 Started at 2015-06-26 04:54:15.893071
+Test Lasted: 878.0869ms
+
+Client 1 Test 74 Started at 2015-06-26 04:54:16.974437
+Test Lasted: 135.0165ms
+
+Client 1 Test 75 Started at 2015-06-26 04:54:17.677686
+Test Lasted: 182.7264ms
+
+Client 1 Test 76 Started at 2015-06-26 04:54:18.062187
+Test Lasted: 123.3162ms
+
+Client 1 Test 77 Started at 2015-06-26 04:54:18.389973
+Test Lasted: 157.8112ms
+
+Client 1 Test 78 Started at 2015-06-26 04:54:18.752547
+Test Lasted: 134.4263ms
+
+Client 1 Test 79 Started at 2015-06-26 04:54:19.105513
+Test Lasted: 160.0235ms
+
+Client 1 Test 80 Started at 2015-06-26 04:54:19.469780
+Test Lasted: 295.509ms
+
+Client 1 Test 81 Started at 2015-06-26 04:54:19.968367
+Test Lasted: 1204.0831ms
+
+Client 1 Test 82 Started at 2015-06-26 04:54:21.373768
+Test Lasted: 1436.1422ms
+
+Client 1 Test 83 Started at 2015-06-26 04:54:23.010646
+Test Lasted: 775.0569ms
+
+Client 1 Test 84 Started at 2015-06-26 04:54:24.062875
+Test Lasted: 911.6619ms
+
+Client 1 Test 85 Started at 2015-06-26 04:54:26.699469
+Test Lasted: 211.028ms
+
+Client 1 Test 86 Started at 2015-06-26 04:54:27.379553
+Test Lasted: 1428.2251ms
+
+Client 1 Test 87 Started at 2015-06-26 04:54:29.008205
+Test Lasted: 266.0978ms
+
+Client 1 Test 88 Started at 2015-06-26 04:54:31.307683
+Test Lasted: 1231.3379ms
+
+Client 1 Test 89 Started at 2015-06-26 04:54:32.742654
+Test Lasted: 3125.3389ms
+
+Client 1 Test 90 Started at 2015-06-26 04:54:36.230940
+Test Lasted: 151.3813ms
+
+Client 1 Test 91 Started at 2015-06-26 04:54:38.166813
+Test Lasted: 168.3651ms
+
+Client 1 Test 92 Started at 2015-06-26 04:54:38.541464
+Test Lasted: 157.9315ms
+
+Client 1 Test 93 Started at 2015-06-26 04:54:40.345652
+Test Lasted: 587.5595ms
+
+Client 1 Test 94 Started at 2015-06-26 04:54:41.364476
+Test Lasted: 1105.2327ms
+
+Client 1 Test 95 Started at 2015-06-26 04:54:42.670965
+Test Lasted: 250.4371ms
+
+Client 1 Test 96 Started at 2015-06-26 04:54:43.270382
+Test Lasted: 559.7424ms
+
+Client 1 Test 97 Started at 2015-06-26 04:54:44.413538
+Test Lasted: 256.4568ms
+
+Client 1 Test 98 Started at 2015-06-26 04:54:44.951358
+Test Lasted: 797.13ms
+
+Client 1 Test 99 Started at 2015-06-26 04:54:45.949221
+Test Lasted: 178.5822ms
+
+Client 2:
+Client 2 Test 0 Started at 2015-06-26 04:53:04.996011
+Test Lasted: 836.3485ms
+
+Client 2 Test 1 Started at 2015-06-26 04:53:06.038689
+Test Lasted: 235.8621ms
+
+Client 2 Test 2 Started at 2015-06-26 04:53:06.476652
+Test Lasted: 166.7802ms
+
+Client 2 Test 3 Started at 2015-06-26 04:53:06.873775
+Test Lasted: 1184.5853ms
+
+Client 2 Test 4 Started at 2015-06-26 04:53:08.261371
+Test Lasted: 411.2399ms
+
+Client 2 Test 5 Started at 2015-06-26 04:53:10.820087
+Test Lasted: 231.4833ms
+
+Client 2 Test 6 Started at 2015-06-26 04:53:11.858581
+Test Lasted: 1525.3212ms
+
+Client 2 Test 7 Started at 2015-06-26 04:53:13.588675
+Test Lasted: 515.5296ms
+
+Client 2 Test 8 Started at 2015-06-26 04:53:14.310003
+Test Lasted: 507.8652ms
+
+Client 2 Test 9 Started at 2015-06-26 04:53:15.019578
+Test Lasted: 412.5466ms
+
+Client 2 Test 10 Started at 2015-06-26 04:53:15.638134
+Test Lasted: 1327.8245ms
+
+Client 2 Test 11 Started at 2015-06-26 04:53:17.169355
+Test Lasted: 299.1093ms
+
+Client 2 Test 12 Started at 2015-06-26 04:53:17.898684
+Test Lasted: 3219.1717ms
+
+Client 2 Test 13 Started at 2015-06-26 04:53:21.323073
+Test Lasted: 195.1126ms
+
+Client 2 Test 14 Started at 2015-06-26 04:53:21.724136
+Test Lasted: 139.379ms
+
+Client 2 Test 15 Started at 2015-06-26 04:53:22.091955
+Test Lasted: 169.3811ms
+
+Client 2 Test 16 Started at 2015-06-26 04:53:22.464304
+Test Lasted: 294.0475ms
+
+Client 2 Test 17 Started at 2015-06-26 04:53:22.961465
+Test Lasted: 162.6117ms
+
+Client 2 Test 18 Started at 2015-06-26 04:53:23.362606
+Test Lasted: 255.963ms
+
+Client 2 Test 19 Started at 2015-06-26 04:53:23.822578
+Test Lasted: 148.8314ms
+
+Client 2 Test 20 Started at 2015-06-26 04:53:24.215292
+Test Lasted: 148.7242ms
+
+Client 2 Test 21 Started at 2015-06-26 04:53:24.607951
+Test Lasted: 143.1869ms
+
+Client 2 Test 22 Started at 2015-06-26 04:53:25.033739
+Test Lasted: 313.8295ms
+
+Client 2 Test 23 Started at 2015-06-26 04:53:25.552697
+Test Lasted: 265.2133ms
+
+Client 2 Test 24 Started at 2015-06-26 04:53:26.020679
+Test Lasted: 179.8413ms
+
+Client 2 Test 25 Started at 2015-06-26 04:53:26.461742
+Test Lasted: 165.0828ms
+
+Client 2 Test 26 Started at 2015-06-26 04:53:26.829581
+Test Lasted: 150.1615ms
+
+Client 2 Test 27 Started at 2015-06-26 04:53:27.291005
+Test Lasted: 119.856ms
+
+Client 2 Test 28 Started at 2015-06-26 04:53:27.658383
+Test Lasted: 254.964ms
+
+Client 2 Test 29 Started at 2015-06-26 04:53:28.119632
+Test Lasted: 274.315ms
+
+Client 2 Test 30 Started at 2015-06-26 04:53:28.598740
+Test Lasted: 216.4046ms
+
+Client 2 Test 31 Started at 2015-06-26 04:53:29.020961
+Test Lasted: 132.5112ms
+
+Client 2 Test 32 Started at 2015-06-26 04:53:29.421421
+Test Lasted: 132.4889ms
+
+Client 2 Test 33 Started at 2015-06-26 04:53:29.982608
+Test Lasted: 226.6871ms
+
+Client 2 Test 34 Started at 2015-06-26 04:53:30.410846
+Test Lasted: 183.0776ms
+
+Client 2 Test 35 Started at 2015-06-26 04:53:30.813605
+Test Lasted: 182.5162ms
+
+Client 2 Test 36 Started at 2015-06-26 04:53:31.218047
+Test Lasted: 171.821ms
+
+Client 2 Test 37 Started at 2015-06-26 04:53:31.593619
+Test Lasted: 563.9537ms
+
+Client 2 Test 38 Started at 2015-06-26 04:53:32.362659
+Test Lasted: 228.2848ms
+
+Client 2 Test 39 Started at 2015-06-26 04:53:32.793191
+Test Lasted: 180.0103ms
+
+Client 2 Test 40 Started at 2015-06-26 04:53:33.176118
+Test Lasted: 184.2293ms
+
+Client 2 Test 41 Started at 2015-06-26 04:53:33.829677
+Test Lasted: 198.4973ms
+
+Client 2 Test 42 Started at 2015-06-26 04:53:34.241102
+Test Lasted: 199.7485ms
+
+Client 2 Test 43 Started at 2015-06-26 04:53:34.647467
+Test Lasted: 177.4591ms
+
+Client 2 Test 44 Started at 2015-06-26 04:53:35.098453
+Test Lasted: 271.0069ms
+
+Client 2 Test 45 Started at 2015-06-26 04:53:35.571425
+Test Lasted: 154.7504ms
+
+Client 2 Test 46 Started at 2015-06-26 04:53:37.346112
+Test Lasted: 717.2799ms
+
+Client 2 Test 47 Started at 2015-06-26 04:53:38.267583
+Test Lasted: 4440.618ms
+
+Client 2 Test 48 Started at 2015-06-26 04:53:42.910554
+Test Lasted: 1090.8565ms
+
+Client 2 Test 49 Started at 2015-06-26 04:53:44.203417
+Test Lasted: 738.1862ms
+
+Client 2 Test 50 Started at 2015-06-26 04:53:45.160224
+Test Lasted: 684.808ms
+
+Client 2 Test 51 Started at 2015-06-26 04:53:46.050710
+Test Lasted: 616.5414ms
+
+Client 2 Test 52 Started at 2015-06-26 04:53:46.871814
+Test Lasted: 748.122ms
+
+Client 2 Test 53 Started at 2015-06-26 04:53:47.831179
+Test Lasted: 207.228ms
+
+Client 2 Test 54 Started at 2015-06-26 04:53:48.240454
+Test Lasted: 1085.7335ms
+
+Client 2 Test 55 Started at 2015-06-26 04:53:49.527664
+Test Lasted: 540.0866ms
+
+Client 2 Test 56 Started at 2015-06-26 04:53:50.285610
+Test Lasted: 253.9917ms
+
+Client 2 Test 57 Started at 2015-06-26 04:53:51.280435
+Test Lasted: 2551.624ms
+
+Client 2 Test 58 Started at 2015-06-26 04:53:54.034587
+Test Lasted: 1333.1815ms
+
+Client 2 Test 59 Started at 2015-06-26 04:53:55.570053
+Test Lasted: 820.1405ms
+
+Client 2 Test 60 Started at 2015-06-26 04:53:56.594107
+Test Lasted: 513.2766ms
+
+Client 2 Test 61 Started at 2015-06-26 04:53:57.830119
+Test Lasted: 1421.1655ms
+
+Client 2 Test 62 Started at 2015-06-26 04:53:59.457647
+Test Lasted: 628.0686ms
+
+Client 2 Test 63 Started at 2015-06-26 04:54:00.288897
+Test Lasted: 299.4707ms
+
+Client 2 Test 64 Started at 2015-06-26 04:54:00.793383
+Test Lasted: 2281.134ms
+
+Client 2 Test 65 Started at 2015-06-26 04:54:03.275723
+Test Lasted: 1205.3537ms
+
+Client 2 Test 66 Started at 2015-06-26 04:54:05.403885
+Test Lasted: 222.1752ms
+
+Client 2 Test 67 Started at 2015-06-26 04:54:07.453370
+Test Lasted: 353.0461ms
+
+Client 2 Test 68 Started at 2015-06-26 04:54:08.012922
+Test Lasted: 1290.7737ms
+
+Client 2 Test 69 Started at 2015-06-26 04:54:09.506690
+Test Lasted: 3625.1329ms
+
+Client 2 Test 70 Started at 2015-06-26 04:54:13.338145
+Test Lasted: 668.3327ms
+
+Client 2 Test 71 Started at 2015-06-26 04:54:14.210005
+Test Lasted: 130.4396ms
+
+Client 2 Test 72 Started at 2015-06-26 04:54:14.821389
+Test Lasted: 866.8244ms
+
+Client 2 Test 73 Started at 2015-06-26 04:54:15.894113
+Test Lasted: 241.7081ms
+
+Client 2 Test 74 Started at 2015-06-26 04:54:16.975392
+Test Lasted: 500.3862ms
+
+Client 2 Test 75 Started at 2015-06-26 04:54:17.678722
+Test Lasted: 152.7311ms
+
+Client 2 Test 76 Started at 2015-06-26 04:54:18.063203
+Test Lasted: 122.2029ms
+
+Client 2 Test 77 Started at 2015-06-26 04:54:18.391021
+Test Lasted: 156.8894ms
+
+Client 2 Test 78 Started at 2015-06-26 04:54:18.753326
+Test Lasted: 148.4124ms
+
+Client 2 Test 79 Started at 2015-06-26 04:54:19.106840
+Test Lasted: 132.5723ms
+
+Client 2 Test 80 Started at 2015-06-26 04:54:19.471114
+Test Lasted: 290.702ms
+
+Client 2 Test 81 Started at 2015-06-26 04:54:19.969271
+Test Lasted: 1203.2648ms
+
+Client 2 Test 82 Started at 2015-06-26 04:54:21.375162
+Test Lasted: 989.368ms
+
+Client 2 Test 83 Started at 2015-06-26 04:54:23.011818
+Test Lasted: 847.466ms
+
+Client 2 Test 84 Started at 2015-06-26 04:54:24.063919
+Test Lasted: 2434.1308ms
+
+Client 2 Test 85 Started at 2015-06-26 04:54:26.700328
+Test Lasted: 476.7461ms
+
+Client 2 Test 86 Started at 2015-06-26 04:54:27.380838
+Test Lasted: 1003.6952ms
+
+Client 2 Test 87 Started at 2015-06-26 04:54:29.009223
+Test Lasted: 2096.3237ms
+
+Client 2 Test 88 Started at 2015-06-26 04:54:31.308953
+Test Lasted: 512.8406ms
+
+Client 2 Test 89 Started at 2015-06-26 04:54:32.743753
+Test Lasted: 3284.6582ms
+
+Client 2 Test 90 Started at 2015-06-26 04:54:36.231753
+Test Lasted: 1732.3327ms
+
+Client 2 Test 91 Started at 2015-06-26 04:54:38.167736
+Test Lasted: 172.5931ms
+
+Client 2 Test 92 Started at 2015-06-26 04:54:38.542409
+Test Lasted: 1601.6218ms
+
+Client 2 Test 93 Started at 2015-06-26 04:54:40.346715
+Test Lasted: 816.6595ms
+
+Client 2 Test 94 Started at 2015-06-26 04:54:41.366457
+Test Lasted: 1103.188ms
+
+Client 2 Test 95 Started at 2015-06-26 04:54:42.671930
+Test Lasted: 393.2198ms
+
+Client 2 Test 96 Started at 2015-06-26 04:54:43.271456
+Test Lasted: 940.736ms
+
+Client 2 Test 97 Started at 2015-06-26 04:54:44.414453
+Test Lasted: 332.3851ms
+
+Client 2 Test 98 Started at 2015-06-26 04:54:44.951860
+Test Lasted: 216.4418ms
+
+Client 2 Test 99 Started at 2015-06-26 04:54:45.949993
+Test Lasted: 188.5083ms
+Test Ended: MultiClientICmd
+Current Time: 2015-06-26 04:54:46.142285
+Test lasted: 00:01:41.3500230
+
+
+
+Test Started: SyncHTTPICmd
+Current Time: 2015-06-26 04:54:46.148809
+Test Run times: 100
+Server: http://0827b63a525242d1b8acc7a31a71c39e.cloudapp.net/
+Test 0 Started at 2015-06-26 04:54:46.148925
+Test Lasted: 3081.36ms
+
+Test 1 Started at 2015-06-26 04:54:49.230307
+Test Lasted: 189.3518ms
+
+Test 2 Started at 2015-06-26 04:54:49.419667
+Test Lasted: 115.0121ms
+
+Test 3 Started at 2015-06-26 04:54:49.534743
+Test Lasted: 323.0074ms
+
+Test 4 Started at 2015-06-26 04:54:49.857805
+Test Lasted: 196.6014ms
+
+Test 5 Started at 2015-06-26 04:54:50.054522
+Test Lasted: 222.6018ms
+
+Test 6 Started at 2015-06-26 04:54:50.277191
+Test Lasted: 160.7637ms
+
+Test 7 Started at 2015-06-26 04:54:50.438017
+Test Lasted: 193.7135ms
+
+Test 8 Started at 2015-06-26 04:54:50.631792
+Test Lasted: 285.5255ms
+
+Test 9 Started at 2015-06-26 04:54:50.917365
+Test Lasted: 197.6379ms
+
+Test 10 Started at 2015-06-26 04:54:51.115068
+Test Lasted: 151.978ms
+
+Test 11 Started at 2015-06-26 04:54:51.267066
+Test Lasted: 128.3487ms
+
+Test 12 Started at 2015-06-26 04:54:51.395474
+Test Lasted: 121.7863ms
+
+Test 13 Started at 2015-06-26 04:54:51.517334
+Test Lasted: 145.5604ms
+
+Test 14 Started at 2015-06-26 04:54:51.662968
+Test Lasted: 208.4941ms
+
+Test 15 Started at 2015-06-26 04:54:51.871512
+Test Lasted: 142.7708ms
+
+Test 16 Started at 2015-06-26 04:54:52.014325
+Test Lasted: 170.3501ms
+
+Test 17 Started at 2015-06-26 04:54:52.184720
+Test Lasted: 270.7991ms
+
+Test 18 Started at 2015-06-26 04:54:52.455574
+Test Lasted: 110.5419ms
+
+Test 19 Started at 2015-06-26 04:54:52.566159
+Test Lasted: 170.6617ms
+
+Test 20 Started at 2015-06-26 04:54:52.736886
+Test Lasted: 184.3389ms
+
+Test 21 Started at 2015-06-26 04:54:52.921303
+Test Lasted: 134.4983ms
+
+Test 22 Started at 2015-06-26 04:54:53.055864
+Test Lasted: 133.6274ms
+
+Test 23 Started at 2015-06-26 04:54:53.189503
+Test Lasted: 126.3972ms
+
+Test 24 Started at 2015-06-26 04:54:53.315947
+Test Lasted: 124.8358ms
+
+Test 25 Started at 2015-06-26 04:54:53.440826
+Test Lasted: 158.6935ms
+
+Test 26 Started at 2015-06-26 04:54:53.599577
+Test Lasted: 115.0547ms
+
+Test 27 Started at 2015-06-26 04:54:53.714678
+Test Lasted: 124.9862ms
+
+Test 28 Started at 2015-06-26 04:54:53.839709
+Test Lasted: 164.1128ms
+
+Test 29 Started at 2015-06-26 04:54:54.003864
+Test Lasted: 133.9559ms
+
+Test 30 Started at 2015-06-26 04:54:54.137879
+Test Lasted: 155.3133ms
+
+Test 31 Started at 2015-06-26 04:54:54.293241
+Test Lasted: 123.255ms
+
+Test 32 Started at 2015-06-26 04:54:54.416555
+Test Lasted: 108.1856ms
+
+Test 33 Started at 2015-06-26 04:54:54.524784
+Test Lasted: 124.1149ms
+
+Test 34 Started at 2015-06-26 04:54:54.648952
+Test Lasted: 164.9025ms
+
+Test 35 Started at 2015-06-26 04:54:54.813930
+Test Lasted: 111.8745ms
+
+Test 36 Started at 2015-06-26 04:54:54.925881
+Test Lasted: 120.6426ms
+
+Test 37 Started at 2015-06-26 04:54:55.046596
+Test Lasted: 119.8093ms
+
+Test 38 Started at 2015-06-26 04:54:55.166408
+Test Lasted: 110.829ms
+
+Test 39 Started at 2015-06-26 04:54:55.277346
+Test Lasted: 119.4144ms
+
+Test 40 Started at 2015-06-26 04:54:55.396836
+Test Lasted: 119.0408ms
+
+Test 41 Started at 2015-06-26 04:54:55.515959
+Test Lasted: 106.0686ms
+
+Test 42 Started at 2015-06-26 04:54:55.622079
+Test Lasted: 123.3546ms
+
+Test 43 Started at 2015-06-26 04:54:55.745493
+Test Lasted: 101.1254ms
+
+Test 44 Started at 2015-06-26 04:54:55.846657
+Test Lasted: 106.1161ms
+
+Test 45 Started at 2015-06-26 04:54:55.952818
+Test Lasted: 139.8972ms
+
+Test 46 Started at 2015-06-26 04:54:56.092766
+Test Lasted: 123.5185ms
+
+Test 47 Started at 2015-06-26 04:54:56.216361
+Test Lasted: 128.2969ms
+
+Test 48 Started at 2015-06-26 04:54:56.344732
+Test Lasted: 146.167ms
+
+Test 49 Started at 2015-06-26 04:54:56.490973
+Test Lasted: 190.563ms
+
+Test 50 Started at 2015-06-26 04:54:56.681612
+Test Lasted: 123.7134ms
+
+Test 51 Started at 2015-06-26 04:54:56.805386
+Test Lasted: 145.681ms
+
+Test 52 Started at 2015-06-26 04:54:56.951062
+Test Lasted: 148.1824ms
+
+Test 53 Started at 2015-06-26 04:54:57.099296
+Test Lasted: 237.3569ms
+
+Test 54 Started at 2015-06-26 04:54:57.336699
+Test Lasted: 203.7505ms
+
+Test 55 Started at 2015-06-26 04:54:57.540500
+Test Lasted: 207.9113ms
+
+Test 56 Started at 2015-06-26 04:54:57.748455
+Test Lasted: 176.486ms
+
+Test 57 Started at 2015-06-26 04:54:57.925018
+Test Lasted: 225.6685ms
+
+Test 58 Started at 2015-06-26 04:54:58.150760
+Test Lasted: 396.7381ms
+
+Test 59 Started at 2015-06-26 04:54:58.547548
+Test Lasted: 184.5314ms
+
+Test 60 Started at 2015-06-26 04:54:58.732212
+Test Lasted: 265.7902ms
+
+Test 61 Started at 2015-06-26 04:54:58.998075
+Test Lasted: 332.7506ms
+
+Test 62 Started at 2015-06-26 04:54:59.330881
+Test Lasted: 136.4202ms
+
+Test 63 Started at 2015-06-26 04:54:59.467366
+Test Lasted: 306.3845ms
+
+Test 64 Started at 2015-06-26 04:54:59.773807
+Test Lasted: 719.9381ms
+
+Test 65 Started at 2015-06-26 04:55:00.493794
+Test Lasted: 412.7277ms
+
+Test 66 Started at 2015-06-26 04:55:00.906544
+Test Lasted: 155.4641ms
+
+Test 67 Started at 2015-06-26 04:55:01.062079
+Test Lasted: 166.8842ms
+
+Test 68 Started at 2015-06-26 04:55:01.229040
+Test Lasted: 155.9049ms
+
+Test 69 Started at 2015-06-26 04:55:01.385019
+Test Lasted: 130.4026ms
+
+Test 70 Started at 2015-06-26 04:55:01.515494
+Test Lasted: 244.8981ms
+
+Test 71 Started at 2015-06-26 04:55:01.760449
+Test Lasted: 374.1686ms
+
+Test 72 Started at 2015-06-26 04:55:02.134668
+Test Lasted: 180.4677ms
+
+Test 73 Started at 2015-06-26 04:55:02.315198
+Test Lasted: 157.7105ms
+
+Test 74 Started at 2015-06-26 04:55:02.472960
+Test Lasted: 158.7685ms
+
+Test 75 Started at 2015-06-26 04:55:02.631757
+Test Lasted: 128.1384ms
+
+Test 76 Started at 2015-06-26 04:55:02.759961
+Test Lasted: 128.3429ms
+
+Test 77 Started at 2015-06-26 04:55:02.888363
+Test Lasted: 148.5601ms
+
+Test 78 Started at 2015-06-26 04:55:03.036995
+Test Lasted: 229.7156ms
+
+Test 79 Started at 2015-06-26 04:55:03.266778
+Test Lasted: 170.4412ms
+
+Test 80 Started at 2015-06-26 04:55:03.437286
+Test Lasted: 537.6206ms
+
+Test 81 Started at 2015-06-26 04:55:03.974982
+Test Lasted: 292.5281ms
+
+Test 82 Started at 2015-06-26 04:55:04.267561
+Test Lasted: 221.793ms
+
+Test 83 Started at 2015-06-26 04:55:04.489381
+Test Lasted: 200.9307ms
+
+Test 84 Started at 2015-06-26 04:55:04.690380
+Test Lasted: 290.7814ms
+
+Test 85 Started at 2015-06-26 04:55:04.981221
+Test Lasted: 198.0069ms
+
+Test 86 Started at 2015-06-26 04:55:05.179286
+Test Lasted: 186.3894ms
+
+Test 87 Started at 2015-06-26 04:55:05.365741
+Test Lasted: 139.3068ms
+
+Test 88 Started at 2015-06-26 04:55:05.505125
+Test Lasted: 263.3126ms
+
+Test 89 Started at 2015-06-26 04:55:05.768508
+Test Lasted: 460.0371ms
+
+Test 90 Started at 2015-06-26 04:55:06.228622
+Test Lasted: 112.523ms
+
+Test 91 Started at 2015-06-26 04:55:06.341204
+Test Lasted: 143.3488ms
+
+Test 92 Started at 2015-06-26 04:55:06.484544
+Test Lasted: 115.7089ms
+
+Test 93 Started at 2015-06-26 04:55:06.600297
+Test Lasted: 204.6636ms
+
+Test 94 Started at 2015-06-26 04:55:06.805006
+Test Lasted: 139.9707ms
+
+Test 95 Started at 2015-06-26 04:55:06.945016
+Test Lasted: 113.6027ms
+
+Test 96 Started at 2015-06-26 04:55:07.058725
+Test Lasted: 166.5092ms
+
+Test 97 Started at 2015-06-26 04:55:07.225286
+Test Lasted: 127.0443ms
+
+Test 98 Started at 2015-06-26 04:55:07.352404
+Test Lasted: 133.8239ms
+
+Test 99 Started at 2015-06-26 04:55:07.486302
+Test Lasted: 151.7217ms
+Test Ended: SyncHTTPICmd
+Current Time: 2015-06-26 04:55:07.638137
+Test lasted: 00:00:21.4893120
+
+
+
+Test Started: SyncHTTPSICmd
+Current Time: 2015-06-26 04:55:07.645155
+Test Run times: 100
+Server: http://0827b63a525242d1b8acc7a31a71c39e.cloudapp.net/
+Test 0 Started at 2015-06-26 04:55:07.645252
+Test Lasted: 264.8115ms
+
+Test 1 Started at 2015-06-26 04:55:07.910143
+Test Lasted: 140.4207ms
+
+Test 2 Started at 2015-06-26 04:55:08.050624
+Test Lasted: 156.8921ms
+
+Test 3 Started at 2015-06-26 04:55:08.207535
+Test Lasted: 491.7797ms
+
+Test 4 Started at 2015-06-26 04:55:08.699365
+Test Lasted: 172.9511ms
+
+Test 5 Started at 2015-06-26 04:55:08.872361
+Test Lasted: 144.5097ms
+
+Test 6 Started at 2015-06-26 04:55:09.016925
+Test Lasted: 129.9571ms
+
+Test 7 Started at 2015-06-26 04:55:09.146953
+Test Lasted: 143.8264ms
+
+Test 8 Started at 2015-06-26 04:55:09.290856
+Test Lasted: 131.8049ms
+
+Test 9 Started at 2015-06-26 04:55:09.422719
+Test Lasted: 120.4416ms
+
+Test 10 Started at 2015-06-26 04:55:09.543213
+Test Lasted: 119.6176ms
+
+Test 11 Started at 2015-06-26 04:55:09.662896
+Test Lasted: 129.0324ms
+
+Test 12 Started at 2015-06-26 04:55:09.791983
+Test Lasted: 217.0067ms
+
+Test 13 Started at 2015-06-26 04:55:10.009044
+Test Lasted: 143.0988ms
+
+Test 14 Started at 2015-06-26 04:55:10.152133
+Test Lasted: 224.5299ms
+
+Test 15 Started at 2015-06-26 04:55:10.376714
+Test Lasted: 171.518ms
+
+Test 16 Started at 2015-06-26 04:55:10.548289
+Test Lasted: 202.1309ms
+
+Test 17 Started at 2015-06-26 04:55:10.750463
+Test Lasted: 197.304ms
+
+Test 18 Started at 2015-06-26 04:55:10.947833
+Test Lasted: 138.9584ms
+
+Test 19 Started at 2015-06-26 04:55:11.086867
+Test Lasted: 153.4983ms
+
+Test 20 Started at 2015-06-26 04:55:11.240428
+Test Lasted: 136.1504ms
+
+Test 21 Started at 2015-06-26 04:55:11.376653
+Test Lasted: 136.3228ms
+
+Test 22 Started at 2015-06-26 04:55:11.513036
+Test Lasted: 157.7835ms
+
+Test 23 Started at 2015-06-26 04:55:11.670866
+Test Lasted: 232.4535ms
+
+Test 24 Started at 2015-06-26 04:55:11.903414
+Test Lasted: 142.0003ms
+
+Test 25 Started at 2015-06-26 04:55:12.045435
+Test Lasted: 170.1814ms
+
+Test 26 Started at 2015-06-26 04:55:12.215686
+Test Lasted: 133.1713ms
+
+Test 27 Started at 2015-06-26 04:55:12.348906
+Test Lasted: 137.3785ms
+
+Test 28 Started at 2015-06-26 04:55:12.486338
+Test Lasted: 152.5146ms
+
+Test 29 Started at 2015-06-26 04:55:12.638897
+Test Lasted: 276.6896ms
+
+Test 30 Started at 2015-06-26 04:55:12.915631
+Test Lasted: 157.6014ms
+
+Test 31 Started at 2015-06-26 04:55:13.073280
+Test Lasted: 130.0482ms
+
+Test 32 Started at 2015-06-26 04:55:13.203369
+Test Lasted: 193.6491ms
+
+Test 33 Started at 2015-06-26 04:55:13.397059
+Test Lasted: 167.7741ms
+
+Test 34 Started at 2015-06-26 04:55:13.564891
+Test Lasted: 148.5031ms
+
+Test 35 Started at 2015-06-26 04:55:13.713459
+Test Lasted: 133.8772ms
+
+Test 36 Started at 2015-06-26 04:55:13.847418
+Test Lasted: 156.5844ms
+
+Test 37 Started at 2015-06-26 04:55:14.004013
+Test Lasted: 132.2706ms
+
+Test 38 Started at 2015-06-26 04:55:14.136338
+Test Lasted: 164.05ms
+
+Test 39 Started at 2015-06-26 04:55:14.300452
+Test Lasted: 144.1388ms
+
+Test 40 Started at 2015-06-26 04:55:14.444639
+Test Lasted: 145.5822ms
+
+Test 41 Started at 2015-06-26 04:55:14.590275
+Test Lasted: 138.5811ms
+
+Test 42 Started at 2015-06-26 04:55:14.728918
+Test Lasted: 159.8024ms
+
+Test 43 Started at 2015-06-26 04:55:14.888790
+Test Lasted: 142.4747ms
+
+Test 44 Started at 2015-06-26 04:55:15.031311
+Test Lasted: 154.5545ms
+
+Test 45 Started at 2015-06-26 04:55:15.185906
+Test Lasted: 132.0247ms
+
+Test 46 Started at 2015-06-26 04:55:15.317972
+Test Lasted: 135.1177ms
+
+Test 47 Started at 2015-06-26 04:55:15.453146
+Test Lasted: 135.4812ms
+
+Test 48 Started at 2015-06-26 04:55:15.588697
+Test Lasted: 249.8101ms
+
+Test 49 Started at 2015-06-26 04:55:15.838506
+Test Lasted: 196.2078ms
+
+Test 50 Started at 2015-06-26 04:55:16.034760
+Test Lasted: 155.8509ms
+
+Test 51 Started at 2015-06-26 04:55:16.190715
+Test Lasted: 1304.9863ms
+
+Test 52 Started at 2015-06-26 04:55:17.495776
+Test Lasted: 1297.2544ms
+
+Test 53 Started at 2015-06-26 04:55:18.793104
+Test Lasted: 183.0359ms
+
+Test 54 Started at 2015-06-26 04:55:18.976183
+Test Lasted: 173.4996ms
+
+Test 55 Started at 2015-06-26 04:55:19.149748
+Test Lasted: 205.3592ms
+
+Test 56 Started at 2015-06-26 04:55:19.355157
+Test Lasted: 185.3186ms
+
+Test 57 Started at 2015-06-26 04:55:19.540503
+Test Lasted: 715.2588ms
+
+Test 58 Started at 2015-06-26 04:55:20.255856
+Test Lasted: 167.3959ms
+
+Test 59 Started at 2015-06-26 04:55:20.423309
+Test Lasted: 146.2141ms
+
+Test 60 Started at 2015-06-26 04:55:20.569584
+Test Lasted: 124.7992ms
+
+Test 61 Started at 2015-06-26 04:55:20.694446
+Test Lasted: 147.4915ms
+
+Test 62 Started at 2015-06-26 04:55:20.842001
+Test Lasted: 180.7257ms
+
+Test 63 Started at 2015-06-26 04:55:21.022799
+Test Lasted: 138.005ms
+
+Test 64 Started at 2015-06-26 04:55:21.160874
+Test Lasted: 132.0344ms
+
+Test 65 Started at 2015-06-26 04:55:21.292955
+Test Lasted: 124.6604ms
+
+Test 66 Started at 2015-06-26 04:55:21.417661
+Test Lasted: 129.4281ms
+
+Test 67 Started at 2015-06-26 04:55:21.547107
+Test Lasted: 151.395ms
+
+Test 68 Started at 2015-06-26 04:55:21.698556
+Test Lasted: 120.8312ms
+
+Test 69 Started at 2015-06-26 04:55:21.819436
+Test Lasted: 131.3208ms
+
+Test 70 Started at 2015-06-26 04:55:21.950819
+Test Lasted: 141.5456ms
+
+Test 71 Started at 2015-06-26 04:55:22.092425
+Test Lasted: 148.7634ms
+
+Test 72 Started at 2015-06-26 04:55:22.241227
+Test Lasted: 156.9976ms
+
+Test 73 Started at 2015-06-26 04:55:22.398277
+Test Lasted: 134.9027ms
+
+Test 74 Started at 2015-06-26 04:55:22.533263
+Test Lasted: 147.4156ms
+
+Test 75 Started at 2015-06-26 04:55:22.680793
+Test Lasted: 129.8933ms
+
+Test 76 Started at 2015-06-26 04:55:22.810747
+Test Lasted: 165.9911ms
+
+Test 77 Started at 2015-06-26 04:55:22.976793
+Test Lasted: 136.7476ms
+
+Test 78 Started at 2015-06-26 04:55:23.113588
+Test Lasted: 121.7108ms
+
+Test 79 Started at 2015-06-26 04:55:23.235361
+Test Lasted: 128.3684ms
+
+Test 80 Started at 2015-06-26 04:55:23.363779
+Test Lasted: 132.8065ms
+
+Test 81 Started at 2015-06-26 04:55:23.496776
+Test Lasted: 143.9203ms
+
+Test 82 Started at 2015-06-26 04:55:23.640744
+Test Lasted: 137.4681ms
+
+Test 83 Started at 2015-06-26 04:55:23.778271
+Test Lasted: 125.9539ms
+
+Test 84 Started at 2015-06-26 04:55:23.904291
+Test Lasted: 143.0096ms
+
+Test 85 Started at 2015-06-26 04:55:24.047371
+Test Lasted: 143.795ms
+
+Test 86 Started at 2015-06-26 04:55:24.191225
+Test Lasted: 211.602ms
+
+Test 87 Started at 2015-06-26 04:55:24.402898
+Test Lasted: 164.2705ms
+
+Test 88 Started at 2015-06-26 04:55:24.567213
+Test Lasted: 189.3499ms
+
+Test 89 Started at 2015-06-26 04:55:24.756644
+Test Lasted: 163.2504ms
+
+Test 90 Started at 2015-06-26 04:55:24.919955
+Test Lasted: 124.039ms
+
+Test 91 Started at 2015-06-26 04:55:25.044051
+Test Lasted: 642.2427ms
+
+Test 92 Started at 2015-06-26 04:55:25.686319
+Test Lasted: 126.4671ms
+
+Test 93 Started at 2015-06-26 04:55:25.812854
+Test Lasted: 207.9287ms
+
+Test 94 Started at 2015-06-26 04:55:26.020865
+Test Lasted: 134.2245ms
+
+Test 95 Started at 2015-06-26 04:55:26.155216
+Test Lasted: 140.2377ms
+
+Test 96 Started at 2015-06-26 04:55:26.295543
+Test Lasted: 131.8088ms
+
+Test 97 Started at 2015-06-26 04:55:26.427395
+Test Lasted: 130.7289ms
+
+Test 98 Started at 2015-06-26 04:55:26.558172
+Test Lasted: 129.7475ms
+
+Test 99 Started at 2015-06-26 04:55:26.687983
+Test Lasted: 138.3735ms
+Current Time: 2015-06-26 04:55:26.826457
+Test lasted: 00:00:19.1812950
+
+
+

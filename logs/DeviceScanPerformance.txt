@@ -1,0 +1,6044 @@
+Test Started: AsyncHTTPDeviceScan
+Current Time: 2015-06-26 04:46:53.844234
+Test Run times: 100
+Server: http://0827b63a525242d1b8acc7a31a71c39e.cloudapp.net/
+Test 0 Started at 2015-06-26 04:46:54.046654
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 0
+}
+Test Lasted: 162.3504ms
+
+Test 1 Started at 2015-06-26 04:46:54.249942
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 1
+}
+Test Lasted: 121.861ms
+
+Test 2 Started at 2015-06-26 04:46:54.455032
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 2
+}
+Test Lasted: 159.8823ms
+
+Test 3 Started at 2015-06-26 04:46:54.659859
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 3
+}
+Test Lasted: 206.5882ms
+
+Test 4 Started at 2015-06-26 04:46:54.861431
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 4
+}
+Test Lasted: 139.3187ms
+
+Test 5 Started at 2015-06-26 04:46:55.064960
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 5
+}
+Test Lasted: 111.5775ms
+
+Test 6 Started at 2015-06-26 04:46:55.269280
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 6
+}
+Test Lasted: 100.9304ms
+
+Test 7 Started at 2015-06-26 04:46:55.474091
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 7
+}
+Test Lasted: 297.7884ms
+
+Test 8 Started at 2015-06-26 04:46:55.675218
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 8
+}
+Test Lasted: 301.746ms
+
+Test 9 Started at 2015-06-26 04:46:55.876904
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 9
+}
+Test Lasted: 389.6338ms
+
+Test 10 Started at 2015-06-26 04:46:56.080139
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 10
+}
+Test Lasted: 257.0728ms
+
+Test 11 Started at 2015-06-26 04:46:56.282697
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 11
+}
+Test Lasted: 132.5176ms
+
+Test 12 Started at 2015-06-26 04:46:56.488434
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 12
+}
+Test Lasted: 138.7516ms
+
+Test 13 Started at 2015-06-26 04:46:56.694139
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 13
+}
+Test Lasted: 122.7879ms
+
+Test 14 Started at 2015-06-26 04:46:56.895267
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 14
+}
+Test Lasted: 135.6631ms
+
+Test 15 Started at 2015-06-26 04:46:57.096243
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 15
+}
+Test Lasted: 178.1407ms
+
+Test 16 Started at 2015-06-26 04:46:57.300508
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 16
+}
+Test Lasted: 147.9083ms
+
+Test 17 Started at 2015-06-26 04:46:57.505920
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 17
+}
+Test Lasted: 152.1688ms
+
+Test 18 Started at 2015-06-26 04:46:57.707943
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 18
+}
+Test Lasted: 591.3675ms
+
+Test 19 Started at 2015-06-26 04:46:57.911867
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 19
+}
+Test Lasted: 270.938ms
+
+Test 20 Started at 2015-06-26 04:46:58.116298
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 20
+}
+Test Lasted: 181.2644ms
+
+Test 21 Started at 2015-06-26 04:46:58.318776
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 21
+}
+Test Lasted: 133.92ms
+
+Test 22 Started at 2015-06-26 04:46:58.521011
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 22
+}
+Test Lasted: 137.63ms
+
+Test 23 Started at 2015-06-26 04:46:58.724511
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 23
+}
+Test Lasted: 120.5368ms
+
+Test 24 Started at 2015-06-26 04:46:58.928944
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 24
+}
+Test Lasted: 143.3223ms
+
+Test 25 Started at 2015-06-26 04:46:59.130967
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 25
+}
+Test Lasted: 140.6688ms
+
+Test 26 Started at 2015-06-26 04:46:59.332507
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 26
+}
+Test Lasted: 132.6934ms
+
+Test 27 Started at 2015-06-26 04:46:59.536883
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 27
+}
+Test Lasted: 158.4088ms
+
+Test 28 Started at 2015-06-26 04:46:59.738851
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 28
+}
+Test Lasted: 149.2013ms
+
+Test 29 Started at 2015-06-26 04:46:59.943057
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 29
+}
+Test Lasted: 133.352ms
+
+Test 30 Started at 2015-06-26 04:47:00.146980
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 30
+}
+Test Lasted: 117.4271ms
+
+Test 31 Started at 2015-06-26 04:47:00.348576
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 31
+}
+Test Lasted: 1736.7228ms
+
+Test 32 Started at 2015-06-26 04:47:00.553538
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 32
+}
+Test Lasted: 1623.6845ms
+
+Test 33 Started at 2015-06-26 04:47:00.756730
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 33
+}
+Test Lasted: 1328.6547ms
+
+Test 34 Started at 2015-06-26 04:47:00.958130
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 34
+}
+Test Lasted: 1077.1837ms
+
+Test 35 Started at 2015-06-26 04:47:01.161358
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 35
+}
+Test Lasted: 1015.4307ms
+
+Test 36 Started at 2015-06-26 04:47:01.362541
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 36
+}
+Test Lasted: 722.7913ms
+
+Test 37 Started at 2015-06-26 04:47:01.567737
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 37
+}
+Test Lasted: 579.5663ms
+
+Test 38 Started at 2015-06-26 04:47:01.770777
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 38
+}
+Test Lasted: 388.5986ms
+
+Test 39 Started at 2015-06-26 04:47:01.973900
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 39
+}
+Test Lasted: 271.257ms
+
+Test 40 Started at 2015-06-26 04:47:02.177992
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 40
+}
+Test Lasted: 165.727ms
+
+Test 41 Started at 2015-06-26 04:47:02.382699
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 41
+}
+Test Lasted: 1123.8464ms
+
+Test 42 Started at 2015-06-26 04:47:02.585726
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 42
+}
+Test Lasted: 797.2313ms
+
+Test 43 Started at 2015-06-26 04:47:02.790718
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 43
+}
+Test Lasted: 747.124ms
+
+Test 44 Started at 2015-06-26 04:47:02.996673
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 44
+}
+Test Lasted: 509.9421ms
+
+Test 45 Started at 2015-06-26 04:47:03.202030
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 45
+}
+Test Lasted: 335.7358ms
+
+Test 46 Started at 2015-06-26 04:47:03.405955
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 46
+}
+Test Lasted: 184.772ms
+
+Test 47 Started at 2015-06-26 04:47:03.612063
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 47
+}
+Test Lasted: 120.063ms
+
+Test 48 Started at 2015-06-26 04:47:03.817048
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 48
+}
+Test Lasted: 123.3194ms
+
+Test 49 Started at 2015-06-26 04:47:04.019994
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 49
+}
+Test Lasted: 163.6972ms
+
+Test 50 Started at 2015-06-26 04:47:04.224473
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 50
+}
+Test Lasted: 122.3434ms
+
+Test 51 Started at 2015-06-26 04:47:04.428055
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 51
+}
+Test Lasted: 148.6132ms
+
+Test 52 Started at 2015-06-26 04:47:04.630078
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 52
+}
+Test Lasted: 112.1874ms
+
+Test 53 Started at 2015-06-26 04:47:04.835320
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 53
+}
+Test Lasted: 123.0044ms
+
+Test 54 Started at 2015-06-26 04:47:05.040243
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 54
+}
+Test Lasted: 116.7517ms
+
+Test 55 Started at 2015-06-26 04:47:05.247837
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 55
+}
+Test Lasted: 254.9986ms
+
+Test 56 Started at 2015-06-26 04:47:05.454676
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 56
+}
+Test Lasted: 131.7755ms
+
+Test 57 Started at 2015-06-26 04:47:05.658260
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 57
+}
+Test Lasted: 125.3538ms
+
+Test 58 Started at 2015-06-26 04:47:05.858971
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 58
+}
+Test Lasted: 113.3556ms
+
+Test 59 Started at 2015-06-26 04:47:06.059922
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 59
+}
+Test Lasted: 116.0256ms
+
+Test 60 Started at 2015-06-26 04:47:06.262156
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 60
+}
+Test Lasted: 155.2402ms
+
+Test 61 Started at 2015-06-26 04:47:06.463081
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 61
+}
+Test Lasted: 146.5167ms
+
+Test 62 Started at 2015-06-26 04:47:06.666859
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 62
+}
+Test Lasted: 109.7508ms
+
+Test 63 Started at 2015-06-26 04:47:06.868695
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 63
+}
+Test Lasted: 153.9971ms
+
+Test 64 Started at 2015-06-26 04:47:07.072781
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 64
+}
+Test Lasted: 120.0546ms
+
+Test 65 Started at 2015-06-26 04:47:07.277788
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 65
+}
+Test Lasted: 123.8233ms
+
+Test 66 Started at 2015-06-26 04:47:07.481124
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 66
+}
+Test Lasted: 133.8899ms
+
+Test 67 Started at 2015-06-26 04:47:07.682921
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 67
+}
+Test Lasted: 112.475ms
+
+Test 68 Started at 2015-06-26 04:47:07.887250
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 68
+}
+Test Lasted: 123.1553ms
+
+Test 69 Started at 2015-06-26 04:47:08.090790
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 69
+}
+Test Lasted: 134.3722ms
+
+Test 70 Started at 2015-06-26 04:47:08.293443
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 70
+}
+Test Lasted: 115.4735ms
+
+Test 71 Started at 2015-06-26 04:47:08.497970
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 71
+}
+Test Lasted: 131.5709ms
+
+Test 72 Started at 2015-06-26 04:47:08.700737
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 72
+}
+Test Lasted: 123.3975ms
+
+Test 73 Started at 2015-06-26 04:47:08.906505
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 73
+}
+Test Lasted: 123.679ms
+
+Test 74 Started at 2015-06-26 04:47:09.109085
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 74
+}
+Test Lasted: 503.2243ms
+
+Test 75 Started at 2015-06-26 04:47:09.312347
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 75
+}
+Test Lasted: 119.1211ms
+
+Test 76 Started at 2015-06-26 04:47:09.517699
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 76
+}
+Test Lasted: 141.9645ms
+
+Test 77 Started at 2015-06-26 04:47:09.721474
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 77
+}
+Test Lasted: 112.7169ms
+
+Test 78 Started at 2015-06-26 04:47:09.928293
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 78
+}
+Test Lasted: 123.6655ms
+
+Test 79 Started at 2015-06-26 04:47:10.132842
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 79
+}
+Test Lasted: 115.3955ms
+
+Test 80 Started at 2015-06-26 04:47:10.336949
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 80
+}
+Test Lasted: 227.9676ms
+
+Test 81 Started at 2015-06-26 04:47:10.540319
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 81
+}
+Test Lasted: 257.9715ms
+
+Test 82 Started at 2015-06-26 04:47:10.741618
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 82
+}
+Test Lasted: 136.076ms
+
+Test 83 Started at 2015-06-26 04:47:10.945749
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 83
+}
+Test Lasted: 129.9905ms
+
+Test 84 Started at 2015-06-26 04:47:11.149983
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 84
+}
+Test Lasted: 130.6977ms
+
+Test 85 Started at 2015-06-26 04:47:11.351057
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 85
+}
+Test Lasted: 150.8591ms
+
+Test 86 Started at 2015-06-26 04:47:11.556212
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 86
+}
+Test Lasted: 135.0473ms
+
+Test 87 Started at 2015-06-26 04:47:11.761761
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 87
+}
+Test Lasted: 223.7427ms
+
+Test 88 Started at 2015-06-26 04:47:11.967401
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 88
+}
+Test Lasted: 120.7192ms
+
+Test 89 Started at 2015-06-26 04:47:12.171563
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 89
+}
+Test Lasted: 121.2273ms
+
+Test 90 Started at 2015-06-26 04:47:12.375728
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 90
+}
+Test Lasted: 146.3418ms
+
+Test 91 Started at 2015-06-26 04:47:12.579323
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 91
+}
+Test Lasted: 110.8413ms
+
+Test 92 Started at 2015-06-26 04:47:12.780650
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 92
+}
+Test Lasted: 110.2568ms
+
+Test 93 Started at 2015-06-26 04:47:12.981692
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 93
+}
+Test Lasted: 109.9717ms
+
+Test 94 Started at 2015-06-26 04:47:13.182698
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 94
+}
+Test Lasted: 239.7139ms
+
+Test 95 Started at 2015-06-26 04:47:13.383294
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 95
+}
+Test Lasted: 114.8924ms
+
+Test 96 Started at 2015-06-26 04:47:13.588574
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 96
+}
+Test Lasted: 161.0606ms
+
+Test 97 Started at 2015-06-26 04:47:13.790296
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 97
+}
+Test Lasted: 136.7934ms
+
+Test 98 Started at 2015-06-26 04:47:13.992567
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 98
+}
+Test Lasted: 196.7705ms
+Test 99 Started at 2015-06-26 04:47:14.193609
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 99
+}
+Test Lasted: 487.8036ms
+Test Ended: AsyncHTTPDeviceScan
+Current Time: 2015-06-26 04:47:14.683402
+Test lasted: 00:00:20.8391660
+
+
+
+Test Started: AsyncHTTPSDeviceScan
+Current Time: 2015-06-26 04:47:14.691131
+Test Run times: 100
+Server: http://0827b63a525242d1b8acc7a31a71c39e.cloudapp.net/
+Test 0 Started at 2015-06-26 04:47:14.910313
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 0
+}
+Test Lasted: 192.737ms
+
+Test 1 Started at 2015-06-26 04:47:15.132725
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 1
+}
+Test Lasted: 112.5812ms
+
+Test 2 Started at 2015-06-26 04:47:15.353312
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 2
+}
+Test Lasted: 146.2173ms
+
+Test 3 Started at 2015-06-26 04:47:15.572132
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 3
+}
+Test Lasted: 127.9026ms
+
+Test 4 Started at 2015-06-26 04:47:15.792696
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 4
+}
+Test Lasted: 103.2578ms
+
+Test 5 Started at 2015-06-26 04:47:16.015870
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 5
+}
+Test Lasted: 122.078ms
+
+Test 6 Started at 2015-06-26 04:47:16.237267
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 6
+}
+Test Lasted: 167.6351ms
+
+Test 7 Started at 2015-06-26 04:47:16.459186
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 7
+}
+Test Lasted: 141.5267ms
+
+Test 8 Started at 2015-06-26 04:47:16.679743
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 8
+}
+Test Lasted: 130.4205ms
+
+Test 9 Started at 2015-06-26 04:47:16.896286
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 9
+}
+Test Lasted: 141.5645ms
+
+Test 10 Started at 2015-06-26 04:47:17.118483
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 10
+}
+Test Lasted: 122.1452ms
+
+Test 11 Started at 2015-06-26 04:47:17.338734
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 11
+}
+Test Lasted: 135.2796ms
+
+Test 12 Started at 2015-06-26 04:47:17.562297
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 12
+}
+Test Lasted: 242.0262ms
+
+Test 13 Started at 2015-06-26 04:47:17.779796
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 13
+}
+Test Lasted: 196.2576ms
+
+Test 14 Started at 2015-06-26 04:47:18.000332
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 14
+}
+Test Lasted: 218.3852ms
+
+Test 15 Started at 2015-06-26 04:47:18.223619
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 15
+}
+Test Lasted: 155.1862ms
+
+Test 16 Started at 2015-06-26 04:47:18.447540
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 16
+}
+Test Lasted: 110.6395ms
+
+Test 17 Started at 2015-06-26 04:47:18.666373
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 17
+}
+Test Lasted: 129.2889ms
+
+Test 18 Started at 2015-06-26 04:47:18.887834
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 18
+}
+Test Lasted: 124.2847ms
+
+Test 19 Started at 2015-06-26 04:47:19.113747
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 19
+}
+Test Lasted: 228.422ms
+
+Test 20 Started at 2015-06-26 04:47:19.332278
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 20
+}
+Test Lasted: 174.0948ms
+
+Test 21 Started at 2015-06-26 04:47:19.554326
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 21
+}
+Test Lasted: 103.0869ms
+
+Test 22 Started at 2015-06-26 04:47:19.774879
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 22
+}
+Test Lasted: 133.2925ms
+
+Test 23 Started at 2015-06-26 04:47:19.995771
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 23
+}
+Test Lasted: 204.5111ms
+
+Test 24 Started at 2015-06-26 04:47:20.217486
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 24
+}
+Test Lasted: 167.3134ms
+
+Test 25 Started at 2015-06-26 04:47:20.438583
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 25
+}
+Test Lasted: 163.7842ms
+
+Test 26 Started at 2015-06-26 04:47:20.656056
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 26
+}
+Test Lasted: 104.8673ms
+
+Test 27 Started at 2015-06-26 04:47:20.879937
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 27
+}
+Test Lasted: 123.7796ms
+
+Test 28 Started at 2015-06-26 04:47:21.101858
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 28
+}
+Test Lasted: 139.3182ms
+
+Test 29 Started at 2015-06-26 04:47:21.322237
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 29
+}
+Test Lasted: 136.2519ms
+
+Test 30 Started at 2015-06-26 04:47:21.542300
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 30
+}
+Test Lasted: 153.5971ms
+
+Test 31 Started at 2015-06-26 04:47:21.762550
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 31
+}
+Test Lasted: 174.1835ms
+
+Test 32 Started at 2015-06-26 04:47:21.982155
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 32
+}
+Test Lasted: 182.6474ms
+
+Test 33 Started at 2015-06-26 04:47:22.202371
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 33
+}
+Test Lasted: 149.6546ms
+
+Test 34 Started at 2015-06-26 04:47:22.422726
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 34
+}
+Test Lasted: 201.3424ms
+
+Test 35 Started at 2015-06-26 04:47:22.640895
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 35
+}
+Test Lasted: 193.2398ms
+
+Test 36 Started at 2015-06-26 04:47:22.862048
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 36
+}
+Test Lasted: 220.1431ms
+
+Test 37 Started at 2015-06-26 04:47:23.086500
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 37
+}
+Test Lasted: 156.218ms
+
+Test 38 Started at 2015-06-26 04:47:23.308244
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 38
+}
+Test Lasted: 129.7689ms
+
+Test 39 Started at 2015-06-26 04:47:23.529890
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 39
+}
+Test Lasted: 181.8059ms
+
+Test 40 Started at 2015-06-26 04:47:23.754653
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 40
+}
+Test Lasted: 110.3056ms
+
+Test 41 Started at 2015-06-26 04:47:23.975673
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 41
+}
+Test Lasted: 153.1195ms
+
+Test 42 Started at 2015-06-26 04:47:24.198560
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 42
+}
+Test Lasted: 178.578ms
+
+Test 43 Started at 2015-06-26 04:47:24.417679
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 43
+}
+Test Lasted: 148.6291ms
+
+Test 44 Started at 2015-06-26 04:47:24.641421
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 44
+}
+Test Lasted: 123.5074ms
+
+Test 45 Started at 2015-06-26 04:47:24.863348
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 45
+}
+Test Lasted: 194.1984ms
+
+Test 46 Started at 2015-06-26 04:47:25.084129
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 46
+}
+Test Lasted: 138.6069ms
+
+Test 47 Started at 2015-06-26 04:47:25.301254
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 47
+}
+Test Lasted: 129.8725ms
+
+Test 48 Started at 2015-06-26 04:47:25.521620
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 48
+}
+Test Lasted: 249.7015ms
+
+Test 49 Started at 2015-06-26 04:47:25.741819
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 49
+}
+Test Lasted: 135.7229ms
+
+Test 50 Started at 2015-06-26 04:47:25.959719
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 50
+}
+Test Lasted: 329.6307ms
+
+Test 51 Started at 2015-06-26 04:47:26.178708
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 51
+}
+Test Lasted: 129.1528ms
+
+Test 52 Started at 2015-06-26 04:47:26.398454
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 52
+}
+Test Lasted: 350.926ms
+
+Test 53 Started at 2015-06-26 04:47:26.620293
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 53
+}
+Test Lasted: 148.7775ms
+
+Test 54 Started at 2015-06-26 04:47:26.839937
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 54
+}
+Test Lasted: 291.1849ms
+
+Test 55 Started at 2015-06-26 04:47:27.062760
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 55
+}
+Test Lasted: 116.1844ms
+
+Test 56 Started at 2015-06-26 04:47:27.283355
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 56
+}
+Test Lasted: 659.6547ms
+
+Test 57 Started at 2015-06-26 04:47:27.504907
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 57
+}
+Test Lasted: 194.1955ms
+
+Test 58 Started at 2015-06-26 04:47:27.728099
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 58
+}
+Test Lasted: 143.5261ms
+
+Test 59 Started at 2015-06-26 04:47:27.945426
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 59
+}
+Test Lasted: 130.9443ms
+
+Test 60 Started at 2015-06-26 04:47:28.165886
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 60
+}
+Test Lasted: 128.2626ms
+
+Test 61 Started at 2015-06-26 04:47:28.388852
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 61
+}
+Test Lasted: 122.2244ms
+
+Test 62 Started at 2015-06-26 04:47:28.610416
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 62
+}
+Test Lasted: 126.756ms
+
+Test 63 Started at 2015-06-26 04:47:28.826817
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 63
+}
+Test Lasted: 140.2044ms
+
+Test 64 Started at 2015-06-26 04:47:29.046399
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 64
+}
+Test Lasted: 137.5967ms
+
+Test 65 Started at 2015-06-26 04:47:29.264224
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 65
+}
+Test Lasted: 235.0624ms
+
+Test 66 Started at 2015-06-26 04:47:29.480847
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 66
+}
+Test Lasted: 158.0022ms
+
+Test 67 Started at 2015-06-26 04:47:29.702379
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 67
+}
+Test Lasted: 146.3338ms
+
+Test 68 Started at 2015-06-26 04:47:29.921499
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 68
+}
+Test Lasted: 130.3494ms
+
+Test 69 Started at 2015-06-26 04:47:30.141149
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 69
+}
+Test Lasted: 161.2917ms
+
+Test 70 Started at 2015-06-26 04:47:30.363213
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 70
+}
+Test Lasted: 177.0118ms
+
+Test 71 Started at 2015-06-26 04:47:30.583730
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 71
+}
+Test Lasted: 195.1212ms
+
+Test 72 Started at 2015-06-26 04:47:30.800796
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 72
+}
+Test Lasted: 141.5771ms
+
+Test 73 Started at 2015-06-26 04:47:31.025772
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 73
+}
+Test Lasted: 196.8256ms
+
+Test 74 Started at 2015-06-26 04:47:31.243268
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 74
+}
+Test Lasted: 146.4584ms
+
+Test 75 Started at 2015-06-26 04:47:31.463868
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 75
+}
+Test Lasted: 113.407ms
+
+Test 76 Started at 2015-06-26 04:47:31.687346
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 76
+}
+Test Lasted: 108.8977ms
+
+Test 77 Started at 2015-06-26 04:47:31.906218
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 77
+}
+Test Lasted: 135.6393ms
+
+Test 78 Started at 2015-06-26 04:47:32.127672
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 78
+}
+Test Lasted: 125.3101ms
+
+Test 79 Started at 2015-06-26 04:47:32.348040
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 79
+}
+Test Lasted: 119.4289ms
+
+Test 80 Started at 2015-06-26 04:47:32.566730
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 80
+}
+Test Lasted: 207.6004ms
+
+Test 81 Started at 2015-06-26 04:47:32.791223
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 81
+}
+Test Lasted: 192.7113ms
+
+Test 82 Started at 2015-06-26 04:47:33.010821
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 82
+}
+Test Lasted: 210.7497ms
+
+Test 83 Started at 2015-06-26 04:47:33.237165
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 83
+}
+Test Lasted: 151.6426ms
+
+Test 84 Started at 2015-06-26 04:47:33.457903
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 84
+}
+Test Lasted: 112.4402ms
+
+Test 85 Started at 2015-06-26 04:47:33.676719
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 85
+}
+Test Lasted: 170.584ms
+
+Test 86 Started at 2015-06-26 04:47:33.899229
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 86
+}
+Test Lasted: 154.3818ms
+
+Test 87 Started at 2015-06-26 04:47:34.117296
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 87
+}
+Test Lasted: 132.5879ms
+
+Test 88 Started at 2015-06-26 04:47:34.337211
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 88
+}
+Test Lasted: 183.4095ms
+
+Test 89 Started at 2015-06-26 04:47:34.555440
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 89
+}
+Test Lasted: 164.1037ms
+
+Test 90 Started at 2015-06-26 04:47:34.774897
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 90
+}
+Test Lasted: 171.0169ms
+
+Test 91 Started at 2015-06-26 04:47:34.995734
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 91
+}
+Test Lasted: 324.0344ms
+
+Test 92 Started at 2015-06-26 04:47:35.214810
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 92
+}
+Test Lasted: 349.6063ms
+
+Test 93 Started at 2015-06-26 04:47:35.432464
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 93
+}
+Test Lasted: 1054.4924ms
+
+Test 94 Started at 2015-06-26 04:47:35.651509
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 94
+}
+Test Lasted: 2171.8733ms
+
+Test 95 Started at 2015-06-26 04:47:35.873699
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 95
+}
+Test Lasted: 259.1788ms
+
+Test 96 Started at 2015-06-26 04:47:36.091378
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 96
+}
+Test Lasted: 640.4799ms
+
+Test 97 Started at 2015-06-26 04:47:36.311394
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 97
+}
+Test Lasted: 509.3249ms
+
+Test 98 Started at 2015-06-26 04:47:36.533604
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 98
+}
+Test Lasted: 2508.2773ms
+Test 99 Started at 2015-06-26 04:47:36.756065
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 99
+}
+Test Lasted: 204.0051ms
+Test Ended: AsyncHTTPSDeviceScan
+Current Time: 2015-06-26 04:47:39.043148
+Test lasted: 00:00:24.3520200
+
+
+
+Test Started: MultiClientDeviceScan
+Current Time: 2015-06-26 04:47:39.050568
+Server: http://0827b63a525242d1b8acc7a31a71c39e.cloudapp.net/
+Client 1:
+Client 1 Test 0 Started at 2015-06-26 04:47:39.252301
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 0
+}
+Test Lasted: 1137.5053ms
+
+Client 1 Test 1 Started at 2015-06-26 04:47:41.205215
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 1
+}
+Test Lasted: 614.1794ms
+
+Client 1 Test 2 Started at 2015-06-26 04:47:42.234995
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 2
+}
+Test Lasted: 528.3542ms
+
+Client 1 Test 3 Started at 2015-06-26 04:47:43.023294
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 3
+}
+Test Lasted: 283.9144ms
+
+Client 1 Test 4 Started at 2015-06-26 04:47:43.864474
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 4
+}
+Test Lasted: 509.1793ms
+
+Client 1 Test 5 Started at 2015-06-26 04:47:44.715955
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 5
+}
+Test Lasted: 201.6472ms
+
+Client 1 Test 6 Started at 2015-06-26 04:47:46.838267
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 6
+}
+Test Lasted: 226.5107ms
+
+Client 1 Test 7 Started at 2015-06-26 04:47:47.266624
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 7
+}
+Test Lasted: 186.0008ms
+
+Client 1 Test 8 Started at 2015-06-26 04:47:47.754925
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 8
+}
+Test Lasted: 1438.6709ms
+
+Client 1 Test 9 Started at 2015-06-26 04:47:49.397633
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 9
+}
+Test Lasted: 1323.826ms
+
+Client 1 Test 10 Started at 2015-06-26 04:47:50.923759
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 10
+}
+Test Lasted: 2466.8414ms
+
+Client 1 Test 11 Started at 2015-06-26 04:47:53.594379
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 11
+}
+Test Lasted: 1224.8156ms
+
+Client 1 Test 12 Started at 2015-06-26 04:47:55.019699
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 12
+}
+Test Lasted: 141.9283ms
+
+Client 1 Test 13 Started at 2015-06-26 04:47:56.144493
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 13
+}
+Test Lasted: 187.3244ms
+
+Client 1 Test 14 Started at 2015-06-26 04:47:56.565343
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 14
+}
+Test Lasted: 172.4413ms
+
+Client 1 Test 15 Started at 2015-06-26 04:47:56.942066
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 15
+}
+Test Lasted: 334.7281ms
+
+Client 1 Test 16 Started at 2015-06-26 04:47:57.784568
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 16
+}
+Test Lasted: 229.9098ms
+
+Client 1 Test 17 Started at 2015-06-26 04:47:58.216781
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 17
+}
+Test Lasted: 252.7369ms
+
+Client 1 Test 18 Started at 2015-06-26 04:47:59.019181
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 18
+}
+Test Lasted: 154.2874ms
+
+Client 1 Test 19 Started at 2015-06-26 04:47:59.374169
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 19
+}
+Test Lasted: 483.7889ms
+
+Client 1 Test 20 Started at 2015-06-26 04:48:00.063361
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 20
+}
+Test Lasted: 118.5102ms
+
+Client 1 Test 21 Started at 2015-06-26 04:48:01.055184
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 21
+}
+Test Lasted: 331.4798ms
+
+Client 1 Test 22 Started at 2015-06-26 04:48:01.589759
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 22
+}
+Test Lasted: 499.81ms
+
+Client 1 Test 23 Started at 2015-06-26 04:48:02.290579
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 23
+}
+Test Lasted: 1026.4809ms
+
+Client 1 Test 24 Started at 2015-06-26 04:48:03.521993
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 24
+}
+Test Lasted: 1538.8233ms
+
+Client 1 Test 25 Started at 2015-06-26 04:48:05.264156
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 25
+}
+Test Lasted: 201.8339ms
+
+Client 1 Test 26 Started at 2015-06-26 04:48:05.667077
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 26
+}
+Test Lasted: 619.7592ms
+
+Client 1 Test 27 Started at 2015-06-26 04:48:06.920747
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 27
+}
+Test Lasted: 1210.6231ms
+
+Client 1 Test 28 Started at 2015-06-26 04:48:08.332064
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 28
+}
+Test Lasted: 229.2787ms
+
+Client 1 Test 29 Started at 2015-06-26 04:48:09.150492
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 29
+}
+Test Lasted: 1220.373ms
+
+Client 1 Test 30 Started at 2015-06-26 04:48:10.571940
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 30
+}
+Test Lasted: 735.5968ms
+
+Client 1 Test 31 Started at 2015-06-26 04:48:12.120314
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 31
+}
+Test Lasted: 224.8686ms
+
+Client 1 Test 32 Started at 2015-06-26 04:48:12.548817
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 32
+}
+Test Lasted: 238.8698ms
+
+Client 1 Test 33 Started at 2015-06-26 04:48:12.992714
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 33
+}
+Test Lasted: 568.076ms
+
+Client 1 Test 34 Started at 2015-06-26 04:48:13.764311
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 34
+}
+Test Lasted: 1737.4073ms
+
+Client 1 Test 35 Started at 2015-06-26 04:48:15.704383
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 35
+}
+Test Lasted: 174.6909ms
+
+Client 1 Test 36 Started at 2015-06-26 04:48:16.132241
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 36
+}
+Test Lasted: 503.0364ms
+
+Client 1 Test 37 Started at 2015-06-26 04:48:16.840182
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 37
+}
+Test Lasted: 158.0622ms
+
+Client 1 Test 38 Started at 2015-06-26 04:48:17.264029
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 38
+}
+Test Lasted: 168.1462ms
+
+Client 1 Test 39 Started at 2015-06-26 04:48:17.654581
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 39
+}
+Test Lasted: 182.8065ms
+
+Client 1 Test 40 Started at 2015-06-26 04:48:18.041640
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 40
+}
+Test Lasted: 220.8046ms
+
+Client 1 Test 41 Started at 2015-06-26 04:48:18.466288
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 41
+}
+Test Lasted: 151.2761ms
+
+Client 1 Test 42 Started at 2015-06-26 04:48:18.818165
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 42
+}
+Test Lasted: 150.77ms
+
+Client 1 Test 43 Started at 2015-06-26 04:48:19.190819
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 43
+}
+Test Lasted: 155.6133ms
+
+Client 1 Test 44 Started at 2015-06-26 04:48:19.601878
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 44
+}
+Test Lasted: 246.6348ms
+
+Client 1 Test 45 Started at 2015-06-26 04:48:20.050199
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 45
+}
+Test Lasted: 190.3271ms
+
+Client 1 Test 46 Started at 2015-06-26 04:48:20.442455
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 46
+}
+Test Lasted: 203.7772ms
+
+Client 1 Test 47 Started at 2015-06-26 04:48:20.990508
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 47
+}
+Test Lasted: 314.6231ms
+
+Client 1 Test 48 Started at 2015-06-26 04:48:21.507312
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 48
+}
+Test Lasted: 145.7293ms
+
+Client 1 Test 49 Started at 2015-06-26 04:48:21.857622
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 49
+}
+Test Lasted: 133.6175ms
+
+Client 1 Test 50 Started at 2015-06-26 04:48:22.227118
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 50
+}
+Test Lasted: 154.6462ms
+
+Client 1 Test 51 Started at 2015-06-26 04:48:22.582400
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 51
+}
+Test Lasted: 142.572ms
+
+Client 1 Test 52 Started at 2015-06-26 04:48:22.944525
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 52
+}
+Test Lasted: 162.9439ms
+
+Client 1 Test 53 Started at 2015-06-26 04:48:23.308131
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 53
+}
+Test Lasted: 153.0109ms
+
+Client 1 Test 54 Started at 2015-06-26 04:48:23.694419
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 54
+}
+Test Lasted: 136.7029ms
+
+Client 1 Test 55 Started at 2015-06-26 04:48:24.101146
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 55
+}
+Test Lasted: 166.6971ms
+
+Client 1 Test 56 Started at 2015-06-26 04:48:24.496132
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 56
+}
+Test Lasted: 134.5732ms
+
+Client 1 Test 57 Started at 2015-06-26 04:48:24.856482
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 57
+}
+Test Lasted: 134.5089ms
+
+Client 1 Test 58 Started at 2015-06-26 04:48:25.207578
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 58
+}
+Test Lasted: 159.2188ms
+
+Client 1 Test 59 Started at 2015-06-26 04:48:25.571232
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 59
+}
+Test Lasted: 224.087ms
+
+Client 1 Test 60 Started at 2015-06-26 04:48:25.996402
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 60
+}
+Test Lasted: 147.3765ms
+
+Client 1 Test 61 Started at 2015-06-26 04:48:26.344506
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 61
+}
+Test Lasted: 164.5038ms
+
+Client 1 Test 62 Started at 2015-06-26 04:48:26.712065
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 62
+}
+Test Lasted: 232.7321ms
+
+Client 1 Test 63 Started at 2015-06-26 04:48:27.146734
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 63
+}
+Test Lasted: 193.697ms
+
+Client 1 Test 64 Started at 2015-06-26 04:48:27.543167
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 64
+}
+Test Lasted: 157.4834ms
+
+Client 1 Test 65 Started at 2015-06-26 04:48:27.987037
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 65
+}
+Test Lasted: 342.1293ms
+
+Client 1 Test 66 Started at 2015-06-26 04:48:28.530367
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 66
+}
+Test Lasted: 219.0964ms
+
+Client 1 Test 67 Started at 2015-06-26 04:48:28.954582
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 67
+}
+Test Lasted: 132.3641ms
+
+Client 1 Test 68 Started at 2015-06-26 04:48:29.311759
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 68
+}
+Test Lasted: 122.9478ms
+
+Client 1 Test 69 Started at 2015-06-26 04:48:29.666241
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 69
+}
+Test Lasted: 171.7439ms
+
+Client 1 Test 70 Started at 2015-06-26 04:48:30.040336
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 70
+}
+Test Lasted: 167.5158ms
+
+Client 1 Test 71 Started at 2015-06-26 04:48:30.591027
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 71
+}
+Test Lasted: 155.2267ms
+
+Client 1 Test 72 Started at 2015-06-26 04:48:31.033834
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 72
+}
+Test Lasted: 196.2872ms
+
+Client 1 Test 73 Started at 2015-06-26 04:48:31.434996
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 73
+}
+Test Lasted: 141.8815ms
+
+Client 1 Test 74 Started at 2015-06-26 04:48:31.790779
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 74
+}
+Test Lasted: 134.7856ms
+
+Client 1 Test 75 Started at 2015-06-26 04:48:32.156451
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 75
+}
+Test Lasted: 154.5281ms
+
+Client 1 Test 76 Started at 2015-06-26 04:48:32.516247
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 76
+}
+Test Lasted: 117.9504ms
+
+Client 1 Test 77 Started at 2015-06-26 04:48:33.087059
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 77
+}
+Test Lasted: 161.82ms
+
+Client 1 Test 78 Started at 2015-06-26 04:48:33.453178
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 78
+}
+Test Lasted: 162.1235ms
+
+Client 1 Test 79 Started at 2015-06-26 04:48:33.816572
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 79
+}
+Test Lasted: 143.9276ms
+
+Client 1 Test 80 Started at 2015-06-26 04:48:34.160814
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 80
+}
+Test Lasted: 148.8168ms
+
+Client 1 Test 81 Started at 2015-06-26 04:48:34.511153
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 81
+}
+Test Lasted: 162.113ms
+
+Client 1 Test 82 Started at 2015-06-26 04:48:34.874813
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 82
+}
+Test Lasted: 244.5573ms
+
+Client 1 Test 83 Started at 2015-06-26 04:48:35.319667
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 83
+}
+Test Lasted: 223.7433ms
+
+Client 1 Test 84 Started at 2015-06-26 04:48:35.748734
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 84
+}
+Test Lasted: 203.4782ms
+
+Client 1 Test 85 Started at 2015-06-26 04:48:36.176157
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 85
+}
+Test Lasted: 224.7336ms
+
+Client 1 Test 86 Started at 2015-06-26 04:48:36.604246
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 86
+}
+Test Lasted: 137.1461ms
+
+Client 1 Test 87 Started at 2015-06-26 04:48:36.951205
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 87
+}
+Test Lasted: 286.4961ms
+
+Client 1 Test 88 Started at 2015-06-26 04:48:37.441599
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 88
+}
+Test Lasted: 189.0149ms
+
+Client 1 Test 89 Started at 2015-06-26 04:48:37.831625
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 89
+}
+Test Lasted: 153.0463ms
+
+Client 1 Test 90 Started at 2015-06-26 04:48:38.207606
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 90
+}
+Test Lasted: 157.0099ms
+
+Client 1 Test 91 Started at 2015-06-26 04:48:38.627819
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 91
+}
+Test Lasted: 292.6505ms
+
+Client 1 Test 92 Started at 2015-06-26 04:48:39.121579
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 92
+}
+Test Lasted: 175.1634ms
+
+Client 1 Test 93 Started at 2015-06-26 04:48:39.497155
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 93
+}
+Test Lasted: 129.4661ms
+
+Client 1 Test 94 Started at 2015-06-26 04:48:39.827361
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 94
+}
+Test Lasted: 123.2209ms
+
+Client 1 Test 95 Started at 2015-06-26 04:48:40.187107
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 95
+}
+Test Lasted: 174.4018ms
+
+Client 1 Test 96 Started at 2015-06-26 04:48:40.562802
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 96
+}
+Test Lasted: 183.9431ms
+
+Client 1 Test 97 Started at 2015-06-26 04:48:40.950919
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 97
+}
+Test Lasted: 200.8569ms
+
+Client 1 Test 98 Started at 2015-06-26 04:48:41.354188
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 98
+}
+Test Lasted: 149.2224ms
+
+Client 1 Test 99 Started at 2015-06-26 04:48:41.706114
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 99
+}
+Test Lasted: 162.4905ms
+
+Client 2:
+Client 2 Test 0 Started at 2015-06-26 04:47:39.252962
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 0
+}
+Test Lasted: 1749.6541ms
+
+Client 2 Test 1 Started at 2015-06-26 04:47:41.206069
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 1
+}
+Test Lasted: 827.5156ms
+
+Client 2 Test 2 Started at 2015-06-26 04:47:42.235545
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 2
+}
+Test Lasted: 584.5734ms
+
+Client 2 Test 3 Started at 2015-06-26 04:47:43.024231
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 3
+}
+Test Lasted: 635.3595ms
+
+Client 2 Test 4 Started at 2015-06-26 04:47:43.865147
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 4
+}
+Test Lasted: 650.1081ms
+
+Client 2 Test 5 Started at 2015-06-26 04:47:44.716796
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 5
+}
+Test Lasted: 1918.9321ms
+
+Client 2 Test 6 Started at 2015-06-26 04:47:46.839024
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 6
+}
+Test Lasted: 225.7936ms
+
+Client 2 Test 7 Started at 2015-06-26 04:47:47.267632
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 7
+}
+Test Lasted: 286.2047ms
+
+Client 2 Test 8 Started at 2015-06-26 04:47:47.756101
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 8
+}
+Test Lasted: 614.6738ms
+
+Client 2 Test 9 Started at 2015-06-26 04:47:49.398311
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 9
+}
+Test Lasted: 1323.2026ms
+
+Client 2 Test 10 Started at 2015-06-26 04:47:50.925605
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 10
+}
+Test Lasted: 222.7477ms
+
+Client 2 Test 11 Started at 2015-06-26 04:47:53.595497
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 11
+}
+Test Lasted: 384.3534ms
+
+Client 2 Test 12 Started at 2015-06-26 04:47:55.020463
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 12
+}
+Test Lasted: 923.8699ms
+
+Client 2 Test 13 Started at 2015-06-26 04:47:56.145692
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 13
+}
+Test Lasted: 215.4666ms
+
+Client 2 Test 14 Started at 2015-06-26 04:47:56.566401
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 14
+}
+Test Lasted: 125.6676ms
+
+Client 2 Test 15 Started at 2015-06-26 04:47:56.942796
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 15
+}
+Test Lasted: 641.2778ms
+
+Client 2 Test 16 Started at 2015-06-26 04:47:57.788286
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 16
+}
+Test Lasted: 226.3831ms
+
+Client 2 Test 17 Started at 2015-06-26 04:47:58.217824
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 17
+}
+Test Lasted: 597.8446ms
+
+Client 2 Test 18 Started at 2015-06-26 04:47:59.020144
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 18
+}
+Test Lasted: 153.4654ms
+
+Client 2 Test 19 Started at 2015-06-26 04:47:59.375003
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 19
+}
+Test Lasted: 250.06ms
+
+Client 2 Test 20 Started at 2015-06-26 04:48:00.064448
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 20
+}
+Test Lasted: 790.2879ms
+
+Client 2 Test 21 Started at 2015-06-26 04:48:01.056356
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 21
+}
+Test Lasted: 164.8759ms
+
+Client 2 Test 22 Started at 2015-06-26 04:48:01.590848
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 22
+}
+Test Lasted: 144.2766ms
+
+Client 2 Test 23 Started at 2015-06-26 04:48:02.291982
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 23
+}
+Test Lasted: 185.3389ms
+
+Client 2 Test 24 Started at 2015-06-26 04:48:03.522943
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 24
+}
+Test Lasted: 613.6581ms
+
+Client 2 Test 25 Started at 2015-06-26 04:48:05.264991
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 25
+}
+Test Lasted: 186.5961ms
+
+Client 2 Test 26 Started at 2015-06-26 04:48:05.668383
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 26
+}
+Test Lasted: 1050.9368ms
+
+Client 2 Test 27 Started at 2015-06-26 04:48:06.921260
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 27
+}
+Test Lasted: 500.2905ms
+
+Client 2 Test 28 Started at 2015-06-26 04:48:08.336123
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 28
+}
+Test Lasted: 613.4691ms
+
+Client 2 Test 29 Started at 2015-06-26 04:48:09.151198
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 29
+}
+Test Lasted: 472.5626ms
+
+Client 2 Test 30 Started at 2015-06-26 04:48:10.573270
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 30
+}
+Test Lasted: 1345.9781ms
+
+Client 2 Test 31 Started at 2015-06-26 04:48:12.121520
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 31
+}
+Test Lasted: 172.7583ms
+
+Client 2 Test 32 Started at 2015-06-26 04:48:12.550130
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 32
+}
+Test Lasted: 237.4943ms
+
+Client 2 Test 33 Started at 2015-06-26 04:48:12.994209
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 33
+}
+Test Lasted: 567.5272ms
+
+Client 2 Test 34 Started at 2015-06-26 04:48:13.765365
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 34
+}
+Test Lasted: 407.1393ms
+
+Client 2 Test 35 Started at 2015-06-26 04:48:15.705734
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 35
+}
+Test Lasted: 224.5859ms
+
+Client 2 Test 36 Started at 2015-06-26 04:48:16.133030
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 36
+}
+Test Lasted: 136.0387ms
+
+Client 2 Test 37 Started at 2015-06-26 04:48:16.841140
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 37
+}
+Test Lasted: 219.1642ms
+
+Client 2 Test 38 Started at 2015-06-26 04:48:17.264864
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 38
+}
+Test Lasted: 186.8278ms
+
+Client 2 Test 39 Started at 2015-06-26 04:48:17.656914
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 39
+}
+Test Lasted: 147.8471ms
+
+Client 2 Test 40 Started at 2015-06-26 04:48:18.046103
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 40
+}
+Test Lasted: 135.0425ms
+
+Client 2 Test 41 Started at 2015-06-26 04:48:18.467338
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 41
+}
+Test Lasted: 149.4105ms
+
+Client 2 Test 42 Started at 2015-06-26 04:48:18.819779
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 42
+}
+Test Lasted: 170.88ms
+
+Client 2 Test 43 Started at 2015-06-26 04:48:19.192841
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 43
+}
+Test Lasted: 205.0951ms
+
+Client 2 Test 44 Started at 2015-06-26 04:48:19.602708
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 44
+}
+Test Lasted: 169.2097ms
+
+Client 2 Test 45 Started at 2015-06-26 04:48:20.051072
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 45
+}
+Test Lasted: 189.819ms
+
+Client 2 Test 46 Started at 2015-06-26 04:48:20.443740
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 46
+}
+Test Lasted: 343.7418ms
+
+Client 2 Test 47 Started at 2015-06-26 04:48:20.991140
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 47
+}
+Test Lasted: 201.9398ms
+
+Client 2 Test 48 Started at 2015-06-26 04:48:21.508880
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 48
+}
+Test Lasted: 144.1083ms
+
+Client 2 Test 49 Started at 2015-06-26 04:48:21.858468
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 49
+}
+Test Lasted: 163.4892ms
+
+Client 2 Test 50 Started at 2015-06-26 04:48:22.228770
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 50
+}
+Test Lasted: 114.4909ms
+
+Client 2 Test 51 Started at 2015-06-26 04:48:22.583768
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 51
+}
+Test Lasted: 157.3433ms
+
+Client 2 Test 52 Started at 2015-06-26 04:48:22.946012
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 52
+}
+Test Lasted: 122.9764ms
+
+Client 2 Test 53 Started at 2015-06-26 04:48:23.309144
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 53
+}
+Test Lasted: 184.0777ms
+
+Client 2 Test 54 Started at 2015-06-26 04:48:23.695250
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 54
+}
+Test Lasted: 202.2149ms
+
+Client 2 Test 55 Started at 2015-06-26 04:48:24.101797
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 55
+}
+Test Lasted: 192.373ms
+
+Client 2 Test 56 Started at 2015-06-26 04:48:24.496836
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 56
+}
+Test Lasted: 157.4414ms
+
+Client 2 Test 57 Started at 2015-06-26 04:48:24.857356
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 57
+}
+Test Lasted: 148.6501ms
+
+Client 2 Test 58 Started at 2015-06-26 04:48:25.208236
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 58
+}
+Test Lasted: 158.5316ms
+
+Client 2 Test 59 Started at 2015-06-26 04:48:25.572221
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 59
+}
+Test Lasted: 199.5718ms
+
+Client 2 Test 60 Started at 2015-06-26 04:48:25.997520
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 60
+}
+Test Lasted: 146.3438ms
+
+Client 2 Test 61 Started at 2015-06-26 04:48:26.345577
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 61
+}
+Test Lasted: 163.298ms
+
+Client 2 Test 62 Started at 2015-06-26 04:48:26.712857
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 62
+}
+Test Lasted: 144.6235ms
+
+Client 2 Test 63 Started at 2015-06-26 04:48:27.147950
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 63
+}
+Test Lasted: 160.5294ms
+
+Client 2 Test 64 Started at 2015-06-26 04:48:27.543928
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 64
+}
+Test Lasted: 238.9922ms
+
+Client 2 Test 65 Started at 2015-06-26 04:48:27.988173
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 65
+}
+Test Lasted: 222.3199ms
+
+Client 2 Test 66 Started at 2015-06-26 04:48:28.532451
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 66
+}
+Test Lasted: 170.924ms
+
+Client 2 Test 67 Started at 2015-06-26 04:48:28.955288
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 67
+}
+Test Lasted: 153.8084ms
+
+Client 2 Test 68 Started at 2015-06-26 04:48:29.312537
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 68
+}
+Test Lasted: 151.21ms
+
+Client 2 Test 69 Started at 2015-06-26 04:48:29.667313
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 69
+}
+Test Lasted: 170.8861ms
+
+Client 2 Test 70 Started at 2015-06-26 04:48:30.041254
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 70
+}
+Test Lasted: 348.8673ms
+
+Client 2 Test 71 Started at 2015-06-26 04:48:30.591930
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 71
+}
+Test Lasted: 241.183ms
+
+Client 2 Test 72 Started at 2015-06-26 04:48:31.035388
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 72
+}
+Test Lasted: 173.5447ms
+
+Client 2 Test 73 Started at 2015-06-26 04:48:31.435808
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 73
+}
+Test Lasted: 154.1749ms
+
+Client 2 Test 74 Started at 2015-06-26 04:48:31.791948
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 74
+}
+Test Lasted: 162.3949ms
+
+Client 2 Test 75 Started at 2015-06-26 04:48:32.157211
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 75
+}
+Test Lasted: 153.6954ms
+
+Client 2 Test 76 Started at 2015-06-26 04:48:32.517380
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 76
+}
+Test Lasted: 367.3293ms
+
+Client 2 Test 77 Started at 2015-06-26 04:48:33.088386
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 77
+}
+Test Lasted: 140.737ms
+
+Client 2 Test 78 Started at 2015-06-26 04:48:33.454220
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 78
+}
+Test Lasted: 160.9ms
+
+Client 2 Test 79 Started at 2015-06-26 04:48:33.817757
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 79
+}
+Test Lasted: 123.1726ms
+
+Client 2 Test 80 Started at 2015-06-26 04:48:34.161766
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 80
+}
+Test Lasted: 126.3946ms
+
+Client 2 Test 81 Started at 2015-06-26 04:48:34.512258
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 81
+}
+Test Lasted: 161.6322ms
+
+Client 2 Test 82 Started at 2015-06-26 04:48:34.876573
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 82
+}
+Test Lasted: 139.2646ms
+
+Client 2 Test 83 Started at 2015-06-26 04:48:35.320819
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 83
+}
+Test Lasted: 150.9563ms
+
+Client 2 Test 84 Started at 2015-06-26 04:48:35.753218
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 84
+}
+Test Lasted: 164.964ms
+
+Client 2 Test 85 Started at 2015-06-26 04:48:36.211408
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 85
+}
+Test Lasted: 189.451ms
+
+Client 2 Test 86 Started at 2015-06-26 04:48:36.605208
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 86
+}
+Test Lasted: 136.1382ms
+
+Client 2 Test 87 Started at 2015-06-26 04:48:36.954052
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 87
+}
+Test Lasted: 197.4302ms
+
+Client 2 Test 88 Started at 2015-06-26 04:48:37.442823
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 88
+}
+Test Lasted: 144.9913ms
+
+Client 2 Test 89 Started at 2015-06-26 04:48:37.833119
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 89
+}
+Test Lasted: 169.6277ms
+
+Client 2 Test 90 Started at 2015-06-26 04:48:38.208461
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 90
+}
+Test Lasted: 216.2464ms
+
+Client 2 Test 91 Started at 2015-06-26 04:48:38.629506
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 91
+}
+Test Lasted: 122.2227ms
+
+Client 2 Test 92 Started at 2015-06-26 04:48:39.122719
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 92
+}
+Test Lasted: 135.245ms
+
+Client 2 Test 93 Started at 2015-06-26 04:48:39.498759
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 93
+}
+Test Lasted: 127.7772ms
+
+Client 2 Test 94 Started at 2015-06-26 04:48:39.828479
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 94
+}
+Test Lasted: 153.3879ms
+
+Client 2 Test 95 Started at 2015-06-26 04:48:40.188255
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 95
+}
+Test Lasted: 147.7663ms
+
+Client 2 Test 96 Started at 2015-06-26 04:48:40.563860
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 96
+}
+Test Lasted: 135.9597ms
+
+Client 2 Test 97 Started at 2015-06-26 04:48:40.951902
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 97
+}
+Test Lasted: 199.8002ms
+
+Client 2 Test 98 Started at 2015-06-26 04:48:41.354676
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 98
+}
+Test Lasted: 149.5225ms
+
+Client 2 Test 99 Started at 2015-06-26 04:48:41.708547
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 99
+}
+Test Lasted: 144.7731ms
+Test Ended: MultiClientDeviceScan
+Current Time: 2015-06-26 04:48:41.871603
+Test lasted: 00:01:02.8210320
+
+
+
+Test Started: SyncHTTPDeviceScan
+Current Time: 2015-06-26 04:48:41.877037
+Test Run times: 100
+Server: http://0827b63a525242d1b8acc7a31a71c39e.cloudapp.net/
+Test 0 Started at 2015-06-26 04:48:41.877088
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 0
+}
+Test Lasted: 134.4361ms
+
+Test 1 Started at 2015-06-26 04:48:42.211833
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 1
+}
+Test Lasted: 134.0455ms
+
+Test 2 Started at 2015-06-26 04:48:42.549114
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 2
+}
+Test Lasted: 143.4301ms
+
+Test 3 Started at 2015-06-26 04:48:42.893351
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 3
+}
+Test Lasted: 145.5943ms
+
+Test 4 Started at 2015-06-26 04:48:43.241281
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 4
+}
+Test Lasted: 113.6892ms
+
+Test 5 Started at 2015-06-26 04:48:43.556932
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 5
+}
+Test Lasted: 105.6865ms
+
+Test 6 Started at 2015-06-26 04:48:43.866919
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 6
+}
+Test Lasted: 131.3973ms
+
+Test 7 Started at 2015-06-26 04:48:44.203601
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 7
+}
+Test Lasted: 127.2589ms
+
+Test 8 Started at 2015-06-26 04:48:44.533157
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 8
+}
+Test Lasted: 109.0923ms
+
+Test 9 Started at 2015-06-26 04:48:44.844972
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 9
+}
+Test Lasted: 149.6681ms
+
+Test 10 Started at 2015-06-26 04:48:45.196091
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 10
+}
+Test Lasted: 121.1437ms
+
+Test 11 Started at 2015-06-26 04:48:45.518417
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 11
+}
+Test Lasted: 111.4926ms
+
+Test 12 Started at 2015-06-26 04:48:45.830572
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 12
+}
+Test Lasted: 135.9771ms
+
+Test 13 Started at 2015-06-26 04:48:46.171195
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 13
+}
+Test Lasted: 127.5753ms
+
+Test 14 Started at 2015-06-26 04:48:46.502242
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 14
+}
+Test Lasted: 138.1692ms
+
+Test 15 Started at 2015-06-26 04:48:46.842734
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 15
+}
+Test Lasted: 129.6568ms
+
+Test 16 Started at 2015-06-26 04:48:47.173068
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 16
+}
+Test Lasted: 687.9305ms
+
+Test 17 Started at 2015-06-26 04:48:48.065393
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 17
+}
+Test Lasted: 261.2295ms
+
+Test 18 Started at 2015-06-26 04:48:48.526776
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 18
+}
+Test Lasted: 186.5628ms
+
+Test 19 Started at 2015-06-26 04:48:48.917190
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 19
+}
+Test Lasted: 102.2949ms
+
+Test 20 Started at 2015-06-26 04:48:49.222759
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 20
+}
+Test Lasted: 188.6476ms
+
+Test 21 Started at 2015-06-26 04:48:49.612856
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 21
+}
+Test Lasted: 117.6436ms
+
+Test 22 Started at 2015-06-26 04:48:49.932159
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 22
+}
+Test Lasted: 128.5189ms
+
+Test 23 Started at 2015-06-26 04:48:50.262853
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 23
+}
+Test Lasted: 125.3342ms
+
+Test 24 Started at 2015-06-26 04:48:50.591285
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 24
+}
+Test Lasted: 155.3325ms
+
+Test 25 Started at 2015-06-26 04:48:50.950230
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 25
+}
+Test Lasted: 110.6511ms
+
+Test 26 Started at 2015-06-26 04:48:51.263762
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 26
+}
+Test Lasted: 106.8655ms
+
+Test 27 Started at 2015-06-26 04:48:51.573282
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 27
+}
+Test Lasted: 125.8588ms
+
+Test 28 Started at 2015-06-26 04:48:51.899486
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 28
+}
+Test Lasted: 143.7676ms
+
+Test 29 Started at 2015-06-26 04:48:52.243663
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 29
+}
+Test Lasted: 139.7082ms
+
+Test 30 Started at 2015-06-26 04:48:52.585913
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 30
+}
+Test Lasted: 157.7714ms
+
+Test 31 Started at 2015-06-26 04:48:52.945561
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 31
+}
+Test Lasted: 122.8209ms
+
+Test 32 Started at 2015-06-26 04:48:53.269201
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 32
+}
+Test Lasted: 121.7554ms
+
+Test 33 Started at 2015-06-26 04:48:53.591337
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 33
+}
+Test Lasted: 110.2793ms
+
+Test 34 Started at 2015-06-26 04:48:53.906006
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 34
+}
+Test Lasted: 113.4844ms
+
+Test 35 Started at 2015-06-26 04:48:54.221956
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 35
+}
+Test Lasted: 113.2074ms
+
+Test 36 Started at 2015-06-26 04:48:54.540335
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 36
+}
+Test Lasted: 797.136ms
+
+Test 37 Started at 2015-06-26 04:48:55.541664
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 37
+}
+Test Lasted: 128.2567ms
+
+Test 38 Started at 2015-06-26 04:48:55.873149
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 38
+}
+Test Lasted: 175.2385ms
+
+Test 39 Started at 2015-06-26 04:48:56.249720
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 39
+}
+Test Lasted: 147.2385ms
+
+Test 40 Started at 2015-06-26 04:48:56.601141
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 40
+}
+Test Lasted: 136.4703ms
+
+Test 41 Started at 2015-06-26 04:48:56.937891
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 41
+}
+Test Lasted: 265.0636ms
+
+Test 42 Started at 2015-06-26 04:48:57.406690
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 42
+}
+Test Lasted: 113.3042ms
+
+Test 43 Started at 2015-06-26 04:48:57.720641
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 43
+}
+Test Lasted: 146.7411ms
+
+Test 44 Started at 2015-06-26 04:48:58.069058
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 44
+}
+Test Lasted: 118.5115ms
+
+Test 45 Started at 2015-06-26 04:48:58.389005
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 45
+}
+Test Lasted: 108.478ms
+
+Test 46 Started at 2015-06-26 04:48:58.700314
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 46
+}
+Test Lasted: 115.1008ms
+
+Test 47 Started at 2015-06-26 04:48:59.019606
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 47
+}
+Test Lasted: 125.8481ms
+
+Test 48 Started at 2015-06-26 04:48:59.346241
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 48
+}
+Test Lasted: 117.7669ms
+
+Test 49 Started at 2015-06-26 04:48:59.667402
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 49
+}
+Test Lasted: 135.6195ms
+
+Test 50 Started at 2015-06-26 04:49:00.005945
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 50
+}
+Test Lasted: 121.0037ms
+
+Test 51 Started at 2015-06-26 04:49:00.329630
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 51
+}
+Test Lasted: 111.8161ms
+
+Test 52 Started at 2015-06-26 04:49:00.642970
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 52
+}
+Test Lasted: 162.89ms
+
+Test 53 Started at 2015-06-26 04:49:01.008949
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 53
+}
+Test Lasted: 120.786ms
+
+Test 54 Started at 2015-06-26 04:49:01.330039
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 54
+}
+Test Lasted: 210.311ms
+
+Test 55 Started at 2015-06-26 04:49:01.743739
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 55
+}
+Test Lasted: 221.8165ms
+
+Test 56 Started at 2015-06-26 04:49:02.165804
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 56
+}
+Test Lasted: 115.3351ms
+
+Test 57 Started at 2015-06-26 04:49:02.481625
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 57
+}
+Test Lasted: 432.3445ms
+
+Test 58 Started at 2015-06-26 04:49:03.116855
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 58
+}
+Test Lasted: 142.159ms
+
+Test 59 Started at 2015-06-26 04:49:03.460645
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 59
+}
+Test Lasted: 144.9776ms
+
+Test 60 Started at 2015-06-26 04:49:03.807306
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 60
+}
+Test Lasted: 152.479ms
+
+Test 61 Started at 2015-06-26 04:49:04.161755
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 61
+}
+Test Lasted: 114.3966ms
+
+Test 62 Started at 2015-06-26 04:49:04.480094
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 62
+}
+Test Lasted: 107.3335ms
+
+Test 63 Started at 2015-06-26 04:49:04.787925
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 63
+}
+Test Lasted: 126.6435ms
+
+Test 64 Started at 2015-06-26 04:49:05.115500
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 64
+}
+Test Lasted: 108.4297ms
+
+Test 65 Started at 2015-06-26 04:49:05.424533
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 65
+}
+Test Lasted: 106.6989ms
+
+Test 66 Started at 2015-06-26 04:49:05.731374
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 66
+}
+Test Lasted: 127.0038ms
+
+Test 67 Started at 2015-06-26 04:49:06.058742
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 67
+}
+Test Lasted: 132.3299ms
+
+Test 68 Started at 2015-06-26 04:49:06.392138
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 68
+}
+Test Lasted: 139.236ms
+
+Test 69 Started at 2015-06-26 04:49:06.731524
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 69
+}
+Test Lasted: 141.9081ms
+
+Test 70 Started at 2015-06-26 04:49:07.073904
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 70
+}
+Test Lasted: 138.7514ms
+
+Test 71 Started at 2015-06-26 04:49:07.415389
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 71
+}
+Test Lasted: 124.919ms
+
+Test 72 Started at 2015-06-26 04:49:07.745335
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 72
+}
+Test Lasted: 139.0005ms
+
+Test 73 Started at 2015-06-26 04:49:08.084965
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 73
+}
+Test Lasted: 148.4378ms
+
+Test 74 Started at 2015-06-26 04:49:08.435911
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 74
+}
+Test Lasted: 108.7691ms
+
+Test 75 Started at 2015-06-26 04:49:08.749037
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 75
+}
+Test Lasted: 197.3659ms
+
+Test 76 Started at 2015-06-26 04:49:09.150407
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 76
+}
+Test Lasted: 276.916ms
+
+Test 77 Started at 2015-06-26 04:49:09.627471
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 77
+}
+Test Lasted: 131.444ms
+
+Test 78 Started at 2015-06-26 04:49:09.960353
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 78
+}
+Test Lasted: 252.1105ms
+
+Test 79 Started at 2015-06-26 04:49:10.412843
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 79
+}
+Test Lasted: 192.8524ms
+
+Test 80 Started at 2015-06-26 04:49:10.807804
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 80
+}
+Test Lasted: 117.7428ms
+
+Test 81 Started at 2015-06-26 04:49:11.127357
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 81
+}
+Test Lasted: 132.7414ms
+
+Test 82 Started at 2015-06-26 04:49:11.463349
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 82
+}
+Test Lasted: 162.9358ms
+
+Test 83 Started at 2015-06-26 04:49:11.826622
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 83
+}
+Test Lasted: 125.4341ms
+
+Test 84 Started at 2015-06-26 04:49:12.154325
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 84
+}
+Test Lasted: 120.7065ms
+
+Test 85 Started at 2015-06-26 04:49:12.478724
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 85
+}
+Test Lasted: 131.8648ms
+
+Test 86 Started at 2015-06-26 04:49:12.812381
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 86
+}
+Test Lasted: 135.5789ms
+
+Test 87 Started at 2015-06-26 04:49:13.149744
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 87
+}
+Test Lasted: 178.7464ms
+
+Test 88 Started at 2015-06-26 04:49:13.529948
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 88
+}
+Test Lasted: 141.9738ms
+
+Test 89 Started at 2015-06-26 04:49:13.872983
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 89
+}
+Test Lasted: 158.5467ms
+
+Test 90 Started at 2015-06-26 04:49:14.231791
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 90
+}
+Test Lasted: 228.6311ms
+
+Test 91 Started at 2015-06-26 04:49:14.660734
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 91
+}
+Test Lasted: 115.4659ms
+
+Test 92 Started at 2015-06-26 04:49:14.976927
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 92
+}
+Test Lasted: 196.3626ms
+
+Test 93 Started at 2015-06-26 04:49:15.377357
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 93
+}
+Test Lasted: 119.7777ms
+
+Test 94 Started at 2015-06-26 04:49:15.699217
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 94
+}
+Test Lasted: 124.1308ms
+
+Test 95 Started at 2015-06-26 04:49:16.026177
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 95
+}
+Test Lasted: 122.1585ms
+
+Test 96 Started at 2015-06-26 04:49:16.349811
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 96
+}
+Test Lasted: 130.3632ms
+
+Test 97 Started at 2015-06-26 04:49:16.681428
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 97
+}
+Test Lasted: 140.6049ms
+
+Test 98 Started at 2015-06-26 04:49:17.024676
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 98
+}
+Test Lasted: 532.9021ms
+
+Test 99 Started at 2015-06-26 04:49:17.759676
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 99
+}
+Test Lasted: 175.332ms
+Test Ended: SyncHTTPDeviceScan
+Current Time: 2015-06-26 04:49:18.136818
+Test lasted: 00:00:36.2597480
+
+
+
+Test Started: SyncHTTPSDeviceScan
+Current Time: 2015-06-26 04:49:18.143154
+Test Run times: 100
+Server: http://0827b63a525242d1b8acc7a31a71c39e.cloudapp.net/
+Test 0 Started at 2015-06-26 04:49:18.143206
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 0
+}
+Test Lasted: 156.1576ms
+
+Test 1 Started at 2015-06-26 04:49:18.503012
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 1
+}
+Test Lasted: 195.0505ms
+
+Test 2 Started at 2015-06-26 04:49:18.903077
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 2
+}
+Test Lasted: 122.0081ms
+
+Test 3 Started at 2015-06-26 04:49:19.226898
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 3
+}
+Test Lasted: 218.516ms
+
+Test 4 Started at 2015-06-26 04:49:19.648642
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 4
+}
+Test Lasted: 172.727ms
+
+Test 5 Started at 2015-06-26 04:49:20.022122
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 5
+}
+Test Lasted: 168.6716ms
+
+Test 6 Started at 2015-06-26 04:49:20.394677
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 6
+}
+Test Lasted: 193.6081ms
+
+Test 7 Started at 2015-06-26 04:49:20.788649
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 7
+}
+Test Lasted: 148.3904ms
+
+Test 8 Started at 2015-06-26 04:49:21.140865
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 8
+}
+Test Lasted: 160.2564ms
+
+Test 9 Started at 2015-06-26 04:49:21.504639
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 9
+}
+Test Lasted: 154.1785ms
+
+Test 10 Started at 2015-06-26 04:49:21.859368
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 10
+}
+Test Lasted: 159.0669ms
+
+Test 11 Started at 2015-06-26 04:49:22.219884
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 11
+}
+Test Lasted: 223.6997ms
+
+Test 12 Started at 2015-06-26 04:49:22.648049
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 12
+}
+Test Lasted: 158.2593ms
+
+Test 13 Started at 2015-06-26 04:49:23.006851
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 13
+}
+Test Lasted: 133.0646ms
+
+Test 14 Started at 2015-06-26 04:49:23.343564
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 14
+}
+Test Lasted: 157.1361ms
+
+Test 15 Started at 2015-06-26 04:49:23.702102
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 15
+}
+Test Lasted: 130.4637ms
+
+Test 16 Started at 2015-06-26 04:49:24.036409
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 16
+}
+Test Lasted: 279.4748ms
+
+Test 17 Started at 2015-06-26 04:49:24.518428
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 17
+}
+Test Lasted: 181.8139ms
+
+Test 18 Started at 2015-06-26 04:49:24.902481
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 18
+}
+Test Lasted: 135.9408ms
+
+Test 19 Started at 2015-06-26 04:49:25.240587
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 19
+}
+Test Lasted: 176.8581ms
+
+Test 20 Started at 2015-06-26 04:49:25.621667
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 20
+}
+Test Lasted: 229.3383ms
+
+Test 21 Started at 2015-06-26 04:49:26.052958
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 21
+}
+Test Lasted: 131.417ms
+
+Test 22 Started at 2015-06-26 04:49:26.389473
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 22
+}
+Test Lasted: 151.1624ms
+
+Test 23 Started at 2015-06-26 04:49:26.745794
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 23
+}
+Test Lasted: 141.0291ms
+
+Test 24 Started at 2015-06-26 04:49:27.088530
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 24
+}
+Test Lasted: 162.7767ms
+
+Test 25 Started at 2015-06-26 04:49:27.455105
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 25
+}
+Test Lasted: 124.7329ms
+
+Test 26 Started at 2015-06-26 04:49:27.784809
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 26
+}
+Test Lasted: 205.4958ms
+
+Test 27 Started at 2015-06-26 04:49:28.191968
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 27
+}
+Test Lasted: 129.1123ms
+
+Test 28 Started at 2015-06-26 04:49:28.523070
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 28
+}
+Test Lasted: 161.1766ms
+
+Test 29 Started at 2015-06-26 04:49:28.886729
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 29
+}
+Test Lasted: 160.8262ms
+
+Test 30 Started at 2015-06-26 04:49:29.249975
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 30
+}
+Test Lasted: 138.0695ms
+
+Test 31 Started at 2015-06-26 04:49:29.593186
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 31
+}
+Test Lasted: 136.0047ms
+
+Test 32 Started at 2015-06-26 04:49:29.930212
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 32
+}
+Test Lasted: 135.5332ms
+
+Test 33 Started at 2015-06-26 04:49:30.268567
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 33
+}
+Test Lasted: 262.15ms
+
+Test 34 Started at 2015-06-26 04:49:30.735179
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 34
+}
+Test Lasted: 152.6099ms
+
+Test 35 Started at 2015-06-26 04:49:31.088818
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 35
+}
+Test Lasted: 175.1914ms
+
+Test 36 Started at 2015-06-26 04:49:31.467997
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 36
+}
+Test Lasted: 202.0211ms
+
+Test 37 Started at 2015-06-26 04:49:31.870375
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 37
+}
+Test Lasted: 213.5848ms
+
+Test 38 Started at 2015-06-26 04:49:32.287877
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 38
+}
+Test Lasted: 142.0942ms
+
+Test 39 Started at 2015-06-26 04:49:32.635182
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 39
+}
+Test Lasted: 128.5726ms
+
+Test 40 Started at 2015-06-26 04:49:32.965561
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 40
+}
+Test Lasted: 145.0779ms
+
+Test 41 Started at 2015-06-26 04:49:33.311451
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 41
+}
+Test Lasted: 172.6395ms
+
+Test 42 Started at 2015-06-26 04:49:33.688289
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 42
+}
+Test Lasted: 129.7738ms
+
+Test 43 Started at 2015-06-26 04:49:34.018812
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 43
+}
+Test Lasted: 162.2576ms
+
+Test 44 Started at 2015-06-26 04:49:34.381585
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 44
+}
+Test Lasted: 139.3206ms
+
+Test 45 Started at 2015-06-26 04:49:34.723573
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 45
+}
+Test Lasted: 152.2467ms
+
+Test 46 Started at 2015-06-26 04:49:35.080531
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 46
+}
+Test Lasted: 3185.471ms
+
+Test 47 Started at 2015-06-26 04:49:38.471130
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 47
+}
+Test Lasted: 699.0824ms
+
+Test 48 Started at 2015-06-26 04:49:39.375444
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 48
+}
+Test Lasted: 133.3103ms
+
+Test 49 Started at 2015-06-26 04:49:39.709713
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 49
+}
+Test Lasted: 545.7613ms
+
+Test 50 Started at 2015-06-26 04:49:40.457650
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 50
+}
+Test Lasted: 146.4908ms
+
+Test 51 Started at 2015-06-26 04:49:40.806535
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 51
+}
+Test Lasted: 260.9565ms
+
+Test 52 Started at 2015-06-26 04:49:41.272763
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 52
+}
+Test Lasted: 138.3223ms
+
+Test 53 Started at 2015-06-26 04:49:41.616323
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 53
+}
+Test Lasted: 133.7238ms
+
+Test 54 Started at 2015-06-26 04:49:41.952712
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 54
+}
+Test Lasted: 134.4712ms
+
+Test 55 Started at 2015-06-26 04:49:42.288607
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 55
+}
+Test Lasted: 143.5235ms
+
+Test 56 Started at 2015-06-26 04:49:42.635741
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 56
+}
+Test Lasted: 302.0247ms
+
+Test 57 Started at 2015-06-26 04:49:43.141747
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 57
+}
+Test Lasted: 220.8789ms
+
+Test 58 Started at 2015-06-26 04:49:43.563116
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 58
+}
+Test Lasted: 183.2134ms
+
+Test 59 Started at 2015-06-26 04:49:43.947985
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 59
+}
+Test Lasted: 146.5303ms
+
+Test 60 Started at 2015-06-26 04:49:44.299664
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 60
+}
+Test Lasted: 142.9399ms
+
+Test 61 Started at 2015-06-26 04:49:44.645875
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 61
+}
+Test Lasted: 164.553ms
+
+Test 62 Started at 2015-06-26 04:49:45.013499
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 62
+}
+Test Lasted: 147.417ms
+
+Test 63 Started at 2015-06-26 04:49:45.363597
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 63
+}
+Test Lasted: 216.819ms
+
+Test 64 Started at 2015-06-26 04:49:45.783360
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 64
+}
+Test Lasted: 451.5895ms
+
+Test 65 Started at 2015-06-26 04:49:46.436904
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 65
+}
+Test Lasted: 210.0517ms
+
+Test 66 Started at 2015-06-26 04:49:46.849036
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 66
+}
+Test Lasted: 184.5924ms
+
+Test 67 Started at 2015-06-26 04:49:47.236165
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 67
+}
+Test Lasted: 176.4154ms
+
+Test 68 Started at 2015-06-26 04:49:47.613576
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 68
+}
+Test Lasted: 140.6477ms
+
+Test 69 Started at 2015-06-26 04:49:47.956100
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 69
+}
+Test Lasted: 151.1663ms
+
+Test 70 Started at 2015-06-26 04:49:48.312486
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 70
+}
+Test Lasted: 224.0866ms
+
+Test 71 Started at 2015-06-26 04:49:48.740564
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 71
+}
+Test Lasted: 242.6454ms
+
+Test 72 Started at 2015-06-26 04:49:49.188441
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 72
+}
+Test Lasted: 3528.5453ms
+
+Test 73 Started at 2015-06-26 04:49:52.918514
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 73
+}
+Test Lasted: 145.8822ms
+
+Test 74 Started at 2015-06-26 04:49:53.268509
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 74
+}
+Test Lasted: 388.105ms
+
+Test 75 Started at 2015-06-26 04:49:53.857302
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 75
+}
+Test Lasted: 163.8518ms
+
+Test 76 Started at 2015-06-26 04:49:54.224423
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 76
+}
+Test Lasted: 163.0672ms
+
+Test 77 Started at 2015-06-26 04:49:54.591711
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 77
+}
+Test Lasted: 341.3857ms
+
+Test 78 Started at 2015-06-26 04:49:55.133625
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 78
+}
+Test Lasted: 161.1042ms
+
+Test 79 Started at 2015-06-26 04:49:55.495698
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 79
+}
+Test Lasted: 134.795ms
+
+Test 80 Started at 2015-06-26 04:49:55.834099
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 80
+}
+Test Lasted: 160.6457ms
+
+Test 81 Started at 2015-06-26 04:49:56.196330
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 81
+}
+Test Lasted: 263.9095ms
+
+Test 82 Started at 2015-06-26 04:49:56.661690
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 82
+}
+Test Lasted: 143.0688ms
+
+Test 83 Started at 2015-06-26 04:49:57.009990
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 83
+}
+Test Lasted: 638.5419ms
+
+Test 84 Started at 2015-06-26 04:49:57.851405
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 84
+}
+Test Lasted: 189.0273ms
+
+Test 85 Started at 2015-06-26 04:49:58.242094
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 85
+}
+Test Lasted: 268.6129ms
+
+Test 86 Started at 2015-06-26 04:49:58.711804
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 86
+}
+Test Lasted: 163.2338ms
+
+Test 87 Started at 2015-06-26 04:49:59.079839
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 87
+}
+Test Lasted: 153.2899ms
+
+Test 88 Started at 2015-06-26 04:49:59.437162
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 88
+}
+Test Lasted: 228.6686ms
+
+Test 89 Started at 2015-06-26 04:49:59.869423
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 89
+}
+Test Lasted: 177.4737ms
+
+Test 90 Started at 2015-06-26 04:50:00.251725
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 90
+}
+Test Lasted: 139.8123ms
+
+Test 91 Started at 2015-06-26 04:50:00.592617
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 91
+}
+Test Lasted: 132.218ms
+
+Test 92 Started at 2015-06-26 04:50:00.925289
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 92
+}
+Test Lasted: 168.3841ms
+
+Test 93 Started at 2015-06-26 04:50:01.298884
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 93
+}
+Test Lasted: 140.0883ms
+
+Test 94 Started at 2015-06-26 04:50:01.639634
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 94
+}
+Test Lasted: 145.7431ms
+
+Test 95 Started at 2015-06-26 04:50:01.988562
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 95
+}
+Test Lasted: 137.6296ms
+
+Test 96 Started at 2015-06-26 04:50:02.329577
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 96
+}
+Test Lasted: 127.2443ms
+
+Test 97 Started at 2015-06-26 04:50:02.659199
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 97
+}
+Test Lasted: 145.868ms
+
+Test 98 Started at 2015-06-26 04:50:03.010031
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 98
+}
+Test Lasted: 163.907ms
+
+Test 99 Started at 2015-06-26 04:50:03.378650
+Json Posted:
+{
+  "i": "D05FB84F1606",
+  "b": null,
+  "d": "1289472198573",
+  "s": 99
+}
+Test Lasted: 137.4344ms
+Test Ended: SyncHTTPSDeviceScan
+Current Time: 2015-06-26 04:50:03.719762
+Test lasted: 00:00:45.5765850
+
+
+
