@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="InterceptorTester.dll" total="58" failures="8" not-run="9" date="2015-06-05" time="16:58:36">
+  <environment nunit-version="2.4.8.0" clr-version="4.0.30319.17020" os-version="Unix 14.3.0.0" platform="Unix" cwd="/Users/linai/Documents/InterceptorPerformanceTester/InterceptorTester/bin/Debug" machine-name="Lins-MacBook-Air.local" user="linai" user-domain="Lins-MacBook-Air.local" />
+  <culture-info current-culture="en-CA" current-uiculture="en-CA" />
+  <test-suite name="InterceptorTester.dll" success="False" time="68.037" asserts="0">
+    <results>
+      <test-suite name="InterceptorTester" success="False" time="68.029" asserts="0">
+        <results>
+          <test-suite name="Tests" success="False" time="68.027" asserts="0">
+            <results>
+              <test-suite name="AdminTests" success="True" time="9.389" asserts="0">
+                <results>
+                  <test-suite name="AuthenticateTest" success="True" time="0.000" asserts="0">
+                    <results />
+                  </test-suite>
+                  <test-suite name="InterceptorTest" success="True" time="8.521" asserts="0">
+                    <results>
+                      <test-case name="InterceptorTester.Tests.AdminTests.InterceptorTest.createInterceptor" executed="False">
+                        <reason>
+                          <message><![CDATA[Method createInterceptor's signature is not correct: it must be an instance method.]]></message>
+                        </reason>
+                      </test-case>
+                      <test-case name="InterceptorTester.Tests.AdminTests.InterceptorTest.deleteInterceptor" executed="True" success="True" time="8.487" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.AdminTests.InterceptorTest.getMultipleInterceptors" executed="False">
+                        <reason>
+                          <message><![CDATA[Method getMultipleInterceptors's signature is not correct: it must return void.]]></message>
+                        </reason>
+                      </test-case>
+                      <test-case name="InterceptorTester.Tests.AdminTests.InterceptorTest.getSingleInterceptor" executed="False">
+                        <reason>
+                          <message><![CDATA[Method getSingleInterceptor's signature is not correct: it must return void.]]></message>
+                        </reason>
+                      </test-case>
+                    </results>
+                  </test-suite>
+                  <test-suite name="LocationTest" success="True" time="0.762" asserts="0">
+                    <results>
+                      <test-case name="InterceptorTester.Tests.AdminTests.LocationTest.createLocation" executed="False">
+                        <reason>
+                          <message><![CDATA[Method createLocation's signature is not correct: it must be an instance method.]]></message>
+                        </reason>
+                      </test-case>
+                      <test-case name="InterceptorTester.Tests.AdminTests.LocationTest.deleteLocation" executed="True" success="True" time="0.757" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.AdminTests.LocationTest.getMultipleLocations" executed="False">
+                        <reason>
+                          <message><![CDATA[Method getMultipleLocations's signature is not correct: it must return void.]]></message>
+                        </reason>
+                      </test-case>
+                      <test-case name="InterceptorTester.Tests.AdminTests.LocationTest.getSingleLocation" executed="False">
+                        <reason>
+                          <message><![CDATA[Method getSingleLocation's signature is not correct: it must return void.]]></message>
+                        </reason>
+                      </test-case>
+                    </results>
+                  </test-suite>
+                  <test-suite name="OrganizationTest" success="True" time="0.085" asserts="0">
+                    <results>
+                      <test-case name="InterceptorTester.Tests.AdminTests.OrganizationTest.createOrganization" executed="False">
+                        <reason>
+                          <message><![CDATA[Method createOrganization's signature is not correct: it must be an instance method.]]></message>
+                        </reason>
+                      </test-case>
+                      <test-case name="InterceptorTester.Tests.AdminTests.OrganizationTest.deleteOrganization" executed="True" success="True" time="0.081" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.AdminTests.OrganizationTest.getMultipleOrganization" executed="False">
+                        <reason>
+                          <message><![CDATA[Method getMultipleOrganization's signature is not correct: it must return void.]]></message>
+                        </reason>
+                      </test-case>
+                      <test-case name="InterceptorTester.Tests.AdminTests.OrganizationTest.getSingleOrganization" executed="False">
+                        <reason>
+                          <message><![CDATA[Method getSingleOrganization's signature is not correct: it must return void.]]></message>
+                        </reason>
+                      </test-case>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite name="InterceptorTests" success="False" time="9.170" asserts="0">
+                <results>
+                  <test-suite name="DeviceBackupTest" success="False" time="5.207" asserts="0">
+                    <results>
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceBackupTest.BadSerial" executed="True" success="True" time="3.468" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceBackupTest.EmptySerial" executed="True" success="True" time="0.145" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceBackupTest.InvalidBackupItems" executed="True" success="False" time="0.138" asserts="1">
+                        <failure>
+                          <message><![CDATA[  String lengths are both 3. Strings differ at index 0.
+  Expected: "400"
+  But was:  "201"
+  -----------^
+]]></message>
+                          <stack-trace><![CDATA[at InterceptorTester.Tests.InterceptorTests.DeviceBackupTest.InvalidBackupItems () [0x0019d] in /Users/linai/Documents/InterceptorPerformanceTester/InterceptorTester/Tests/InterceptorTests/DeviceBackupTest.cs:189
+at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (System.Reflection.MonoMethod,object,object[],System.Exception&)
+at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00054] in /private/tmp/mono20150427-94385-ls9w7r/mono-4.0.1/mcs/class/corlib/System.Reflection/MonoMethod.cs:230
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceBackupTest.InvalidSingleBackupItem" executed="True" success="False" time="0.271" asserts="1">
+                        <failure>
+                          <message><![CDATA[  String lengths are both 3. Strings differ at index 0.
+  Expected: "400"
+  But was:  "201"
+  -----------^
+]]></message>
+                          <stack-trace><![CDATA[at InterceptorTester.Tests.InterceptorTests.DeviceBackupTest.InvalidSingleBackupItem () [0x00182] in /Users/linai/Documents/InterceptorPerformanceTester/InterceptorTester/Tests/InterceptorTests/DeviceBackupTest.cs:150
+at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (System.Reflection.MonoMethod,object,object[],System.Exception&)
+at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00054] in /private/tmp/mono20150427-94385-ls9w7r/mono-4.0.1/mcs/class/corlib/System.Reflection/MonoMethod.cs:230
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceBackupTest.NoBackupItems" executed="True" success="True" time="0.168" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceBackupTest.NotSpecialDynCode" executed="True" success="True" time="0.119" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceBackupTest.NullSerial" executed="True" success="False" time="0.144" asserts="1">
+                        <failure>
+                          <message><![CDATA[  String lengths are both 3. Strings differ at index 0.
+  Expected: "201"
+  But was:  "500"
+  -----------^
+]]></message>
+                          <stack-trace><![CDATA[at InterceptorTester.Tests.InterceptorTests.DeviceBackupTest.NullSerial () [0x0018c] in /Users/linai/Documents/InterceptorPerformanceTester/InterceptorTester/Tests/InterceptorTests/DeviceBackupTest.cs:339
+at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (System.Reflection.MonoMethod,object,object[],System.Exception&)
+at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00054] in /private/tmp/mono20150427-94385-ls9w7r/mono-4.0.1/mcs/class/corlib/System.Reflection/MonoMethod.cs:230
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceBackupTest.SpecialDynCode" executed="True" success="True" time="0.192" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceBackupTest.ValidBackupItemsSimDyn" executed="True" success="True" time="0.233" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceBackupTest.ValidSerial" executed="True" success="True" time="0.121" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceBackupTest.ValidSingleBackupItem" executed="True" success="True" time="0.117" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="DeviceScanTest" success="False" time="2.367" asserts="0">
+                    <results>
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceScanTest.ASCIIScanCode" executed="True" success="True" time="0.132" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceScanTest.EmptySerialDyn" executed="True" success="True" time="0.137" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceScanTest.EmptySerialSimple" executed="True" success="True" time="0.119" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceScanTest.InvalidSerialDyn" executed="True" success="True" time="0.125" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceScanTest.InvalidSerialSimple" executed="True" success="True" time="0.120" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceScanTest.LOValidScansDyn" executed="True" success="True" time="0.197" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceScanTest.LOValidScansSimple" executed="True" success="True" time="0.151" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceScanTest.NoScanData" executed="True" success="True" time="0.099" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceScanTest.NullSerialDyn" executed="True" success="False" time="0.115" asserts="1">
+                        <failure>
+                          <message><![CDATA[  String lengths are both 3. Strings differ at index 0.
+  Expected: "400"
+  But was:  "500"
+  -----------^
+]]></message>
+                          <stack-trace><![CDATA[at InterceptorTester.Tests.InterceptorTests.DeviceScanTest.NullSerialDyn () [0x00178] in /Users/linai/Documents/InterceptorPerformanceTester/InterceptorTester/Tests/InterceptorTests/DeviceScanTest.cs:459
+at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (System.Reflection.MonoMethod,object,object[],System.Exception&)
+at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00054] in /private/tmp/mono20150427-94385-ls9w7r/mono-4.0.1/mcs/class/corlib/System.Reflection/MonoMethod.cs:230
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceScanTest.NullSerialSimple" executed="True" success="False" time="0.120" asserts="1">
+                        <failure>
+                          <message><![CDATA[  String lengths are both 3. Strings differ at index 0.
+  Expected: "400"
+  But was:  "500"
+  -----------^
+]]></message>
+                          <stack-trace><![CDATA[at InterceptorTester.Tests.InterceptorTests.DeviceScanTest.NullSerialSimple () [0x00178] in /Users/linai/Documents/InterceptorPerformanceTester/InterceptorTester/Tests/InterceptorTests/DeviceScanTest.cs:231
+at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (System.Reflection.MonoMethod,object,object[],System.Exception&)
+at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00054] in /private/tmp/mono20150427-94385-ls9w7r/mono-4.0.1/mcs/class/corlib/System.Reflection/MonoMethod.cs:230
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceScanTest.UTF8ScanCode" executed="True" success="True" time="0.166" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceScanTest.ValidCH" executed="True" success="True" time="0.331" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceScanTest.ValidScansSimDyn" executed="True" success="True" time="0.227" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceScanTest.ValidSingleScanDyn" executed="True" success="True" time="0.150" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceScanTest.ValidSingleScanSimple" executed="True" success="True" time="0.138" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="DeviceSettingsTest" success="True" time="0.437" asserts="0">
+                    <results>
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceSettingsTest.InvalidSerial" executed="True" success="True" time="0.147" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceSettingsTest.NoSerial" executed="True" success="True" time="0.120" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceSettingsTest.ValidSerial" executed="True" success="True" time="0.165" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="DeviceStatusTest" success="False" time="0.508" asserts="0">
+                    <results>
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceStatusTest.AlertDataStore" executed="True" success="False" time="0.115" asserts="1">
+                        <failure>
+                          <message><![CDATA[  String lengths are both 3. Strings differ at index 0.
+  Expected: "201"
+  But was:  "400"
+  -----------^
+]]></message>
+                          <stack-trace><![CDATA[at InterceptorTester.Tests.InterceptorTests.DeviceStatusTest.AlertDataStore () [0x00216] in /Users/linai/Documents/InterceptorPerformanceTester/InterceptorTester/Tests/InterceptorTests/DeviceStatusTest.cs:286
+at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (System.Reflection.MonoMethod,object,object[],System.Exception&)
+at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00054] in /private/tmp/mono20150427-94385-ls9w7r/mono-4.0.1/mcs/class/corlib/System.Reflection/MonoMethod.cs:230
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceStatusTest.EmptySerial" executed="True" success="True" time="0.096" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceStatusTest.InvalidSerial" executed="True" success="True" time="0.072" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceStatusTest.NullSerial" executed="True" success="True" time="0.129" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.DeviceStatusTest.ValidSerial" executed="True" success="False" time="0.079" asserts="1">
+                        <failure>
+                          <message><![CDATA[  String lengths are both 3. Strings differ at index 0.
+  Expected: "201"
+  But was:  "400"
+  -----------^
+]]></message>
+                          <stack-trace><![CDATA[at InterceptorTester.Tests.InterceptorTests.DeviceStatusTest.ValidSerial () [0x00221] in /Users/linai/Documents/InterceptorPerformanceTester/InterceptorTester/Tests/InterceptorTests/DeviceStatusTest.cs:102
+at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (System.Reflection.MonoMethod,object,object[],System.Exception&)
+at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00054] in /private/tmp/mono20150427-94385-ls9w7r/mono-4.0.1/mcs/class/corlib/System.Reflection/MonoMethod.cs:230
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                    </results>
+                  </test-suite>
+                  <test-suite name="ICmdTest" success="False" time="0.633" asserts="0">
+                    <results>
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.ICmdTest.InvalidSerial" executed="True" success="True" time="0.111" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.ICmdTest.MissingSerial" executed="True" success="False" time="0.126" asserts="1">
+                        <failure>
+                          <message><![CDATA[  String lengths are both 3. Strings differ at index 0.
+  Expected: "400"
+  But was:  "500"
+  -----------^
+]]></message>
+                          <stack-trace><![CDATA[at InterceptorTester.Tests.InterceptorTests.ICmdTest.MissingSerial () [0x00124] in /Users/linai/Documents/InterceptorPerformanceTester/InterceptorTester/Tests/InterceptorTests/ICmdTest.cs:106
+at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (System.Reflection.MonoMethod,object,object[],System.Exception&)
+at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00054] in /private/tmp/mono20150427-94385-ls9w7r/mono-4.0.1/mcs/class/corlib/System.Reflection/MonoMethod.cs:230
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.ICmdTest.NoQuery" executed="True" success="True" time="0.078" asserts="1" />
+                      <test-case name="InterceptorTester.Tests.InterceptorTests.ICmdTest.ValidSerial" executed="True" success="True" time="0.299" asserts="1" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite name="PerformanceTests" success="True" time="49.461" asserts="0">
+                <results>
+                  <test-suite name="DeviceBackupPerformanceTest" success="True" time="14.970" asserts="0">
+                    <results>
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceBackupPerformanceTest.AsyncHTTPDeviceBackup" executed="True" success="True" time="2.253" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceBackupPerformanceTest.AsyncHTTPSDeviceBackup" executed="True" success="True" time="2.343" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceBackupPerformanceTest.multiClientDeviceBackup" executed="True" success="True" time="3.467" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceBackupPerformanceTest.SyncHTTPDeviceBackup" executed="True" success="True" time="3.260" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceBackupPerformanceTest.SyncHTTPSDeviceBackup" executed="True" success="True" time="3.642" asserts="0" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="DeviceScanPerformanceTest" success="True" time="18.811" asserts="0">
+                    <results>
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceScanPerformanceTest.AsyncHTTPDeviceScan" executed="True" success="True" time="2.177" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceScanPerformanceTest.AsyncHTTPSDeviceScan" executed="True" success="True" time="6.677" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceScanPerformanceTest.multiClientScans" executed="True" success="True" time="4.024" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceScanPerformanceTest.SyncHTTPDeviceScan" executed="True" success="True" time="2.813" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceScanPerformanceTest.SyncHTTPSDeviceScan" executed="True" success="True" time="3.113" asserts="0" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="DeviceStatusPerformanceTest" success="True" time="4.373" asserts="0">
+                    <results>
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceStatusPerformanceTest.AsyncHTTPDeviceStatus" executed="True" success="True" time="2.112" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.DeviceStatusPerformanceTest.AsyncHTTPSDeviceStatus" executed="True" success="True" time="2.258" asserts="0" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="ICmdPerformanceTest" success="True" time="11.298" asserts="0">
+                    <results>
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.ICmdPerformanceTest.AsyncHTTPICmd" executed="True" success="True" time="2.236" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.ICmdPerformanceTest.AsyncHTTPSICmd" executed="True" success="True" time="2.339" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.ICmdPerformanceTest.multiClientICmd" executed="True" success="True" time="3.613" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.ICmdPerformanceTest.SyncHTTPICmd" executed="True" success="True" time="1.625" asserts="0" />
+                      <test-case name="InterceptorTester.Tests.PerformanceTests.ICmdPerformanceTest.SyncHTTPSICmd" executed="True" success="True" time="1.479" asserts="0" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
